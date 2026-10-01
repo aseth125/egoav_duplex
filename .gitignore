@@ -1,0 +1,6 @@
+# The transcodes are committed deliberately and only by publish.py --media.
+# Nothing else from the working tree belongs here.
+*.wav
+*.pyc
+__pycache__/
+.DS_Store

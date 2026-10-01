@@ -1,0 +1,811 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230908_s1_danielle_pierce_act3_3pm96n::T7@90",
+ "seq_id": "NymeriaPlus_v1.0_20230908_s1_danielle_pierce_act3_3pm96n",
+ "tier": "T7",
+ "window_abs_s": [
+  90.0,
+  510.0
+ ],
+ "duration_s": 420.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230908_s1_danielle_pierce_act3_3pm96n.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Work out why the tomato will not slice and get it cut.",
+  "closed_by_turn": 22
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 36.0,
+   "text": "Which hand did I use to get that bowl down?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 35.5,
+    "detail": "bowl set down on the countertop and the upper doors being closed"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left hand. You lifted it out of the right-hand upper cabinet with your left while your right hand was still holding that door open.",
+    "skill": "action_state",
+    "answer_words": 25,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      29.0,
+      34.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 41.0,
+   "text": "Actually \u2014 did I get the fridge properly shut back there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 40.2,
+    "detail": "gaze moved between the overhead units; the fridge is well out of view"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "actually \u2014",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, you swung it shut with your right hand while the greens stayed in your left, then you veered right toward the counter.",
+    "skill": "episodic_memory",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      18.5,
+      22.0
+     ],
+     "object_uids": [
+      "312"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 45.5,
+   "text": "You've picked the bag up \u2014 checking if there's enough?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 43.5,
+    "detail": "pack lifted off the worktop, contents inspected, set back down"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Looks like it. You lifted it, glanced inside, and put it straight back down on the same spot without taking anything out yet.",
+    "skill": "action_state",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      38.5,
+      43.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 50.0,
+   "text": "Hold on \u2014 I opened and shut that drawer without taking anything. Do you know what I was reaching for?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 48.0,
+    "detail": "middle drawer pulled open a little and pushed shut again"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You didn't take anything out of it. You slid it open a little, closed it again, and went straight back to the pack on the counter.",
+    "skill": "action_state",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      43.5,
+      48.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 72.0,
+   "text": "Back to the greens \u2014 how much is left?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 71.0,
+    "detail": "about twenty seconds of continuous transfer with no new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You've been emptying it steadily for about twenty seconds now. The bag is maybe half down, and you switched to scooping with your left hand a moment ago.",
+    "skill": "action_state",
+    "answer_words": 28,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      53.5,
+      65.0,
+      71.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 76.0,
+   "text": "It was the other one first. When did I swap?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 76.0,
+    "detail": "user follows up on the hand change"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Right at first. You scooped with that one for about ten seconds, then swapped, and you've stayed swapped for the last ten or so.",
+    "skill": "episodic_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      50.0,
+      63.5,
+      72.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 80.0,
+   "text": "Sorry, quick one \u2014 so is the bowl going to take all of it, or should I grab a second?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 80.0,
+    "detail": "user asks for a judgement about capacity"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "sorry, quick one \u2014",
+    "register": "apology"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "It should. The bowl you took down is still well short of full even with most of the bag already tipped in.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      33.5,
+      78.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 102.0,
+   "text": "Twice over here now. What did I pull out first time?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 100.0,
+    "detail": "second approach to the fridge, door opened again"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A bag of leafy greens, nothing else. You bent down for it, stood up and shut the door behind you with the same hand.",
+    "skill": "long_horizon_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      13.5,
+      18.5,
+      22.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 106.5,
+   "text": "Second trip. What have I got hold of in there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 105.6,
+    "detail": "focus left the worktop side of the kitchen for the inside of the fridge"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A sealed pack of vegetables, not loose leaves this time. You have it in your left hand and the door is still held open with the right.",
+    "skill": "object_identification",
+    "answer_words": 27,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      100.5,
+      105.5,
+      108.0
+     ],
+     "object_uids": [
+      "312"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 111.0,
+   "text": "Mm-hm... mm\u2014 and actually, hang on: am I still hanging onto the first lot as well?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 111.0,
+    "detail": "backchannel turns into a question about the earlier item"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, you left it behind. You put it down on the counter with both hands just before you turned round and walked over here.",
+    "skill": "episodic_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      90.5,
+      94.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 130.0,
+   "text": "I've got both now. Which hand ended up shutting it?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 125.5,
+    "detail": "fridge closed again, both items carried away"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left, which is a switch; the first time round you closed it with your right. Everything you had collected was bundled into the other hand.",
+    "skill": "long_horizon_memory",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      18.5,
+      120.5,
+      124.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 135.0,
+   "text": "Mm-hm... mm\u2014 and this one again? I keep opening it.",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 134.0,
+    "detail": "drawer pulled open and the slide-out board touched"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Twice now, and a third pull just started. Each time your hand lands on the board that slides out underneath rather than anything inside.",
+    "skill": "action_state",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      130.5,
+      135.5,
+      140.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 139.0,
+   "text": "No, I mean \u2014 not the drawer itself; the flat thing I keep touching. What is it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 139.0,
+    "detail": "user repairs their own previous question"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "no, I mean \u2014",
+    "register": "correction"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "It is a pull-out cutting board set into the unit under the worktop. You slide it forward, touch it, and push the drawer shut again each time.",
+    "skill": "object_identification",
+    "answer_words": 27,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      135.5,
+      150.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 180.0,
+   "text": "Something's on it at last. What came out the bag?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 179.0,
+    "detail": "tomato placed down on the slide-out board"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A tomato. You pulled a wrapped bag of food out first, had a look, put it back, and then lifted the tomato out instead.",
+    "skill": "episodic_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      170.5,
+      175.5,
+      179.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "t_s": 184.0,
+   "text": "That one went back. What am I rummaging through here?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 183.0,
+    "detail": "a kitchen drawer opened and its contents handled"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A drawer of utensils. You have hold of it with your right and you are sorting through the contents with your left, picking things up and dropping them back.",
+    "skill": "action_state",
+    "answer_words": 29,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      182.5,
+      187.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 15,
+   "t_s": 188.0,
+   "text": "Um, hang on \u2014 I had one of them in my hand already. Did I put it back?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 188.0,
+    "detail": "user is unsure about what they just did"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "um, hang on \u2014",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 14
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You did. You lifted one out, held it for a moment, then set it straight back down among the others and carried on looking.",
+    "skill": "episodic_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      187.5,
+      192.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 16,
+   "t_s": 203.0,
+   "text": "How long looking for the right blade?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 202.0,
+    "detail": "a long searching stretch with no question in it"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 15
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Roughly twenty seconds so far. You went through one drawer, opened and shut two more down here, and you still have nothing in your hand.",
+    "skill": "episodic_memory",
+    "answer_words": 25,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      182.5,
+      197.5,
+      202.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 17,
+   "t_s": 206.0,
+   "text": "Oh \u2014 by the way, was there a plant back there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 204.6,
+    "detail": "gaze left the fridge end of the room for the unit by the hob"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 16
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, a potted one came into view twice while you were at the drawer, off to the side, and it has been out of shot since.",
+    "skill": "outside_attention",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      137.0,
+      151.5,
+      158.8
+     ],
+     "object_uids": [
+      "283"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 18,
+   "t_s": 210.5,
+   "text": "And here? I've had about three of these in and out of the block.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 209.0,
+    "detail": "another blade returned and a different one drawn"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 17
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "At least three, yes. Each one comes out, gets looked at, and goes straight back before you reach for the next along the row.",
+    "skill": "action_state",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      202.5,
+      207.5,
+      212.5,
+      217.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 19,
+   "t_s": 243.0,
+   "text": "Is it me, or have I picked a dud?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 242.0,
+    "detail": "tomato lifted and set down again part way through a cut"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 18
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The blade is barely marking it. You have tried four or five passes, lifted it, repositioned it, and the skin is still unbroken.",
+    "skill": "action_state",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      227.5,
+      237.5,
+      242.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 20,
+   "t_s": 247.0,
+   "text": "Hang on \u2014 which of them did I pull out first? I want the one I skipped.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 247.0,
+    "detail": "user wants to go back to an earlier candidate"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hang on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 19
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You put the first one straight back and took another; the one in your hand is not the first you drew. More are still sitting in the block.",
+    "skill": "long_horizon_memory",
+    "answer_words": 28,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      202.5,
+      207.5,
+      217.5,
+      222.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 21,
+   "t_s": 265.0,
+   "text": "I've swapped and come back. Is this one better?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 263.0,
+    "detail": "returned to the board with a different blade and started cutting"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 20
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes. It is biting on the first pass this time, and you are already through the skin rather than sliding over it.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      242.5,
+      266.0,
+      270.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 22,
+   "t_s": 269.0,
+   "text": "Good, that's the one then. So the problem was just which I grabbed?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 268.0,
+    "detail": "first clean slice completed"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 21
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "It looks that way. Same tomato, same board, same hand; only the blade changed, and it is cutting cleanly now.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      232.5,
+      247.5,
+      268.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

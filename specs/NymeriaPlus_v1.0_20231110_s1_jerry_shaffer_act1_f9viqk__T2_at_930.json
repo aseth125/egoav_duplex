@@ -1,0 +1,361 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20231110_s1_jerry_shaffer_act1_f9viqk::T2@930",
+ "seq_id": "NymeriaPlus_v1.0_20231110_s1_jerry_shaffer_act1_f9viqk",
+ "tier": "T2",
+ "window_abs_s": [
+  930.0,
+  1050.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20231110_s1_jerry_shaffer_act1_f9viqk.mp4",
+ "mode": "companion",
+ "goal": {
+  "text": "The user wants to keep every dart accounted for while he plays, so nothing is left lying on the floor and nothing he is carrying gets mistaken for a dart.",
+  "closed_by_turn": 9
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 6.0,
+   "text": "Keep an eye on my darts \u2014 one got away.",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 5.8,
+    "detail": "the user opens the thread himself, mid-throw"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "It did. You stepped forward, leaned down and went for it on the floor with your right hand.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      7.0,
+      9.5,
+      11.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 10.0,
+   "text": "Did I get it back, or not?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 9.8,
+    "detail": "the reach toward the floor finishes"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You got it. You bent down, picked it up, and switched it over to your left before throwing.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      10.5,
+      12.5,
+      14.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 13.5,
+   "text": "oh \u2014 by the way, what was I looking at there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 11.8,
+    "detail": "gaze leaves the lamp he had been dwelling on and moves off it as he crouches"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your eyes were on the lamp for a couple of seconds, then they left it as you crouched.",
+    "skill": "attention",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.4,
+      11.0,
+      11.8
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 18.0,
+   "text": "mm-hm... mm \u2014 sorry, and the ones on the sofa?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 17.5,
+    "detail": "a backchannel that turns into a turn as the answer runs on"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 2
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "You grabbed those a moment later, leaning right, then stood and threw again.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      14.5,
+      17.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 38.0,
+   "text": "Did I clear every one off the board just now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 37.5,
+    "detail": "two-handed removal of the darts from the board finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, you walked up and pulled them all out with both hands, then turned and set them down on the sofa.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      26.0,
+      31.0,
+      36.0,
+      38.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 42.0,
+   "text": "And whereabouts did they end up, the cushions or the arm?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 41.8,
+    "detail": "the user cuts in to pin down the location before it leaves view"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On the sofa seat. You leaned over it and spread them out there with both hands before standing up.",
+    "skill": "spatial_layout",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      38.5,
+      41.0,
+      44.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 79.0,
+   "text": "I've stopped putting them down. What now instead?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 78.5,
+    "detail": "he finishes taking the darts off the board and starts doing something else with them"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You're trying to stick a few of them onto your left forearm with your right hand instead of putting them down.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      76.5,
+      79.5,
+      83.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 83.0,
+   "text": "wait \u2014 I've been at this a while. Have I dropped any since we started?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 82.5,
+    "detail": "the user cuts in worried that something has been lost over the whole stretch"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Just the one, right at the beginning. Everything since has come off the board or off the sofa.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      11.0,
+      29.0,
+      50.0,
+      73.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 95.0,
+   "text": "So that's one more off the floor, then \u2014 which hand did I use that time?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 93.0,
+    "detail": "he bends, lifts a dart off the floor and walks away from the board"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left, this time. You were holding darts in both already, so you reached down with the left and came up.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      90.8,
+      92.5,
+      93.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 106.0,
+   "text": "Sorry \u2014 not the darts. There was something else in my hand just then, wasn't there? What was it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 105.0,
+    "detail": "he sets an object down that is not a dart and goes back to throwing"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A roll of tape. You carried it in with them, moved it across hands, and put it down on the sofa.",
+    "skill": "object_identification",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      100.0,
+      103.0,
+      105.5
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

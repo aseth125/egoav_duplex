@@ -1,0 +1,786 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230823_s1_alison_riddle_act4_cj51l5::T5@720",
+ "seq_id": "NymeriaPlus_v1.0_20230823_s1_alison_riddle_act4_cj51l5",
+ "tier": "T5",
+ "window_abs_s": [
+  720.0,
+  1020.0
+ ],
+ "duration_s": 300.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230823_s1_alison_riddle_act4_cj51l5.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "The wearer is clearing the house room by room and wants to be sure nothing of his is still lying out by the time he reaches the kitchen.",
+  "closed_by_turn": 22
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 20.0,
+   "text": "Did I leave the towel on the bench?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 17.7,
+    "detail": "towel set down and the wearer stepped out of the sauna"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "You folded it and set it down on the sauna bench with both hands, then stepped out empty-handed.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      8.5,
+      16.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 23.5,
+   "text": "And before that? One hand or both, when I was straightening it out?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 23.0,
+    "detail": "user cuts in while the previous answer is still being spoken"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Both. You held it open first, folded it in the air, and only then bent down to place it.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      4.0,
+      11.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 30.0,
+   "text": "wait \u2014 am I even getting that cap on? It keeps sliding off.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 29.9,
+    "detail": "gaze left the storage unit for the table while the foot cap was underfoot"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not yet. You're nudging it with your right foot while your left hand holds the chair steady above it.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      27.7,
+      33.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 48.0,
+   "text": "The sauna \u2014 did I leave it open?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 47.7,
+    "detail": "glass door opened and closed again, wearer steps forward"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You pulled the glass door open with both hands, then closed it again with your right hand before walking off.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      42.7,
+      47.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 51.5,
+   "text": "So nothing's still ajar. And the thing on the bed \u2014 I brushed past it, didn't I?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 51.5,
+    "detail": "user cuts in on the tail of the previous answer"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You did, with your left hand, and kept walking. That towel sits there until about twenty seconds later.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      47.7,
+      52.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 78.0,
+   "text": "That chair \u2014 moved before or after the blinds?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 77.8,
+    "detail": "chair pushed in and the wearer turns to the blinds"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Before. You pushed it in with your left hand first, then stepped back and took hold of the window blinds.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      72.8,
+      79.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 82.0,
+   "text": "actually \u2014 I've picked something up. Where am I taking it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 82.0,
+    "detail": "wearer sets off carrying something mid-answer"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "actually \u2014",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "To the hallway closet. You turn left in front of it and lay the towel on a shelf, left-handed.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      82.8,
+      88.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 86.5,
+   "text": "Fine. Back in the bedroom though \u2014 how long was I messing about with that cap?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 86.5,
+    "detail": "user returns to an earlier thread while the answer runs"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Roughly fifteen seconds, from about twenty-three to thirty-eight, and you were still nudging it when you moved on.",
+    "skill": "long_horizon_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      22.7,
+      37.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 95.5,
+   "text": "Sorry, lost the thread \u2014 where am I headed now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 95.3,
+    "detail": "focus left the table area for the bare wall as he turned for the stairs"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Upstairs. You have just closed the closet doors with both hands and turned left for the stairs.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      89.8,
+      96.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 118.0,
+   "text": "First thing up here was the chair \u2014 what exactly?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 114.8,
+    "detail": "chair righted and the seat cushion lifted off the floor"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You bent down, stood it upright with your left hand, then picked a seat cushion off the floor and dropped it on.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      110.5,
+      117.0
+     ],
+     "object_uids": [
+      "129"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 122.0,
+   "text": "mm-hm... mm \u2014 the mat. What did I do?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 119.8,
+    "detail": "the mat was rolled up and lifted"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You rolled it up with your left hand and put it on top of the plastic container.",
+    "skill": "episodic_memory",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      119.8,
+      128.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 126.0,
+   "text": "Leave it there, that's fine. I'll come back for that lot.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 126.0,
+    "detail": "user talks over the answer to close the sub-task"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 10
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Understood. I'll keep a note of everything you have moved up here.",
+    "skill": "action_state",
+    "answer_words": 12,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      126.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 140.0,
+   "text": "This heap on the floor \u2014 where's it ending up?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 139.8,
+    "detail": "first armful of clothing folded and slid into the bag"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "In the bag by the sofa. You fold each piece first, and whatever you park on the table gets slid in after.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      134.8,
+      144.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 144.0,
+   "text": "speaking of which, there was a lamp somewhere behind me. Can I still see it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 130.1,
+    "detail": "the lamp left view at 130.1 and has not returned"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "speaking of which,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, it dropped out of view about fifteen seconds ago, over at the dining end behind your right shoulder.",
+    "skill": "outside_attention",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      129.6,
+      130.1
+     ],
+     "object_uids": [
+      "82"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "t_s": 172.0,
+   "text": "Not clothes, that one. What did I just lift off the sofa with my other hand?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 169.8,
+    "detail": "something non-clothing was taken off the sofa left-handed"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A book. You leaned left to grab it, then leaned right and put it down on the table.",
+    "skill": "object_identification",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      164.8,
+      174.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 15,
+   "t_s": 212.0,
+   "text": "I shifted something small on the table. What?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 211.8,
+    "detail": "a small item was lifted and repositioned on the table"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 14
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The remote control. You picked it up with your right hand and set it on the centrepiece.",
+    "skill": "object_identification",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      206.8,
+      216.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 16,
+   "t_s": 216.0,
+   "text": "hang on \u2014 I keep catching that table with my foot. Am I actually moving it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 216.0,
+    "detail": "user cuts in worried about knocking furniture out of place"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hang on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 15
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, twice. You nudged its position with your left foot while holding clothing in both hands, without putting anything down.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      201.8,
+      211.8
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 17,
+   "t_s": 236.0,
+   "text": "That's the clothes done. Where did the bag finish up?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 231.7,
+    "detail": "the bag was set down and a towel picked up off the floor"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 16
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Beside the sofa. You crouched to set it down there, then straight away picked a towel up off the floor.",
+    "skill": "spatial_layout",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      231.7,
+      236.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 18,
+   "t_s": 240.0,
+   "text": "Second one of those today, isn't it? Where's this one going?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 240.0,
+    "detail": "user cuts in as the folding starts"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 17
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, the second towel. You fold it here, then carry it down the hallway to the closets.",
+    "skill": "long_horizon_memory",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      82.8,
+      241.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 19,
+   "t_s": 255.0,
+   "text": "Wrong door, though. I opened something and shut it again immediately \u2014 what was that about?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 251.7,
+    "detail": "a closet was opened right-handed and shut again at once"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 18
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You tried the first closet with your right hand, saw it was not the right one, and shut it within a second.",
+    "skill": "episodic_memory",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      246.7,
+      255.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 20,
+   "t_s": 277.5,
+   "text": "My eyes moved \u2014 looking at what?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 277.0,
+    "detail": "gaze left the wall for the counter as he entered the kitchen"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 19
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your gaze left the wall and settled on the counter ahead, where you reach out and pick up a plate.",
+    "skill": "attention",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      273.8,
+      279.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 21,
+   "t_s": 281.0,
+   "text": "And what's that I'm folding on top of it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 278.8,
+    "detail": "something is folded and laid over the plate"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 20
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A sheet of tissue paper. You fold it with both hands and lay it over the plate before lifting it.",
+    "skill": "object_identification",
+    "answer_words": 20,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      278.8,
+      283.8
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 22,
+   "t_s": 285.0,
+   "text": "oh \u2014 by the way, before I get into this: is anything of mine still lying about?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 285.0,
+    "detail": "user cuts in to close out the tidy-up before starting the next job"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 21
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Nothing. Both towels are in closets, the clothing is bagged beside the sofa, the mat is stowed, and the book is on the table.",
+    "skill": "long_horizon_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      128.0,
+      173.0,
+      236.0,
+      263.8
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

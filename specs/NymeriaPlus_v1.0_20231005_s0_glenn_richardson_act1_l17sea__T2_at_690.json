@@ -1,0 +1,390 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20231005_s0_glenn_richardson_act1_l17sea::T2@690",
+ "seq_id": "NymeriaPlus_v1.0_20231005_s0_glenn_richardson_act1_l17sea",
+ "tier": "T2",
+ "window_abs_s": [
+  690.0,
+  810.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20231005_s0_glenn_richardson_act1_l17sea.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Get the living room straight before people arrive: clear the centre table onto the hutch, then dig the game things out of the cabinet and leave the rest stowed.",
+  "closed_by_turn": 10
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 20.0,
+   "text": "How many loads have I carried across so far?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 17.4,
+    "detail": "an armful from the centre table has just been set down on the hutch shelf"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Three so far: the books and a decorative piece, then another book, and just now the plant with the candle.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      5.0,
+      15.0,
+      20.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 24.0,
+   "text": "\u2014 same shelf as the first lot?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 22.4,
+    "detail": "the plant and the candle are put down at the far end of the hutch"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, those went on the opposite end, the far side of the hutch from where you stacked the books.",
+    "skill": "spatial_layout",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      5.0,
+      24.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 27.0,
+   "text": "hold on \u2014 so is there anything still sitting on the table, or is that it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 27.0,
+    "detail": "the user wants to know whether the centre table is finished before moving on"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not quite, there is one more piece on it, the decorative display you are reaching for right now.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      24.0,
+      27.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 56.0,
+   "text": "Shelf's finished \u2014 what's piling up down here now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 54.4,
+    "detail": "the cabinet doors are open and the first load has come out onto the floor"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Only boxes so far, pulled out of the cabinet and stacked on the floor just beside your left knee.",
+    "skill": "spatial_layout",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      50.0,
+      56.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 60.5,
+   "text": "um, hang on \u2014 keep listing?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 59.7,
+    "detail": "another item is lifted clear and added to the pile on the left"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "um, hang on \u2014",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 3
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Of course, I will note everything that comes out and the order it comes out in.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      60.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 63.0,
+   "text": "mm-hm, mm \u2014 actually, in what order did the first few come out?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 63.0,
+    "detail": "fifteen seconds into the unpacking, before the pile gets long"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Boxes first, both hands, and then the toy you just moved across with your right hand on its own.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      56.0,
+      61.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 88.0,
+   "text": "Back to that list \u2014 what's new since the pillow?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 86.0,
+    "detail": "something is lifted off the cabinet shelf and set down on the game board"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Only one: an hour glass out of the cabinet, which you have just put down on the game board.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      82.0,
+      88.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 92.0,
+   "text": "oh \u2014 by the way, did I actually move that cushion anywhere, or just set it straight back down?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 92.0,
+    "detail": "the user doubts whether the pillow was repositioned or simply dropped again"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Barely, you lifted it off the floor and set it down again about a step to your right.",
+    "skill": "spatial_layout",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      78.5,
+      80.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 104.0,
+   "text": "Am I taking things out still, or putting them back?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 99.6,
+    "detail": "the user stands, walks a couple of paces and squats back down at the cabinet"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Putting back now, you carried over the boxes in both hands and set them onto the shelf inside.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      101.0,
+      106.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 108.0,
+   "text": "\u2014 so of the lot that came out, how much is still down on the floor?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 108.0,
+    "detail": "a minute of unloading and reloading has gone by without a stocktake"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The toy and the organizer are still out, plus the hour glass and cards on the board.",
+    "skill": "episodic_memory",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      62.0,
+      67.0,
+      98.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 114.5,
+   "text": "Game night pile sorted; what is this last one I'm pulling?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 114.6,
+    "detail": "both hands close on one more box at the back of the cabinet"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The last box from the bottom, and your game set is now complete.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      112.0,
+      117.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

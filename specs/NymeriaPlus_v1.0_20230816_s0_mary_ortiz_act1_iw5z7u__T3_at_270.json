@@ -1,0 +1,454 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230816_s0_mary_ortiz_act1_iw5z7u::T3@270",
+ "seq_id": "NymeriaPlus_v1.0_20230816_s0_mary_ortiz_act1_iw5z7u",
+ "tier": "T3",
+ "window_abs_s": [
+  270.0,
+  450.0
+ ],
+ "duration_s": 180.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230816_s0_mary_ortiz_act1_iw5z7u.mp4",
+ "mode": "recall_check",
+ "goal": {
+  "text": "The user wants to settle whether the deal was carried on the same way after he broke off to fetch something from the kitchen.",
+  "closed_by_turn": 12
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 20.0,
+   "text": "Which hand am I actually dealing with right now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 19.5,
+    "detail": "user opens the thread mid-deal"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Your right hand is doing the dealing. The left one stays put, keeping hold of the deck against your palm.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      16.0,
+      21.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 24.0,
+   "text": "wait \u2014 each got one first, yeah?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 21.0,
+    "detail": "a round of distribution finishes"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not quite. One went out to your peer first, and then you dealt yourself one on that same pass.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      21.0,
+      26.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 27.5,
+   "text": "mm-hm... mm \u2014 hold that thought.",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 27.0,
+    "detail": "backchannel turns into a floor grab"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 1
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Sure, take your time. I will keep tracking the deal while you look.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      26.0,
+      31.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 31.0,
+   "text": "And before any of that, what did I do to the card I'd just put down?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 30.5,
+    "detail": "user reaches back to the opening of the window"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You turned it over where it lay, face up, using the same hand that had just released it.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      4.0,
+      9.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 60.0,
+   "text": "What did I just do with that pile?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 61.0,
+    "detail": "the gathered set is piled onto the cards in the centre"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You gathered it up and set it down on top of what was already sitting in the centre.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      56.0,
+      66.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 63.5,
+   "text": "Keep counting, I lost track.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 63.0,
+    "detail": "user cuts in to hand off the counting"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "No problem, I am still following along and will keep count for you.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      61.0,
+      66.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 66.0,
+   "text": "oh \u2014 by the way, was I holding anything in my other hand while that happened?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 66.0,
+    "detail": "the piling action closes"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes. The deck never left your left hand through any of it, so all of that was done one-handed.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      56.0,
+      66.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 100.0,
+   "text": "So where are we now, same routine as before?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 99.0,
+    "detail": "a long quiet stretch of dealing"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Pretty much. You are still alternating: a card out to someone, then a quick tidy of the centre.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      91.0,
+      106.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 104.0,
+   "text": "hang on \u2014 sorry, I meant that middle heap: am I adding to it or clearing it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 106.0,
+    "detail": "the centre heap is arranged again"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hang on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Adding to it. Every tidy so far has pushed another card onto that heap; nothing has come off it.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      61.0,
+      106.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 140.0,
+   "text": "Right, remind me what I went and fetched just now.",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 138.0,
+    "detail": "the user is back in the chair with what he carried"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A pack of food off the kitchen counter. You picked it up with your right hand, then carried it back in your left.",
+    "skill": "long_horizon_memory",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      123.0,
+      133.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 144.0,
+   "text": "mm-hm... mm, actually, hold on.",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 143.5,
+    "detail": "the backchannel escalates into a turn"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 9
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Go ahead, I am still here and following the table.",
+    "skill": "action_state",
+    "answer_words": 10,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      138.0,
+      143.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 147.0,
+   "text": "What did I walk past on the way out there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 123.1,
+    "detail": "the last of the hallway scenery drops out of view"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A plant came by on your right as you stood, and a staircase opened up once you turned the corner.",
+    "skill": "spatial_layout",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      114.0,
+      121.0
+     ],
+     "object_uids": [
+      "288",
+      "340"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 160.0,
+   "text": "So, did I pick the deal back up exactly where I left it?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 158.0,
+    "detail": "dealing has settled back into its rhythm"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes. You lifted the cards off the table with the hand you had been dealing with before, and went straight back to one at a time.",
+    "skill": "long_horizon_memory",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      143.0,
+      158.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

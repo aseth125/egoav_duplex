@@ -1,0 +1,385 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20231130_s0_danielle_wu_act2_yugj1m::T2@1020",
+ "seq_id": "NymeriaPlus_v1.0_20231130_s0_danielle_wu_act2_yugj1m",
+ "tier": "T2",
+ "window_abs_s": [
+  1020.0,
+  1140.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20231130_s0_danielle_wu_act2_yugj1m.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Get the birthday bunting up over the doorway and hanging straight before the guests arrive, without losing track of the wrapper, the tape or the decoration itself along the way.",
+  "closed_by_turn": 10
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 2.5,
+   "text": "Keep track of what I do, would you?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 2.0,
+    "detail": "user opens the task after lifting the decoration off the floor"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "expected_answer": {
+    "text": "Got it. I'll follow every step and tell you if something gets skipped.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      2.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 6.0,
+   "text": "So how am I carrying it right now, one hand or two?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 5.8,
+    "detail": "the lift finished and the walk across the living room began"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Both hands. You picked it up off the floor and you haven't let go with either since.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      3.0,
+      6.0,
+      9.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 12.0,
+   "text": "wait \u2014 am I supposed to get all this plastic off first?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 11.5,
+    "detail": "unwrapping has just started and the user is unsure it is the right move"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You're already doing it \u2014 the wrapping is coming off in pieces, and you've got both hands on it.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      11.0,
+      14.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 22.0,
+   "text": "Where did the torn-off bits end up?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 20.8,
+    "detail": "a piece of wrapper was set down and unwrapping resumed"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On the coffee table \u2014 you set the first piece of wrapper down there with your left hand, then kept going.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      16.5,
+      19.5,
+      21.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 27.0,
+   "text": "mm-hm... mm \u2014 actually, which hand was free while I did that?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 26.5,
+    "detail": "the user's acknowledgement turns into a follow-up question"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your right \u2014 it stayed on the decoration the whole time while the other one did the placing.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      17.0,
+      19.0,
+      20.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 40.0,
+   "text": "Okay, and the thing I walked in with \u2014 where is it sitting now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 35.9,
+    "detail": "the walk to the dining table finished with a hand-off: tape up, decoration down"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You left it on the dining table when you picked up the tape, and it's still lying there.",
+    "skill": "spatial_layout",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      32.0,
+      35.0,
+      39.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 57.0,
+   "text": "Something came into shot as I turned. What was it?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 54.1,
+    "detail": "an object was visible for half a second during the turn and then left view for good"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A chair \u2014 it swung through the frame for about half a second as you turned toward the doorway.",
+    "skill": "object_identification",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      53.6,
+      54.1
+     ],
+     "object_uids": [
+      "27"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 61.0,
+   "text": "oh \u2014 by the way, what did I pick up first over there, the tape or something else?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 60.5,
+    "detail": "the user remembers an unresolved question about the earlier hand-off"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The tape. You grabbed it with your right hand before you put the other thing down with your left.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      31.0,
+      33.0,
+      35.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 80.0,
+   "text": "Okay, it's on the wall. Tell me straight \u2014 is it crooked?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 75.9,
+    "detail": "the decoration is fixed in place and the user starts adjusting it"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Slightly low on your left end. Shift that side up a touch.",
+    "skill": "spatial_layout",
+    "answer_words": 12,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      78.0,
+      79.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 95.0,
+   "text": "Have I moved far enough along since you said that?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 91.8,
+    "detail": "another sideways reposition finished while arranging the bunting"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You've gone three steps sideways to the right since then, all in the same direction.",
+    "skill": "episodic_memory",
+    "answer_words": 15,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      83.0,
+      88.0,
+      94.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 108.0,
+   "text": "So that's it up, then \u2014 nothing else to fix?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 106.8,
+    "detail": "arranging stopped, the user turned away and walked off"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "It's up and you've stepped back from it with both hands empty, so yes \u2014 that one's finished.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      101.0,
+      107.0,
+      112.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

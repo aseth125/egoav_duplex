@@ -1,0 +1,531 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib::T3@240",
+ "seq_id": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib",
+ "tier": "T3",
+ "window_abs_s": [
+  240.0,
+  420.0
+ ],
+ "duration_s": 180.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "The user is making two slices of peanut-butter toast and wants to keep track of what they have already set out, which utensil they are on, and whether both slices are finished.",
+  "closed_by_turn": 12
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 45.0,
+   "text": "What did I set down before I opened this drawer?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 45.0,
+    "detail": "user asks for a status recap while reaching into the drawer"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "The peanut butter jar. You carried it over from the island and set it down right before opening the drawer.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      38.5,
+      43.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 49.0,
+   "text": "Did the towel go on the plate, or under it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 49.0,
+    "detail": "user cuts back to the earlier setup step"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On top. You put the plate down first, then unfolded the sheet over it and patted it flat.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      31.8,
+      34.5,
+      36.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 53.0,
+   "text": "Oh, before I forget \u2014 back when I was ripping that sheet, was a plant in view?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 53.0,
+    "detail": "user pulls a stale detail out of memory mid-answer"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh, before I forget \u2014",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes. A potted plant was visible just past the island for about a second while you tore the towel.",
+    "skill": "long_horizon_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      23.5,
+      24.1
+     ],
+     "object_uids": [
+      "19"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 62.0,
+   "text": "I swapped blades \u2014 did I keep the first?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 59.5,
+    "detail": "drawer closed and the second utensil carried away"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No. You lifted one out, set it back in, and took a different one before shutting the drawer.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      52.0,
+      56.5,
+      59.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 66.0,
+   "text": "Mm-hm, mm \u2014 actually, what did I do with it at the sink?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 66.0,
+    "detail": "backchannel turns into a question as the sink step ends"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You rinsed it under the running tap, holding it in your left hand while your right worked the faucet.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      61.5,
+      63.5,
+      65.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 84.0,
+   "text": "Did the slices land on that sheet, or bare counter?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 83.8,
+    "detail": "both slices out of the toaster and set down"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On it. Both slices came out of the toaster and went straight onto the paper towel you laid down.",
+    "skill": "spatial_layout",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      36.0,
+      78.5,
+      82.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 88.0,
+   "text": "Wait \u2014 did I bring that jar back over with me?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 88.0,
+    "detail": "return trip from the island completes"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 0
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "You did. You picked it up off the island on the way past and opened it as you walked back.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      84.5,
+      87.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 93.0,
+   "text": "and the lid, where'd that end up?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 93.0,
+    "detail": "user cuts in on the running answer"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On the counter. You set it down with your left hand just before switching the jar over to that hand.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      88.5,
+      91.0,
+      92.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 108.0,
+   "text": "Which hand has been doing the spreading?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 108.0,
+    "detail": "a long uninterrupted stretch of spreading"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your right. The knife has stayed in your right hand since the sink, with your left holding the bread steady.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      66.5,
+      95.0,
+      107.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 112.0,
+   "text": "Um, hang on \u2014 that's not the one I rinsed, is it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 112.0,
+    "detail": "user doubts their own recollection and cuts in"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "um, hang on \u2014",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "It is. Only one knife has come out of that drawer since the rinse, and it is still in your hand.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      57.0,
+      63.5,
+      111.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 131.5,
+   "text": "Have I done both now, or just the one?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 130.8,
+    "detail": "first slice set down, second slice taken up"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 8
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Just the one so far. You set that slice down on the towel and picked up the second, which you are spreading now.",
+    "skill": "action_state",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      127.5,
+      129.5,
+      131.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 136.0,
+   "text": "and have I looked up at all since I started this?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 136.0,
+    "detail": "user cuts in over the running answer"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not really. Your gaze has stayed on the counter in front of you the entire time you have been spreading.",
+    "skill": "attention",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      100.0,
+      120.0,
+      135.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 160.0,
+   "text": "There \u2014 both done. Where'd I just leave the knife?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 160.0,
+    "detail": "second slice finished and the utensil carried off"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "In the sink. You carried it over, set it down in the basin, and turned straight back toward the counter.",
+    "skill": "spatial_layout",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      158.5,
+      160.5,
+      162.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 164.0,
+   "text": "No, I mean \u2014 which drawer was that one from?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 164.0,
+    "detail": "user repairs their own previous question"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "no, I mean \u2014",
+    "register": "correction"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The one by the counter, the same drawer you dug the second knife out of before you washed it.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      46.5,
+      57.0,
+      163.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "t_s": 174.6,
+   "text": "Okay, so what did I just take out and put straight back?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 174.5,
+    "detail": "gaze leaves the doorway and settles on the open drawer"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A knife. You put it back, then took another and closed the drawer.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      169.5,
+      174.0,
+      177.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}
