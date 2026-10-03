@@ -1,0 +1,361 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230816_s1_jeffery_bryant_act1_2a6fxu::T2@960",
+ "seq_id": "NymeriaPlus_v1.0_20230816_s1_jeffery_bryant_act1_2a6fxu",
+ "tier": "T2",
+ "window_abs_s": [
+  960.0,
+  1080.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230816_s1_jeffery_bryant_act1_2a6fxu.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Work through the whole laundry pile and confirm nothing has been left unfolded or stranded off to the side.",
+  "closed_by_turn": 9
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 12.0,
+   "text": "Remind me how I got from the bedroom to here?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 11.0,
+    "detail": "C has just turned clockwise and sat down on the couch"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "You walked out of the bedroom, turned left along the hallway, then turned clockwise in the living area and sat down.",
+    "skill": "spatial_layout",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      1.0,
+      7.0,
+      13.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 17.0,
+   "text": "On the way through \u2014 did I pass anything with a screen?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 17.2,
+    "detail": "gaze leaves the clothes in hand and sweeps off to the wall"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, a screen on your left about ten seconds in, just before you reached the couch and sat down.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.8,
+      11.5
+     ],
+     "object_uids": [
+      "271"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 22.0,
+   "text": "Oh \u2014 by the way, which hand started?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 11.7,
+    "detail": "the display dropped out of view as C turned into the living area"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left hand first, on its own, and then both hands came in a few seconds later.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      12.5,
+      16.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 26.0,
+   "text": "Mm-hm... mm \u2014 sorry, carry on, I'm just going to keep working through these.",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 25.5,
+    "detail": "user acknowledges mid-answer and hands the floor back"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "No problem. I'll keep watching and say something if a piece gets missed.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      26.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 55.0,
+   "text": "Back to it: where have the finished ones been going?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 54.0,
+    "detail": "a folded piece has just been dropped forward and C has turned to her left"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Onto the table in front of you. You lean forward and drop each folded piece there with your right hand.",
+    "skill": "spatial_layout",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      30.0,
+      52.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 60.0,
+   "text": "Is that the only place they're going, or did some end up next to me?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 59.0,
+    "detail": "C has finished dragging the packed clothing over on her left"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Some are beside you as well. There were packed bundles on your left that you kept pulling closer, plus a pile on the floor.",
+    "skill": "spatial_layout",
+    "answer_words": 24,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      53.5,
+      58.0,
+      61.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 70.0,
+   "text": "Did I ever get that lot off the floor?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 68.5,
+    "detail": "the item retrieved from the floor has been checked and folded"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes. You leaned down and lifted it with your right hand, then straightened up and checked it across your lap.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      61.5,
+      64.0,
+      68.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 99.0,
+   "text": "And this one I've just picked up \u2014 where did it come from?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 98.5,
+    "detail": "a folded piece is dropped on the table and a new one is lifted from the left"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Off the couch on your left. You twisted round for it, then passed it across into your other hand.",
+    "skill": "object_identification",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      98.0,
+      100.0,
+      101.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 104.0,
+   "text": "Hold on \u2014 I mean before that, was it one of the ones I pulled over earlier?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 103.0,
+    "detail": "user repairs her own question while the answer is still running"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, it came off that bundle you dragged across from your left about a minute into this.",
+    "skill": "episodic_memory",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      56.5,
+      59.5,
+      99.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 114.0,
+   "text": "So am I done with the lot now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 113.5,
+    "detail": "the final fold is completed on the lap"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "That was the last one. It's all folded and stacked on the table now.",
+    "skill": "action_state",
+    "answer_words": 14,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      110.0,
+      115.0,
+      118.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

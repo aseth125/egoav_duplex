@@ -1,0 +1,355 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230815_s1_lisa_colon_act3_okbf3p::T2@1020",
+ "seq_id": "NymeriaPlus_v1.0_20230815_s1_lisa_colon_act3_okbf3p",
+ "tier": "T2",
+ "window_abs_s": [
+  1020.0,
+  1140.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230815_s1_lisa_colon_act3_okbf3p.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Clear every armful of clothing out of the bedroom and into the one bag, and know when the last load is in so she can leave the room.",
+  "closed_by_turn": 8
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 8.5,
+   "text": "One hand or both, putting it down?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 8.2,
+    "detail": "the bag is set down and released at the side of the living room"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Both hands. You carried it by the handles in your right and steadied the side with your left.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      7.7,
+      10.5,
+      12.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 12.0,
+   "text": "So where's it sitting now, exactly?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 11.8,
+    "detail": "both hands come off the bag and she turns away from it"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On the low table at the side of the living room, where you walked it over to.",
+    "skill": "spatial_layout",
+    "answer_words": 17,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.7,
+      12.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 21.0,
+   "text": "Okay \u2014 what did I just lean down and grab?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 20.4,
+    "detail": "she stops on the way to the bedroom and leans forward over the seat"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A pile of clothes. You picked them up with your right hand and then took them in both.",
+    "skill": "object_identification",
+    "answer_words": 18,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      21.5,
+      24.7,
+      27.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 25.0,
+   "text": "hold on \u2014 was that the same spot I took the first load from?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 25.0,
+    "detail": "she second-guesses where this armful came from"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No. The first load came off the sofa in the living room; this one you took from the seat in the bedroom.",
+    "skill": "episodic_memory",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      3.2,
+      6.0,
+      22.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 46.0,
+   "text": "Anyway \u2014 the bag; where's it ended up now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 45.2,
+    "detail": "she lifts the bag off the table with both hands and sets it down again"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You've just moved it onto the couch, carrying it off the table with both hands.",
+    "skill": "spatial_layout",
+    "answer_words": 15,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      44.7,
+      47.0,
+      48.9
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 50.0,
+   "text": "mm-hm... mm \u2014 actually, how many loads have gone in so far?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 49.7,
+    "detail": "halfway through the window she wants a running total"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Two so far. One off the sofa at the start, then the armful you carried through from the bedroom.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      4.5,
+      6.3,
+      36.5,
+      41.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 71.0,
+   "text": "Keep a tally, would you?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 70.2,
+    "detail": "she straightens up after emptying her arms into the bag"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Will do. I'll keep count of each armful as it goes in.",
+    "skill": "action_state",
+    "answer_words": 12,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      69.7,
+      72.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 73.5,
+   "text": "which room have I been ferrying these out of?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 73.5,
+    "detail": "she cuts in over the acknowledgement to check the route"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The bedroom. You've been going back and forth to a seat just inside it and bringing armfuls out to the living area.",
+    "skill": "spatial_layout",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      26.0,
+      52.0,
+      66.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 100.0,
+   "text": "Is that the last armful, or is there more?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 99.2,
+    "detail": "the final armful goes into the bag and she straightens up"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "That was the last armful. You've straightened up, and from here you head for the bedroom instead of the seat.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      91.0,
+      96.5,
+      99.7
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 104.0,
+   "text": "oh \u2014 by the way, what did I just scoop up off the floor in here?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 103.5,
+    "detail": "the couch and the bag drop out of view as she leans over the bedroom floor"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Some brochures. You grabbed them off the floor with your right hand, then kept one in your left while lifting the bags.",
+    "skill": "object_identification",
+    "answer_words": 22,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      103.0,
+      105.5,
+      109.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

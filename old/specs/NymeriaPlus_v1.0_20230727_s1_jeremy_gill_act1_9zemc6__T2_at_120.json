@@ -1,0 +1,457 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230727_s1_jeremy_gill_act1_9zemc6::T2@120",
+ "seq_id": "NymeriaPlus_v1.0_20230727_s1_jeremy_gill_act1_9zemc6",
+ "tier": "T2",
+ "window_abs_s": [
+  120.0,
+  240.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230727_s1_jeremy_gill_act1_9zemc6.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "The user is tidying the flat against a deadline and wants a running account of what she has actually dealt with, so she can tell at the end whether anything is still out of place.",
+  "closed_by_turn": 12
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 11.0,
+   "text": "Keep track of what I've actually dealt with, would you?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 10.4,
+    "detail": "the user opens the task herself, mid-tidy"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "expected_answer": {
+    "text": "Of course \u2014 I'll keep a running list. Right now you're stacking the puzzle pieces onto the ottoman.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.4,
+      11.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 15.5,
+   "text": "\u2014 and the first lot, those went straight onto it, or did they end up on the floor?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 14.4,
+    "detail": "the repeated pick-up-and-place cycle onto the ottoman finished"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On the floor first. You dropped them over the ottoman with both hands, then crouched to gather them back up.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      4.4,
+      9.4
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 33.0,
+   "text": "Those from the fireplace \u2014 on the pile, or still holding?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 29.5,
+    "detail": "the sweep across the floor from the fireplace to the side table finished"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Still in your hands. You haven't been back to the pile since you crossed over to the fireplace.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      24.5,
+      33.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 37.5,
+   "text": "wait, wait \u2014 and don't let me put this one down somewhere stupid.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 35.5,
+    "detail": "the screen swung out of view as she turned from the ottoman toward the window"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait, wait \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "I'll watch it. Both hands on it, and you're turning back into the room.",
+    "skill": "action_state",
+    "answer_words": 14,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      34.5,
+      37.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 50.0,
+   "text": "Okay, so where did that thing end up?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 49.5,
+    "detail": "the square object was stowed and the last pieces were off the floor"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Under the side table. You crouched and pushed it under there with your right hand, then went back for the last pieces.",
+    "skill": "spatial_layout",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      37.5,
+      44.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 55.5,
+   "text": "mm-hm... mm \u2014 sorry, one thing: don't let me forget the cereal.",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 54.5,
+    "detail": "she has moved through to the kitchen and is mid-carry"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 4
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Noted. I'll keep the cereal on the list \u2014 you're carrying the board along the counter right now.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      54.5,
+      55.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 62.0,
+   "text": "So that's parked \u2014 which hand did I set it down with?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 59.5,
+    "detail": "the chopping board was set down beside the toaster"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left. You carried it with both hands along the counter and set it down beside the toaster with the left one.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      49.5,
+      59.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 80.5,
+   "text": "The cereal \u2014 shut before I moved it, or after?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 79.5,
+    "detail": "the cereal box finished its move down the counter and was set down"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You shut it first, both hands on the lid, and only then walked it down the counter with your left.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      69.5,
+      79.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 85.0,
+   "text": "um, hang on \u2014 how many of those am I putting in there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 84.4,
+    "detail": "the box was down and both scissors were in hand"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "um, hang on \u2014",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Two. One in each hand off the counter, and they're going into the holder one at a time, left hand first.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      79.5,
+      86.4
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 97.5,
+   "text": "And the kettle \u2014 did that go on the hob, or back on the side?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 96.4,
+    "detail": "the kettle was let go of and she turned away from the stove"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On the stovetop. You lifted it with your right hand, turned left and set it down with both, then stepped away.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      91.4,
+      96.4
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 104.0,
+   "text": "\u2014 left or right?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 103.8,
+    "detail": "the hallway doorway passed out of view as she entered the bedroom"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Right twice. You crossed the kitchen, turned right into the little hallway, then right again through the doorway, and left towards the bed.",
+    "skill": "spatial_layout",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      96.4,
+      103.8
+     ],
+     "object_uids": [
+      "20"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 106.0,
+   "text": "no, I mean \u2014 this one: same, or different?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 109.9,
+    "detail": "the first pillow was put down and a second was lifted off the floor"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "no, I mean \u2014",
+    "register": "correction"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A different one. The first came off the bed; this one you've just lifted off the floor with your left hand.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      101.4,
+      111.5
+     ],
+     "object_uids": [
+      "85"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 110.0,
+   "text": "\u2014 right, that's me done then, isn't it? Anything still out of place in here?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 118.9,
+    "detail": "the last pillow landed at the headboard and she closed the task out"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "That's the lot \u2014 pieces on the ottoman, box under the side table, kitchen things away, both pillows back.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      4.4,
+      118.9
+     ],
+     "object_uids": [
+      "85"
+     ]
+    }
+   }
+  }
+ ]
+}

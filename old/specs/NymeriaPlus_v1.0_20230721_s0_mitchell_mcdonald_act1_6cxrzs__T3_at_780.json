@@ -1,0 +1,517 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230721_s0_mitchell_mcdonald_act1_6cxrzs::T3@780",
+ "seq_id": "NymeriaPlus_v1.0_20230721_s0_mitchell_mcdonald_act1_6cxrzs",
+ "tier": "T3",
+ "window_abs_s": [
+  780.0,
+  960.0
+ ],
+ "duration_s": 180.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230721_s0_mitchell_mcdonald_act1_6cxrzs.mp4",
+ "mode": "companion",
+ "goal": {
+  "text": "The user is working through a floor stretching session and wants the assistant to keep a running log so it can read the whole sequence back at the end.",
+  "closed_by_turn": 14
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 14.0,
+   "text": "Keep a log of this session for me, would you?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 14.0,
+    "detail": "user opens the session while lying on the floor"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "expected_answer": {
+    "text": "Happy to. I'll track each pose and how long you hold it, and read the list back when you're done.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      14.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 18.0,
+   "text": "And right now \u2014 which arm have I got stretched out behind me?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 17.3,
+    "detail": "the turn-onto-the-side movement finishes and the stretch settles"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left one is stretched back along the floor; your right arm is bent in front of your chest.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      17.3,
+      21.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 31.0,
+   "text": "Anything but carpet in view down here?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 29.3,
+    "detail": "gaze leaves the storage unit and settles on the open room"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The edge of a doorway is off to one side, and a stretch of plain wall; nothing else is really in frame.",
+    "skill": "spatial_layout",
+    "answer_words": 22,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      29.3,
+      31.0
+     ],
+     "object_uids": [
+      "89",
+      "16"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 34.0,
+   "text": "Actually \u2014 how long have I been down here now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 34.0,
+    "detail": "user cuts in mid-answer to check the clock on the session"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "actually \u2014",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A little over half a minute of floor work so far, counting from when you first lay down.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      2.3,
+      34.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 44.0,
+   "text": "Did I come straight up, or not?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 42.3,
+    "detail": "the lying sequence ends and the wearer is up on knees and hands"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Straight up. You pushed off the floor from lying flat and settled onto your knees with both hands planted.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      37.3,
+      42.3,
+      44.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 47.0,
+   "text": "Right, got it \u2014 don't bother narrating unless I ask.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 47.0,
+    "detail": "user talks over the reply to set ground rules"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Understood. I'll stay quiet and keep logging in the background until you ask.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      47.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 58.0,
+   "text": "Anyway \u2014 what did I shift into after the crawling bit?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 57.3,
+    "detail": "the hands-forward crawl ends and a new shape is held"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You rolled through cat-cow a few times, then folded down into child's pose with your arms out front.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      54.3,
+      58.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 72.0,
+   "text": "Did I just glance up at something?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 69.3,
+    "detail": "the wearer lifts out of the fold and lowers back into it"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, you lifted your chest for a second to check the laptop in front of you, then lowered back down.",
+    "skill": "attention",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      69.3,
+      71.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 75.0,
+   "text": "Mm-hm \u2014 actually, was that the first time I've done that?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 75.0,
+    "detail": "a backchannel over the reply turns into a question"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, first look up since you went down; before that your eyes stayed on the carpet the whole way through.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      59.3,
+      69.3,
+      75.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 87.0,
+   "text": "And now that's twice, isn't it?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 84.3,
+    "detail": "a second look up and back down to the floor completes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Twice, yes. Same move both times: lift, check the screen, settle back down into the fold.",
+    "skill": "attention",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      69.3,
+      79.3,
+      84.3
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 97.0,
+   "text": "How did I get out of that?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 94.3,
+    "detail": "the wearer comes up, side-sits, and opens into a seated shape"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You lifted up, turned to your left, side-sat for a moment, then brought both feet together in front of you.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      89.3,
+      94.3
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 100.0,
+   "text": "Hold on \u2014 how long was I folded up like that?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 100.0,
+    "detail": "user cuts into the reply to pin down the duration"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Roughly thirty-five seconds in that fold, from just before the one-minute mark until you sat up a moment ago.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      57.3,
+      92.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 136.0,
+   "text": "Which leg went out first just then?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 134.3,
+    "detail": "the seated open-leg shape ends and a forward reach begins"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The left. You stretched it forward while your right stayed folded in, then reached for that foot with both hands.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      129.3,
+      134.3
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 139.0,
+   "text": "And have I done that side already, or is this the first?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 139.0,
+    "detail": "user talks over the reply to check symmetry of the routine"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "First time on that one. Everything before this was symmetrical, so you've got the mirror of it still to do.",
+    "skill": "long_horizon_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      94.3,
+      134.3,
+      139.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "t_s": 169.0,
+   "text": "That's the switch done then \u2014 give me the whole run-through.",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 166.3,
+    "detail": "the wearer swaps legs and settles into the mirrored reach"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Floor stretches, then knees and cat-cow, child's pose with two laptop checks, cobbler's sit, and toe touches on each leg.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      2.3,
+      57.3,
+      94.3,
+      134.3,
+      166.3
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

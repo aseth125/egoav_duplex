@@ -1,0 +1,610 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230830_s1_christy_ramirez_act2_9ctbxp::T3@840",
+ "seq_id": "NymeriaPlus_v1.0_20230830_s1_christy_ramirez_act2_9ctbxp",
+ "tier": "T3",
+ "window_abs_s": [
+  840.0,
+  1020.0
+ ],
+ "duration_s": 180.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230830_s1_christy_ramirez_act2_9ctbxp.mp4",
+ "mode": "recall_check",
+ "goal": {
+  "text": "The wearer wants an accurate account of the route she walked from the backyard back indoors to the sofa, so she can describe it to someone afterwards.",
+  "closed_by_turn": 16
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 12.0,
+   "text": "Keep a running note of my route from here, would you?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 11.6,
+    "detail": "wearer opens the task while walking and talking in the backyard"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "expected_answer": {
+    "text": "Of course. I'll track every turn and stairway from here until you sit down.",
+    "skill": "action_state",
+    "answer_words": 14,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      11.0,
+      13.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 16.5,
+   "text": "Which hand was I pointing with just now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 13.5,
+    "detail": "the pointing gesture toward her peers finished"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "That was your right one. You lifted it to point while you were still talking to the group.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.0,
+      11.5,
+      13.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 21.0,
+   "text": "oh \u2014 by the way, where did my eyes go right after that?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 17.9,
+    "detail": "gaze left the steps behind her and settled on the ground ahead"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Straight down to the ground ahead of you. Until then you'd been fixed on the steps for a good six seconds.",
+    "skill": "attention",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      12.0,
+      17.9,
+      19.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 26.0,
+   "text": "mm-hm... mm \u2014 and the second time I pointed?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 23.5,
+    "detail": "the second pointing gesture ended and she stepped forward"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You used the left that time, then stepped forward and carried on uphill.",
+    "skill": "action_state",
+    "answer_words": 13,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      19.0,
+      22.5,
+      25.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 45.0,
+   "text": "So have I actually been climbing this whole time?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 42.5,
+    "detail": "gaze dropped from the ground she had been following to the ground directly underfoot"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, steadily uphill since roughly thirty seconds in, and you glanced back over your shoulder at about forty-five.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      29.0,
+      40.0,
+      46.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 49.0,
+   "text": "Am I still doing it now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 48.5,
+    "detail": "the uphill stretch ended as she turned anticlockwise"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, you've stopped climbing: you just turned anticlockwise and shuffled sideways while you kept talking.",
+    "skill": "action_state",
+    "answer_words": 15,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      47.0,
+      50.5,
+      52.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 52.5,
+   "text": "um, hang on \u2014 have I stopped talking to them at any point?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 52.0,
+    "detail": "wearer checks a long-running state rather than the current frame"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "um, hang on \u2014",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, through the long climb: from about thirty to forty-eight seconds you were quiet and just walking.",
+    "skill": "episodic_memory",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "evidence": {
+     "t_s": [
+      30.0,
+      38.0,
+      44.0,
+      50.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 70.0,
+   "text": "Right, so what was that bend about?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 65.5,
+    "detail": "she straightened up again after bending forward"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You bent forward for roughly five seconds while still talking, then straightened and turned anticlockwise before heading uphill.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      59.0,
+      63.0,
+      67.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 74.0,
+   "text": "And is this the same slope as before?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 73.0,
+    "detail": "wearer checks the layout after a left turn"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, you turned left at seventy and you're climbing the same rise you were on earlier.",
+    "skill": "spatial_layout",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      33.0,
+      71.0,
+      76.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 118.0,
+   "text": "Okay, did I actually go through there?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 115.5,
+    "detail": "she let go of the doorknob after turning on the deck"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No. You held it, turned away and carried on along the decking instead of opening it.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      112.0,
+      117.0,
+      122.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 121.0,
+   "text": "speaking of which, how many flights so far?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 120.5,
+    "detail": "wearer tallies the route so far"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "speaking of which,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Only one so far, at about ninety seconds, and it took you up to deck level.",
+    "skill": "long_horizon_memory",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      91.0,
+      96.0,
+      99.0,
+      120.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 124.5,
+   "text": "I meant since I got up here, not before.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 124.0,
+    "detail": "wearer narrows her own question"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 10
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Since then, none yet, though you are starting up another short flight right now.",
+    "skill": "action_state",
+    "answer_words": 14,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      126.0,
+      129.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 152.0,
+   "text": "Back to that door \u2014 did I get it open single-handed?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 150.5,
+    "detail": "she finished wiping her shoes on the mat just inside"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, that one needed both hands. You pushed through into the hall and scraped your shoes on the mat just inside.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      142.0,
+      146.0,
+      149.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 157.0,
+   "text": "Was there a plant back near the entrance?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 153.4,
+    "detail": "the potted greenery left view as she turned down the hallway"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, a potted one was visible just inside for a few seconds, then it dropped out of frame as you turned.",
+    "skill": "object_identification",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      150.0,
+      152.0,
+      153.4
+     ],
+     "object_uids": [
+      "352"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "t_s": 161.0,
+   "text": "oh, before I forget, have I shut anything behind me yet?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 160.5,
+    "detail": "wearer checks an open state she left behind her"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh, before I forget,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not yet. You are just reaching out for the next one now, and you will need both hands for it.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      147.0,
+      159.0,
+      162.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 15,
+   "t_s": 165.5,
+   "text": "Both hands, really? Even for that one?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 165.0,
+    "detail": "wearer reacts to the assistant's prediction"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 14
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Yes, you pushed it to with both, standing on the stair landing, then turned away to the right.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      163.0,
+      166.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 16,
+   "t_s": 171.0,
+   "text": "So if I'm retracing it out loud: backyard, up the slope, deck, then in. Anything I'm missing?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 170.5,
+    "detail": "wearer closes out the route summary as she reaches the living area"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 15
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You missed one thing: there were two separate climbs on the deck itself before you got inside. Otherwise that is the route.",
+    "skill": "long_horizon_memory",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      91.0,
+      128.0,
+      146.0,
+      173.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

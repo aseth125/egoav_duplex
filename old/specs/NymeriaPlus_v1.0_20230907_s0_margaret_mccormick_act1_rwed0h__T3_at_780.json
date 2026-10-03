@@ -1,0 +1,637 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230907_s0_margaret_mccormick_act1_rwed0h::T3@780",
+ "seq_id": "NymeriaPlus_v1.0_20230907_s0_margaret_mccormick_act1_rwed0h",
+ "tier": "T3",
+ "window_abs_s": [
+  780.0,
+  960.0
+ ],
+ "duration_s": 180.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230907_s0_margaret_mccormick_act1_rwed0h.mp4",
+ "mode": "recall_check",
+ "goal": {
+  "text": "Retrace everywhere he has already searched for the thing he is hunting, so he can work out the one place he has not looked yet.",
+  "closed_by_turn": 16
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 16.0,
+   "text": "What have I been doing out here so far?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 17.0,
+    "detail": "the lean-in over the plants finished and he straightened up"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "You've been working your way along the beds: a few paces, stop, lean in over the plants, straighten up, move on.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      12.0,
+      17.0,
+      19.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 20.5,
+   "text": "\u2014 not the ones I just walk past, though. Only where I stop.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 20.5,
+    "detail": "the user narrows his own instruction mid-answer"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 0
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Understood. Stops only.",
+    "skill": "action_state",
+    "answer_words": 3,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      16.0,
+      20.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 34.0,
+   "text": "So how many have I properly stopped at by now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 33.0,
+    "detail": "a quiet stretch after the third lean-in"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Three. One just after you veered left, another when you turned left again, and the one you're on right now.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      15.0,
+      21.0,
+      33.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 38.0,
+   "text": "wait \u2014 did I finish those, or break off?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 36.8,
+    "detail": "he turns away from the beds and heads for the stairs"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You broke off. You straightened up, took a step, turned right, then headed for the stairs without going back.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      33.0,
+      36.8,
+      41.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 42.0,
+   "text": "\u2014 so that one's unfinished. Put it down that way.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 41.8,
+    "detail": "he reaches the top of the stairs"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 3
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Logged, one bed left unfinished.",
+    "skill": "action_state",
+    "answer_words": 5,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      36.8,
+      41.8
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 57.0,
+   "text": "Anyway \u2014 how long was I stood out there with him?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 55.8,
+    "detail": "the conversation ends and he walks on"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About eight seconds all in. You turned to him mid-stride, stood still for roughly three of those, then walked on inside.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "evidence": {
+     "t_s": [
+      48.0,
+      53.0,
+      56.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 62.0,
+   "text": "mm-hm \u2014 mm, actually, what did I just do with my hands there?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 61.0,
+    "detail": "he stops, turns and brings both arms up"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You stopped, turned left and pushed both arms straight out in front of you with your right foot forward, then lowered them.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      61.0,
+      64.0,
+      66.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 67.0,
+   "text": "\u2014 and from there? Which way did that put me?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 70.5,
+    "detail": "he leaves the living room for the hallway"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Right turn into the living room, right again at the end of it, and the hallway took you to the bedroom door.",
+    "skill": "spatial_layout",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      66.0,
+      70.5,
+      75.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 88.0,
+   "text": "Have I searched anywhere indoors yet, or only walked through?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 85.2,
+    "detail": "he leaves the bedroom still talking and enters the hallway"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Nothing indoors. You've crossed four rooms and haven't stopped to look in any of them, just walked straight through.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      58.0,
+      70.0,
+      80.0,
+      87.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 92.0,
+   "text": "actually \u2014 I'm back in this one, aren't I? Second time?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 90.2,
+    "detail": "he turns and re-enters the room he left"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "actually \u2014",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, second time. You were in here about ten seconds ago, stepped out into the corridor, and have just come back.",
+    "skill": "long_horizon_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      75.5,
+      85.2,
+      94.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 108.0,
+   "text": "A proper look, or did I just spin round?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 106.0,
+    "detail": "the slow turn ends and he walks back out"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A spin, really. You turned slowly all the way round with your hands up, then walked out without opening anything.",
+    "skill": "attention",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      99.5,
+      103.0,
+      106.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 112.0,
+   "text": "\u2014 so nothing's been opened yet at all.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 111.0,
+    "detail": "he is in transit along the hallway"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 10
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Not one. All looking, no opening.",
+    "skill": "action_state",
+    "answer_words": 6,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      106.0,
+      111.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 124.0,
+   "text": "That's changing. Which hand have I got on this?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 121.0,
+    "detail": "the closet door comes open and he steps in"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left, and it hasn't moved since you opened it. The right is the one doing all the rummaging.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      117.0,
+      121.0,
+      124.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 128.0,
+   "text": "hang on \u2014 did I get to the top, or only eye level?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 126.0,
+    "detail": "he rises onto his toes in front of the open door"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hang on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You went up on your toes and looked at the shelf above, just before you stepped back and shut it.",
+    "skill": "attention",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      126.0,
+      129.0,
+      131.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "t_s": 133.0,
+   "text": "\u2014 and beside the seating, when I leaned over that way?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 134.0,
+    "detail": "he tips sideways beside the seating and moves on"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Barely a glance. You put your right foot out, tipped sideways for a second, then carried straight on past.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      131.0,
+      134.0,
+      136.0
+     ],
+     "object_uids": [
+      "104"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 15,
+   "t_s": 160.0,
+   "text": "That sofa next door \u2014 did I get round the far side?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 160.0,
+    "detail": "gaze leaves one window for another across the kitchen while he talks to his peer"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 14
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No. You looked in from where you were standing, down the near side only, and then went straight past without rounding it.",
+    "skill": "long_horizon_memory",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      135.7,
+      138.0,
+      141.6
+     ],
+     "object_uids": [
+      "104"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 16,
+   "t_s": 165.0,
+   "text": "\u2014 fine. So what's left that I've not been near at all?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 165.0,
+    "detail": "he asks for the gap in his own search"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 15
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Two places: the cabinet high up on the dining wall that you walked at and turned away from, and underneath the table itself.",
+    "skill": "spatial_layout",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      146.0,
+      151.0,
+      166.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 17,
+   "t_s": 171.0,
+   "text": "\u2014 underneath it is.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 171.0,
+    "detail": "he stops walking and bends down"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 16
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Looking there now. I'll keep the list running.",
+    "skill": "action_state",
+    "answer_words": 8,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      168.0,
+      171.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

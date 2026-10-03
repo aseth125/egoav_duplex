@@ -1,0 +1,311 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230928_s1_barbara_sandoval_act2_btx6gv::T2@120",
+ "seq_id": "NymeriaPlus_v1.0_20230928_s1_barbara_sandoval_act2_btx6gv",
+ "tier": "T2",
+ "window_abs_s": [
+  120.0,
+  240.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230928_s1_barbara_sandoval_act2_btx6gv.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Get the board game fully laid out for the others without leaving any component behind in the box.",
+  "closed_by_turn": 8
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 30.0,
+   "text": "Did I come straight here, or stop off?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 29.0,
+    "detail": "both hands close on the box, ending the settling-in stretch at the table"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "You came through the living area, veered right past the sofa, then circled the table once before sitting down.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      3.0,
+      9.0,
+      14.0
+     ],
+     "object_uids": [
+      "70"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 33.5,
+   "text": "oh \u2014 by the way, I waved, yeah?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 33.5,
+    "detail": "user cuts into the route recap to chase a detail of it"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Twice, actually. Your right hand went up passing the sofa, and again as you came round past the chair.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      5.5,
+      10.5
+     ]
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 37.0,
+   "text": "mm-hm... mm \u2014 so both of those were before I even sat, then.",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 37.0,
+    "detail": "backchannel over the reply hardens into a turn"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "That's right \u2014 both of them happened while you were still on your feet.",
+    "skill": "episodic_memory",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      5.5,
+      10.5,
+      15.0
+     ]
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 50.0,
+   "text": "What was I doing before the lid came off?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 49.0,
+    "detail": "the lid is worked open with the right hand, closing the fumbling stretch"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You flipped it over, set it down, turned it round, then lifted it to check underneath before prising it open.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      34.0,
+      39.0,
+      44.0,
+      49.5
+     ]
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 54.0,
+   "text": "And the first thing out of it \u2014 that was the board itself, wasn't it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 54.0,
+    "detail": "user talks over the recap to jump ahead to the unpacking"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, it came out first and right-handed, while your left kept everything else pinned down on the table.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      53.5,
+      58.0
+     ]
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 70.0,
+   "text": "Everything's emptied. What else was lying there besides the pieces?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 69.0,
+    "detail": "the emptied box is set down and the right hand moves to what is on the table"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A rules booklet and a zip-lock pouch were out there as well \u2014 you touched both with your right hand.",
+    "skill": "object_identification",
+    "answer_words": 19,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      68.5,
+      71.0,
+      73.0
+     ]
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 74.0,
+   "text": "hold on \u2014 where did I shove those two?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 74.0,
+    "detail": "user cuts in worried the small items have been buried"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Over on your left, at the far end \u2014 you carried the booklet and the loose pieces across together.",
+    "skill": "spatial_layout",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      74.5,
+      79.0
+     ]
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 95.0,
+   "text": "Now these halves \u2014 did I get them joined the right way round?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 94.0,
+    "detail": "the second board is mated to the first with the right hand"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You slotted them together right-handed, then spun the pair round with both hands to face your guests.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      91.0,
+      96.5
+     ]
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 110.0,
+   "text": "So \u2014 anything still to go out before we start?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 110.0,
+    "detail": "setup is nearly finished and the user checks for leftovers"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Just the rack in your hand and one more after it. Nothing is left inside, you tipped it out earlier.",
+    "skill": "spatial_layout",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      64.0,
+      106.0,
+      110.5
+     ]
+    }
+   }
+  }
+ ]
+}

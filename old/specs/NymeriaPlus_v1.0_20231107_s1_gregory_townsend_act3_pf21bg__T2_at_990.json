@@ -1,0 +1,358 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20231107_s1_gregory_townsend_act3_pf21bg::T2@990",
+ "seq_id": "NymeriaPlus_v1.0_20231107_s1_gregory_townsend_act3_pf21bg",
+ "tier": "T2",
+ "window_abs_s": [
+  990.0,
+  1110.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20231107_s1_gregory_townsend_act3_pf21bg.mp4",
+ "mode": "recall_check",
+ "goal": {
+  "text": "The user is keeping an honest tally of this foosball match and wants to confirm how many times he broke off to the scoreboard and whether the score was actually changed.",
+  "closed_by_turn": 7
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 12.0,
+   "text": "Left hand on the scoreboard just then, or did I switch?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 11.0,
+    "detail": "the sideways step and reach to the scoreboard finished and he returned to the rods"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left. You stepped sideways off the rods and reached across to the scoreboard with that hand.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      8.0,
+      11.0,
+      13.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 16.4,
+   "text": "Right, that's what I thought.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 16.4,
+    "detail": "user acknowledges mid-answer and keeps the floor"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 0
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Mm-hm. You're back on the rods now, working them with both hands.",
+    "skill": "action_state",
+    "answer_words": 12,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      16.0,
+      18.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 19.5,
+   "text": "hold on \u2014 I meant before that, right at the very beginning: which hand was doing the spinning?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 19.5,
+    "detail": "user repairs the scope of his own earlier question"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Both of them. Right at the opening you had two hands on the handles, spinning, before you broke away.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      1.0,
+      3.0,
+      5.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 38.0,
+   "text": "That's three trips across now, right? Or am I miscounting?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 35.0,
+    "detail": "the third break to the scoreboard ended and both hands came back to the rods"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Three, yes. One just after the start, one around twenty-five seconds, and the last one near thirty-three.",
+    "skill": "episodic_memory",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.0,
+      24.0,
+      33.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 42.0,
+   "text": "And the last one \u2014 did I actually change anything, or just lean on it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 42.0,
+    "detail": "user cuts in to narrow the tally to the trip that mattered"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, only the middle one. You adjusted it then. That last reach you came straight back to the handles.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      23.0,
+      27.0,
+      33.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 63.0,
+   "text": "On my left, or my right?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 62.0,
+    "detail": "a long uninterrupted stretch of rod play with no break to the scoreboard"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On your left. Every time you went for it you stepped left and leaned away from the table to reach.",
+    "skill": "spatial_layout",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.0,
+      23.0,
+      33.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 66.0,
+   "text": "Mm-hm, mm\u2014 yeah, got it.",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 66.0,
+    "detail": "a backchannel that escalates into holding the floor"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 5
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Yep. You are still playing, both handles turning.",
+    "skill": "action_state",
+    "answer_words": 8,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      65.0,
+      68.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 96.0,
+   "text": "Has it been touched at all since?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 95.0,
+    "detail": "another counter clockwise rotation finished with no break away from the table"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not once. Since that third trip you have not left the handles. Everything since has been rod work.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      34.0,
+      60.0,
+      90.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 99.0,
+   "text": "oh \u2014 by the way, which hand have I been favouring?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 99.0,
+    "detail": "user cuts in with a new angle on the same stretch of play"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left, mostly. Nearly all the counter clockwise turns in the last stretch came from it, with your right holding.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      88.0,
+      93.0,
+      98.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 104.5,
+   "text": "sorry, quick one \u2014 and what was that just now, off the handles?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 104.0,
+    "detail": "both hands came off the rods and went up to his face"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "sorry, quick one \u2014",
+    "register": "apology"
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You took both hands off and brought them up to your face, then put them straight back on.",
+    "skill": "action_state",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      103.0,
+      105.0,
+      109.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,355 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230728_s0_lauren_mayer_act1_8hf4dv::T2@900",
+ "seq_id": "NymeriaPlus_v1.0_20230728_s0_lauren_mayer_act1_8hf4dv",
+ "tier": "T2",
+ "window_abs_s": [
+  900.0,
+  1020.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230728_s0_lauren_mayer_act1_8hf4dv.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Clear every loose thing off the living-room floor and get it put away before sitting down",
+  "closed_by_turn": 9
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 3.0,
+   "text": "What have I just picked up off the carpet?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 2.9,
+    "detail": "gaze drops to the floor as she lowers her body over the carpet"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "A magazine. You lifted it off the carpet with your right hand while your left hand was already holding the box.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      1.5,
+      5.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 7.0,
+   "text": "\u2014 and where's that gone now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 7.5,
+    "detail": "she turns left and stows what was in her right hand"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You slid it under the side table with your right hand, so it is out of sight on the floor there.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      5.5,
+      7.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 12.0,
+   "text": "hold on \u2014 so what am I filling it with?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 11.8,
+    "detail": "she has been bent over the same patch of floor for several seconds"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Puzzle pieces. You are crouched down picking them off the floor one at a time with your right hand.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      12.5,
+      17.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 16.0,
+   "text": "\u2014 okay, keep an eye out, there should be more of them.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 16.0,
+    "detail": "the user hands the assistant a standing instruction"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 2
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Will do. I will flag anything on the floor that still needs collecting before you sit down.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      16.5,
+      20.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 36.0,
+   "text": "Back to the box \u2014 is that all of those?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 35.5,
+    "detail": "she straightens up, drops the last pieces in and walks off"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes \u2014 you dropped the last handful in just now and you have started walking off with it in both hands.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      27.5,
+      33.0,
+      36.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 40.0,
+   "text": "mm-hm... mm\u2014 actually, hang on, did I ever sort out the thing I shoved under there?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 39.5,
+    "detail": "a quiet walking stretch with nothing new in hand"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not yet \u2014 the magazine is still under there; you only pushed it out of the way earlier.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      6.5,
+      39.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 57.0,
+   "text": "Soft stuff done \u2014 what am I shoving around now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 56.0,
+    "detail": "the pillow lands on the sofa and she turns to something low"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The ottoman. You are pushing it across with your right hand, then with both hands once you square up to it.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      55.5,
+      58.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 61.5,
+   "text": "oh \u2014 by the way, what else is sitting on top of it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 61.2,
+    "detail": "she stops pushing and leans in to lift something off it"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh \u2014 by the way,",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A book and two remotes. The book is already in your left hand and you are collecting the remotes now.",
+    "skill": "object_identification",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      61.0,
+      63.0,
+      65.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 93.0,
+   "text": "Kitchen now. What did I do with that bit of paper?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 92.3,
+    "detail": "she shuts the dishwasher and straightens up"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You dropped it in the trash bin in the dining area, then carried on through to the dishwasher.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      78.0,
+      84.0,
+      86.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 99.0,
+   "text": "\u2014 so I'm done back in there, then?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 99.0,
+    "detail": "the kitchen work is underway and the living room is behind her"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes \u2014 nothing loose is left on the carpet; the pieces, the pillow, the book and the paper are all away.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      36.0,
+      55.0,
+      70.0,
+      84.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

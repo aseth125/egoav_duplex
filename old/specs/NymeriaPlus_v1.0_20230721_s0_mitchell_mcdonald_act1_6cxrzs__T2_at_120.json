@@ -1,0 +1,344 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230721_s0_mitchell_mcdonald_act1_6cxrzs::T2@120",
+ "seq_id": "NymeriaPlus_v1.0_20230721_s0_mitchell_mcdonald_act1_6cxrzs",
+ "tier": "T2",
+ "window_abs_s": [
+  120.0,
+  240.0
+ ],
+ "duration_s": 120.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230721_s0_mitchell_mcdonald_act1_6cxrzs.mp4",
+ "mode": "companion",
+ "goal": {
+  "text": "The user has moved from the kitchen to the floor of the living area for a stretch and wants to be sure the trip over is finished with nothing of theirs left behind in the kitchen.",
+  "closed_by_turn": 8
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 36.0,
+   "text": "Did I set that down, or am I still holding it?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 38.0,
+    "detail": "the carry ends: laptop placed on the centre table and first touched with the right hand"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "You carried it over with both hands and set it down on the centre table, then started using it with your right hand.",
+    "skill": "action_state",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      31.0,
+      35.5,
+      39.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 40.5,
+   "text": "and where'd I grab it from in the first place?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 40.5,
+    "detail": "user follows up on the answer in progress"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Off the kitchen island - you walked over, picked it up with both hands and carried it straight through.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      26.0,
+      30.0,
+      33.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 45.0,
+   "text": "oh, before I forget - was the fridge visible?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 27.3,
+    "detail": "fridge last seen at 27.3 and basin at 27.2, both gone once the wearer turned away from the counter"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh, before I forget -",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes. The fridge and the sink were both visible from the kitchen early on, and neither has been in frame since.",
+    "skill": "episodic_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      11.0,
+      23.5,
+      27.2,
+      45.0
+     ],
+     "object_uids": [
+      "91",
+      "96"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 49.0,
+   "text": "mm-hm... mm- actually, am I still in the same spot?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 43.3,
+    "detail": "the wearer finished sitting down cross-legged on the carpet"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes. You've been cross-legged on the carpet since just after you stood up from the table, and you haven't moved from it.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      40.0,
+      44.0,
+      49.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 54.0,
+   "text": "Leaning over it \u2014 one hand or two?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 54.0,
+    "detail": "user cuts back to the moment before sitting"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "One - your right hand only. Both hands were just for carrying it and setting it down.",
+    "skill": "action_state",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      32.0,
+      36.5,
+      39.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 57.5,
+   "text": "sorry, quick one - did I have to leave the room to fetch it, or was it already in here?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 57.5,
+    "detail": "thirty seconds settled in one place, user reviewing the trip over"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "sorry, quick one -",
+    "register": "apology"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You had to move rooms - it was on the worktop in the kitchen and you walked through to the living area with it.",
+    "skill": "spatial_layout",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      24.0,
+      29.0,
+      34.0,
+      37.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 66.5,
+   "text": "was that leafy thing there all along?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 64.0,
+    "detail": "the greenery has sat in frame unbroken since the turn into the living area"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The potted plant, yes - it's been in frame continuously since you turned toward this area, and it hasn't moved.",
+    "skill": "object_identification",
+    "answer_words": 20,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      38.6,
+      52.0,
+      66.0
+     ],
+     "object_uids": [
+      "82"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 69.5,
+   "text": "um, hang on \u2014 which way first?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 69.5,
+    "detail": "user interrupts to reopen the start of the stretch"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "um, hang on -",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "To your right, with your left arm up. You alternated after that, left then right, back and forth.",
+    "skill": "episodic_memory",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      46.0,
+      50.5,
+      56.0,
+      61.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 72.5,
+   "text": "okay, so I'm set - nothing of mine still back in there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 72.5,
+    "detail": "user closes the thread about the kitchen"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Nothing you touched. The only thing you brought through was set down in front of you, and it's still there.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      30.0,
+      36.0,
+      72.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

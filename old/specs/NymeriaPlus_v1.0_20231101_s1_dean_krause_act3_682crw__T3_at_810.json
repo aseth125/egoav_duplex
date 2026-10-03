@@ -1,0 +1,500 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw::T3@810",
+ "seq_id": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw",
+ "tier": "T3",
+ "window_abs_s": [
+  810.0,
+  990.0
+ ],
+ "duration_s": 180.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw.mp4",
+ "mode": "task_assist",
+ "goal": {
+  "text": "Clear and reset the living area before guests arrive, keeping track of where everything that was moved has ended up.",
+  "closed_by_turn": 13
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 6.0,
+   "text": "Keep track of what I shift, would you?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 6.0,
+    "detail": "wearer opens the session while tidying the living area"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "expected_answer": {
+    "text": "Got it. I'm following along, so ask whenever you want to know what you moved or where it ended up.",
+    "skill": "action_state",
+    "answer_words": 20,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      6.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 9.5,
+   "text": "- so did the plant go down before I grabbed these, or after?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 9.2,
+    "detail": "plant set down on the table, pillows lifted off the seating"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Before. You set the small potted plant on the glass table with both hands, straightened up, and only then leaned over to lift the pillows.",
+    "skill": "episodic_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      4.5,
+      7.0,
+      9.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 19.8,
+   "text": "And the bottle after \u2014 which hand took it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 18.0,
+    "detail": "bottle lifted from the centre table and carried across the room"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left. You picked the bottle up left-handed, carried it across, and set it down on the side table by the window.",
+    "skill": "action_state",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      14.5,
+      17.0,
+      19.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 24.0,
+   "text": "hold on - did I leave anything on the glass one, or is it clear now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 23.0,
+    "detail": "wearer stops mid-room and looks back down at the cleared surface"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on -",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not clear. The hangers are still lying on it - that's the only thing left there now that the bottle's gone.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      21.0,
+      26.0,
+      30.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 46.5,
+   "text": "Back to those hangers. Which hand slid that door open?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 45.0,
+    "detail": "hangers hung inside the hallway closet, wearer turns back"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left hand slid it open while your right kept hold of the hangers, and then you hung them inside right-handed before turning back.",
+    "skill": "action_state",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      37.8,
+      41.0,
+      43.5
+     ],
+     "object_uids": [
+      "204"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 51.0,
+   "text": "mm-hm... mm - actually, where did the rubbish from that table end up?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 50.5,
+    "detail": "backchannel turns into a question as the wearer reaches the bin"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "In the kitchen bin. You carried the plastic pack and carton over, popped the lid with your right foot, and dropped them in left-handed.",
+    "skill": "episodic_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      47.5,
+      52.0,
+      57.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 61.5,
+   "text": "How many trips did that take me?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 60.0,
+    "detail": "wearer back in the living area, bin run finished"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "One. You gathered everything off that table in a single armful and took it straight over, then came back empty-handed.",
+    "skill": "episodic_memory",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      46.0,
+      52.0,
+      58.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 65.0,
+   "text": "Okay - and this one, where was it sitting before I picked it up?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 65.0,
+    "detail": "wearer lifts the seat with both hands and turns with it"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "It was over by the railing on your right. You've just carried it across and set it down facing the table you cleared earlier.",
+    "skill": "spatial_layout",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      61.0,
+      66.0,
+      69.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 80.0,
+   "text": "Second one now. Have I moved both, or just the one?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 78.0,
+    "detail": "wearer crouches at the far seat and starts dragging it"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Both, nearly. The first is already in place; this second one you've only dragged back a step so far, it isn't squared up yet.",
+    "skill": "action_state",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      68.0,
+      76.0,
+      82.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 85.0,
+   "text": "actually - remind me where I put the drink, I've lost track.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 84.5,
+    "detail": "wearer cuts in with an unrelated recall request"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "actually -",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "On the side table by the window - you moved it there early on, left-handed, and it hasn't been touched since.",
+    "skill": "long_horizon_memory",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      15.0,
+      19.0,
+      84.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 101.0,
+   "text": "Okay, what came out from underneath just now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 100.0,
+    "detail": "wearer pulls a box out from under the low table and sets it down"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The games box - you pulled it out left-handed from under the table, and the book you'd lifted off the top went down on the floor beside it.",
+    "skill": "object_identification",
+    "answer_words": 29,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      95.5,
+      98.0,
+      100.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 156.0,
+   "text": "I glanced away \u2014 what caught my eye?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 154.6,
+    "detail": "gaze left the sweeping area and settled on the stairs"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The stairs. You looked up from the brush towards them for a couple of seconds, then went straight back to sweeping.",
+    "skill": "attention",
+    "answer_words": 21,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      154.6,
+      155.5,
+      156.8
+     ],
+     "object_uids": [
+      "348"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 160.0,
+   "text": "oh, before I forget - the cushions. Did they all land on the same seat?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 159.5,
+    "detail": "wearer cuts in with a callback to the start of the tidy-up"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh, before I forget -",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No. Two went onto the long sofa, one from each hand, and the third you swapped across and dropped on the single-seater.",
+    "skill": "long_horizon_memory",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      9.5,
+      11.5,
+      13.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 170.0,
+   "text": "Perfect, that's the lot then - I'll call it done.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 169.0,
+    "detail": "sweeping winding down, wearer closes out the task"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 12
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Agreed, the room's clear and the floor's nearly done; nothing you moved is still unaccounted for.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      170.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}

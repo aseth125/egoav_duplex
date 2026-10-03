@@ -1,0 +1,818 @@
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230814_s0_leah_gaines_act3_sbpqjr::T5@600",
+ "seq_id": "NymeriaPlus_v1.0_20230814_s0_leah_gaines_act3_sbpqjr",
+ "tier": "T5",
+ "window_abs_s": [
+  600.0,
+  900.0
+ ],
+ "duration_s": 300.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230814_s0_leah_gaines_act3_sbpqjr.mp4",
+ "mode": "companion",
+ "goal": {
+  "text": "The user is the clue-giver in a long charades round and wants a running record of what she has already acted out, so she can be told at the end whether she repeated a clue.",
+  "closed_by_turn": 21
+ },
+ "turns": [
+  {
+   "idx": 0,
+   "t_s": 10.0,
+   "text": "Track the clues I act out, would you?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 10.0,
+    "detail": "user sets up the task at the top of the round"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "expected_answer": {
+    "text": "Got it. I'll log each clue as you act it out and flag anything you repeat.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      10.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "t_s": 13.6,
+   "text": "What was the first thing I mimed?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 12.2,
+    "detail": "the two-fingers clue finished and a new one began"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You stepped backwards and mimed driving, hands up on an invisible steering wheel.",
+    "skill": "episodic_memory",
+    "answer_words": 13,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      2.2,
+      7.2
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "t_s": 16.5,
+   "text": "Sorry, quick one \u2014 which hand did I point with?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 17.2,
+    "detail": "pointing and waving at a peer completed"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "sorry, quick one \u2014",
+    "register": "apology"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your right hand both times. You pointed at her, then waved goodbye with the same hand.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      13.0,
+      19.5
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "t_s": 20.5,
+   "text": "Did the walking come before that or after?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 22.2,
+    "detail": "the walk-left, walk-right sequence closed"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "After it. The wave came first, then you walked off to your left and stopped.",
+    "skill": "episodic_memory",
+    "answer_words": 15,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      14.5,
+      17.2,
+      19.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "t_s": 24.0,
+   "text": "Mm-hm... mm, actually \u2014 both hands at the end there, or just one?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 24.0,
+    "detail": "backchannel turns into a question mid-answer"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Both. You raised them together right after you came back across to your right.",
+    "skill": "action_state",
+    "answer_words": 14,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      19.0,
+      22.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "t_s": 33.0,
+   "text": "Just before that, my left hand \u2014 doing what?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 31.7,
+    "detail": "gaze left the peer she was miming at and settled on the wall behind"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You lifted it to your face twice, lowering it in between, just before you began gesturing while you spoke.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      22.2,
+      27.2,
+      32.1
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "t_s": 37.0,
+   "text": "Uh, wait \u2014 same hand as the driving clue?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 37.0,
+    "detail": "user checks a comparison while the answer is still running"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "uh, wait \u2014",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, that one was both hands on an imaginary wheel. The face gesture was left only.",
+    "skill": "long_horizon_memory",
+    "answer_words": 15,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      2.2,
+      5.0,
+      25.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "t_s": 152.0,
+   "text": "Back to my list. That hand-over-hand sway \u2014 how long did I keep it?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 151.1,
+    "detail": "the long hand-over-hand sway ended and free gesturing resumed"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Right hand over left, swinging side to side, for about thirty seconds from two minutes in until two thirty.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      121.2,
+      136.1,
+      151.1
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "t_s": 158.0,
+   "text": "Hold on \u2014 what have I just taken hold of?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 156.1,
+    "detail": "stepped sideways right and grabbed a piece of furniture"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on \u2014",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The display cabinet, with your right hand, after you swayed both arms and stepped sideways.",
+    "skill": "object_identification",
+    "answer_words": 15,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      156.1,
+      160.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "t_s": 162.0,
+   "text": "Still on it, or have I let go?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 162.0,
+    "detail": "user checks the state of the grip mid-answer"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Still holding. Your grip stays put for another four seconds before you turn to the left.",
+    "skill": "action_state",
+    "answer_words": 15,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      161.1,
+      165.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "t_s": 166.8,
+   "text": "Um, hang on \u2014 what's that I've just pointed out?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 166.1,
+    "detail": "turned left and pointed at something, then picked it up"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "um, hang on \u2014",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A potted plant to your left. A moment later you pick it up and hold it in that hand.",
+    "skill": "object_identification",
+    "answer_words": 19,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      166.1,
+      171.1
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "t_s": 172.5,
+   "text": "And whereabouts am I standing now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 168.4,
+    "detail": "the low surface slid back out of view as she turned"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Over on the right of the living area, beside the unit you grabbed. As you turned, both a window and a low table came into shot.",
+    "skill": "spatial_layout",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      167.3,
+      168.4
+     ],
+     "object_uids": [
+      "121",
+      "72"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "t_s": 177.0,
+   "text": "That's not \u2014 sorry, I meant the one in my hand. Have I let go of it?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 177.0,
+    "detail": "user repairs her own previous question"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "that's not \u2014 sorry,",
+    "register": "correction"
+   },
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Not yet. You hold on to it until about three minutes, then turn right and release it.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      171.1,
+      176.1,
+      181.1
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "t_s": 186.5,
+   "text": "And now? Something in my right hand again.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 186.1,
+    "detail": "a new contact with the furnishing on her right began"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You are brushing the curtain. That begins just after three minutes and runs for about ten seconds.",
+    "skill": "object_identification",
+    "answer_words": 16,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      186.1,
+      191.1,
+      196.1
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "t_s": 191.0,
+   "text": "Mm-hm... mm, actually \u2014 was that window back in shot just then?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "object_exit",
+    "t_s": 194.0,
+    "detail": "the window leaves view for the rest of the clip"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, for about a second and a half around three twelve. After that it does not reappear at all.",
+    "skill": "long_horizon_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      192.4,
+      194.0
+     ],
+     "object_uids": [
+      "121"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 15,
+   "t_s": 196.0,
+   "text": "Right, noted. Carry on.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 196.0,
+    "detail": "acknowledgement over the tail of the answer"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 14
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "Will do. I'll keep logging each clue and tell you if one comes round twice.",
+    "skill": "action_state",
+    "answer_words": 15,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      196.0
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 16,
+   "t_s": 229.0,
+   "text": "Right, back to it. What have I just bent down over?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 228.2,
+    "detail": "she leaned in over a low surface and touched it"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "A side table. You walked to it, leaned in and ran your right fingertip along the edge of a board sitting on it.",
+    "skill": "object_identification",
+    "answer_words": 23,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      225.0,
+      228.8,
+      230.9
+     ],
+     "object_uids": [
+      "72"
+     ]
+    }
+   }
+  },
+  {
+   "idx": 17,
+   "t_s": 233.5,
+   "text": "Did I touch anything else down there?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 233.5,
+    "detail": "follow-up over the answer about the same lean"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 16
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, a houseplant on it. You brushed that with your left hand a few seconds before the fingertip touch.",
+    "skill": "episodic_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      223.2,
+      228.2
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 18,
+   "t_s": 238.0,
+   "text": "Which foot did I tap after I straightened up?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 238.2,
+    "detail": "turned away, walked forward and pointed a foot at the floor"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 17
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your right. You turned anticlockwise, walked a couple of paces and pointed it at the floor.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      233.2,
+      238.2
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 19,
+   "t_s": 242.0,
+   "text": "And straight after, which hand went out?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 243.2,
+    "detail": "spun back clockwise and jabbed a finger out"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 18
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your left. You spun back clockwise, walked on and jabbed a finger out with that one.",
+    "skill": "action_state",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      238.2,
+      243.2
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 20,
+   "t_s": 252.0,
+   "text": "The palm thing \u2014 when did that come in?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 251.0,
+    "detail": "quiet stretch after the answer, user picks the thread up again"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 19
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You rubbed your palms together at about four ten, right after you turned back to face everyone.",
+    "skill": "episodic_memory",
+    "answer_words": 17,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      243.2,
+      248.2,
+      253.2
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 21,
+   "t_s": 256.0,
+   "text": "Oh, before I forget \u2014 have I reused any clue?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 256.0,
+    "detail": "user closes out the running record she asked for at the start"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh, before I forget \u2014",
+    "register": "discourse_shift"
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, one. The hand to the face came back at three forty, about three minutes after the first time.",
+    "skill": "long_horizon_memory",
+    "answer_words": 19,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      22.2,
+      27.2,
+      218.2
+     ],
+     "object_uids": []
+    }
+   }
+  },
+  {
+   "idx": 22,
+   "t_s": 260.0,
+   "text": "That's the one. Thanks.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "elapsed",
+    "t_s": 260.0,
+    "detail": "user signs off over the tail of the answer"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 21
+   },
+   "scored": false,
+   "expected_answer": {
+    "text": "No problem. I'll flag it if you start that one again.",
+    "skill": "action_state",
+    "answer_words": 11,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "evidence": {
+     "t_s": [
+      260.0
+     ],
+     "object_uids": []
+    }
+   }
+  }
+ ]
+}
