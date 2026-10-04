@@ -1,1 +1,1269 @@
-{"schema": "egoduplex.chain-spec/1", "chain_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc::T10@150", "seq_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc", "tier": "T10", "window_abs_s": [150.0, 750.0], "duration_s": 600.0, "mp4_basename": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc.mp4", "mode": "task_assist", "authored_by": "duplex/avd/author_av_chain.py (bank-written phrasing, measured evidence); NOT one of the 47 hand-authored chains", "goal": {"text": "The wearer is working through this stretch and keeps checking back on what has happened, what was said, and what they heard.", "closed_by_turn": 30}, "turns": [{"idx": 0, "speaker": "user", "t_s": 18.75, "text": "So what had I done right beforehand?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 17.5, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": null, "scored": true, "expected_answer": {"text": "Just before that, you were in the living room sitting on the sofa with both hands on your lap, watching your peer for about 4 seconds.", "skill": "episodic_memory", "answer_words": 26, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [7.5, 12.5, 17.5], "object_uids": []}, "answer_draft": "Immediately before, you while in the living room, you're sitting on the sofa while you're resting both of your hands on your lap while you're watching your peer. That ran from a few seconds ago, for about 4 seconds.", "answer_source": "model"}}, {"idx": 1, "speaker": "user", "t_s": 26.94, "text": "One sec \u2014 what preceded that one?", "timing": "barge_in", "trigger": {"type": "action_complete", "t_s": 22.5, "detail": "a narrated action finishes"}, "interruption": {"realization": "marked", "marker": "one sec \u2014", "register": "hesitation"}, "cohesion": {"device": "answer_reference", "refers_to_turn": 0}, "scored": true, "expected_answer": {"text": "Right before that, you were still in the living room, sitting on the sofa with both hands on your lap, watching your peer for about 6 seconds.", "skill": "episodic_memory", "answer_words": 27, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [12.5, 17.5, 22.5], "object_uids": []}, "answer_draft": "Immediately before, you while in the living room, you're sitting on the sofa while you're resting both of your hands on your lap while you're watching your peer. That ran from a few seconds ago, for about 6 seconds.", "answer_source": "model"}}, {"idx": 2, "speaker": "user", "t_s": 56.25, "text": "One sec, what came immediately before that?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 52.6, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 1}, "scored": true, "expected_answer": {"text": "Before that, you were in the living room kneeling on the floor, picking up the object and moving it to the left side of the coffee table with your right hand while your left rested on the table for about 5 seconds.", "skill": "episodic_memory", "answer_words": 42, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [42.6, 47.6, 52.6], "object_uids": []}, "answer_draft": "Immediately before, you while in the living room, you're kneeling on the floor while you pick up the object and move it on the left side of the coffee table using your right hand and your left hand is resting on top of the coffee table. That ran from a few seconds ago, for about 5 seconds.", "answer_source": "model"}}, {"idx": 3, "speaker": "user", "t_s": 66.93, "text": "Right, has someone been speaking recently?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 66.93, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "connective", "refers_to_turn": 2}, "scored": true, "expected_answer": {"text": "Yes, there was some speech just now for a moment, but the words aren't clear enough.", "skill": "speech_timing", "answer_words": 16, "beyond_captioner": true, "requires_audio": true, "family": "speech_timing", "evidence": {"t_s": [50.52, 50.91], "object_uids": []}, "answer_draft": "Yes \u2014 there was speech a few seconds ago, just for a moment. The words themselves are not clear enough to repeat.", "answer_source": "model"}}, {"idx": 4, "speaker": "user", "t_s": 93.75, "text": "Quick one, has there been an oven door closing up to this point?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 93.75, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 3}, "scored": true, "expected_answer": {"text": "Yes, just now for about 1 second, and that's the only time so far.", "skill": "sound_existence", "answer_words": 14, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_pos", "evidence": {"t_s": [90.0, 91.0], "object_uids": []}, "needs_audio_verification": true, "text_before_repair": "Yes \u2014 just now, for about 1 second, about 1 seconds of it, and that is the only time so far.", "answer_draft": "Yes \u2014 just now, for about 1 second, and that is the only time so far.", "answer_source": "model"}}, {"idx": 5, "speaker": "user", "t_s": 101.53, "text": "Wait, sorry \u2014 what was I looking at before that?", "timing": "barge_in", "trigger": {"type": "attention_shift", "t_s": 100.1, "detail": "gaze moves onto a new object"}, "interruption": {"realization": "marked", "marker": "wait, sorry \u2014", "register": "hesitation"}, "cohesion": {"device": "reformulation", "refers_to_turn": 4}, "scored": true, "expected_answer": {"text": "The plant \u2014 you had been on it for about 3 seconds before your gaze moved off at around 100 seconds.", "skill": "attention", "answer_words": 21, "beyond_captioner": false, "requires_audio": false, "family": "attention_abandoned", "evidence": {"t_s": [99.1, 100.1], "object_uids": []}, "answer_source": "template"}}, {"idx": 6, "speaker": "user", "t_s": 131.25, "text": "Okay, where did my attention go?", "timing": "clean_handoff", "trigger": {"type": "attention_shift", "t_s": 126.2, "detail": "gaze moves onto a new object"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 5}, "scored": true, "expected_answer": {"text": "Your gaze moved onto the plant just now, after being on something else.", "skill": "attention", "answer_words": 13, "beyond_captioner": false, "requires_audio": false, "family": "attention", "evidence": {"t_s": [126.2, 127.2], "object_uids": []}, "answer_source": "template"}}, {"idx": 7, "speaker": "user", "t_s": 150.0, "text": "And how long has it been since I heard chewing food?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 150.0, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "ellipsis", "refers_to_turn": 6}, "scored": true, "expected_answer": {"text": "About 38 seconds \u2014 you heard chewing food.", "skill": "elapsed_time", "answer_words": 8, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [104.0, 112.0], "object_uids": []}, "numeric": {"value_s": 38.0, "tol_s": 5.7, "unit": "seconds", "form": "since_sound"}, "needs_audio_verification": true, "text_before_repair": "About 38 seconds \u2014 you heard chewing food around 112 seconds in.", "answer_source": "template"}}, {"idx": 8, "speaker": "user", "t_s": 155.85, "text": "Then has paper rustling come up yet?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 155.85, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "connective", "refers_to_turn": 7}, "scored": true, "expected_answer": {"text": "Yes, just under a minute ago for about 2 seconds, and that's the only time.", "skill": "sound_existence", "answer_words": 15, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_pos", "evidence": {"t_s": [101.0, 103.0], "object_uids": []}, "needs_audio_verification": true, "text_before_repair": "Yes \u2014 just under a minute ago, for about 2 seconds, about 2 seconds of it, and that is the only time so far.", "answer_draft": "Yes \u2014 just under a minute ago, for about 2 seconds, and that is the only time so far.", "answer_source": "model"}}, {"idx": 9, "speaker": "user", "t_s": 187.5, "text": "So talk me through what I just did?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 186.5, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 8}, "scored": true, "expected_answer": {"text": "You're sitting on the sofa with legs crossed and hands in your lap, then you point at the table with your right hand while playing cards.", "skill": "action_state", "answer_words": 26, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [181.6, 184.05, 186.5], "object_uids": []}, "answer_draft": "You're sitting on the sofa with legs crossed and both hands resting on your lap then point on the table with your right hand while playing a card game with your peer in the living area.", "answer_source": "model"}}, {"idx": 10, "speaker": "user", "t_s": 195.62, "text": "Going back \u2014 what did I just look over at?", "timing": "barge_in", "trigger": {"type": "attention_shift", "t_s": 173.1, "detail": "gaze moves onto a new object"}, "interruption": {"realization": "marked", "marker": "going back \u2014", "register": "hesitation"}, "cohesion": {"device": "thread_return", "refers_to_turn": 9}, "scored": true, "expected_answer": {"text": "Your gaze moved onto the plant twenty seconds or so ago, after being on something else.", "skill": "attention", "answer_words": 16, "beyond_captioner": false, "requires_audio": false, "family": "attention", "evidence": {"t_s": [173.1, 174.1], "object_uids": []}, "answer_source": "template"}}, {"idx": 11, "speaker": "user", "t_s": 225.0, "text": "Also, talk me through what I just did?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 216.5, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 10}, "scored": true, "expected_answer": {"text": "You're sitting on the sofa with legs crossed and hands in your lap holding a card. Then you leaned forward to pick up another card from the table with your right hand while playing with your peer.", "skill": "action_state", "answer_words": 37, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [211.6, 214.05, 216.5], "object_uids": []}, "answer_draft": "You're sitting on the sofa with legs crossed and both hands resting on your lap and holding a card on your hands. You then bend forward and hold a card from the table with your right hand while holding your card with your left hand while playing a card game with your peer in the living area.", "answer_source": "model"}}, {"idx": 12, "speaker": "user", "t_s": 236.02, "text": "How long ago was it that I said \u201cOkay, and then I throw it away?\u201d?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 236.02, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "anaphora", "refers_to_turn": 11}, "scored": true, "expected_answer": {"text": "About 68 seconds ago, when you said, \u201cOkay, and then I throw it away?\u201d", "skill": "elapsed_time", "answer_words": 14, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [166.17, 168.12], "object_uids": []}, "numeric": {"value_s": 67.9, "tol_s": 10.2, "unit": "seconds", "form": "since_speech"}, "text_before_repair": "About 68 seconds \u2014 you said \u201cOkay, and then I throw it away?\u201d around 168 seconds in.", "answer_draft": "About 68 seconds \u2014 you said \u201cOkay, and then I throw it away?\u201d.", "answer_source": "model"}}, {"idx": 13, "speaker": "user", "t_s": 262.5, "text": "Oh, what did that last bit amount to?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 243.6, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 12}, "scored": true, "expected_answer": {"text": "You're swapping the playing cards on the table with both of your hands while sitting on the sofa, leaning forward, crossing both of your legs, and playing a card game in the living room with your peer. You then put down the playing card onto the discard pile on the table with your right hand before straightening up your body and placing both of your hands onto your lap.", "skill": "action_state", "answer_words": 69, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [238.6, 241.1, 243.6], "object_uids": []}, "answer_source": "template"}}, {"idx": 14, "speaker": "user", "t_s": 289.75, "text": "So talk me through what I just did?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 283.6, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 13}, "scored": true, "expected_answer": {"text": "You pick up a playing card from the draw pile on the table with your left hand. You then put down the playing card onto the discard pile on the table with your left hand while sitting on the sofa, crossing both of your legs, leaning forward, placing your right hand on your lap, and playing a card game in the living room with your peer. After that, you straighten up your body and place your left hand onto your lap as well.", "skill": "action_state", "answer_words": 83, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [278.6, 281.1, 283.6], "object_uids": []}, "answer_source": "template"}}, {"idx": 15, "speaker": "user", "t_s": 304.36, "text": "But then \u2014 did anyone mention the room so far?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 304.36, "detail": "the wearer raises a new question"}, "interruption": {"realization": "marked", "marker": "but then \u2014", "register": "urgency"}, "cohesion": {"device": "connective", "refers_to_turn": 14}, "scored": true, "expected_answer": {"text": "No, it hasn't come up. The talking from just under five minutes ago at 8, 30 doesn't mention the room either.", "skill": "speech_content", "answer_words": 21, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_neg", "evidence": {"t_s": [0.0, 270.0], "object_uids": []}, "answer_draft": "No \u2014 the room does not come up in anything that was picked up. The talking caught here is around 8, 30, just under five minutes ago, and none of it mentions the room.", "answer_source": "model"}}, {"idx": 16, "speaker": "user", "t_s": 320.23, "text": "Okay, how long was it between when you said \u201cOkay, and then I throw it away?\u201d and when you started swapping the playing cards on the table with both of your hands?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 320.23, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "answer_reference", "refers_to_turn": 15}, "scored": true, "expected_answer": {"text": "About 70 seconds. You said that, then roughly 70 seconds later you started swapping the playing cards on the table with both of your hands.", "skill": "elapsed_time", "answer_words": 25, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [166.17, 168.12, 238.6], "object_uids": []}, "numeric": {"value_s": 70.5, "tol_s": 10.6, "unit": "seconds", "form": "speech_action"}, "answer_draft": "About 70 seconds \u2014 you said \u201cOkay, and then I throw it away?\u201d, then roughly 70 seconds later you started swapping the playing cards on the table with both of your hands.", "answer_source": "model"}}, {"idx": 17, "speaker": "user", "t_s": 336.12, "text": "Was there any laughter up to now?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 336.08, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "anaphora", "refers_to_turn": 16}, "scored": true, "expected_answer": {"text": "No, no laughter so far. You've heard a car engine, a kettle boiling, a light switch clicking, and 7 other kinds\u201410 distinct sounds in total.", "skill": "sound_existence", "answer_words": 25, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_neg", "evidence": {"t_s": [0.0, 330.0], "object_uids": []}, "answer_draft": "No laughter so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 7 other kinds \u2014 10 distinct sounds in total, none of them that.", "answer_source": "model"}, "timing_before_retime": "barge_in", "retime_reason": "arrived after the answer ended", "retimed_from": 336.08}, {"idx": 18, "speaker": "user", "t_s": 356.25, "text": "Okay, how much time has passed since I started swapping the playing cards on the table with both of my hands?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 356.25, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 17}, "scored": true, "expected_answer": {"text": "About 118 seconds \u2014 you started swapping the playing cards on the table with both of your hands.", "skill": "elapsed_time", "answer_words": 18, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [238.6], "object_uids": []}, "numeric": {"value_s": 117.7, "tol_s": 17.6, "unit": "seconds", "form": "since_action"}, "text_before_repair": "About 118 seconds \u2014 you started swapping the playing cards on the table with both of your hands around 239 seconds in.", "answer_source": "template"}}, {"idx": 19, "speaker": "user", "t_s": 375.0, "text": "Right, what did I just turn away from?", "timing": "clean_handoff", "trigger": {"type": "attention_shift", "t_s": 363.6, "detail": "gaze moves onto a new object"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 18}, "scored": true, "expected_answer": {"text": "The table \u2014 you had been on it for about 2 seconds before your gaze moved off at around 364 seconds.", "skill": "attention", "answer_words": 21, "beyond_captioner": false, "requires_audio": false, "family": "attention_abandoned", "evidence": {"t_s": [362.6, 363.6], "object_uids": []}, "answer_source": "template"}}, {"idx": 20, "speaker": "user", "t_s": 381.06, "text": "Oh \u2014 how many seconds passed between when you said \u201cOkay, and then I throw it away?\u201d and when you said \u201cOh. Queens and Jacks. Okay, yeah, you're right. I\u201d?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 381.06, "detail": "the wearer raises a new question"}, "interruption": {"realization": "marked", "marker": "oh \u2014", "register": "correction"}, "cohesion": {"device": "answer_reference", "refers_to_turn": 19}, "scored": true, "expected_answer": {"text": "About 61 seconds. You said \u201cOkay, and then I throw it away?\u201d, and you said \u201cOh. Queens and Jacks. Okay, yeah, you're right. I\u201d roughly 61 seconds later.", "skill": "elapsed_time", "answer_words": 28, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [166.17, 168.12, 229.3, 236.42], "object_uids": []}, "numeric": {"value_s": 61.2, "tol_s": 9.2, "unit": "seconds", "form": "speech_speech"}, "answer_source": "template"}}, {"idx": 21, "speaker": "user", "t_s": 412.5, "text": "Quick one, has there been music playing up to this point?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 412.5, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 20}, "scored": true, "expected_answer": {"text": "No, no music so far. You've heard a car engine, a kettle boiling, a light switch clicking, and 8 other kinds\u201411 distinct sounds in total.", "skill": "sound_existence", "answer_words": 25, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_neg", "evidence": {"t_s": [0.0, 390.0], "object_uids": []}, "answer_draft": "No music playing so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 8 other kinds \u2014 11 distinct sounds in total, none of them that.", "answer_source": "model"}}, {"idx": 22, "speaker": "user", "t_s": 431.25, "text": "Quick one, was there anything said about the show yet?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 431.25, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 21}, "scored": true, "expected_answer": {"text": "Yes, a little over three minutes ago, when you said, \u201cOh. Queens and Jacks. Okay, yeah, you're right. I did not show.\u201d", "skill": "speech_content", "answer_words": 22, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_pos", "evidence": {"t_s": [229.3, 236.42], "object_uids": []}, "answer_draft": "Yes \u2014 it came up a little over three minutes ago, when you said \u201cOh. Queens and Jacks. Okay, yeah, you're right. I did not show.\u201d.", "answer_source": "model"}}, {"idx": 23, "speaker": "user", "t_s": 450.0, "text": "One sec, who said that, me or the other person?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 450.0, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 22}, "scored": true, "expected_answer": {"text": "That was you, just under three and a half minutes ago.", "skill": "speech_content", "answer_words": 11, "beyond_captioner": true, "requires_audio": true, "family": "speech_speaker", "evidence": {"t_s": [229.3, 236.42], "object_uids": []}, "answer_draft": "That was you, just under three and a half minutes ago.", "answer_source": "model"}}, {"idx": 24, "speaker": "user", "t_s": 457.34, "text": "Sorry, one more \u2014 has the house been brought up so far?", "timing": "backchannel", "trigger": {"type": "user_initiated", "t_s": 455.37, "detail": "the wearer raises a new question"}, "interruption": {"realization": "marked", "marker": "sorry, one more \u2014", "register": "correction"}, "cohesion": {"device": "thread_return", "refers_to_turn": 23}, "scored": true, "expected_answer": {"text": "No \u2014 the house does not come up in anything that was picked up. The talking caught here is around 8, 30, just under eight minutes ago, and none of it mentions the house.", "skill": "speech_content", "answer_words": 34, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_neg", "evidence": {"t_s": [0.0, 450.0], "object_uids": []}, "answer_source": "template"}, "retimed_from": 455.37}, {"idx": 25, "speaker": "user", "t_s": 487.5, "text": "Okay, has a cupboard door closing come up yet?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 487.5, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 24}, "scored": true, "expected_answer": {"text": "No, not that one either. So far you've heard a car engine, a kettle boiling, a light switch clicking, and 9 others\u201412 distinct sounds in total.", "skill": "sound_existence", "answer_words": 26, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_neg", "evidence": {"t_s": [0.0, 450.0], "object_uids": []}, "answer_draft": "No cupboard door closing so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 9 other kinds \u2014 12 distinct sounds in total, none of them that.", "answer_source": "model"}}, {"idx": 26, "speaker": "user", "t_s": 506.25, "text": "So did anyone mention the away so far?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 506.25, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 25}, "scored": true, "expected_answer": {"text": "Yes, just under six minutes ago, when you said, \u201cOkay, and then I throw it away?\u201d", "skill": "speech_content", "answer_words": 16, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_pos", "evidence": {"t_s": [166.17, 168.12], "object_uids": []}, "answer_draft": "Yes \u2014 it came up just under six minutes ago, when you said \u201cOkay, and then I throw it away?\u201d.", "answer_source": "model"}}, {"idx": 27, "speaker": "user", "t_s": 512.17, "text": "Anyway, has a sigh come up yet?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 512.17, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "thread_return", "refers_to_turn": 26}, "scored": true, "expected_answer": {"text": "No, not that one. You've heard a car engine, a kettle boiling, a light switch clicking, and 10 others\u201413 distinct sounds in total, but no sigh.", "skill": "sound_existence", "answer_words": 26, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_neg", "evidence": {"t_s": [0.0, 510.0], "object_uids": []}, "answer_draft": "No sigh so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 10 other kinds \u2014 13 distinct sounds in total, none of them that.", "answer_source": "model"}}, {"idx": 28, "speaker": "user", "t_s": 543.75, "text": "So and what was I doing just before?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 74.6, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 27}, "scored": true, "expected_answer": {"text": "Immediately before, you're crouching down on the floor as you shuffle the cards on the table with both hands while in the living area. That ran from a little over eight minutes ago, for about 5 seconds.", "skill": "episodic_memory", "answer_words": 37, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [64.6, 69.6, 74.6], "object_uids": []}, "answer_source": "template"}}, {"idx": 29, "speaker": "user", "t_s": 562.5, "text": "Sorry, what did I just hear?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 562.5, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "reformulation", "refers_to_turn": 28}, "scored": true, "expected_answer": {"text": "That was paper rustling just now, for about 8 seconds.", "skill": "sound_identity", "answer_words": 10, "beyond_captioner": true, "requires_audio": true, "family": "sound_identity", "evidence": {"t_s": [546.0, 554.0], "object_uids": []}, "answer_draft": "That was the paper rustling, a few seconds ago, for about 8 seconds.", "answer_source": "model"}}, {"idx": 30, "speaker": "user", "t_s": 581.25, "text": "Also, how much time has passed since I heard sneezing?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 581.25, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 29}, "scored": true, "expected_answer": {"text": "About 17 seconds \u2014 you heard sneezing.", "skill": "elapsed_time", "answer_words": 7, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [562.0, 564.0], "object_uids": []}, "numeric": {"value_s": 17.2, "tol_s": 2.6, "unit": "seconds", "form": "since_sound"}, "needs_audio_verification": true, "text_before_repair": "About 17 seconds \u2014 you heard sneezing around 564 seconds in.", "answer_source": "template"}}], "answers_repaired": true, "answers_spoken": true, "retimed_for_response_room": true, "response_room_model": {"seconds": "0.8743 + 0.24489*words", "handoff_s": 0.4, "breath_s": 0.25, "barge_fraction": 0.6}, "harness_requires": "the model may keep speaking after the video ends; do not stop at the final frame"}
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc::T10@150",
+ "seq_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc",
+ "tier": "T10",
+ "window_abs_s": [
+  150.0,
+  750.0
+ ],
+ "duration_s": 600.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc.mp4",
+ "mode": "task_assist",
+ "authored_by": "duplex/avd/author_av_chain.py (bank-written phrasing, measured evidence); NOT one of the 47 hand-authored chains",
+ "goal": {
+  "text": "The wearer is working through this stretch and keeps checking back on what has happened, what was said, and what they heard.",
+  "closed_by_turn": 30
+ },
+ "turns": [
+  {
+   "idx": -1,
+   "speaker": "user",
+   "t_s": 1.5,
+   "text": "Hey, I'm sat down with a mate for a bit — keep an ear out for me.",
+   "timing": "clean_handoff",
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "role": "opener",
+   "trigger": {
+    "type": "session_start",
+    "t_s": 0.0,
+    "detail": "the wearer opens the session"
+   },
+   "expected_answer": {
+    "family": "ack",
+    "scored": false,
+    "text": "Got it -- I'm watching and listening."
+   }
+  },
+  {
+   "idx": 0,
+   "speaker": "user",
+   "t_s": 18.75,
+   "text": "What was I doing just before this?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 17.5,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Just before that, you were in the living room sitting on the sofa with both hands on your lap, watching your peer for about 4 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      7.5,
+      12.5,
+      17.5
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Immediately before, you while in the living room, you're sitting on the sofa while you're resting both of your hands on your lap while you're watching your peer. That ran from a few seconds ago, for about 4 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "So what had I done right beforehand?"
+  },
+  {
+   "idx": 1,
+   "speaker": "user",
+   "t_s": 26.94,
+   "text": "And one step before that?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 22.5,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "one sec —",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Immediately before that, while in the living room, you were sitting on the sofa while you raise both hands on your head to adjust the equipment then rest both hands on your lap.",
+    "skill": "episodic_memory",
+    "answer_words": 27,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      12.5,
+      17.5,
+      22.5
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Immediately before, you while in the living room, you're sitting on the sofa while you're resting both of your hands on your lap while you're watching your peer. That ran from a few seconds ago, for about 6 seconds.",
+    "answer_source": "model",
+    "text_before_stepback_repair": "Right before that, you were still in the living room, sitting on the sofa with both hands on your lap, watching your peer for about 6 seconds.",
+    "evidence_t": [
+     2.5,
+     7.5
+    ]
+   },
+   "text_before_rewrite": "One sec — what preceded that one?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 2,
+   "speaker": "user",
+   "t_s": 56.25,
+   "text": "And before that bit, what was I on?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 52.6,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Before that, you were in the living room kneeling on the floor, picking up the object and moving it to the left side of the coffee table with your right hand while your left rested on the table for about 5 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 42,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      42.6,
+      47.6,
+      52.6
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Immediately before, you while in the living room, you're kneeling on the floor while you pick up the object and move it on the left side of the coffee table using your right hand and your left hand is resting on top of the coffee table. That ran from a few seconds ago, for about 5 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "One sec, what came immediately before that?"
+  },
+  {
+   "idx": 3,
+   "speaker": "user",
+   "t_s": 66.93,
+   "text": "Has anyone been talking just now?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 66.93,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, there was some speech just now for a moment, but the words aren't clear enough.",
+    "skill": "speech_timing",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_timing",
+    "evidence": {
+     "t_s": [
+      50.52,
+      50.91
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Yes — there was speech a few seconds ago, just for a moment. The words themselves are not clear enough to repeat.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Right, has someone been speaking recently?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 4,
+   "speaker": "user",
+   "t_s": 93.75,
+   "text": "Has an oven door shut anywhere in this?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 93.75,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, just now for about 1 second, and that's the only time so far.",
+    "skill": "sound_existence",
+    "answer_words": 14,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_pos",
+    "evidence": {
+     "t_s": [
+      90.0,
+      91.0
+     ],
+     "object_uids": []
+    },
+    "needs_audio_verification": true,
+    "text_before_repair": "Yes — just now, for about 1 second, about 1 seconds of it, and that is the only time so far.",
+    "answer_draft": "Yes — just now, for about 1 second, and that is the only time so far.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Quick one, has there been an oven door closing up to this point?"
+  },
+  {
+   "idx": 5,
+   "speaker": "user",
+   "t_s": 101.53,
+   "text": "What had I been looking at before?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 100.1,
+    "detail": "gaze moves onto a new object"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The plant — you had been on it for about 3 seconds before your gaze moved off at around 100 seconds.",
+    "skill": "attention",
+    "answer_words": 21,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "attention_abandoned",
+    "evidence": {
+     "t_s": [
+      99.1,
+      100.1
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Wait, sorry — what was I looking at before that?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "barge_in",
+   "interruption_demoted_reason": "arrives 4.5s in, answer ends at 4.3s",
+   "text_before_interrupt_repair": "Wait — what had I been looking at before?"
+  },
+  {
+   "idx": 6,
+   "speaker": "user",
+   "t_s": 131.25,
+   "text": "Where did my eyes go just then?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 126.2,
+    "detail": "gaze moves onto a new object"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your gaze moved onto the plant just now, after being on something else.",
+    "skill": "attention",
+    "answer_words": 13,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "attention",
+    "evidence": {
+     "t_s": [
+      126.2,
+      127.2
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Okay, where did my attention go?"
+  },
+  {
+   "idx": 7,
+   "speaker": "user",
+   "t_s": 150.0,
+   "text": "How long since I heard chewing?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 150.0,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 38 seconds — you heard chewing food.",
+    "skill": "elapsed_time",
+    "answer_words": 8,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      104.0,
+      112.0
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 38.0,
+     "tol_s": 5.7,
+     "unit": "seconds",
+     "form": "since_sound"
+    },
+    "needs_audio_verification": true,
+    "text_before_repair": "About 38 seconds — you heard chewing food around 112 seconds in.",
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "And how long has it been since I heard chewing food?"
+  },
+  {
+   "idx": 8,
+   "speaker": "user",
+   "t_s": 155.85,
+   "text": "And paper rustling, had that come up?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 155.85,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, just under a minute ago for about 2 seconds, and that's the only time.",
+    "skill": "sound_existence",
+    "answer_words": 15,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_pos",
+    "evidence": {
+     "t_s": [
+      101.0,
+      103.0
+     ],
+     "object_uids": []
+    },
+    "needs_audio_verification": true,
+    "text_before_repair": "Yes — just under a minute ago, for about 2 seconds, about 2 seconds of it, and that is the only time so far.",
+    "answer_draft": "Yes — just under a minute ago, for about 2 seconds, and that is the only time so far.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Then has paper rustling come up yet?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "barge_in",
+   "interruption_demoted_reason": "previous answer only 8 words",
+   "text_before_interrupt_repair": "And paper rustling — had that come up?"
+  },
+  {
+   "idx": 9,
+   "speaker": "user",
+   "t_s": 187.5,
+   "text": "Talk me through what I just did.",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 186.5,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You're sitting on the sofa with legs crossed and hands in your lap, then you point at the table with your right hand while playing cards.",
+    "skill": "action_state",
+    "answer_words": 26,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      181.6,
+      184.05,
+      186.5
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "You're sitting on the sofa with legs crossed and both hands resting on your lap then point on the table with your right hand while playing a card game with your peer in the living area.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "So talk me through what I just did?"
+  },
+  {
+   "idx": 10,
+   "speaker": "user",
+   "t_s": 195.62,
+   "text": "Hang on — what did I just look at?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 173.1,
+    "detail": "gaze moves onto a new object"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "going back —",
+    "register": "hesitation"
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Your gaze moved onto the plant twenty seconds or so ago, after being on something else.",
+    "skill": "attention",
+    "answer_words": 16,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "attention",
+    "evidence": {
+     "t_s": [
+      173.1,
+      174.1
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Going back — what did I just look over at?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 11,
+   "speaker": "user",
+   "t_s": 225.0,
+   "text": "And this last bit — what did I do?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 216.5,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You're sitting on the sofa with legs crossed and hands in your lap holding a card. Then you leaned forward to pick up another card from the table with your right hand while playing with your peer.",
+    "skill": "action_state",
+    "answer_words": 37,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      211.6,
+      214.05,
+      216.5
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "You're sitting on the sofa with legs crossed and both hands resting on your lap and holding a card on your hands. You then bend forward and hold a card from the table with your right hand while holding your card with your left hand while playing a card game with your peer in the living area.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Also, talk me through what I just did?"
+  },
+  {
+   "idx": 12,
+   "speaker": "user",
+   "t_s": 236.02,
+   "text": "How far back did I say 'and then I throw it away'?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 236.02,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 68 seconds ago, when you said, “Okay, and then I throw it away?”",
+    "skill": "elapsed_time",
+    "answer_words": 14,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      166.17,
+      168.12
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 67.9,
+     "tol_s": 10.2,
+     "unit": "seconds",
+     "form": "since_speech"
+    },
+    "text_before_repair": "About 68 seconds — you said “Okay, and then I throw it away?” around 168 seconds in.",
+    "answer_draft": "About 68 seconds — you said “Okay, and then I throw it away?”.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "How long ago was it that I said “Okay, and then I throw it away?”?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 13,
+   "speaker": "user",
+   "t_s": 262.5,
+   "text": "And what have I just been doing?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 243.6,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You're swapping the playing cards on the table with both of your hands while sitting on the sofa, leaning forward, crossing both of your legs, and playing a card game in the living room with your peer. You then put down the playing card onto the discard pile on the table with your right hand before straightening up your body and placing both of your hands onto your lap.",
+    "skill": "action_state",
+    "answer_words": 69,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      238.6,
+      241.1,
+      243.6
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Oh, what did that last bit amount to?"
+  },
+  {
+   "idx": 14,
+   "speaker": "user",
+   "t_s": 289.75,
+   "text": "Run me through that last stretch.",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 283.6,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 13
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You pick up a playing card from the draw pile on the table with your left hand. You then put down the playing card onto the discard pile on the table with your left hand while sitting on the sofa, crossing both of your legs, leaning forward, placing your right hand on your lap, and playing a card game in the living room with your peer. After that, you straighten up your body and place your left hand onto your lap as well.",
+    "skill": "action_state",
+    "answer_words": 83,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      278.6,
+      281.1,
+      283.6
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "So talk me through what I just did?"
+  },
+  {
+   "idx": 15,
+   "speaker": "user",
+   "t_s": 304.36,
+   "text": "Did 'room' come up anywhere?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 304.36,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "but then —",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 14
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, it hasn't come up. The talking from just under five minutes ago at 8, 30 doesn't mention the room either.",
+    "skill": "speech_content",
+    "answer_words": 21,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      270.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No — the room does not come up in anything that was picked up. The talking caught here is around 8, 30, just under five minutes ago, and none of it mentions the room.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "But then — did anyone mention the room so far?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 16,
+   "speaker": "user",
+   "t_s": 320.23,
+   "text": "From 'and then I throw it away' to me starting to swap cards — how long?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 320.23,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 15
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 70 seconds. You said that, then roughly 70 seconds later you started swapping the playing cards on the table with both of your hands.",
+    "skill": "elapsed_time",
+    "answer_words": 25,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      166.17,
+      168.12,
+      238.6
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 70.5,
+     "tol_s": 10.6,
+     "unit": "seconds",
+     "form": "speech_action"
+    },
+    "answer_draft": "About 70 seconds — you said “Okay, and then I throw it away?”, then roughly 70 seconds later you started swapping the playing cards on the table with both of your hands.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Okay, how long was it between when you said “Okay, and then I throw it away?” and when you started swapping the playing cards on the table with both of your hands?"
+  },
+  {
+   "idx": 17,
+   "speaker": "user",
+   "t_s": 336.12,
+   "text": "Any laughter in there?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 336.08,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 16
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, no laughter so far. You've heard a car engine, a kettle boiling, a light switch clicking, and 7 other kinds—10 distinct sounds in total.",
+    "skill": "sound_existence",
+    "answer_words": 25,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      330.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No laughter so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 7 other kinds — 10 distinct sounds in total, none of them that.",
+    "answer_source": "model"
+   },
+   "timing_before_retime": "barge_in",
+   "retime_reason": "arrived after the answer ended",
+   "retimed_from": 336.08,
+   "text_before_rewrite": "Was there any laughter up to now?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "clean_handoff",
+   "interruption_demoted_reason": "arrives 10.7s in, answer ends at 7.0s"
+  },
+  {
+   "idx": 18,
+   "speaker": "user",
+   "t_s": 356.25,
+   "text": "And how long since I started swapping those cards?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 356.25,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 17
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 118 seconds — you started swapping the playing cards on the table with both of your hands.",
+    "skill": "elapsed_time",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      238.6
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 117.7,
+     "tol_s": 17.6,
+     "unit": "seconds",
+     "form": "since_action"
+    },
+    "text_before_repair": "About 118 seconds — you started swapping the playing cards on the table with both of your hands around 239 seconds in.",
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Okay, how much time has passed since I started swapping the playing cards on the table with both of my hands?"
+  },
+  {
+   "idx": 19,
+   "speaker": "user",
+   "t_s": 375.0,
+   "text": "What did I just look away from?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "attention_shift",
+    "t_s": 363.6,
+    "detail": "gaze moves onto a new object"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 18
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The table — you had been on it for about 2 seconds before your gaze moved off at around 364 seconds.",
+    "skill": "attention",
+    "answer_words": 21,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "attention_abandoned",
+    "evidence": {
+     "t_s": [
+      362.6,
+      363.6
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Right, what did I just turn away from?"
+  },
+  {
+   "idx": 20,
+   "speaker": "user",
+   "t_s": 381.06,
+   "text": "'Then I throw it away' through to 'queens and jacks' — what's the gap?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 381.06,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "oh —",
+    "register": "correction"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 19
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 61 seconds. You said “Okay, and then I throw it away?”, and you said “Oh. Queens and Jacks. Okay, yeah, you're right. I” roughly 61 seconds later.",
+    "skill": "elapsed_time",
+    "answer_words": 28,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      166.17,
+      168.12,
+      229.3,
+      236.42
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 61.2,
+     "tol_s": 9.2,
+     "unit": "seconds",
+     "form": "speech_speech"
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Oh — how many seconds passed between when you said “Okay, and then I throw it away?” and when you said “Oh. Queens and Jacks. Okay, yeah, you're right. I”?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 21,
+   "speaker": "user",
+   "t_s": 412.5,
+   "text": "Has music been playing at all?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 412.5,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 20
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, no music so far. You've heard a car engine, a kettle boiling, a light switch clicking, and 8 other kinds—11 distinct sounds in total.",
+    "skill": "sound_existence",
+    "answer_words": 25,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      390.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No music playing so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 8 other kinds — 11 distinct sounds in total, none of them that.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Quick one, has there been music playing up to this point?"
+  },
+  {
+   "idx": 22,
+   "speaker": "user",
+   "t_s": 431.25,
+   "text": "Did 'show' get said somewhere?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 431.25,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 21
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, a little over three minutes ago, when you said, “Oh. Queens and Jacks. Okay, yeah, you're right. I did not show.”",
+    "skill": "speech_content",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_pos",
+    "evidence": {
+     "t_s": [
+      229.3,
+      236.42
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Yes — it came up a little over three minutes ago, when you said “Oh. Queens and Jacks. Okay, yeah, you're right. I did not show.”.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Quick one, was there anything said about the show yet?"
+  },
+  {
+   "idx": 23,
+   "speaker": "user",
+   "t_s": 450.0,
+   "text": "And was that me, or them?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 450.0,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 22
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "That was you, just under three and a half minutes ago.",
+    "skill": "speech_content",
+    "answer_words": 11,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_speaker",
+    "evidence": {
+     "t_s": [
+      229.3,
+      236.42
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "That was you, just under three and a half minutes ago.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "One sec, who said that, me or the other person?"
+  },
+  {
+   "idx": 24,
+   "speaker": "user",
+   "t_s": 457.34,
+   "text": "Was the house mentioned at any point?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 455.37,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 23
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No — the house does not come up in anything that was picked up. The talking caught here is around 8, 30, just under eight minutes ago, and none of it mentions the house.",
+    "skill": "speech_content",
+    "answer_words": 34,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      450.0
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "retimed_from": 455.37,
+   "text_before_rewrite": "Sorry, one more — has the house been brought up so far?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "backchannel",
+   "interruption_demoted_reason": "arrives 4.6s in, answer ends at 3.6s",
+   "text_before_interrupt_repair": "Sorry — was the house mentioned at any point?"
+  },
+  {
+   "idx": 25,
+   "speaker": "user",
+   "t_s": 487.5,
+   "text": "Any cupboard door shutting so far?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 487.5,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 24
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, not that one either. So far you've heard a car engine, a kettle boiling, a light switch clicking, and 9 others—12 distinct sounds in total.",
+    "skill": "sound_existence",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      450.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No cupboard door closing so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 9 other kinds — 12 distinct sounds in total, none of them that.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Okay, has a cupboard door closing come up yet?"
+  },
+  {
+   "idx": 26,
+   "speaker": "user",
+   "t_s": 506.25,
+   "text": "Did anyone say 'away'?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 506.25,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 25
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, just under six minutes ago, when you said, “Okay, and then I throw it away?”",
+    "skill": "speech_content",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_pos",
+    "evidence": {
+     "t_s": [
+      166.17,
+      168.12
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Yes — it came up just under six minutes ago, when you said “Okay, and then I throw it away?”.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "So did anyone mention the away so far?"
+  },
+  {
+   "idx": 27,
+   "speaker": "user",
+   "t_s": 512.17,
+   "text": "And a sigh — has there been one?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 512.17,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "thread_return",
+    "refers_to_turn": 26
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, not that one. You've heard a car engine, a kettle boiling, a light switch clicking, and 10 others—13 distinct sounds in total, but no sigh.",
+    "skill": "sound_existence",
+    "answer_words": 26,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      510.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No sigh so far. What you have heard up to now is a car engine, a kettle boiling, a light switch clicking, plus 10 other kinds — 13 distinct sounds in total, none of them that.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Anyway, has a sigh come up yet?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 28,
+   "speaker": "user",
+   "t_s": 543.75,
+   "text": "Take me back — what was I doing earlier on?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 74.6,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 27
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Immediately before, you were crouching down on the floor as you shuffle the cards on the table with both hands while in the living area. That ran from a little over eight minutes ago, for about 5 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 37,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      64.6,
+      69.6,
+      74.6
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template",
+    "text_before_splice_fix": "Immediately before, you're crouching down on the floor as you shuffle the cards on the table with both hands while in the living area. That ran from a little over eight minutes ago, for about 5 seconds."
+   },
+   "text_before_rewrite": "So and what was I doing just before?"
+  },
+  {
+   "idx": 29,
+   "speaker": "user",
+   "t_s": 562.5,
+   "text": "What was that sound just now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 562.5,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 28
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "That was paper rustling just now, for about 8 seconds.",
+    "skill": "sound_identity",
+    "answer_words": 10,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_identity",
+    "evidence": {
+     "t_s": [
+      546.0,
+      554.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "That was the paper rustling, a few seconds ago, for about 8 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Sorry, what did I just hear?"
+  },
+  {
+   "idx": 30,
+   "speaker": "user",
+   "t_s": 581.25,
+   "text": "How long since that sneeze?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 581.25,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 29
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 17 seconds — you heard sneezing.",
+    "skill": "elapsed_time",
+    "answer_words": 7,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      562.0,
+      564.0
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 17.2,
+     "tol_s": 2.6,
+     "unit": "seconds",
+     "form": "since_sound"
+    },
+    "needs_audio_verification": true,
+    "text_before_repair": "About 17 seconds — you heard sneezing around 564 seconds in.",
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Also, how much time has passed since I heard sneezing?"
+  }
+ ],
+ "answers_repaired": true,
+ "answers_spoken": true,
+ "retimed_for_response_room": true,
+ "response_room_model": {
+  "seconds": "0.8743 + 0.24489*words",
+  "handoff_s": 0.4,
+  "breath_s": 0.25,
+  "barge_fraction": 0.6
+ },
+ "harness_requires": "the model may keep speaking after the video ends; do not stop at the final frame On a BACKCHANNEL the assistant should finish the answer it was giving; on a BARGE-IN it should stop that answer and respond to the new line. Per-turn, see `on_interrupt`.",
+ "questions_rewritten": "hand_authored_v51"
+}

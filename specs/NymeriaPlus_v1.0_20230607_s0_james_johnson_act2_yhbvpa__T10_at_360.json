@@ -1,1 +1,1327 @@
-{"schema": "egoduplex.chain-spec/1", "chain_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa::T10@360", "seq_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa", "tier": "T10", "window_abs_s": [360.0, 960.0], "duration_s": 600.0, "mp4_basename": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa.mp4", "mode": "companion", "authored_by": "duplex/avd/author_av_chain.py (bank-written phrasing, measured evidence); NOT one of the 47 hand-authored chains", "goal": {"text": "The wearer is working through this stretch and keeps checking back on what has happened, what was said, and what they heard.", "closed_by_turn": 31}, "turns": [{"idx": 0, "speaker": "user", "t_s": 15.79, "text": "Hold on, has there been paper rustling up to this point?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 15.79, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": null, "scored": true, "expected_answer": {"text": "Yes, just a few seconds ago for about 7 seconds, and that's the only time.", "skill": "sound_existence", "answer_words": 15, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_pos", "evidence": {"t_s": [0.0, 7.0], "object_uids": []}, "needs_audio_verification": true, "text_before_repair": "Yes \u2014 a few seconds ago, for about 7 seconds, about 7 seconds of it, and that is the only time so far.", "answer_draft": "Yes \u2014 a few seconds ago, for about 7 seconds, and that is the only time so far.", "answer_source": "model"}}, {"idx": 1, "speaker": "user", "t_s": 23.16, "text": "And \u2014 what have I just done?", "timing": "barge_in", "trigger": {"type": "action_complete", "t_s": 5.3, "detail": "a narrated action finishes"}, "interruption": {"realization": "marked", "marker": "and \u2014", "register": "hesitation"}, "cohesion": {"device": "ellipsis", "refers_to_turn": 0}, "scored": true, "expected_answer": {"text": "You bent toward the living area's center table to measure the book, then walked to the other side and used the measuring tape in both hands to measure the whiteboard.", "skill": "action_state", "answer_words": 30, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [0.3, 2.8, 5.3], "object_uids": []}, "answer_draft": "You while bent toward the center table in the living area, you're measuring the book on the center table using the measuring tape you hold with both hands. You walk to the other side of the center table and measure the whiteboard using the measuring tape you hold with both hands.", "answer_source": "model"}}, {"idx": 2, "speaker": "user", "t_s": 47.37, "text": "So talk me through what I just did?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 37.3, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 1}, "scored": true, "expected_answer": {"text": "You're in a bent forward position in the living area while measuring the objects on the center table using the steel tape measure in both of your hands.", "skill": "action_state", "answer_words": 28, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [32.3, 34.8, 37.3], "object_uids": []}, "answer_source": "template"}}, {"idx": 3, "speaker": "user", "t_s": 57.35, "text": "Right, how long since I started standing in the living area?", "timing": "backchannel", "trigger": {"type": "user_initiated", "t_s": 54.39, "detail": "the wearer raises a new question"}, "interruption": {"realization": "backchannel_escalation", "marker": null, "register": null}, "cohesion": {"device": "connective", "refers_to_turn": 2}, "scored": true, "expected_answer": {"text": "About 10 seconds since you started standing there.", "skill": "elapsed_time", "answer_words": 8, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [47.3], "object_uids": []}, "numeric": {"value_s": 10.1, "tol_s": 2.0, "unit": "seconds", "form": "since_action", "value_s_before_retime": 7.1}, "text_before_repair": "About 7 seconds \u2014 you started standing in the living area around 47 seconds in.", "answer_draft": "About 7 seconds \u2014 you started standing in the living area.", "answer_source": "model", "text_before_retime": "About 7 seconds since you started standing there."}, "retimed_from": 54.39}, {"idx": 4, "speaker": "user", "t_s": 78.95, "text": "Also, what made that noise?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 78.95, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 3}, "scored": true, "expected_answer": {"text": "That was paper rustling a few seconds ago, for about 8 seconds.", "skill": "sound_identity", "answer_words": 12, "beyond_captioner": true, "requires_audio": true, "family": "sound_identity", "evidence": {"t_s": [63.0, 71.0], "object_uids": []}, "answer_draft": "That was the paper rustling, a few seconds ago, for about 8 seconds.", "answer_source": "model"}}, {"idx": 5, "speaker": "user", "t_s": 82.87, "text": "Hold on \u2014 point me at whatever made that?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 82.87, "detail": "the wearer raises a new question"}, "interruption": {"realization": "marked", "marker": "hold on \u2014", "register": "correction"}, "cohesion": {"device": "anaphora", "refers_to_turn": 4}, "scored": true, "expected_answer": {"text": "Look over at the paper rustling; that's what made it just under twenty seconds ago for 8 seconds.", "skill": "sound_localization", "answer_words": 18, "beyond_captioner": true, "requires_audio": true, "family": "sound_point", "evidence": {"t_s": [63.0, 71.0], "object_uids": []}, "point": [621, 587], "text_before_repair": "Over at the paper rustling \u2014 that is what made it, just under twenty seconds ago, for about 8 seconds, and it is visible in frame at that moment.", "answer_draft": "Over at the paper rustling \u2014 that is what made it, just under twenty seconds ago, for about 8 seconds.", "answer_source": "model"}}, {"idx": 6, "speaker": "user", "t_s": 110.53, "text": "Also, have I heard paper rustling so far?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 110.53, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 5}, "scored": true, "expected_answer": {"text": "Yes, that one just now lasted about 8 seconds. It's one of 7 times it's happened so far.", "skill": "sound_existence", "answer_words": 18, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_pos", "evidence": {"t_s": [95.0, 103.0], "object_uids": []}, "needs_audio_verification": true, "answer_draft": "Yes \u2014 a few seconds ago, for about 8 seconds. That is one of 7 times it has happened so far, this one lasting about 8 seconds.", "answer_source": "model"}}, {"idx": 7, "speaker": "user", "t_s": 126.32, "text": "Actually, what came immediately before that?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 119.3, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 6}, "scored": true, "expected_answer": {"text": "Right before that, you were in the kitchen, bent forward and measuring the freezer door handle with a measuring tape for about 5 seconds.", "skill": "episodic_memory", "answer_words": 24, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [109.3, 114.3, 119.3], "object_uids": []}, "answer_draft": "Immediately before, you in the kitchen, you're bent forward while measuring the freezer door handle using the measuring tape with both hands. That ran from a few seconds ago, for about 5 seconds.", "answer_source": "model"}}, {"idx": 8, "speaker": "user", "t_s": 133.34, "text": "What did I just finish doing there?", "timing": "barge_in", "trigger": {"type": "action_complete", "t_s": 129.3, "detail": "a narrated action finishes"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "anaphora", "refers_to_turn": 7}, "scored": true, "expected_answer": {"text": "In the kitchen, you crouched down holding the tape measure with both hands, stood up, and turned left. Then you fixed your eyewear with your left hand and walked toward the dining table.", "skill": "action_state", "answer_words": 33, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [124.3, 126.8, 129.3], "object_uids": []}, "answer_draft": "You in the kitchen, you're crouching down while holding the tape measure with both hands and then stand up before turning to the left. You then fix your eyewear using your left hand and then hold the tape measure with both hands then walk towards the dining table.", "answer_source": "model"}}, {"idx": 9, "speaker": "user", "t_s": 157.89, "text": "Also, how long has it been since I started standing in the kitchen?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 157.89, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 8}, "scored": true, "expected_answer": {"text": "About 9 seconds since you started standing there.", "skill": "elapsed_time", "answer_words": 8, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [149.3], "object_uids": []}, "numeric": {"value_s": 8.6, "tol_s": 2.0, "unit": "seconds", "form": "since_action"}, "text_before_repair": "About 9 seconds \u2014 you started standing in the kitchen around 149 seconds in.", "answer_draft": "About 9 seconds \u2014 you started standing in the kitchen.", "answer_source": "model"}}, {"idx": 10, "speaker": "user", "t_s": 164.7, "text": "Quick thing \u2014 what did I just finish doing there?", "timing": "barge_in", "trigger": {"type": "action_complete", "t_s": 159.3, "detail": "a narrated action finishes"}, "interruption": {"realization": "marked", "marker": "quick thing \u2014", "register": "discourse_shift"}, "cohesion": {"device": "anaphora", "refers_to_turn": 9}, "scored": true, "expected_answer": {"text": "You were measuring the hallway closet door with the tape measure using both hands, then stepped right for the next one.", "skill": "action_state", "answer_words": 21, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [154.3, 156.8, 159.3], "object_uids": []}, "answer_draft": "You're standing while measuring the hallway closet door using the tape measure with both hands and then step to the right to measure the next closet door.", "answer_source": "model"}}, {"idx": 11, "speaker": "user", "t_s": 189.47, "text": "Actually, what came immediately before that?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 184.2, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 10}, "scored": true, "expected_answer": {"text": "Right before that, you were holding the tape measure in your right hand, stepped left to measure the closet door with both hands, and then opened it. That lasted about 5 seconds.", "skill": "episodic_memory", "answer_words": 32, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [174.2, 179.2, 184.2], "object_uids": []}, "answer_draft": "Immediately before, you're standing in front of the hallway closet while holding the tape measure with your right hand and then step to the left and start measuring the closet door using the tape measure with both hands. While measuring the closet door, you then open the closet door with both hands. That ran from a few seconds ago, for about 5 seconds.", "answer_source": "model"}}, {"idx": 12, "speaker": "user", "t_s": 200.63, "text": "But what have I just done?", "timing": "barge_in", "trigger": {"type": "action_complete", "t_s": 194.2, "detail": "a narrated action finishes"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "connective", "refers_to_turn": 11}, "scored": true, "expected_answer": {"text": "Now you're in front of the laundry closet, stepping left to measure every side corner of the washing machine.", "skill": "action_state", "answer_words": 19, "beyond_captioner": false, "requires_audio": false, "family": "action_state", "evidence": {"t_s": [189.2, 191.7, 194.2], "object_uids": []}, "text_before_repair": "You're standing in front of the laundry closet, steps to the left to measure every side corner of the washing machine using the tape measure with both hands,.", "answer_draft": "You're standing in front of the laundry closet, steps to the left to measure every side corner of the washing machine using the tape measure with both hands.", "answer_source": "model"}}, {"idx": 13, "speaker": "user", "t_s": 221.05, "text": "Sorry, how long ago was it that I heard footsteps on stairs?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 221.05, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "reformulation", "refers_to_turn": 12}, "scored": true, "expected_answer": {"text": "About 10 seconds ago.", "skill": "elapsed_time", "answer_words": 4, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [210.0, 211.0], "object_uids": []}, "numeric": {"value_s": 10.1, "tol_s": 2.0, "unit": "seconds", "form": "since_sound"}, "needs_audio_verification": true, "text_before_repair": "About 10 seconds \u2014 you heard footsteps on stairs around 211 seconds in.", "answer_draft": "About 10 seconds \u2014 you heard footsteps on stairs.", "answer_source": "model"}}, {"idx": 14, "speaker": "user", "t_s": 236.84, "text": "Hold on, and what was I doing just before?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 221.3, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": null, "scored": true, "expected_answer": {"text": "Immediately before, you're standing in front of the laundry closet near the kitchen, slightly leaning forward while you're measuring the width of the control panel and then the length using a steel tape measure held in both of your hands. In addition, you measure the distance of the control selector. That ran from a little over twenty seconds ago, for about 5 seconds.", "skill": "episodic_memory", "answer_words": 63, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [211.3, 216.3, 221.3], "object_uids": []}, "answer_source": "template"}}, {"idx": 15, "speaker": "user", "t_s": 249.03, "text": "Wait, back up \u2014 what preceded that one?", "timing": "barge_in", "trigger": {"type": "action_complete", "t_s": 241.3, "detail": "a narrated action finishes"}, "interruption": {"realization": "marked", "marker": "wait, back up \u2014", "register": "urgency"}, "cohesion": {"device": "answer_reference", "refers_to_turn": 14}, "scored": true, "expected_answer": {"text": "Before that, you were still by the laundry closet, measuring the length of the rubber suction on the wall with your steel tape measure. That was just under twenty seconds ago and lasted about 5 seconds.", "skill": "episodic_memory", "answer_words": 36, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [231.3, 236.3, 241.3], "object_uids": []}, "answer_draft": "Immediately before, you're standing in front of the laundry closet near the kitchen as you're measuring the length of the rubber suction hung in the wall using a steel tape measure held in both of your hands. That ran from just under twenty seconds ago, for about 5 seconds.", "answer_source": "model"}}, {"idx": 16, "speaker": "user", "t_s": 269.39, "text": "Also, what preceded that one?", "timing": "clean_handoff", "trigger": {"type": "action_complete", "t_s": 256.3, "detail": "a narrated action finishes"}, "interruption": null, "cohesion": {"device": "answer_reference", "refers_to_turn": 15}, "scored": true, "expected_answer": {"text": "Immediately before, you're standing in front of the laundry closet near the kitchen while you're measuring the label in front of the laundry machine using a steel tape measure held in both of your hands.\nYou then step sideways to the left and lower your body as you're about to measure the height of the laundry machine. That ran from twenty seconds or so ago, for about 5 seconds.", "skill": "episodic_memory", "answer_words": 69, "beyond_captioner": true, "requires_audio": false, "family": "episodic_memory", "evidence": {"t_s": [246.3, 251.3, 256.3], "object_uids": []}, "answer_source": "template"}}, {"idx": 17, "speaker": "user", "t_s": 281.03, "text": "So was the room mentioned up to now?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 281.03, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "connective", "refers_to_turn": 16}, "scored": true, "expected_answer": {"text": "No, the room never came up. In fact, nobody says anything at all in this stretch.", "skill": "speech_content", "answer_words": 16, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_neg", "evidence": {"t_s": [0.0, 270.0], "object_uids": []}, "answer_draft": "No \u2014 the room never came up, and in fact nobody says anything at all in this stretch.", "answer_source": "model"}}, {"idx": 18, "speaker": "user", "t_s": 300.0, "text": "Also, was there any laughter up to now?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 300.0, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 17}, "scored": true, "expected_answer": {"text": "No, not that one either. You've only heard a television playing, a window sliding, footsteps on stairs, and 2 other kinds\u20145 distinct sounds in total.", "skill": "sound_existence", "answer_words": 25, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_neg", "evidence": {"t_s": [0.0, 270.0], "object_uids": []}, "answer_draft": "No laughter so far. What you have heard up to now is a television playing, a window sliding, footsteps on stairs, plus 2 other kinds \u2014 5 distinct sounds in total, none of them that.", "answer_source": "model"}}, {"idx": 19, "speaker": "user", "t_s": 315.79, "text": "Right, any paper rustling so far?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 315.79, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 18}, "scored": true, "expected_answer": {"text": "Yes, about three and a half minutes ago for 8 seconds. That's one of 13 times it's happened so far.", "skill": "sound_existence", "answer_words": 20, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_pos", "evidence": {"t_s": [87.0, 95.0], "object_uids": []}, "needs_audio_verification": true, "answer_draft": "Yes \u2014 three and a half minutes ago, for about 8 seconds. That is one of 13 times it has happened so far, this one lasting about 8 seconds.", "answer_source": "model"}}, {"idx": 20, "speaker": "user", "t_s": 325.01, "text": "Sorry to cut in \u2014 any paper rustling so far?", "timing": "backchannel", "trigger": {"type": "user_initiated", "t_s": 322.26, "detail": "the wearer raises a new question"}, "interruption": {"realization": "marked", "marker": "sorry to cut in \u2014", "register": "urgency"}, "cohesion": {"device": "reformulation", "refers_to_turn": 19}, "scored": true, "expected_answer": {"text": "Yes, just under five minutes ago for about 8 seconds. That's one of 13 times, also lasting about 8 seconds.", "skill": "sound_existence", "answer_words": 20, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_pos", "evidence": {"t_s": [47.0, 55.0], "object_uids": []}, "needs_audio_verification": true, "answer_draft": "Yes \u2014 just under five minutes ago, for about 8 seconds. That is one of 13 times it has happened so far, this one lasting about 8 seconds.", "answer_source": "model"}, "retimed_from": 322.26}, {"idx": 21, "speaker": "user", "t_s": 390.5, "text": "So was there any music playing up to now?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 390.5, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 20}, "scored": true, "expected_answer": {"text": "No, but you've heard a television playing, a window sliding, footsteps on stairs, and 2 other kinds\u20145 distinct sounds in total, none of them music.", "skill": "sound_existence", "answer_words": 25, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_neg", "evidence": {"t_s": [0.0, 390.0], "object_uids": []}, "answer_draft": "No music playing so far. What you have heard up to now is a television playing, a window sliding, footsteps on stairs, plus 2 other kinds \u2014 5 distinct sounds in total, none of them that.", "answer_source": "model"}}, {"idx": 22, "speaker": "user", "t_s": 400.07, "text": "And has someone been speaking recently?", "timing": "backchannel", "trigger": {"type": "user_initiated", "t_s": 398.97, "detail": "the wearer raises a new question"}, "interruption": {"realization": "backchannel_escalation", "marker": null, "register": null}, "cohesion": {"device": "ellipsis", "refers_to_turn": 21}, "scored": true, "expected_answer": {"text": "Yes, there was speech just now for about 1 second, but the words aren't clear enough.", "skill": "speech_timing", "answer_words": 16, "beyond_captioner": true, "requires_audio": true, "family": "speech_timing", "evidence": {"t_s": [390.31, 390.87], "object_uids": []}, "answer_draft": "Yes \u2014 there was speech a few seconds ago, for about 1 second. The words themselves are not clear enough to repeat.", "answer_source": "model"}, "retimed_from": 398.97}, {"idx": 23, "speaker": "user", "t_s": 450.5, "text": "Also, has the house been brought up so far?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 450.5, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 22}, "scored": true, "expected_answer": {"text": "No, the house hasn't been mentioned. The talking from just under a minute ago at 387 and 390 doesn't bring it up.", "skill": "speech_content", "answer_words": 22, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_neg", "evidence": {"t_s": [0.0, 450.0], "object_uids": []}, "answer_draft": "No \u2014 the house does not come up in anything that was picked up. The talking caught here is around 387, 390, just under a minute ago, and none of it mentions the house.", "answer_source": "model"}}, {"idx": 24, "speaker": "user", "t_s": 477.46, "text": "How many seconds passed between when you said \u201cWhat about this is different that you guys can't\u201d and when they said \u201ctape measure though\u201d?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 477.46, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "answer_reference", "refers_to_turn": 23}, "scored": true, "expected_answer": {"text": "About 70 seconds. You said \u201cWhat about this is different that you guys can't\u201d, and they said \u201ctape measure though\u201d roughly 70 seconds later.", "skill": "elapsed_time", "answer_words": 24, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [401.75, 406.29, 476.64, 476.96], "object_uids": []}, "numeric": {"value_s": 70.3, "tol_s": 10.6, "unit": "seconds", "form": "speech_speech"}, "answer_source": "template"}}, {"idx": 25, "speaker": "user", "t_s": 494.86, "text": "One sec, how long ago was it that I said \u201cDefinitely the most I've ever used a tape measure\u201d?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 494.71, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "anaphora", "refers_to_turn": 24}, "scored": true, "expected_answer": {"text": "About 18 seconds ago, when you said \u201cDefinitely the most I've ever used a tape measure\u201d.", "skill": "elapsed_time", "answer_words": 16, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [475.41, 477.4], "object_uids": []}, "numeric": {"value_s": 17.5, "tol_s": 2.6, "unit": "seconds", "form": "since_speech", "value_s_before_retime": 17.3}, "text_before_repair": "About 17 seconds \u2014 you said \u201cDefinitely the most I've ever used a tape measure\u201d around 477 seconds in.", "answer_draft": "About 17 seconds \u2014 you said \u201cDefinitely the most I've ever used a tape measure\u201d.", "answer_source": "model", "text_before_retime": "About 17 seconds ago, when you said \u201cDefinitely the most I've ever used a tape measure\u201d."}, "retimed_from": 494.71}, {"idx": 26, "speaker": "user", "t_s": 508.51, "text": "Right, did anyone speak in the last few seconds?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 508.51, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "connective", "refers_to_turn": 25}, "scored": true, "expected_answer": {"text": "Yes, there was some speech just now for about 1 second, but it's not clear enough to repeat.", "skill": "speech_timing", "answer_words": 18, "beyond_captioner": true, "requires_audio": true, "family": "speech_timing", "evidence": {"t_s": [505.3, 505.6], "object_uids": []}, "answer_draft": "Yes \u2014 there was speech just now, for about 1 second. The words themselves are not clear enough to repeat.", "answer_source": "model"}}, {"idx": 27, "speaker": "user", "t_s": 514.77, "text": "Has there been a cupboard door closing up to this point?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 514.77, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "anaphora", "refers_to_turn": 26}, "scored": true, "expected_answer": {"text": "No, not that one. So far you've heard a plate being set down on a table, a television playing, a toaster popping, and 5 other kinds\u20148 distinct sounds in total.", "skill": "sound_existence", "answer_words": 30, "beyond_captioner": true, "requires_audio": true, "family": "sound_exist_neg", "evidence": {"t_s": [0.0, 510.0], "object_uids": []}, "answer_draft": "No cupboard door closing so far. What you have heard up to now is a plate being set down on a table, a television playing, a toaster popping, plus 5 other kinds \u2014 8 distinct sounds in total, none of them that.", "answer_source": "model"}}, {"idx": 28, "speaker": "user", "t_s": 533.75, "text": "Sorry, how many seconds passed between when you said \u201cWhat about this is different that you guys can't\u201d and when you said \u201cDefinitely the most I've ever used a tape measure\u201d?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 533.75, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "answer_reference", "refers_to_turn": 27}, "scored": true, "expected_answer": {"text": "About 69 seconds. You said \u201cWhat about this is different that you guys can't\u201d, and you said \u201cDefinitely the most I've ever used a tape measure\u201d roughly 69 seconds later.", "skill": "elapsed_time", "answer_words": 30, "beyond_captioner": true, "requires_audio": true, "family": "elapsed_time", "evidence": {"t_s": [401.75, 406.29, 475.41, 477.4], "object_uids": []}, "numeric": {"value_s": 69.1, "tol_s": 10.4, "unit": "seconds", "form": "speech_speech"}, "answer_source": "template"}}, {"idx": 29, "speaker": "user", "t_s": 551.18, "text": "And also \u2014 has the tape come up in what was said so far?", "timing": "backchannel", "trigger": {"type": "user_initiated", "t_s": 548.98, "detail": "the wearer raises a new question"}, "interruption": {"realization": "marked", "marker": "and also \u2014", "register": "hesitation"}, "cohesion": {"device": "ellipsis", "refers_to_turn": 28}, "scored": true, "expected_answer": {"text": "Yes, just under a minute and a half ago, when you said \u201cDefinitely the most I've ever used a tape measure, though.\u201d", "skill": "speech_content", "answer_words": 22, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_pos", "evidence": {"t_s": [475.41, 477.4], "object_uids": []}, "answer_draft": "Yes \u2014 it came up just under a minute and a half ago, when you said \u201cDefinitely the most I've ever used a tape measure, though.\u201d.", "answer_source": "model"}, "retimed_from": 548.98}, {"idx": 30, "speaker": "user", "t_s": 563.61, "text": "And did anyone mention the tape so far?", "timing": "clean_handoff", "trigger": {"type": "user_initiated", "t_s": 563.47, "detail": "the wearer raises a new question"}, "interruption": null, "cohesion": {"device": "ellipsis", "refers_to_turn": 29}, "scored": true, "expected_answer": {"text": "Yes, it came up then too, when the other person said \u201ctape measure though.\u201d", "skill": "speech_content", "answer_words": 14, "beyond_captioner": true, "requires_audio": true, "family": "speech_mention_pos", "evidence": {"t_s": [476.64, 476.96], "object_uids": []}, "answer_draft": "Yes \u2014 it came up a minute and a half ago, when the other person said \u201ctape measure though.\u201d.", "answer_source": "model"}, "retimed_from": 563.47}, {"idx": 31, "speaker": "user", "t_s": 569.25, "text": "Who said that, me or the other person?", "timing": "barge_in", "trigger": {"type": "user_initiated", "t_s": 569.25, "detail": "the wearer raises a new question"}, "interruption": {"realization": "bare", "marker": null, "register": null}, "cohesion": {"device": "anaphora", "refers_to_turn": 30}, "scored": true, "expected_answer": {"text": "The other person said that, a minute and a half ago.", "skill": "speech_content", "answer_words": 11, "beyond_captioner": true, "requires_audio": true, "family": "speech_speaker", "evidence": {"t_s": [476.64, 476.96], "object_uids": []}, "answer_draft": "That was the other person, a minute and a half ago.", "answer_source": "model"}}], "answers_repaired": true, "answers_spoken": true, "retimed_for_response_room": true, "response_room_model": {"seconds": "0.8743 + 0.24489*words", "handoff_s": 0.4, "breath_s": 0.25, "barge_fraction": 0.6}, "harness_requires": "the model may keep speaking after the video ends; do not stop at the final frame"}
+{
+ "schema": "egoduplex.chain-spec/1",
+ "chain_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa::T10@360",
+ "seq_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa",
+ "tier": "T10",
+ "window_abs_s": [
+  360.0,
+  960.0
+ ],
+ "duration_s": 600.0,
+ "mp4_basename": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa.mp4",
+ "mode": "companion",
+ "authored_by": "duplex/avd/author_av_chain.py (bank-written phrasing, measured evidence); NOT one of the 47 hand-authored chains",
+ "goal": {
+  "text": "The wearer is working through this stretch and keeps checking back on what has happened, what was said, and what they heard.",
+  "closed_by_turn": 31
+ },
+ "turns": [
+  {
+   "idx": -1,
+   "speaker": "user",
+   "t_s": 1.5,
+   "text": "Hey, I've got a long job ahead — track it all, I'll ask as I work.",
+   "timing": "clean_handoff",
+   "interruption": null,
+   "cohesion": null,
+   "scored": false,
+   "role": "opener",
+   "trigger": {
+    "type": "session_start",
+    "t_s": 0.0,
+    "detail": "the wearer opens the session"
+   },
+   "expected_answer": {
+    "family": "ack",
+    "scored": false,
+    "text": "Got it -- I'm watching and listening."
+   }
+  },
+  {
+   "idx": 0,
+   "speaker": "user",
+   "t_s": 15.79,
+   "text": "Has paper rustling come through yet?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 15.79,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, just a few seconds ago for about 7 seconds, and that's the only time.",
+    "skill": "sound_existence",
+    "answer_words": 15,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_pos",
+    "evidence": {
+     "t_s": [
+      0.0,
+      7.0
+     ],
+     "object_uids": []
+    },
+    "needs_audio_verification": true,
+    "text_before_repair": "Yes — a few seconds ago, for about 7 seconds, about 7 seconds of it, and that is the only time so far.",
+    "answer_draft": "Yes — a few seconds ago, for about 7 seconds, and that is the only time so far.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Hold on, has there been paper rustling up to this point?"
+  },
+  {
+   "idx": 1,
+   "speaker": "user",
+   "t_s": 23.16,
+   "text": "What did I just do?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 5.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 0
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You bent toward the living area's center table to measure the book, then walked to the other side and used the measuring tape in both hands to measure the whiteboard.",
+    "skill": "action_state",
+    "answer_words": 30,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      0.3,
+      2.8,
+      5.3
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "You while bent toward the center table in the living area, you're measuring the book on the center table using the measuring tape you hold with both hands. You walk to the other side of the center table and measure the whiteboard using the measuring tape you hold with both hands.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "And — what have I just done?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "barge_in",
+   "interruption_demoted_reason": "arrives 4.6s in, answer ends at 4.5s",
+   "text_before_interrupt_repair": "Wait — what did I just do?"
+  },
+  {
+   "idx": 2,
+   "speaker": "user",
+   "t_s": 47.37,
+   "text": "Talk me through that last bit.",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 37.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 1
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You're in a bent forward position in the living area while measuring the objects on the center table using the steel tape measure in both of your hands.",
+    "skill": "action_state",
+    "answer_words": 28,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      32.3,
+      34.8,
+      37.3
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "So talk me through what I just did?"
+  },
+  {
+   "idx": 3,
+   "speaker": "user",
+   "t_s": 57.35,
+   "text": "And how long have I been standing in here?",
+   "timing": "backchannel",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 54.39,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "backchannel_escalation",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 2
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 10 seconds since you started standing there.",
+    "skill": "elapsed_time",
+    "answer_words": 8,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      47.3
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 10.1,
+     "tol_s": 2.0,
+     "unit": "seconds",
+     "form": "since_action",
+     "value_s_before_retime": 7.1
+    },
+    "text_before_repair": "About 7 seconds — you started standing in the living area around 47 seconds in.",
+    "answer_draft": "About 7 seconds — you started standing in the living area.",
+    "answer_source": "model",
+    "text_before_retime": "About 7 seconds since you started standing there."
+   },
+   "retimed_from": 54.39,
+   "text_before_rewrite": "Right, how long since I started standing in the living area?",
+   "on_interrupt": "resume_after"
+  },
+  {
+   "idx": 4,
+   "speaker": "user",
+   "t_s": 78.95,
+   "text": "What was that noise?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 78.95,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 3
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "That was paper rustling a few seconds ago, for about 8 seconds.",
+    "skill": "sound_identity",
+    "answer_words": 12,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_identity",
+    "evidence": {
+     "t_s": [
+      63.0,
+      71.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "That was the paper rustling, a few seconds ago, for about 8 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Also, what made that noise?"
+  },
+  {
+   "idx": 5,
+   "speaker": "user",
+   "t_s": 82.87,
+   "text": "Where was it — point me at it.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 82.87,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "hold on —",
+    "register": "correction"
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 4
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Look over at the paper rustling; that's what made it just under twenty seconds ago for 8 seconds.",
+    "skill": "sound_localization",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_point",
+    "evidence": {
+     "t_s": [
+      63.0,
+      71.0
+     ],
+     "object_uids": []
+    },
+    "point": [
+     621,
+     587
+    ],
+    "text_before_repair": "Over at the paper rustling — that is what made it, just under twenty seconds ago, for about 8 seconds, and it is visible in frame at that moment.",
+    "answer_draft": "Over at the paper rustling — that is what made it, just under twenty seconds ago, for about 8 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Hold on — point me at whatever made that?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 6,
+   "speaker": "user",
+   "t_s": 110.53,
+   "text": "Had paper rustling come up before that?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 110.53,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 5
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, that one just now lasted about 8 seconds. It's one of 7 times it's happened so far.",
+    "skill": "sound_existence",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_pos",
+    "evidence": {
+     "t_s": [
+      95.0,
+      103.0
+     ],
+     "object_uids": []
+    },
+    "needs_audio_verification": true,
+    "answer_draft": "Yes — a few seconds ago, for about 8 seconds. That is one of 7 times it has happened so far, this one lasting about 8 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Also, have I heard paper rustling so far?"
+  },
+  {
+   "idx": 7,
+   "speaker": "user",
+   "t_s": 126.32,
+   "text": "And what was I doing before this?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 119.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 6
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Right before that, you were in the kitchen, bent forward and measuring the freezer door handle with a measuring tape for about 5 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      109.3,
+      114.3,
+      119.3
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Immediately before, you in the kitchen, you're bent forward while measuring the freezer door handle using the measuring tape with both hands. That ran from a few seconds ago, for about 5 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Actually, what came immediately before that?"
+  },
+  {
+   "idx": 8,
+   "speaker": "user",
+   "t_s": 133.34,
+   "text": "Actually — what did I just finish in here?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 129.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 7
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "In the kitchen, you crouched down holding the tape measure with both hands, stood up, and turned left. Then you fixed your eyewear with your left hand and walked toward the dining table.",
+    "skill": "action_state",
+    "answer_words": 33,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      124.3,
+      126.8,
+      129.3
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "You in the kitchen, you're crouching down while holding the tape measure with both hands and then stand up before turning to the left. You then fix your eyewear using your left hand and then hold the tape measure with both hands then walk towards the dining table.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "What did I just finish doing there?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 9,
+   "speaker": "user",
+   "t_s": 157.89,
+   "text": "How long have I been in the kitchen now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 157.89,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 8
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 9 seconds since you started standing there.",
+    "skill": "elapsed_time",
+    "answer_words": 8,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      149.3
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 8.6,
+     "tol_s": 2.0,
+     "unit": "seconds",
+     "form": "since_action"
+    },
+    "text_before_repair": "About 9 seconds — you started standing in the kitchen around 149 seconds in.",
+    "answer_draft": "About 9 seconds — you started standing in the kitchen.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Also, how long has it been since I started standing in the kitchen?"
+  },
+  {
+   "idx": 10,
+   "speaker": "user",
+   "t_s": 164.7,
+   "text": "Quick one, what did I just get done?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 159.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 9
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "You were measuring the hallway closet door with the tape measure using both hands, then stepped right for the next one.",
+    "skill": "action_state",
+    "answer_words": 21,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      154.3,
+      156.8,
+      159.3
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "You're standing while measuring the hallway closet door using the tape measure with both hands and then step to the right to measure the next closet door.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Quick thing — what did I just finish doing there?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "barge_in",
+   "interruption_demoted_reason": "previous answer only 8 words",
+   "text_before_interrupt_repair": "Quick one — what did I just get done?"
+  },
+  {
+   "idx": 11,
+   "speaker": "user",
+   "t_s": 189.47,
+   "text": "And the bit before that?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 184.2,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 10
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Right before that, you were holding the tape measure in your right hand, stepped left to measure the closet door with both hands, and then opened it. That lasted about 5 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 32,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      174.2,
+      179.2,
+      184.2
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Immediately before, you're standing in front of the hallway closet while holding the tape measure with your right hand and then step to the left and start measuring the closet door using the tape measure with both hands. While measuring the closet door, you then open the closet door with both hands. That ran from a few seconds ago, for about 5 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Actually, what came immediately before that?"
+  },
+  {
+   "idx": 12,
+   "speaker": "user",
+   "t_s": 200.63,
+   "text": "No — what have I just done?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 194.2,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 11
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Now you're in front of the laundry closet, stepping left to measure every side corner of the washing machine.",
+    "skill": "action_state",
+    "answer_words": 19,
+    "beyond_captioner": false,
+    "requires_audio": false,
+    "family": "action_state",
+    "evidence": {
+     "t_s": [
+      189.2,
+      191.7,
+      194.2
+     ],
+     "object_uids": []
+    },
+    "text_before_repair": "You're standing in front of the laundry closet, steps to the left to measure every side corner of the washing machine using the tape measure with both hands,.",
+    "answer_draft": "You're standing in front of the laundry closet, steps to the left to measure every side corner of the washing machine using the tape measure with both hands.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "But what have I just done?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 13,
+   "speaker": "user",
+   "t_s": 221.05,
+   "text": "Those footsteps on the stairs — how long ago?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 221.05,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 12
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 10 seconds ago.",
+    "skill": "elapsed_time",
+    "answer_words": 4,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      210.0,
+      211.0
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 10.1,
+     "tol_s": 2.0,
+     "unit": "seconds",
+     "form": "since_sound"
+    },
+    "needs_audio_verification": true,
+    "text_before_repair": "About 10 seconds — you heard footsteps on stairs around 211 seconds in.",
+    "answer_draft": "About 10 seconds — you heard footsteps on stairs.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Sorry, how long ago was it that I heard footsteps on stairs?"
+  },
+  {
+   "idx": 14,
+   "speaker": "user",
+   "t_s": 236.84,
+   "text": "And what was I on just before this?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 221.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": null,
+   "scored": true,
+   "expected_answer": {
+    "text": "Immediately before, you were standing in front of the laundry closet near the kitchen, slightly leaning forward while you're measuring the width of the control panel and then the length using a steel tape measure held in both of your hands. In addition, you measure the distance of the control selector. That ran from a little over twenty seconds ago, for about 5 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 63,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      211.3,
+      216.3,
+      221.3
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template",
+    "text_before_splice_fix": "Immediately before, you're standing in front of the laundry closet near the kitchen, slightly leaning forward while you're measuring the width of the control panel and then the length using a steel tape measure held in both of your hands. In addition, you measure the distance of the control selector. That ran from a little over twenty seconds ago, for about 5 seconds."
+   },
+   "text_before_rewrite": "Hold on, and what was I doing just before?"
+  },
+  {
+   "idx": 15,
+   "speaker": "user",
+   "t_s": 249.03,
+   "text": "Back up one more step.",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 241.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": {
+    "realization": "marked",
+    "marker": "wait, back up —",
+    "register": "urgency"
+   },
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 14
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Before that, you were still by the laundry closet, measuring the length of the rubber suction on the wall with your steel tape measure. That was just under twenty seconds ago and lasted about 5 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 36,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      231.3,
+      236.3,
+      241.3
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Immediately before, you're standing in front of the laundry closet near the kitchen as you're measuring the length of the rubber suction hung in the wall using a steel tape measure held in both of your hands. That ran from just under twenty seconds ago, for about 5 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Wait, back up — what preceded that one?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 16,
+   "speaker": "user",
+   "t_s": 269.39,
+   "text": "And one more again?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "action_complete",
+    "t_s": 256.3,
+    "detail": "a narrated action finishes"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 15
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Immediately before, you were standing in front of the laundry closet near the kitchen while you're measuring the label in front of the laundry machine using a steel tape measure held in both of your hands.\nYou then step sideways to the left and lower your body as you're about to measure the height of the laundry machine. That ran from twenty seconds or so ago, for about 5 seconds.",
+    "skill": "episodic_memory",
+    "answer_words": 69,
+    "beyond_captioner": true,
+    "requires_audio": false,
+    "family": "episodic_memory",
+    "evidence": {
+     "t_s": [
+      246.3,
+      251.3,
+      256.3
+     ],
+     "object_uids": []
+    },
+    "answer_source": "template",
+    "text_before_splice_fix": "Immediately before, you're standing in front of the laundry closet near the kitchen while you're measuring the label in front of the laundry machine using a steel tape measure held in both of your hands.\nYou then step sideways to the left and lower your body as you're about to measure the height of the laundry machine. That ran from twenty seconds or so ago, for about 5 seconds."
+   },
+   "text_before_rewrite": "Also, what preceded that one?"
+  },
+  {
+   "idx": 17,
+   "speaker": "user",
+   "t_s": 281.03,
+   "text": "Did 'room' get said at any point?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 281.03,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 16
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, the room never came up. In fact, nobody says anything at all in this stretch.",
+    "skill": "speech_content",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      270.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No — the room never came up, and in fact nobody says anything at all in this stretch.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "So was the room mentioned up to now?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 18,
+   "speaker": "user",
+   "t_s": 300.0,
+   "text": "Any laughter so far?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 300.0,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 17
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, not that one either. You've only heard a television playing, a window sliding, footsteps on stairs, and 2 other kinds—5 distinct sounds in total.",
+    "skill": "sound_existence",
+    "answer_words": 25,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      270.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No laughter so far. What you have heard up to now is a television playing, a window sliding, footsteps on stairs, plus 2 other kinds — 5 distinct sounds in total, none of them that.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Also, was there any laughter up to now?"
+  },
+  {
+   "idx": 19,
+   "speaker": "user",
+   "t_s": 315.79,
+   "text": "Paper rustling — anything?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 315.79,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 18
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, about three and a half minutes ago for 8 seconds. That's one of 13 times it's happened so far.",
+    "skill": "sound_existence",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_pos",
+    "evidence": {
+     "t_s": [
+      87.0,
+      95.0
+     ],
+     "object_uids": []
+    },
+    "needs_audio_verification": true,
+    "answer_draft": "Yes — three and a half minutes ago, for about 8 seconds. That is one of 13 times it has happened so far, this one lasting about 8 seconds.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Right, any paper rustling so far?"
+  },
+  {
+   "idx": 20,
+   "speaker": "user",
+   "t_s": 325.01,
+   "text": "Sorry, that rustling again, has there been any?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 322.26,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "reformulation",
+    "refers_to_turn": 19
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, just under five minutes ago for about 8 seconds. That's one of 13 times, also lasting about 8 seconds.",
+    "skill": "sound_existence",
+    "answer_words": 20,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_pos",
+    "evidence": {
+     "t_s": [
+      47.0,
+      55.0
+     ],
+     "object_uids": []
+    },
+    "needs_audio_verification": true,
+    "answer_draft": "Yes — just under five minutes ago, for about 8 seconds. That is one of 13 times it has happened so far, this one lasting about 8 seconds.",
+    "answer_source": "model"
+   },
+   "retimed_from": 322.26,
+   "text_before_rewrite": "Sorry to cut in — any paper rustling so far?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "backchannel",
+   "interruption_demoted_reason": "arrives 7.0s in, answer ends at 5.8s",
+   "text_before_interrupt_repair": "Sorry, that rustling again — has there been any?"
+  },
+  {
+   "idx": 21,
+   "speaker": "user",
+   "t_s": 390.5,
+   "text": "Has any music been on?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 390.5,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 20
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, but you've heard a television playing, a window sliding, footsteps on stairs, and 2 other kinds—5 distinct sounds in total, none of them music.",
+    "skill": "sound_existence",
+    "answer_words": 25,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      390.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No music playing so far. What you have heard up to now is a television playing, a window sliding, footsteps on stairs, plus 2 other kinds — 5 distinct sounds in total, none of them that.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "So was there any music playing up to now?"
+  },
+  {
+   "idx": 22,
+   "speaker": "user",
+   "t_s": 400.07,
+   "text": "Has anyone been talking just now?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 398.97,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 21
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, there was speech just now for about 1 second, but the words aren't clear enough.",
+    "skill": "speech_timing",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_timing",
+    "evidence": {
+     "t_s": [
+      390.31,
+      390.87
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Yes — there was speech a few seconds ago, for about 1 second. The words themselves are not clear enough to repeat.",
+    "answer_source": "model"
+   },
+   "retimed_from": 398.97,
+   "text_before_rewrite": "And has someone been speaking recently?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "backchannel",
+   "interruption_demoted_reason": "arrives 7.1s in, answer ends at 7.0s"
+  },
+  {
+   "idx": 23,
+   "speaker": "user",
+   "t_s": 450.5,
+   "text": "Was the house brought up at all?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 450.5,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 22
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, the house hasn't been mentioned. The talking from just under a minute ago at 387 and 390 doesn't bring it up.",
+    "skill": "speech_content",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      450.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No — the house does not come up in anything that was picked up. The talking caught here is around 387, 390, just under a minute ago, and none of it mentions the house.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Also, has the house been brought up so far?"
+  },
+  {
+   "idx": 24,
+   "speaker": "user",
+   "t_s": 477.46,
+   "text": "How long between me saying 'what about this is different' and them saying 'tape measure though'?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 477.46,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 23
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 70 seconds. You said “What about this is different that you guys can't”, and they said “tape measure though” roughly 70 seconds later.",
+    "skill": "elapsed_time",
+    "answer_words": 24,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      401.75,
+      406.29,
+      476.64,
+      476.96
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 70.3,
+     "tol_s": 10.6,
+     "unit": "seconds",
+     "form": "speech_speech"
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "How many seconds passed between when you said “What about this is different that you guys can't” and when they said “tape measure though”?"
+  },
+  {
+   "idx": 25,
+   "speaker": "user",
+   "t_s": 494.86,
+   "text": "And how far back did I say 'the most I've ever used a tape measure'?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 494.71,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 24
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 18 seconds ago, when you said “Definitely the most I've ever used a tape measure”.",
+    "skill": "elapsed_time",
+    "answer_words": 16,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      475.41,
+      477.4
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 17.5,
+     "tol_s": 2.6,
+     "unit": "seconds",
+     "form": "since_speech",
+     "value_s_before_retime": 17.3
+    },
+    "text_before_repair": "About 17 seconds — you said “Definitely the most I've ever used a tape measure” around 477 seconds in.",
+    "answer_draft": "About 17 seconds — you said “Definitely the most I've ever used a tape measure”.",
+    "answer_source": "model",
+    "text_before_retime": "About 17 seconds ago, when you said “Definitely the most I've ever used a tape measure”."
+   },
+   "retimed_from": 494.71,
+   "text_before_rewrite": "One sec, how long ago was it that I said “Definitely the most I've ever used a tape measure”?"
+  },
+  {
+   "idx": 26,
+   "speaker": "user",
+   "t_s": 508.51,
+   "text": "Did anyone speak just then?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 508.51,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "connective",
+    "refers_to_turn": 25
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, there was some speech just now for about 1 second, but it's not clear enough to repeat.",
+    "skill": "speech_timing",
+    "answer_words": 18,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_timing",
+    "evidence": {
+     "t_s": [
+      505.3,
+      505.6
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Yes — there was speech just now, for about 1 second. The words themselves are not clear enough to repeat.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Right, did anyone speak in the last few seconds?"
+  },
+  {
+   "idx": 27,
+   "speaker": "user",
+   "t_s": 514.77,
+   "text": "Any cupboard door shutting so far?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 514.77,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 26
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "No, not that one. So far you've heard a plate being set down on a table, a television playing, a toaster popping, and 5 other kinds—8 distinct sounds in total.",
+    "skill": "sound_existence",
+    "answer_words": 30,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "sound_exist_neg",
+    "evidence": {
+     "t_s": [
+      0.0,
+      510.0
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "No cupboard door closing so far. What you have heard up to now is a plate being set down on a table, a television playing, a toaster popping, plus 5 other kinds — 8 distinct sounds in total, none of them that.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Has there been a cupboard door closing up to this point?",
+   "on_interrupt": "abandon_and_answer_new"
+  },
+  {
+   "idx": 28,
+   "speaker": "user",
+   "t_s": 533.75,
+   "text": "Gap from 'what about this is different' to 'the most I've ever used a tape measure'?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 533.75,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "answer_reference",
+    "refers_to_turn": 27
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "About 69 seconds. You said “What about this is different that you guys can't”, and you said “Definitely the most I've ever used a tape measure” roughly 69 seconds later.",
+    "skill": "elapsed_time",
+    "answer_words": 30,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "elapsed_time",
+    "evidence": {
+     "t_s": [
+      401.75,
+      406.29,
+      475.41,
+      477.4
+     ],
+     "object_uids": []
+    },
+    "numeric": {
+     "value_s": 69.1,
+     "tol_s": 10.4,
+     "unit": "seconds",
+     "form": "speech_speech"
+    },
+    "answer_source": "template"
+   },
+   "text_before_rewrite": "Sorry, how many seconds passed between when you said “What about this is different that you guys can't” and when you said “Definitely the most I've ever used a tape measure”?"
+  },
+  {
+   "idx": 29,
+   "speaker": "user",
+   "t_s": 551.18,
+   "text": "Has the tape been mentioned in anything said?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 548.98,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 28
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, just under a minute and a half ago, when you said “Definitely the most I've ever used a tape measure, though.”",
+    "skill": "speech_content",
+    "answer_words": 22,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_pos",
+    "evidence": {
+     "t_s": [
+      475.41,
+      477.4
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Yes — it came up just under a minute and a half ago, when you said “Definitely the most I've ever used a tape measure, though.”.",
+    "answer_source": "model"
+   },
+   "retimed_from": 548.98,
+   "text_before_rewrite": "And also — has the tape come up in what was said so far?",
+   "on_interrupt": null,
+   "timing_before_interrupt_repair": "backchannel",
+   "interruption_demoted_reason": "arrives 12.2s in, answer ends at 8.2s"
+  },
+  {
+   "idx": 30,
+   "speaker": "user",
+   "t_s": 563.61,
+   "text": "Did anyone else bring the tape up?",
+   "timing": "clean_handoff",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 563.47,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": null,
+   "cohesion": {
+    "device": "ellipsis",
+    "refers_to_turn": 29
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "Yes, it came up then too, when the other person said “tape measure though.”",
+    "skill": "speech_content",
+    "answer_words": 14,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_mention_pos",
+    "evidence": {
+     "t_s": [
+      476.64,
+      476.96
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "Yes — it came up a minute and a half ago, when the other person said “tape measure though.”.",
+    "answer_source": "model"
+   },
+   "retimed_from": 563.47,
+   "text_before_rewrite": "And did anyone mention the tape so far?"
+  },
+  {
+   "idx": 31,
+   "speaker": "user",
+   "t_s": 569.25,
+   "text": "Was that me or them?",
+   "timing": "barge_in",
+   "trigger": {
+    "type": "user_initiated",
+    "t_s": 569.25,
+    "detail": "the wearer raises a new question"
+   },
+   "interruption": {
+    "realization": "bare",
+    "marker": null,
+    "register": null
+   },
+   "cohesion": {
+    "device": "anaphora",
+    "refers_to_turn": 30
+   },
+   "scored": true,
+   "expected_answer": {
+    "text": "The other person said that, a minute and a half ago.",
+    "skill": "speech_content",
+    "answer_words": 11,
+    "beyond_captioner": true,
+    "requires_audio": true,
+    "family": "speech_speaker",
+    "evidence": {
+     "t_s": [
+      476.64,
+      476.96
+     ],
+     "object_uids": []
+    },
+    "answer_draft": "That was the other person, a minute and a half ago.",
+    "answer_source": "model"
+   },
+   "text_before_rewrite": "Who said that, me or the other person?",
+   "on_interrupt": "abandon_and_answer_new"
+  }
+ ],
+ "answers_repaired": true,
+ "answers_spoken": true,
+ "retimed_for_response_room": true,
+ "response_room_model": {
+  "seconds": "0.8743 + 0.24489*words",
+  "handoff_s": 0.4,
+  "breath_s": 0.25,
+  "barge_fraction": 0.6
+ },
+ "harness_requires": "the model may keep speaking after the video ends; do not stop at the final frame On a BACKCHANNEL the assistant should finish the answer it was giving; on a BARGE-IN it should stop that answer and respond to the new line. Per-turn, see `on_interrupt`.",
+ "questions_rewritten": "hand_authored_v51"
+}

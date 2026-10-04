@@ -1,0 +1,122 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Action-episodic memory &mdash; design</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:60rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:38px 0 10px;padding-top:16px;
+ border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}
+code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;
+ border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:16px 0;padding:10px 15px;border:1px solid var(--line);
+ border-left:3px solid var(--warm);background:#161b22;border-radius:5px;
+ color:#e8d9b0}
+blockquote p{margin:3px 0}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;
+ vertical-align:top}
+th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.sub{color:var(--dim);margin:0 0 22px}
+strong{color:#fff}
+
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;
+ border-bottom:1px solid #262b35}
+.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;
+ color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;
+ border:1px solid transparent;border-bottom:none;position:relative;top:1px}
+.nav a:hover{color:#c3cbd8;background:#161a22}
+.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap><div class=nav><a href='index.html'>Episodes</a><a href='deixis_v52.html'>Deixis rewrite</a><a href='em_merge_v1.html'>Action memory</a><a href='episodic_memory_design.html' class=on>Memory design</a><a href='narration_7xwm28.html'>Raw narration</a></div><h1>Action-episodic memory questions — end-to-end design</h1>
+<p><strong>Status:</strong> 18 questions shipped from 8 published episodes (2026-10-04). Everything below is what actually ran, with the numbers it produced. Where a step failed, the failure is written down rather than the repaired version only — the failures are the reason most of the gates exist.</p>
+<p><strong>Run the whole thing:</strong> <code>bash duplex/avd/run_em_gates.sh</code> → <code>EM_CHAIN_OK</code> (13 steps, producers before consumers, stops at the first non-OK token).</p>
+<hr>
+<h2>1. What the question is for</h2>
+<p>The wearer asks the assistant what they <em>themselves</em> were doing a moment ago:</p>
+<blockquote><p><em>&quot;And before I pushed the bathroom door open, what was I on?&quot;</em></p></blockquote>
+<p>To answer, the model has to hold a running record of the wearer&#x27;s own actions and index into it by an event, not by a clock. That is the skill. Three things have to be true or the question measures something else:</p>
+<ol><li><strong>The anchor must have already happened at the moment of asking.</strong> If the wearer is still walking into the bathroom, &quot;before I walked into the bathroom&quot; is not a memory cue — it is a prediction.</li><li><strong>The anchor must not be the answer.</strong> If the question names the thing the answer has to say, there is nothing to recall.</li><li><strong>The window between anchor and ask must contain something to recall.</strong> A window where the wearer did one thing, slowly, is not an episodic-memory item; it is a caption.</li></ol>
+<p>Every gate in this pipeline enforces one of those three.</p>
+<hr>
+<h2>2. The unit is a clause, not a row</h2>
+<p>Narration arrives as overlapping ~5 s rows, each a multi-clause summary, and <strong>each row&#x27;s last clause is the next row&#x27;s first</strong>. Treating a row as an event double-counts, and treating the whole window as one event erases the structure the question depends on.</p>
+<p>So rows are split into clauses, and clauses are merged into <strong>runs</strong> when they share both a head object and an action verb (jaccard ≥ 0.34). The threshold is deliberately strict: <code>gap_coverage</code> — how much of the anchor→ask window the merged runs actually account for — is computed from it, and a loose merge would inflate that number by swallowing unrelated clauses.</p>
+<p>At answer level, adjacent runs sharing a canonical head collapse into one <strong>item</strong>. A run shorter than <code>INTERRUPT_MAX</code> (2.5 s) wedged between two runs with the same head is a <strong>break</strong>: it gets folded into the surrounding item and <em>named</em> rather than listed, because &quot;you were doing the drawers, you paused to move the remote, you went back to the drawers&quot; is one memory with a hiccup, not three memories.</p>
+<p><strong>Current scale:</strong> 31 candidate turns → 27 merged runs → 18 answer-level item sets. Median answer 23 words; 11 answers have 1 item, 5 have 2, 2 have 3. <code>gap_coverage</code> median 0.76, minimum 0.12.</p>
+<hr>
+<h2>3. Pipeline, in order</h2>
+<table><thead><tr><th>#</th><th>Script</th><th>Produces</th><th>Gate</th></tr></thead><tbody><tr><td>1</td><td><code>em_merge.py</code></td><td>clause runs</td><td><code>EM_OK</code></td></tr><tr><td>2</td><td><code>test_em_merge.py</code></td><td>—</td><td><code>EM_MERGE_TEST_OK</code></td></tr><tr><td>3</td><td><code>em_items.py</code></td><td>answer-level items + breaks</td><td><code>EI_OK</code></td></tr><tr><td>4</td><td><code>test_em_items.py</code></td><td>—</td><td><code>EI_TEST_OK</code></td></tr><tr><td>5</td><td><code>em_anchors_v1.py</code></td><td>anchor proposal + status per turn</td><td><code>EA_OK</code></td></tr><tr><td>6</td><td><code>em_questions_v1.py</code></td><td>the question, long and short</td><td><code>EQ_OK</code></td></tr><tr><td>7</td><td><code>test_em_questions.py</code></td><td>—</td><td><code>EQT_OK</code></td></tr><tr><td>8</td><td><code>em_answers_v1.py</code></td><td>the composed answer</td><td><code>EAN_OK</code></td></tr><tr><td>9</td><td><code>em_vision_v1.py</code></td><td><strong>written frame reading per anchor</strong></td><td><code>EV_OK</code></td></tr><tr><td>10</td><td><code>em_anchor_timing.py</code></td><td>narration-side timing check</td><td><code>EAT_OK</code></td></tr><tr><td>11</td><td><code>test_em_anchor_timing.py</code></td><td>—</td><td><code>EATT_OK</code></td></tr><tr><td>12</td><td><code>emit_specs_v54.py</code></td><td>chain specs with both answers</td><td><code>ES_OK</code></td></tr><tr><td>13</td><td><code>test_emit_specs_v54.py</code></td><td>—</td><td><code>ES54T_OK</code></td></tr></tbody></table>
+<p>Order is not cosmetic. These scripts pass state through JSON on disk, so editing a producer without re-running it leaves the old JSON in place and every gate downstream re-confirms the previous answer. That happened: one turn reported <code>ok</code> for three runs after it had been reclassified.</p>
+<hr>
+<h2>4. Choosing the anchor</h2>
+<p>A proposal from narration, then four ways to lose it.</p>
+<p><strong>Deixis rule.</strong> Narration proposes the anchor → vision confirms it by object persistence across head turns → if vision contradicts narration, vision names the activity itself → the anchor is dropped only when vision has nothing nameable. <strong>The anchor may never be the activity the question is asking for.</strong></p>
+<p><strong>Statuses on the 31 candidates:</strong></p>
+<table><thead><tr><th>status</th><th>n</th><th>meaning</th></tr></thead><tbody><tr><td><code>ok</code></td><td>15</td><td>shipped</td></tr><tr><td><code>weak</code></td><td>3</td><td>shipped, object identity rests on narration</td></tr><tr><td><code>degenerate</code></td><td>6</td><td>the window has nothing distinct to recall</td></tr><tr><td><code>anchor_unavailable</code></td><td>3</td><td>no event in the window that isn&#x27;t the answer</td></tr><tr><td><code>degenerate_same_object</code></td><td>1</td><td>anchor and answer are the same object</td></tr><tr><td><code>degenerate_same_activity</code></td><td>1</td><td>anchor and answer are the same activity</td></tr><tr><td><code>not_stepback</code></td><td>1</td><td>not actually a backward-looking question</td></tr><tr><td><code>vacuous_gold</code></td><td>1</td><td>the v53 gold answer said nothing checkable</td></tr></tbody></table>
+<p>18 shipped of 31 = <strong>58%</strong>. That rate is the planning number for scale-up, and it is reported on the page rather than hidden.</p>
+<hr>
+<h2>5. The leak gate — why the question may not name the answer</h2>
+<p><code>item_leak</code> scans the question for any word naming something the answer has to utter. Three widenings, each forced by a real escape:</p>
+<ol><li>**Items only → items <em>and</em> their folded breaks.** The TV turn&#x27;s anchor was &quot;before I set the remote down&quot;, in front of an answer whose <em>break</em> is the one-second gesture with that same remote. A thing the answer must say is a thing the question may not say, whether it is a whole item or two words inside one.</li><li>**Head words only → head words <em>and</em> object words in the evidence text.** One anchor said &quot;mug&quot; while the item&#x27;s evidence read &quot;puts the spoon down in the mug&quot; — head <code>spoon</code>, so the head check saw nothing.</li><li><strong>A <code>PLACE</code> exemption, applied asymmetrically.</strong> Widening (2) immediately flagged 9 surfaces — counter, wall, table, closet. Where an action happened is scenery, and naming the scenery is the anchor&#x27;s whole job: *&quot;before I set the mug down on the counter&quot;* says nothing about a tea bag soaking. So places are exempt from the <strong>evidence</strong> scan — but <strong>not</strong> from the head check, because when a place is the item&#x27;s own head the answer is about that place and it leaks like anything else.</li></ol>
+<p>A fourth fix was in the vocabulary, not the gate: <strong>&quot;mug&quot; was not a known object word at all</strong>, which is why both mug leaks were invisible to every version of the scan.</p>
+<hr>
+<h2>6. Temporal alignment — two checks, and vision wins</h2>
+<p>This is the owner&#x27;s requirement: <em>the exit-bathroom anchor cannot come before the person is exiting the bathroom.</em> Two independent checks stand behind it.</p>
+<p><strong>Narration side</strong> (<code>em_anchor_timing</code>) searches the episode&#x27;s own action list for the anchor&#x27;s nouns. <code>NOT_YET</code> if the first mention lands after the ask, <code>STALE</code> if the last lands more than 12 s before it. Cheap, runs over everything, and <strong>wrong often enough that it cannot be the decider</strong>: the narrator names an object when it becomes the subject of a sentence, not when it enters frame.</p>
+<p><strong>Vision side</strong> (<code>em_vision_v1</code>) is the decider. Every shipped anchor has a contact strip cut around its ask and a <strong>written reading</strong> stored in the table — a sentence about pixels at named timestamps, not a tick.</p>
+<table><thead><tr><th>verdict</th><th>n</th><th>meaning</th></tr></thead><tbody><tr><td><code>confirmed</code></td><td>16</td><td>the strip shows the event finished or underway at the ask</td></tr><tr><td><code>weak</code></td><td>1</td><td>the action is visible, the object&#x27;s identity rests on narration</td></tr><tr><td><code>unconfirmed</code></td><td>1</td><td>the frames neither show nor contradict it — <strong>held, not dropped</strong></td></tr><tr><td><code>refuted</code></td><td>0</td><td>hard gate failure if it ever appears</td></tr></tbody></table>
+<p>Four anchors earned <code>refuted</code> during the pass. None are in the table: they were rewritten or held out, and what the frames said is recorded in the entry that replaced them.</p>
+<p><strong>Final timing tally:</strong> 18 checked — 12 <code>ok</code>, 4 <code>vision_only</code>, 2 overturned by frames (<code>T5_at_390</code> p01 <code>NOT_YET</code>, <code>T5_at_120</code> p06 <code>STALE</code>), <strong>0 failures</strong>. Both narration-side failures were lag.</p>
+<p>The downgrade is an escape hatch, so it has a fixture pair: readings present → <code>EAT_OK</code>, vision table empty → <code>EAT_FAIL</code>. It can only be silenced by someone who has looked at the strip and written down what is in it.</p>
+<h3>6.1 Contact strips, and the trap in them</h3>
+<p>4-tile hstack from the published 720×720 transcode, ASK tile stamped green. Default offsets ask−6 / −3 / 0 / +3; <code>EAF_OFFS</code> / <code>EAF_ONLY</code> / <code>EAF_TAG</code> override. Four of 18 needed something else: three too <strong>tight</strong> for 3 s steps (a remote set down, a crouch starting, a door swinging), one too <strong>wide</strong>.</p>
+<blockquote><p><strong>A strip that is too narrow does not report &quot;cannot see it&quot; — it reports the wrong answer.</strong></p></blockquote>
+<p>Proved on <code>T5_at_120</code> p15: at ±6 s all four tiles look down on the same coffee table from apparently the same place, and the default strip said the walk-round never happened. Widened to ±14 s it is unmistakable — the sofa swings from the top edge to the left edge and the whole layout rotates.</p>
+<h3>6.2 The owner&#x27;s own example</h3>
+<p><code>T10_at_600</code> p04 was asked mid-threshold. Fine strip: bathroom door <strong>shut</strong> at 78.7 s, <strong>swinging</strong> at 79.5 s, <strong>open</strong> at the 80.2 s ask, interior not resolved until 80.9 s. So the walk-in is mid-stride at the ask. Re-anchored to the door push, which <em>is</em> behind her:</p>
+<blockquote><p><em>&quot;Hang on, take it back one more — what was I on before I pushed this door open?&quot;</em></p></blockquote>
+<hr>
+<h2>7. Both answers are kept</h2>
+<p>The owner asked to keep both. In the emitted spec each turn carries:</p>
+<ul><li><code>text</code> — the anchored <strong>long</strong> question (the ship style)</li><li><code>question_short_unused</code> — the short style, kept as a fallback if a line reads</li></ul>
+<p>heavy aloud</p>
+<ul><li><code>question_v53</code> — the question it replaced</li><li><code>expected_answer.text</code> — the composed, item-listing answer</li><li><code>expected_answer.text_v53</code> — the previous gold, kept beside it</li><li><code>anchor</code> — <code>seen_at_ask</code>, <code>anchor_long</code>, the vision verdict, the <strong>reading</strong>,</li></ul>
+<p>and the strip path</p>
+<p>Turns the pass could not use are left exactly as they were and listed in <code>held_out</code> on the chain. Dropping them would shift every later turn&#x27;s timing.</p>
+<hr>
+<h2>8. Two numbering traps (both caught by guards, both real)</h2>
+<p>Position in <code>em_runs</code> and <code>idx</code> in a chain are different numbering schemes.</p>
+<ul><li><strong>Matching on position</strong> rewrote the wrong turn in two chains. The guard</li></ul>
+<p>fired on 4 turns; without it, four plausible-but-wrong questions would have shipped silently.</p>
+<ul><li><strong>Matching on text then over-corrected.</strong> The string stored as</li></ul>
+<p><code>question_v53</code> is in fact the <strong>v51</strong> text — the deixis pass rewrote 9 of 19 questions in one chain and 12 of 19 in the other — so &quot;newest spec that still contains these strings&quot; resolved all six chains down to v51 and would have quietly discarded every deixis repair. <em>Passing is not the same as correct.</em></p>
+<p><strong>Resolution:</strong> two-legged lookup. Text locates the turn in v51, where that text actually lives; the turn&#x27;s <code>t_s</code> — identical across specs, and the only field that is — carries it into the newest base. <strong>Text for identity, time for the join.</strong> Fixture pair: a base holding every <code>t_s</code> is chosen, a base missing one is refused.</p>
+<hr>
+<h2>9. Rendering the listening set</h2>
+<ul><li><strong>Never CSM.</strong> <code>renderers.check</code> raises on it. Breeze (<code>BreezeTTS-2</code>) is the</li></ul>
+<p>renderer; measured median 3.29 words/s.</p>
+<ul><li><strong>Slot feasibility is checked before rendering</strong>, not discovered after. For</li></ul>
+<p>each turn, time to the next onset minus the 0.4 s handoff versus words/3.29. All 18 long questions fit; tightest margin 1.3 s.</p>
+<ul><li><strong>Whole chains, not 18 turns.</strong> The published audio is <code>specs_v50</code>; these</li></ul>
+<p>questions are built on v51/v53_4, authored later and never rendered. Those generations do not share turn <strong>positions</strong>, and the wav key is <code>u-NN</code> by position — so for these chains every id on disk already points at different text. Dropping 18 wavs into that set would place them beside audio for questions the spec no longer contains.</p>
+<ul><li><strong>New wav root</strong> (<code>wavs_v54</code>). Same reason from the other side: the ids</li></ul>
+<p>collide with the v50 release&#x27;s own wavs, and rendering into <code>wavs_v2</code> would overwrite published audio.</p>
+<ul><li><strong>Voice pinned to 8.</strong> Voice number is &quot;index of this participant among all</li></ul>
+<p>participants, corpus-wide&quot; — correct as a rule, but the corpus shrank 498 → 477 chains between generations and james_johnson slid from slot 8 to slot 7. Slot 7 is a different speaker. The participant has not changed; only the denominator has. Pinned in <code>pin_voice_v54.py</code> so the next rebuild cannot silently undo it.</p>
+<ul><li><strong>Assistant turns are never synthesised.</strong> Text lane only. Speaking the gold</li></ul>
+<p>answer into the audio track would feed the model the thing it is being tested on.</p>
+<hr>
+<h2>10. Scaling to the rest (469 episodes, ~1447 turns)</h2>
+<p>Not started. The shape it has to take, given what the 8-episode sample showed:</p>
+<ol><li><strong>Expect ~58% yield.</strong> Budget for it; do not treat rejected windows as a bug to be fixed away.</li><li><strong>Reject degenerate windows up front.</strong> ~26% of windows on this sample had nothing distinct to recall. An action-density floor at window-selection time is cheaper than authoring a question and throwing it out.</li><li><strong>The vision step is the expensive part and cannot be skipped.</strong> Hand-written readings do not scale to 1447 turns, so it becomes a VLM multiple-choice step — Gemma-31B via transformers (not vLLM), one H200, sharded on <code>h200_usr-sr_high</code>. Multiple-choice, because free-text verdicts cannot be gated.</li><li><strong>Set the agreement floor BEFORE the run.</strong> A stratified self-audit whose threshold is chosen after seeing the numbers measures nothing.</li><li><strong>Templated anchors, not authored ones</strong> — but every template still has to pass the same leak gate and the same timing gate. The gates are the transferable part of this work; the 18 questions are not.</li></ol>
+<h3>Hard rules carried in</h3>
+<ul><li>Never render with CSM.</li><li><code>sam31_c015/</code> and tranche <code>*/sam31/</code> are read-only; never delete a SAM3 mask.</li><li>Never delete anything — quarantine with a written reason.</li><li>Heavy work through <code>srun</code>/<code>sbatch</code>, never the login node.</li><li>Cap image-reading agents at 40 frames.</li><li>Verify agent claims against disk before recording them as fact.</li><li><strong>A guard needs a fixture pair</strong> — one case that must trip it, one that must</li></ul>
+<p>not. A test that only runs the real data passes equally well if the guard fires unconditionally.</p>
+<ul><li><strong>Beware the asserted-field gate</strong>: a field written by a counter or a hash and</li></ul>
+<p>then validated by a gate reading that same field proves nothing. Eleven of those turned up in one night. Honest values are always worse first.</p></div></body></html>
