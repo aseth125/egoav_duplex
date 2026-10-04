@@ -1,0 +1,520 @@
+[
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 1,
+  "t_s": 16.67,
+  "skill": "episodic_memory",
+  "question": "What was I doing right before this?",
+  "answer": "Just before that, you were in the hallway opening and closing the laundry closet repeatedly with both hands for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u01_t016.67_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u01_t016.67_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u01_t016.67_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u01_t016.67_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u01_t016.67_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u01_t016.67_m15.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 2,
+  "t_s": 31.51,
+  "skill": "",
+  "question": "Keep an eye on that closet for me, would you?",
+  "answer": "",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u02_t031.51_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 3,
+  "t_s": 67.5,
+  "skill": "sound_existence",
+  "question": "Did a window slide somewhere back there?",
+  "answer": "Yes, just now for about 7 seconds, and that's the only time so far.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u03_t067.50_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 8,
+  "t_s": 126.35,
+  "skill": "elapsed_time",
+  "question": "From me saying 'I'll just open everything then' to this doorknob \u2014 how long?",
+  "answer": "About 100 seconds \u2014 you said \u201cOkay. So I'll just open everything then\u201d, then roughly 100 seconds later you started standing and leaning to the left to twist counterclockwise the doorknob.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u08_t126.35_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 9,
+  "t_s": 141.72,
+  "skill": "episodic_memory",
+  "question": "Sorry, cutting in, what came before that?",
+  "answer": "Immediately before, while the door is opened, you were standing in the bedroom at the back of the door while holding the doorknob with both hands, and then twist to the right and talk to your peer before twisting back to the left. You then step to the right and then hold the back and front doorknob by each hand. You then walk out of the house. That ran from a few seconds ago, for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u09_t141.72_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 10,
+  "t_s": 173.11,
+  "skill": "action_state",
+  "question": "So what did I just do out there?",
+  "answer": "You walked into the backyard and descended the bulkhead stairs.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u10_t173.11_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 11,
+  "t_s": 176.96,
+  "skill": "action_state",
+  "question": "No, the part before that one.",
+  "answer": "You walked in the side yard and then turned right towards the backyard.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u11_t176.96_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 13,
+  "t_s": 192.96,
+  "skill": "elapsed_time",
+  "question": "And 'I'll just open everything then' to me standing in the side yard \u2014 how long?",
+  "answer": "About 115 seconds \u2014 you said \u201cOkay. So I'll just open everything then\u201d, then roughly 115 seconds later you started standing in the side yard.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u13_t192.96_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 16,
+  "t_s": 254.8,
+  "skill": "elapsed_time",
+  "question": "Gap between 'oh, it's three floors' and me walking into the bedroom?",
+  "answer": "About 5 seconds \u2014 you said \u201cOh, it's three floors\u201d, then roughly 5 seconds later you started walking to enter the bedroom.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u16_t254.80_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 18,
+  "t_s": 271.26,
+  "skill": "episodic_memory",
+  "question": "And one step earlier than that?",
+  "answer": "Right before that, you walked forward and entered the bedroom, ascending the stairs for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u18_t271.26_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390",
+  "turn_idx": 19,
+  "t_s": 283.33,
+  "skill": "sound_existence",
+  "question": "Has there been any scrubbing anywhere?",
+  "answer": "No scrubbing a surface so far. What you have heard up to now is a car door closing, a car engine, a cupboard door closing, plus 12 other kinds \u2014 15 distinct sounds in total, none of them that.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390/u19_t283.33_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810",
+  "turn_idx": 2,
+  "t_s": 43.1,
+  "skill": "action_state",
+  "question": "What did I just do there?",
+  "answer": "While in the living room, you were sitting on the sofa while you raise the tumbler using your right hand towards your mouth as you drink from it while your left hand is resting on your lap.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u02_t043.10_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810",
+  "turn_idx": 3,
+  "t_s": 55.45,
+  "skill": "episodic_memory",
+  "question": "Sorry \u2014 what was I on before this?",
+  "answer": "Immediately before that, while in the living room, you were sitting on the sofa while you're leaning your body in front of the coffee table as you pick up the tumbler with your right hand then straighten your body as you hold the tumbler using both of your hands.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u03_t055.45_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810",
+  "turn_idx": 4,
+  "t_s": 61.76,
+  "skill": "episodic_memory",
+  "question": "And one more back from there?",
+  "answer": "Immediately before, while in the living room, you were sitting on the sofa while you turn your body to the left while you're holding the tumbler near your mouth using your right hand as you're drinking from it while your left hand is resting on your lap. That ran from just under twenty seconds ago, for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810/u04_t061.76_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 2,
+  "t_s": 31.7,
+  "skill": "action_state",
+  "question": "What did I just do there?",
+  "answer": "You walked towards the kitchen, turned clockwise, stood by the counter, and measured its width using the tape measure in both hands.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u02_t031.70_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 3,
+  "t_s": 38.93,
+  "skill": "sound_existence",
+  "question": "Hang on \u2014 was there a sneeze?",
+  "answer": "Yes, just now for about 8 seconds, and that's the only time so far.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u03_t038.93_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 4,
+  "t_s": 50.66,
+  "skill": "action_state",
+  "question": "Walk me through that last bit.",
+  "answer": "You're standing by the kitchen counter, steps sideways to the left and stand by the cooking range and measure the width of the microwave oven using tape measure held in your both hands.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u04_t050.66_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 6,
+  "t_s": 98.8,
+  "skill": "episodic_memory",
+  "question": "What was I doing before this?",
+  "answer": "Immediately before, you were standing beside the counter in the kitchen while holding a measuring tape with both hands, and then you measure the light switch on the wall using the measuring tape with both hands. That ran from a few seconds ago, for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u06_t098.80_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 9,
+  "t_s": 168.8,
+  "skill": "action_state",
+  "question": "And what did I finish off there?",
+  "answer": "You're still in the living area, bent forward measuring the brown pillow on the chair with both hands, and then you measure the brown chair with them too.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u09_t168.80_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 10,
+  "t_s": 186.05,
+  "skill": "episodic_memory",
+  "question": "And just before that one?",
+  "answer": "Right before that, you were still in the living area, bent forward and measuring the brown pillow on the chair with the measuring tape for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u10_t186.05_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 13,
+  "t_s": 233.83,
+  "skill": "sound_identity",
+  "question": "Hang on \u2014 what was that noise?",
+  "answer": "That was the paper rustling just now, for about 8 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u13_t233.83_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 14,
+  "t_s": 238.44,
+  "skill": "sound_localization",
+  "question": "Where is it \u2014 point it out.",
+  "answer": "Look over at the paper rustling; that's what made it just now for about 8 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u14_t238.44_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 15,
+  "t_s": 250.86,
+  "skill": "episodic_memory",
+  "question": "Sorry \u2014 what was I on before that?",
+  "answer": "Immediately before, while bent toward the center table in the living area, you were measuring the book on the center table using the measuring tape you hold with both hands. You walk to the other side of the center table and measure the whiteboard using the measuring tape you hold with both hands. That ran from a few seconds ago, for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u15_t250.86_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120",
+  "turn_idx": 17,
+  "t_s": 280.1,
+  "skill": "sound_identity",
+  "question": "And that one \u2014 what was it?",
+  "answer": "That was a window sliding just now, for about 8 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120/u17_t280.10_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720",
+  "turn_idx": 0,
+  "t_s": 1.5,
+  "skill": "",
+  "question": "Hey, still at it \u2014 keep an ear out, I'll be asking you things.",
+  "answer": "Got it -- I'm watching and listening.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u00_t001.50_m00.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720",
+  "turn_idx": 1,
+  "t_s": 16.36,
+  "skill": "attention",
+  "question": "Where did my eyes land just then?",
+  "answer": "Your gaze moved onto the table a few seconds ago, after being on something else.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u01_t016.36_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u01_t016.36_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u01_t016.36_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u01_t016.36_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u01_t016.36_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u01_t016.36_m15.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720",
+  "turn_idx": 3,
+  "t_s": 57.1,
+  "skill": "episodic_memory",
+  "question": "What was I doing right before this?",
+  "answer": "Just before that, you were in the living area sitting on the sofa, leaning forward, talking and playing cards with your peer for about 5 seconds, with both arms on your lap and your right arm over your left.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u03_t057.10_m24.jpg"
+  ]
+ },
+ {
+  "stem": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720",
+  "turn_idx": 9,
+  "t_s": 152.61,
+  "skill": "episodic_memory",
+  "question": "And before that one?",
+  "answer": "Immediately before, you were playing cards in the living room with your peer, sitting on the chair as you lean your left hand on your left knee and flip the face down card on the center table using your right hand while your body leans forward. Then you straighten your back as you rest both of your hands on your knees. That ran from just under half a minute ago, for about 5 seconds.",
+  "frames": [
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m00.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m03.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m06.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m09.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m12.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m15.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m18.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m21.jpg",
+   "/home/aseth125/qwen3omni_train/data/egoav_duplex/anchor_frames/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720/u09_t152.61_m24.jpg"
+  ]
+ }
+]
