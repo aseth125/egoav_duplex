@@ -57,7 +57,9 @@ video{max-width:100%;border-radius:6px}
 (<code>NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28</code>). All times in the first four tables are
 <b>clip-relative</b>; click a timestamp to seek the video.</p>
 
-<video id=v controls preload=metadata src="media/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810.mp4"></video>
+<p class=note><b>Original clip, no TTS.</b> This is the source video with its own scene audio &mdash; the narration tables below describe <i>this</i>. Use the switch to hear the synthesised question track instead.</p>
+<video id=v controls preload=metadata src="media/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810_raw.mp4"></video>
+<p class=note>Audio track: <label><input type=radio name=aud value=raw checked> original (no TTS)</label> &nbsp; <label><input type=radio name=aud value=tts> with the TTS question track burned in</label></p>
 
 <h2>Actions &mdash; time-aligned narration (25 spans)</h2>
 <p class=note>This is the complete action metadata for the window. Rows shaded
@@ -88,6 +90,17 @@ document.querySelectorAll('a[data-t]').forEach(function(a){
     var v=document.getElementById('v');
     v.currentTime=parseFloat(a.dataset.t); v.play();
     window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+document.querySelectorAll('input[name=aud]').forEach(function(r){
+  r.addEventListener('change', function(){
+    var v=document.getElementById('v'), t=v.currentTime, playing=!v.paused;
+    v.src = (r.value==='tts') ? 'media/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810.mp4' : 'media/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810_raw.mp4';
+    v.addEventListener('loadedmetadata', function h(){
+      v.currentTime=t; if(playing) v.play();
+      v.removeEventListener('loadedmetadata',h);
+    });
   });
 });
 </script>
