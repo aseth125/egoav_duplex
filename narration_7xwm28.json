@@ -1,0 +1,901 @@
+{
+ "seq_id": "NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28",
+ "n": 179,
+ "actions": [
+  {
+   "t0": 116.68,
+   "t1": 121.68,
+   "text": "C is standing in the kitchen, then turns to her right and walks in the kitchen while talking to her peers."
+  },
+  {
+   "t0": 121.68,
+   "t1": 126.68,
+   "text": "C is walking in the kitchen towards the counter, then stops to open the hanging cabinet using her right hand and passes the cabinet door to her left hand to reach for an item from the cabinet using her right hand."
+  },
+  {
+   "t0": 126.68,
+   "t1": 131.68,
+   "text": "C is standing in the kitchen as she grabs a mug from the cabinet using her right hand while holding the cabinet door open using her left hand. C closes the cabinet using her left hand, then puts the mug on the counter using her right hand before holding it with both hands."
+  },
+  {
+   "t0": 131.68,
+   "t1": 116.68,
+   "text": "C is standing in the kitchen as she opens the coffee machine lid using her left hand while holding the mug on the counter with her right hand before grabbing a capsule from the rack using her right hand."
+  },
+  {
+   "t0": 136.68,
+   "t1": 141.68,
+   "text": "C is standing in the kitchen as she puts the capsule into the coffee machine using her right hand, then closes the coffee machine lid using her right hand and grabs the mug from the counter using her right hand before putting the mug on the coffee machine using both hands."
+  },
+  {
+   "t0": 141.68,
+   "t1": 146.68,
+   "text": "C is standing in the kitchen as she turns on the coffee machine using her right hand before resting both hands on the counter."
+  },
+  {
+   "t0": 146.68,
+   "t1": 151.68,
+   "text": "C is standing in the kitchen with both hands resting on the counter while looking at the coffee machine."
+  },
+  {
+   "t0": 151.68,
+   "t1": 156.67,
+   "text": "C is standing in the kitchen with both hands resting on the counter while looking at the coffee machine."
+  },
+  {
+   "t0": 156.67,
+   "t1": 161.67,
+   "text": "C is standing in the kitchen with both hands resting on the counter while looking at the coffee machine. C then turns to her left and gestures with both hands while talking to her peers."
+  },
+  {
+   "t0": 161.67,
+   "t1": 166.67,
+   "text": "C is standing in the kitchen and gesturing with both hands while talking to her peers, then turns to her right to look at the coffee machine while resting both hands on the counter."
+  },
+  {
+   "t0": 166.67,
+   "t1": 171.67,
+   "text": "C is standing in the kitchen with both hands resting on the counter while looking at the coffee machine."
+  },
+  {
+   "t0": 171.67,
+   "t1": 176.67,
+   "text": "C is standing in the kitchen with both hands resting on the counter while looking at the coffee machine. C then turns to her left and gestures with both hands while talking to her peers before turning to her right to look at the coffee machine while resting her right hand on the counter."
+  },
+  {
+   "t0": 176.67,
+   "t1": 116.68,
+   "text": "C is standing in the kitchen with her right hand resting on the counter while looking at the coffee machine."
+  },
+  {
+   "t0": 181.67,
+   "t1": 116.68,
+   "text": "C is standing in the kitchen with her right hand resting on the counter while looking at the coffee machine and talking to her peer."
+  },
+  {
+   "t0": 186.67,
+   "t1": 116.68,
+   "text": "C is standing in the kitchen with her right hand resting on the counter while looking at the coffee machine and talking to her peer."
+  },
+  {
+   "t0": 191.67,
+   "t1": 121.68,
+   "text": "C is standing in the kitchen with her right hand resting on the counter while looking at the coffee machine and talking to her peer."
+  },
+  {
+   "t0": 196.67,
+   "t1": 126.68,
+   "text": "C is standing in the kitchen with her right hand resting on the counter while looking at the coffee machine and talking to her peer."
+  },
+  {
+   "t0": 201.67,
+   "t1": 131.61,
+   "text": "C is standing in the kitchen with her right hand resting on the counter while looking at the coffee machine and talking to her peer."
+  },
+  {
+   "t0": 203.67,
+   "t1": 208.67,
+   "text": "C is standing by the kitchen countertop with her right hand arm resting on it and with both her legs slightly crossed as she waits for the coffee to finish brewing."
+  },
+  {
+   "t0": 208.67,
+   "t1": 213.67,
+   "text": "C is standing by the kitchen countertop with her right hand arm resting on it and with both her legs slightly crossed as she waits for the coffee to finish brewing, steps her left foot backwards and bends her left leg as she further crosses both her legs, and then lifts her right arm from the kitchen countertop as she opens the top of the coffee machine with her right hand."
+  },
+  {
+   "t0": 213.67,
+   "t1": 218.66,
+   "text": "C is standing by the kitchen countertop with her left leg bent and with both her legs crossed as she opens the top of the coffee machine with her right hand, and then pulls out the coffee capsule and lowers it down to the kitchen countertop with her right hand."
+  },
+  {
+   "t0": 218.66,
+   "t1": 223.66,
+   "text": "C is standing by the kitchen countertop with her left leg bent and with both her legs crossed as she briefly puts down the coffee capsule with her right hand, picks it up again and puts it on top of another coffee capsule with her right hand, closes the top of the coffee machine with her right hand, and then picks up the mug with coffee from the coffee machine with her right hand."
+  },
+  {
+   "t0": 223.66,
+   "t1": 228.66,
+   "text": "C is standing by the kitchen countertop with her left leg bent and with both her legs crossed while picking up the mug with coffee with her right hand, uncrosses both her legs as she turns and steps to the left, walks forward, and then stands in place as she quickly opens and closes the kitchen drawer with her left hand."
+  },
+  {
+   "t0": 228.66,
+   "t1": 233.66,
+   "text": "C takes a couple of steps forward and stands in place by the kitchen countertop as she puts the mug down with her right hand, turns around clockwise as she takes a couple of steps forward towards the kitchen island, slightly leans forward as she stands in place and picks up another mug with her left hand and the spoon in it with her right hand, and then straightens up as she turns around counterclockwise and steps forward."
+  },
+  {
+   "t0": 233.66,
+   "t1": 238.66,
+   "text": "C steps forward as she turns to the left and stands in place by the kitchen countertop while transferring the spoon from the mug in her left hand to the mug on the kitchen countertop with her right hand, turns to the right and turns to the left as she takes a couple of steps forward while passing the mug from her left hand to her right hand, and then stands in place as she puts the mug down with her right hand. C then steps to the left and stands in place as she holds the kitchen cabinet handle with her right hand."
+  },
+  {
+   "t0": 238.66,
+   "t1": 243.66,
+   "text": "C is standing by the kitchen countertop while holding the kitchen cabinet handle with her right hand, steps and leans to the left then stands in place as she releases the kitchen cabinet handle with her right hand, opens and closes another kitchen cabinet with her left hand, straightens up as she steps to the right and opens the other kitchen cabinet with her right hand, and then steps to the right as she releases the kitchen cabinet handle with her right hand."
+  },
+  {
+   "t0": 243.66,
+   "t1": 248.66,
+   "text": "C is standing by the kitchen countertop as she lowers her right hand to her side, slightly steps to the right as she tiptoes with both her feet, pulls out a box from the kitchen cabinet and puts it back in with her right hand, and then slightly moves a jar container aside with her right hand."
+  },
+  {
+   "t0": 248.66,
+   "t1": 253.66,
+   "text": "C is tiptoeing with both her feet while standing by the kitchen countertop as she pushes a jar container  in the kitchen cabinet with her right hand, and then slightly leans to the right and straightens up as she moves aside a canister of sugar with her right hand."
+  },
+  {
+   "t0": 253.66,
+   "t1": 258.66,
+   "text": "C is tiptoeing with both her feet while standing by the kitchen countertop and while touching the canister of sugar in the kitchen cabinet with her right hand, pulls her right hand back and holds onto the lower kitchen cabinet shelf with that hand, and then slightly leans to the left as she reaches for something on the middle kitchen cabinet shelf with her right hand."
+  },
+  {
+   "t0": 258.66,
+   "t1": 263.66,
+   "text": "C is tiptoeing with both her feet and slightly leaning to the left while standing by the kitchen countertop as she gets a tea packet from the middle kitchen cabinet shelf with her right hand, straightens up and lowers both her heels to the floor as she passes the tea packet from her right hand to the left hand, slightly reaches towards the kitchen cabinet door with her right hand, opens the tea packet in her left hand with her right hand, and then holds the tea bag inside with her right hand."
+  },
+  {
+   "t0": 263.66,
+   "t1": 268.66,
+   "text": "C is standing by the kitchen countertop as she pulls out the tea bag from the packet in her left hand with her right hand, puts the packet down with her left hand and holds the tea bag with both her hands as she unravels the string, holds the tea bag from the top with her right hand and passes it to her left hand as she puts it in the mug, and then picks up the spoon from the mug with her right hand."
+  },
+  {
+   "t0": 268.66,
+   "t1": 273.66,
+   "text": "C is standing by the kitchen countertop while holding the tea bag with her left hand as she pushes it down and soaks it on the mug with coffee using the spoon in her right hand, releases the tea bag with her left hand as she slightly stirs the coffee using the spoon in her right hand, and then holds the tea bag's string with her left hand as she turns her body to the left and talks to her colleague."
+  },
+  {
+   "t0": 273.66,
+   "t1": 278.66,
+   "text": "C is standing by the kitchen countertop while holding the tea bag with her left hand and the spoon with her right hand while talking to her colleague, slightly turns her body to the right as she quickly looks at the kitchen cabinet, and then slightly turns her body to the left as she continues talking to her colleague."
+  },
+  {
+   "t0": 278.66,
+   "t1": 283.65,
+   "text": "C is standing by the kitchen countertop as she slightly turns her body to the right while holding the tea bag with her left hand and while slightly stirring the coffee in the mug using the spoon in her right hand, and then puts the spoon down in the mug with her right hand and releases the tea bag with her left hand."
+  },
+  {
+   "t0": 283.65,
+   "t1": 288.65,
+   "text": "C is standing by the kitchen countertop as she tiptoes with both her feet, and then lowers both her heels to the floor as she takes the box of sugar from the kitchen cabinet with her right hand."
+  },
+  {
+   "t0": 288.65,
+   "t1": 293.59,
+   "text": "C is standing by the kitchen countertop as she slightly leans to the left and pours sugar from the box in her right hand into the mug, and then straightens up as she stops pouring and slightly lifts the box from the mug with her right hand."
+  },
+  {
+   "t0": 290.65,
+   "t1": 295.65,
+   "text": "C is standing by the kitchen counter, preparing tea, pouring some sugar in the tea cup from the sugar box in her right hand then shakes the top portion of the box with her left hand"
+  },
+  {
+   "t0": 295.65,
+   "t1": 300.65,
+   "text": "C is standing by the kitchen counter, preparing tea, holding a box with her right hand while shaking the top portion of the box with her left hand then puts the box in the cabinet with her right hand. C then drops her right hand on the countertop, grabs the spoon on the tea cup with her right as she mixes the tea then holds the tea tag with her left hand"
+  },
+  {
+   "t0": 300.65,
+   "t1": 305.65,
+   "text": "C is standing by the kitchen counter, preparing tea, holding the tea bag with her left hand while mixing the tea in the cup using the spoon in her right hand"
+  },
+  {
+   "t0": 305.65,
+   "t1": 310.65,
+   "text": "C is standing by the kitchen counter, preparing tea, holding the tea bag with her left hand while mixing the tea in the cup using the spoon in her right hand"
+  },
+  {
+   "t0": 310.65,
+   "t1": 315.65,
+   "text": "C is standing by the kitchen counter, preparing tea, holding the tea bag with her left hand while mixing the tea in the cup using the spoon in her right hand then closes the cabinet with her right hand"
+  },
+  {
+   "t0": 315.65,
+   "t1": 320.65,
+   "text": "C is standing by the kitchen counter, closes the kitchen cabinet with her right hand, picks up the tea cup with her left from the countertop then turns to the left"
+  },
+  {
+   "t0": 320.65,
+   "t1": 325.65,
+   "text": "C is standing by the kitchen counter while holding the tea cup with both hands, walks towards the kitchen island counter, puts the tea cup on the countertop with both hands then turns counterclockwise"
+  },
+  {
+   "t0": 325.65,
+   "t1": 330.65,
+   "text": "C steps towards the kitchen counter, grabs a sachet on the countertop with her right hand, holds it with both hands, turns clockwise then stands while she talks to her peer"
+  },
+  {
+   "t0": 330.65,
+   "t1": 335.65,
+   "text": "C is standing in the kitchen, holding a sachet with both hands while talking to her peer, walks towards the kitchen sink, leans forward, turns counterclockwise then stands and talks to her peer"
+  },
+  {
+   "t0": 335.65,
+   "t1": 340.65,
+   "text": "C is standing in the kitchen while holding a sachet with both hands, veers to the left then stands by the kitchen island counter. C then puts the sachet down on the countertop with her right hand, grabs the spoon in the tea cup and mixes it with her right hand then holds the cup with her left hand"
+  },
+  {
+   "t0": 340.65,
+   "t1": 345.64,
+   "text": "C is standing by the kitchen island counter, holding the tea cup with her left hand while mixing the tea in the cup using the spoon in her right hand, releases her hands from the spoon and the cup then veers to the left"
+  },
+  {
+   "t0": 345.64,
+   "t1": 350.64,
+   "text": "C is walking towards the living area, leans towards the center table then touches the tumbler on the table with her left hand"
+  },
+  {
+   "t0": 350.64,
+   "t1": 355.64,
+   "text": "C is leaning towards the center table in the living area as she picks up the tumbler on the table with her left hand, straightens her back then drinks from the tumbler in her left hand. C then twists her body to the left as she talks to her peers then twists it back to the front"
+  },
+  {
+   "t0": 355.64,
+   "t1": 360.64,
+   "text": "C is standing in the living area while holding a tumbler with her left hand, steps to the right, turns counterclockwise, steps forward then puts her right hand on her waist as she talks to her peer"
+  },
+  {
+   "t0": 360.64,
+   "t1": 365.64,
+   "text": "C is standing in the living area with her right hand on her waist while drinking from the tumbler held by her left hand"
+  },
+  {
+   "t0": 365.64,
+   "t1": 370.64,
+   "text": "C is standing in the living area with her right hand on her waist while drinking from the tumbler held by her left hand. C turns clockwise, talks to her peer, leans forward as she puts the tumbler down on the center table with both hands then reaches for the TV remote on the table with her left hand"
+  },
+  {
+   "t0": 370.64,
+   "t1": 375.64,
+   "text": "C is leaning towards the center table in the living area while picking up the TV remote on the table with her left hand, holds it with both hands, straightens her back, turns clockwise and looks at the TV then looks at the remote in her hands"
+  },
+  {
+   "t0": 375.64,
+   "t1": 380.57,
+   "text": "C is standing in the living area, holding a remote with both hands as she tries to open the TV, steps forward then sits down on the sofa. C then rests her right hand with the remote on her lap while she touches her hair with her left hand"
+  },
+  {
+   "t0": 377.64,
+   "t1": 382.64,
+   "text": "C sits on the sofa in the living area with her right hand holding the TV remote control while her left hand fixes her hair and the bends her left hand on her lap"
+  },
+  {
+   "t0": 382.64,
+   "t1": 387.64,
+   "text": "C is sitting on the sofa in the living area with her right hand holding the TV remote control while her left hand is resting on her lap"
+  },
+  {
+   "t0": 387.64,
+   "t1": 392.64,
+   "text": "C is sitting on the sofa in the living area, presses the buttons of the remote control to turns on the TV using her right hand hand while her left hand is resting on her lap"
+  },
+  {
+   "t0": 392.64,
+   "t1": 397.64,
+   "text": "C is sitting on the sofa in the living area with her right hand holding the TV remote control while her left hand is resting on her lap"
+  },
+  {
+   "t0": 397.64,
+   "t1": 402.64,
+   "text": "C is sitting on the sofa in the living area with her right hand holding the TV remote control and then leans sideways to the left while her left hand is resting on her lap"
+  },
+  {
+   "t0": 402.64,
+   "t1": 407.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left while her left hand holding the TV remote control and her right hand pointing at the TV"
+  },
+  {
+   "t0": 407.63,
+   "t1": 412.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left and pressing the buttons of the TV remote control to open the TV using her right hand while her left elbow is resting on her lap"
+  },
+  {
+   "t0": 412.63,
+   "t1": 417.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left and pressing the buttons of the TV remote control to open the TV using her right hand while her left elbow is resting on her lap and then both of her hands holding the TV remote control"
+  },
+  {
+   "t0": 417.63,
+   "t1": 422.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left with her rigth hand holding the TV remote control while her left elbow is resting on her lap"
+  },
+  {
+   "t0": 422.63,
+   "t1": 427.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left and pressing the buttons of the TV remote control to change channels on the TV using her right hand while her left elbow is resting on her lap"
+  },
+  {
+   "t0": 427.63,
+   "t1": 432.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left and pressing the buttons of the TV remote control to change channels on the TV using her right hand while her left elbow is resting on her lap"
+  },
+  {
+   "t0": 432.63,
+   "t1": 437.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left and pressing the buttons of the TV remote control to change channels on the TV using her right hand while her left elbow is resting on her lap"
+  },
+  {
+   "t0": 437.63,
+   "t1": 442.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left and pressing the buttons of the TV remote control to change channels on the TV using her right hand while her left elbow is resting on her lap"
+  },
+  {
+   "t0": 442.63,
+   "t1": 447.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left and pressing the buttons of the TV remote control to change channels on the TV using her right hand while her left elbow is resting on her lap"
+  },
+  {
+   "t0": 447.63,
+   "t1": 452.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left with her left hand holding the TV remote control while her left elbow is resting on her lap and then holds the sofa using her left hand"
+  },
+  {
+   "t0": 452.63,
+   "t1": 457.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left with her left hand holding the TV remote control while her left hand holding the surface of the sofa"
+  },
+  {
+   "t0": 457.63,
+   "t1": 462.63,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left with her left hand holding the TV remote control while her left hand holding the surface of the sofa"
+  },
+  {
+   "t0": 462.63,
+   "t1": 467.56,
+   "text": "C is sitting on the sofa in the living area, leaning sideways to the left with her left hand holding the TV remote control while her left hand holding the surface of the sofa and then crosses her legs"
+  },
+  {
+   "t0": 464.63,
+   "t1": 469.62,
+   "text": "C is slightly leaning to the left while sitting on the sofa in the living room with her left hand on the sofa and with her right hand resting on her lap while holding the remote control, straightens up and slightly lifts her right hand from her lap as she crosses her left leg over her right leg, and then puts her right hand down on her lap again as she shifts her left hand on the sofa and slightly leans to the left."
+  },
+  {
+   "t0": 469.62,
+   "t1": 474.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa and with her right hand resting on her lap while holding the remote control as she waits for the app to load on the television."
+  },
+  {
+   "t0": 474.62,
+   "t1": 479.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa and with her right hand resting on her lap while holding the remote control as she waits for the app to load on the television."
+  },
+  {
+   "t0": 479.62,
+   "t1": 484.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa and with her right hand resting on her lap while holding the remote control, and then lifts her right hand from her lap as she selects something on the television using the remote control in her right hand."
+  },
+  {
+   "t0": 484.62,
+   "t1": 489.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa as she selects something on the television using the remote control in her right hand, and then rests her right hand on her lap."
+  },
+  {
+   "t0": 489.62,
+   "t1": 494.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa and with her right hand resting on her lap while holding the remote control as she waits for the app to load on the television."
+  },
+  {
+   "t0": 494.62,
+   "t1": 499.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa and with her right hand resting on her lap while holding the remote control, and then lifts her right hand from her lap as she starts browsing for what to watch on the television using the remote control in her right hand."
+  },
+  {
+   "t0": 499.62,
+   "t1": 504.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa as she browses for what to watch on the television using the remote control in her right hand, and then gestures using the remote control in her right hand while talking to her colleague."
+  },
+  {
+   "t0": 504.62,
+   "t1": 509.62,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her left hand on the sofa as she gestures and browses for what to watch on the television using the remote control in her right hand while talking to her colleague, and then straightens up."
+  },
+  {
+   "t0": 509.62,
+   "t1": 514.62,
+   "text": "C is sitting cross-legged on the sofa in the living room with her left hand on the sofa and with her right hand holding the remote control, slightly leans to the left and straightens up, and then rests her right arm on her lap as she scratches her neck with her left hand."
+  },
+  {
+   "t0": 514.62,
+   "t1": 519.62,
+   "text": "C is sitting cross-legged on the sofa in the living room with her right hand resting on her lap while holding the remote control as she gestures with her left hand, lifts her right hand from her lap while still holding the remote control as she gestures with both her hands, lowers her right hand on the sofa as she places her left hand on her knee, and then gestures with her left hand while talking to her colleague."
+  },
+  {
+   "t0": 519.62,
+   "t1": 524.62,
+   "text": "C is sitting cross-legged on the sofa in the living room with her left hand on her lap as she raises the remote control to eye level with her right hand, lowers it to chest level as she lifts her left hand from her lap, gestures with both her hands with the remote control still in her right hand, and then slightly leans to the left while talking to her colleague."
+  },
+  {
+   "t0": 524.62,
+   "t1": 529.62,
+   "text": "C is sitting cross-legged on the sofa in the living room as she straightens up while gesturing with both her hands with the remote control in her right hand, and then rests her right hand on her lap as she continues gesturing with her left hand while talking to her colleague."
+  },
+  {
+   "t0": 529.62,
+   "t1": 534.61,
+   "text": "C is sitting cross-legged on the sofa in the living room with her right hand resting on her lap while holding the remote control as she gestures with her left hand, lifts her right hand from her lap as she gestures with both her hands with the remote control still in her right hand, and then rests her right hand on her lap again as she continues gesturing with her left hand while talking to her colleague."
+  },
+  {
+   "t0": 534.61,
+   "t1": 539.61,
+   "text": "C is sitting cross-legged on the sofa in the living room with her right hand resting on her lap while holding the remote control as she gestures with her left hand, slightly removes her right hand from her lap as she gestures with both her hands with the remote control still in her right hand, and then rests her right hand on her lap again as she continues gesturing with her left hand while talking to her colleague."
+  },
+  {
+   "t0": 539.61,
+   "t1": 544.61,
+   "text": "C is sitting cross-legged on the sofa in the living room with her right hand resting on her lap while holding the remote control as she gestures with her left hand, and then lifts her right hand from her lap as she gestures with both her hands with the remote control still in her right hand while talking to her colleague."
+  },
+  {
+   "t0": 544.61,
+   "t1": 549.61,
+   "text": "C is sitting cross-legged on the sofa in the living room as she gestures with both her hands while holding the remote control with her right hand as she talks to her colleague, and then slightly leans to the left."
+  },
+  {
+   "t0": 549.61,
+   "t1": 554.61,
+   "text": "C is slightly leaning to the left while sitting cross-legged on the sofa in the living room with her right hand resting on her lap while holding the remote control as she gestures with her left hand, straightens up and slightly leans to the left again as she briefly rests her left hand on her lap, and then straightens up as she lifts both her hands from her lap and gestures with them while still holding the remote control with her right hand as she talks to her colleague."
+  },
+  {
+   "t0": 551.68,
+   "t1": 556.68,
+   "text": "C is sitting on the sofa in the living area and holding the remote control in her right hand while talking to her peer and gesturing both of her hands."
+  },
+  {
+   "t0": 556.68,
+   "t1": 561.68,
+   "text": "C is sitting on the sofa in the living area while holding a remote control in her right hand, puts  both of her arms on her lap then she looks at the kitchen."
+  },
+  {
+   "t0": 561.68,
+   "t1": 566.68,
+   "text": "C is sitting on the sofa in the living area while both arms are on her lap, holding a remote control in her right hand and looking at the kitchen."
+  },
+  {
+   "t0": 566.68,
+   "t1": 571.68,
+   "text": "C is sitting on the sofa in the living area while both arms are on her lap, holding a remote control in her right hand and looking at the kitchen."
+  },
+  {
+   "t0": 571.68,
+   "t1": 576.67,
+   "text": "C is sitting on the sofa in the living area while both arms are on her lap, holding a remote control in her right hand then gestures both of her hands while talking to her peers."
+  },
+  {
+   "t0": 576.67,
+   "t1": 581.67,
+   "text": "C is sitting on the sofa in the living area and holding a remote control in her right hand then she transfers the remote control in her left hand and then gestures both of her hands while talking with her peer."
+  },
+  {
+   "t0": 581.67,
+   "t1": 586.67,
+   "text": "C is sitting on the sofa in the living area and holding a remote control in her left hand and talking to her peer while gesturing both of her hands."
+  },
+  {
+   "t0": 586.67,
+   "t1": 591.67,
+   "text": "C is sitting on the sofa in the living area and holding a remote control in her left hand and talking to her peer while gesturing both of her hands."
+  },
+  {
+   "t0": 591.67,
+   "t1": 596.67,
+   "text": "C is sitting on the sofa in the living area and holding a remote control in both of her hands."
+  },
+  {
+   "t0": 596.67,
+   "t1": 601.67,
+   "text": "C is sitting on the sofa in the living area and holding a remote control in both of her hands."
+  },
+  {
+   "t0": 601.67,
+   "t1": 606.67,
+   "text": "C is sitting on the sofa in the living area and holding a remote control in both of her hands."
+  },
+  {
+   "t0": 606.67,
+   "t1": 611.67,
+   "text": "C is sitting on the sofa in the living area and holding a remote control in both of her hands. C then holds the remote control in  her left hand and is about to take a tumbler on the  center table using her right hand."
+  },
+  {
+   "t0": 611.67,
+   "t1": 616.67,
+   "text": "C is sitting on the sofa in the living area while holding a remote control in her left hand and takes a tumbler using her right hand then drinks on it  using the straw."
+  },
+  {
+   "t0": 616.67,
+   "t1": 621.67,
+   "text": "C is sitting on the chair in the living area  and holding a remote in her left hand while right hand is holding a tumbler."
+  },
+  {
+   "t0": 621.67,
+   "t1": 626.67,
+   "text": "C is sitting on the chair in the living area and holding a remote in her left hand while sipping on the tumbler in her right hand then she puts her right hand down."
+  },
+  {
+   "t0": 626.67,
+   "t1": 631.67,
+   "text": "C is sitting on the chair in the living area  and holding a remote in her left hand while right hand is holding a tumbler."
+  },
+  {
+   "t0": 631.67,
+   "t1": 636.66,
+   "text": "C is sitting on the chair in the living area  and holding a remote in her left hand while right hand is holding a tumbler then she raises her right hand and drinks on it."
+  },
+  {
+   "t0": 636.66,
+   "t1": 641.6,
+   "text": "C is sitting on the chair in the living area and holding a remote in her left hand while sipping on the tumbler in her right hand."
+  },
+  {
+   "t0": 638.66,
+   "t1": 643.66,
+   "text": "C is sitting on a sofa in the living area holding a tumbler with his right hand while talking to his peers"
+  },
+  {
+   "t0": 643.66,
+   "t1": 648.66,
+   "text": "C is sitting on a sofa in the living area holding a tumbler with his right hand then puts down the tumbler on the table with his right hand. C then raises both hands to fix the gear on his head with both hands while talking to his peers"
+  },
+  {
+   "t0": 648.66,
+   "t1": 653.66,
+   "text": "C is sitting on a sofa in the living area as he controls the tv with the remote on his right hand"
+  },
+  {
+   "t0": 653.66,
+   "t1": 658.66,
+   "text": "C is sitting on a sofa in the living area controlling the tv with the remote on his right hand then raises his left hand to touch his face while talking to his peer"
+  },
+  {
+   "t0": 658.66,
+   "t1": 663.66,
+   "text": "C is sitting on a sofa in the living area holding the remote on his right hand and gesticulating with his left hand while talking to his peer"
+  },
+  {
+   "t0": 663.66,
+   "t1": 668.66,
+   "text": "C is sitting on a sofa in the living area holding the remote on his right hand and gesticulating with his left hand while talking to his peers"
+  },
+  {
+   "t0": 668.66,
+   "t1": 673.66,
+   "text": "C is sitting on a sofa in the living area holding the remote on his right hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 673.66,
+   "t1": 678.66,
+   "text": "C is sitting on a sofa in the living area holding the remote on his right hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 678.66,
+   "t1": 683.66,
+   "text": "C is sitting on a sofa in the living area holding the remote on his right hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 683.66,
+   "t1": 688.66,
+   "text": "C is sitting on a sofa in the living area holding the remote on his right hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 688.66,
+   "t1": 693.66,
+   "text": "C is sitting on a sofa in the living area holding the remote on his right hand and gesticulating with both hands and then passes the remote from his right to left hand while talking to his peers"
+  },
+  {
+   "t0": 693.66,
+   "t1": 698.65,
+   "text": "C is sitting on a sofa in the living area holding the remote on his left hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 693.66,
+   "t1": 698.65,
+   "text": "C is sitting on a sofa in the living area holding the remote on his left hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 698.65,
+   "t1": 703.65,
+   "text": "C is sitting on a sofa in the living area holding the remote on his left hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 703.65,
+   "t1": 708.65,
+   "text": "C is sitting on a sofa in the living area holding the remote on his left hand and resting both hands on his lap while talking to his peers"
+  },
+  {
+   "t0": 708.65,
+   "t1": 713.65,
+   "text": "C is sitting on a sofa in the living area holding the remote on his left hand and resting both hands on his lap. C then gesticulates with his right hand while talking to his peers"
+  },
+  {
+   "t0": 713.65,
+   "t1": 718.65,
+   "text": "C is sitting on a sofa in the living area holding the remote with his left hand resting on his lap and gesticulating with his right hand while talking to his peers"
+  },
+  {
+   "t0": 718.65,
+   "t1": 723.65,
+   "text": "C is sitting on a sofa in the living area holding the remote on his left hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 723.65,
+   "t1": 728.58,
+   "text": "C is sitting on a sofa in the living area holding the remote on his left hand and gesticulating with both hands while talking to his peers"
+  },
+  {
+   "t0": 725.65,
+   "t1": 730.65,
+   "text": "C is sitting on a sofa in the living area while gesticulating with both hands and with his left hand holding the remote and while talking to his peer"
+  },
+  {
+   "t0": 730.65,
+   "t1": 735.65,
+   "text": "C is sitting on a sofa in the living area while gesticulating with both hands and with his left hand holding the remote and while talking to his peer"
+  },
+  {
+   "t0": 735.65,
+   "t1": 740.65,
+   "text": "C is sitting on a sofa in the living area while gesticulating with both hands and with his left hand holding the remote and while talking to his peer"
+  },
+  {
+   "t0": 740.65,
+   "t1": 745.65,
+   "text": "C is sitting on a sofa in the living area while gesticulating with both hands and with his left hand holding the remote and while talking to his peer"
+  },
+  {
+   "t0": 745.65,
+   "t1": 750.65,
+   "text": "C is sitting on a sofa in the living area with both hands resting on his lap while talking to his peer"
+  },
+  {
+   "t0": 750.65,
+   "t1": 755.65,
+   "text": "C is sitting on a sofa in the living area with both hands resting on his lap while talking to his peer and then gesticulates with both hands"
+  },
+  {
+   "t0": 755.65,
+   "t1": 760.64,
+   "text": "C is sitting on a sofa in the living area while gesticulating with both hands and with his left hand holding the remote and while talking to his peer"
+  },
+  {
+   "t0": 760.64,
+   "t1": 765.64,
+   "text": "C is sitting on a sofa in the living area while gesticulating with his right hand and with his left hand holding the remote and while talking to his peer"
+  },
+  {
+   "t0": 765.64,
+   "t1": 770.64,
+   "text": "C is sitting on a sofa in the living area while gesticulating with both hands and with his left hand holding the remote and while talking to his peer"
+  },
+  {
+   "t0": 770.64,
+   "t1": 775.64,
+   "text": "C is sitting on a sofa in the living area while gesticulating with his left hand holding the remote. C then passes the remote from his left to right hand"
+  },
+  {
+   "t0": 775.64,
+   "t1": 780.64,
+   "text": "C is sitting on a sofa in the living area with his right hand holding the remote and resting on his lap while his left hand is gesticulating while talking to his peer"
+  },
+  {
+   "t0": 780.64,
+   "t1": 785.64,
+   "text": "C is sitting on a sofa in the living area with his right hand holding the remote and resting on his lap while his left hand is gesticulating while talking to his peer. C then gesticulates with both hands"
+  },
+  {
+   "t0": 785.64,
+   "t1": 790.64,
+   "text": "C is sitting on a sofa in the living area  while gesticulating with both hands and with his right hand holding the remote while talking to his peer. C then puts down the remote on the table using his right hand"
+  },
+  {
+   "t0": 790.64,
+   "t1": 795.64,
+   "text": "C is sitting on a sofa in the living area while gesticulating with both hands then rests both hands down on his lap while talking to his peer"
+  },
+  {
+   "t0": 795.64,
+   "t1": 800.64,
+   "text": "C is sitting on a sofa in the living area with both hands resting on his lap while talking to his peer"
+  },
+  {
+   "t0": 800.64,
+   "t1": 805.64,
+   "text": "C is sitting on a sofa in the living area with his right hand resting on his lap as he gesticulates with his left hand while talking to his peer"
+  },
+  {
+   "t0": 805.64,
+   "t1": 810.64,
+   "text": "C is sitting on a sofa in the living area as he raises both hands to his head while talking to his peer"
+  },
+  {
+   "t0": 810.64,
+   "t1": 815.57,
+   "text": "C is sitting on a sofa in the living area with both hands holding his head and then rests down both hands on his lap while talking to his peer"
+  },
+  {
+   "t0": 812.64,
+   "t1": 817.64,
+   "text": "While in the living room, C is sitting on the sofa while her peer approaches her and adjusts the equipment on her head."
+  },
+  {
+   "t0": 817.64,
+   "t1": 822.63,
+   "text": "While in the living room, C is sitting on the sofa while her peer adjusts the equipment on her head."
+  },
+  {
+   "t0": 822.63,
+   "t1": 827.63,
+   "text": "While in the living room, C is sitting on the sofa while her peer adjusts the equipment on her head. C then places both of her hands on her head."
+  },
+  {
+   "t0": 827.63,
+   "t1": 832.63,
+   "text": "While in the living room, C is sitting on the sofa while she adjusts the equipment on her head with both of her hands. C then rests both of her hands on her lap."
+  },
+  {
+   "t0": 832.63,
+   "t1": 837.63,
+   "text": "While in the living room, C is sitting on the sofa while she is talking with her peer while both of her hands are resting on her lap."
+  },
+  {
+   "t0": 837.63,
+   "t1": 842.63,
+   "text": "While in the living room, C is sitting on the sofa while she is talking with her peer while both of her hands are resting on her lap. C then leans forward in front of the coffee table while she extends her right hand towards the tumbler."
+  },
+  {
+   "t0": 842.63,
+   "t1": 847.63,
+   "text": "While in the living room, C is sitting on the sofa while she is leaning her body in front of the coffee table as she picks up the tumbler with her right hand then straightens her body as she holds the tumbler using both of her hands."
+  },
+  {
+   "t0": 847.63,
+   "t1": 852.63,
+   "text": "While in the living room, C is sitting on the sofa while she raises the tumbler using her right hand towards her mouth as she drinks from it while her left hand is resting on her lap."
+  },
+  {
+   "t0": 852.63,
+   "t1": 857.63,
+   "text": "While in the living room, C is sitting on the sofa while she turns her body to the left while she is holding the tumbler near her mouth using her right hand as she is drinking from it while her left hand is resting on her lap."
+  },
+  {
+   "t0": 857.63,
+   "t1": 862.63,
+   "text": "While in the living room, C is sitting on the sofa while she is holding the tumbler near her mouth using her right hand as she is drinking from it while her left hand is resting on her lap."
+  },
+  {
+   "t0": 862.63,
+   "t1": 867.63,
+   "text": "While in the living room, C is sitting on the sofa while she leans back her body as she reacts and her left hand is raised towards her face while her right hand is holding the tumbler."
+  },
+  {
+   "t0": 867.63,
+   "t1": 872.63,
+   "text": "While in the living room, C is sitting on the sofa while she leans her body forward as she is holding the tumbler near her mouth using her right hand as she is drinking from it and her left hand rests on her lap."
+  },
+  {
+   "t0": 872.63,
+   "t1": 877.63,
+   "text": "While in the living room, C is sitting on the sofa while she is holding the tumbler near her mouth using her right hand as she is drinking from it while her left hand is resting on her lap. C then lowers her right hand while holding the tumbler."
+  },
+  {
+   "t0": 877.63,
+   "t1": 882.63,
+   "text": "While in the living room, C is sitting on the sofa while she is holding the tumbler using her right hand while her left hand is resting on her lap."
+  },
+  {
+   "t0": 882.63,
+   "t1": 887.62,
+   "text": "While in the living room, C is sitting on the sofa while she passes the tumbler from her right hand to her left hand and then leans her body as she picks up the remote control from the coffee table with her right hand. C then operates the television using the remote control with her right hand and her left hand is holding the tumbler."
+  },
+  {
+   "t0": 887.62,
+   "t1": 892.62,
+   "text": "While in the living room, C is sitting on the sofa while she is holding the tumbler on her left hand and her right hand is operating the television using the remote control with her right hand."
+  },
+  {
+   "t0": 892.62,
+   "t1": 897.62,
+   "text": "While in the living room, C is sitting on the sofa while she is holding the tumbler on her left hand and her right hand is operating the television using the remote control with her right hand."
+  },
+  {
+   "t0": 897.62,
+   "t1": 902.56,
+   "text": "While in the living room, C is sitting on the sofa while she is holding the tumbler on her left hand and her right hand is operating the television using the remote control with her right hand."
+  },
+  {
+   "t0": 899.62,
+   "t1": 904.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 904.62,
+   "t1": 909.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 909.62,
+   "t1": 914.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 914.62,
+   "t1": 919.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 919.62,
+   "t1": 924.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 924.62,
+   "t1": 929.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 929.62,
+   "t1": 934.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 934.62,
+   "t1": 939.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 939.62,
+   "t1": 944.62,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 944.62,
+   "t1": 949.61,
+   "text": "C is sitting on the sofa in the living area while controlling the TV with the TV remote control in her right hand and holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 949.61,
+   "t1": 954.61,
+   "text": "C is sitting on the sofa in the living area as she puts down the TV remote control on the center table with her right hand and rests her right hand on her leg while holding a bottle tumbler in her left hand"
+  },
+  {
+   "t0": 954.61,
+   "t1": 959.61,
+   "text": "C is sitting on the sofa in the living area while holding a bottle tumbler in her left hand and resting her right hand on her leg"
+  },
+  {
+   "t0": 959.61,
+   "t1": 964.61,
+   "text": "C is sitting on the sofa in the living area while holding a bottle tumbler in her left hand and resting her right hand on her leg"
+  },
+  {
+   "t0": 964.61,
+   "t1": 969.61,
+   "text": "C is sitting on the sofa in the living area while holding a bottle tumbler in her left hand and resting her right hand on her leg"
+  },
+  {
+   "t0": 969.61,
+   "t1": 974.61,
+   "text": "C is sitting on the sofa in the living area as she drinks from the tumbler using both hands and then stands up from sitting and walks towards the door"
+  },
+  {
+   "t0": 974.61,
+   "t1": 978.88,
+   "text": "C turns around to the left by the door as her peer approaches her"
+  }
+ ]
+}
