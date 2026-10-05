@@ -1,0 +1,112 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>chaining — turning a list of questions into a conversation</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:60rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:38px 0 10px;padding-top:16px;
+ border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}
+code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;
+ border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:16px 0;padding:10px 15px;border:1px solid var(--line);
+ border-left:3px solid var(--warm);background:#161b22;border-radius:5px;
+ color:#e8d9b0}
+blockquote p{margin:3px 0}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;
+ vertical-align:top}
+th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.sub{color:var(--dim);margin:0 0 22px}
+strong{color:#fff}
+
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;
+ border-bottom:1px solid #262b35}
+.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;
+ color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;
+ border:1px solid transparent;border-bottom:none;position:relative;top:1px}
+.nav a:hover{color:#c3cbd8;background:#161a22}
+.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap><div class=nav><a href='index.html'>Episodes</a><a href='deixis_v52.html'>Deixis rewrite</a><a href='em_merge_v1.html'>Action memory</a><a href='episodic_memory_design.html'>Action memory design</a><a href='object_episodic_memory_design.html'>Object memory design</a><a href='interruption_model_hoi_design.html'>Model interruption design</a><a href='action_narration_design.html'>Action narration design</a><a href='duration_activity_design.html'>Duration design</a><a href='chaining_design.html' class=on>Chaining design</a><a href='narration_7xwm28.html'>Raw narration</a></div><h1>chaining — turning a list of questions into a conversation</h1>
+<p><strong>Status:</strong> design only (2026-10-05). Nothing built. Capacity numbers are measured off <code>briefs_v4</code> tonight; the design is not.</p>
+<p><strong>Run the whole thing (once it exists):</strong> <code>bash duplex/avd/run_chain_gates.sh</code> → <code>CHAIN_CHAIN_OK</code>.</p>
+<p>This document covers <strong>episode construction</strong>, not any one skill. The five skill documents say what a good item is. This one says how 3–10 of them become something that sounds like a person talking to an assistant rather than a quiz being administered.</p>
+<p>Skill documents: <code>EPISODIC_MEMORY_DESIGN</code> · <code>OBJECT_EPISODIC_MEMORY_DESIGN</code> · <code>INTERRUPTION_MODEL_HOI_DESIGN</code> · <code>ACTION_NARRATION_DESIGN</code> · <code>DURATION_ACTIVITY_DESIGN</code>.</p>
+<hr>
+<h2>1. Two modes</h2>
+<table><thead><tr><th>mode</th><th>shape</th><th>what it measures</th></tr></thead><tbody><tr><td><strong>homogeneous</strong></td><td>3–10 turns, one skill</td><td>does the skill hold up across an episode, or drift</td></tr><tr><td><strong>heterogeneous</strong></td><td>3–10 turns, mixed skills</td><td>can the model switch tasks mid-conversation</td></tr></tbody></table>
+<p>Heterogeneous is the default because it is what makes an episode duplex. Homogeneous is a <strong>consistency test, not a realism test</strong>, and is sized accordingly — around a fifth of episodes.</p>
+<hr>
+<h2>2. Capacity — turn count follows clip length</h2>
+<p>Clips are not one length, and most of the corpus is short.</p>
+<table><thead><tr><th>clip length</th><th>clips</th><th>avg families available</th><th>all 5 available</th><th>turns that fit</th></tr></thead><tbody><tr><td>120 s</td><td>67</td><td>3.4</td><td>11</td><td>~3</td></tr><tr><td>180 s</td><td><strong>206</strong></td><td>3.7</td><td>37</td><td>~6</td></tr><tr><td>300 s</td><td>12</td><td>4.8</td><td>10</td><td>~10</td></tr><tr><td>420 s</td><td>9</td><td>4.9</td><td>8</td><td>~15</td></tr><tr><td>600 s</td><td><strong>183</strong></td><td>4.7</td><td>138</td><td>~22</td></tr></tbody></table>
+<p>Capacity assumes 25 s of spacing and no turn before 45 s, because the memory and HOI families need a lead.</p>
+<p><strong>57% of the corpus is 180 s or shorter.</strong> A flat 3–10 target would either starve the long clips or be impossible on the short ones, so the turn count is <strong>set from the clip length</strong>: long clips carry the 8–10 turn episodes, short ones carry 3–4.</p>
+<p>Heterogeneous material is plentiful — <strong>294 of 477 clips offer all five families</strong>, and 138 of those are the 600 s clips, which are also the ones with room.</p>
+<p>Homogeneous is uneven and the packer must know it:</p>
+<table><thead><tr><th>family</th><th>clips with ≥3</th><th>≥5</th><th>≥8</th></tr></thead><tbody><tr><td>HOI / proactive</td><td>373</td><td>324</td><td>274</td></tr><tr><td>memory callbacks</td><td>349</td><td>271</td><td>165</td></tr><tr><td>object memory</td><td>236</td><td>143</td><td>72</td></tr><tr><td>pick triggers</td><td>213</td><td>153</td><td>77</td></tr></tbody></table>
+<p>Duration is the worst case: a clip holds a handful of meaningful activities, so a homogeneous duration episode is mostly not available. It appears in heterogeneous episodes only.</p>
+<hr>
+<h2>3. Build on the pools that already exist</h2>
+<p>The briefs already carry most of what a packer needs. This is selection work, not extraction work.</p>
+<table><thead><tr><th>field</th><th>total</th><th>used by</th></tr></thead><tbody><tr><td><code>proactive_candidates</code></td><td><strong>3,764</strong> (<code>arm_s</code>, <code>fire_s</code>, <code>fire_evidence</code>)</td><td>HOI</td></tr><tr><td><code>proactive_no_fire</code></td><td>~700 (<code>correct_behaviour: silence…</code>)</td><td>HOI negatives</td></tr><tr><td><code>memory_callback_candidates</code></td><td>median 5/clip</td><td>object + long-horizon memory</td></tr><tr><td><code>attention_shifts</code></td><td>median 1/clip</td><td>attention, referent setup</td></tr><tr><td><code>speech</code> / <code>sounds</code></td><td>median 8 / 15 per clip</td><td>placement, audio-only items</td></tr><tr><td><code>skills_available</code></td><td>7 tags per clip</td><td>eligibility</td></tr></tbody></table>
+<p>Proactive breaks down as P3_object_reentry 3,127 · P4_partner_speaks 283 · P2_container_revisit 219 · P1_appliance_done 135.</p>
+<p><strong>Caution, not yet discharged:</strong> <code>arm_s</code> / <code>fire_s</code> have never been checked against the video. They are treated as <em>candidates</em>, and every one that ships goes through the visual verification in §7 first. A pool that was generated by a script and is validated by reading the same script&#x27;s output is not validated at all.</p>
+<hr>
+<h2>4. Ordering is a constraint, not a preference</h2>
+<p>Packing is constraint satisfaction over a timeline, not sampling:</p>
+<ul><li>an HOI standing instruction must come <strong>before</strong> its trigger, with a lead</li><li>a duration question must come <strong>after</strong> the activity ends</li><li>a memory question must come <strong>after</strong> the event it asks about</li><li>no turn may read material later than its own anchor</li><li>two turns may not occupy overlapping airtime</li></ul>
+<p>Build the packer as a timeline with reservations from the start. Retrofitting ordering onto a sampler produces episodes that are individually valid and collectively impossible.</p>
+<hr>
+<h2>5. Cross-turn leakage — the one that ruins it silently</h2>
+<p>In a multi-turn episode the model sees the earlier turns.</p>
+<blockquote><p>Turn 3 — <em>&quot;Where did I put the cup?&quot;</em> → <strong>&quot;On the table.&quot;</strong> Turn 7 — <em>&quot;What was I doing four minutes ago?&quot;</em> → <strong>&quot;Putting the cup on the table.&quot;</strong></p></blockquote>
+<p>Turn 7 is now free. It is answerable from the transcript with the video switched off, and nothing about the item looks wrong.</p>
+<p>Today this barely bites because episodes are sparse. At 8–10 turns it bites constantly, and it bites <strong>silently</strong> — the item passes every skill gate, the model scores well, and the score means nothing.</p>
+<p><strong>The gate:</strong> a text-only model is shown turns 1…N−1 and the question of turn N, with no video and no narration. Anything it answers correctly is leaked, and that turn is dropped or re-sited.</p>
+<p>This is the main new engineering in episode construction, and it belongs to no single skill, which is why it lives here.</p>
+<h3>5.1 Leakage runs the other way too</h3>
+<p>Turn 3 can also leak <strong>backwards</strong> into turn 7&#x27;s premise: once the model has been told the cup is on the table, a later HOI item <em>&quot;tell me when I pick up the cup&quot;</em> has had its referent located for free. The gate runs on every turn against every earlier turn, not on a sample.</p>
+<hr>
+<h2>6. Making it a conversation, not a list</h2>
+<p>A correct episode can still read like a form. These are the devices that make it a chain. Each one is <strong>optional per episode and counted after the fact</strong>, never assigned by position.</p>
+<table><thead><tr><th>device</th><th>what happens</th><th>why it is worth having</th></tr></thead><tbody><tr><td><strong>model interruption</strong></td><td>the model cuts in unprompted at a trigger</td><td>the HOI family; the only model-initiated turn</td></tr><tr><td><strong>wearer interruption</strong></td><td>the wearer cuts the model off mid-answer</td><td>the model must stop, not finish its sentence</td></tr><tr><td><strong>backchannel</strong></td><td><em>&quot;mm-hm&quot;</em>, <em>&quot;yeah&quot;</em>, <em>&quot;right&quot;</em></td><td>not a turn; must not be answered</td></tr><tr><td><strong>counter-question</strong></td><td>the model asks before answering</td><td>tests knowing when it cannot answer yet</td></tr><tr><td><strong>repair</strong></td><td><em>&quot;no, the other one&quot;</em></td><td>the model must revise, not restart</td></tr><tr><td><strong>ellipsis / follow-up</strong></td><td><em>&quot;and the other one?&quot;</em></td><td>the only place a bare pointer is legal</td></tr><tr><td><strong>abandonment</strong></td><td>the wearer starts and drops a question</td><td>the model must not answer the fragment</td></tr><tr><td><strong>topic return</strong></td><td>back to an earlier thread after a detour</td><td>tests holding a thread across turns</td></tr></tbody></table>
+<h3>6.1 Backchannel is not a turn</h3>
+<p><em>&quot;mm-hm&quot;</em> while the model is talking is <strong>not</strong> a request. A model that treats it as one produces a non-sequitur, and a scorer that treats it as a turn marks the correct silence as a miss.</p>
+<p>So backchannels are authored with <code>scored: false</code> and an explicit <code>expected: no_response</code>. They are the cheapest realism device available and they also catch a real failure.</p>
+<h3>6.2 Counter-question needs an authored reply, and the reply must not leak</h3>
+<p>If the model is expected to ask <em>&quot;the blue folder or the grey one?&quot;</em>, the wearer&#x27;s answer has to exist, and that answer must not contain the thing the model is about to be scored on. A counter-question whose reply gives away the target is a two-turn way of handing over the answer.</p>
+<p>Counter-questions are only sited where the question is <strong>genuinely ambiguous</strong> — two candidate referents both live at that moment. Manufacturing ambiguity to create the device produces a turn that a good model is right to skip.</p>
+<h3>6.3 Repair must be a real correction</h3>
+<p><em>&quot;No, I meant the one in the kitchen&quot;</em> requires that the model&#x27;s first answer was wrong <strong>for a reason present in the clip</strong> — two candidates, and it picked the other one. A repair scripted onto a correct first answer teaches the model to abandon right answers when pushed.</p>
+<h3>6.4 Ellipsis is the one legal bare pointer</h3>
+<p>Every skill document forbids <em>&quot;where did I put it?&quot;</em> with no referent. In a chain, <em>&quot;and the other one?&quot;</em> immediately after a resolved turn is legal and is the point of having chains. The rule is adjacency: the referent must be resolvable from the <strong>immediately preceding</strong> exchange, not from four turns back.</p>
+<h3>6.5 <code>cohesion</code> must be derived, never assigned</h3>
+<p>The turn schema already has a <code>cohesion</code> field. It has previously been set by <code>idx % 6</code> — a value written by a counter and then validated by a gate that reads the same value back. That is not a measurement.</p>
+<p><code>cohesion</code> is <strong>computed from the text relationship</strong> between a turn and its predecessor, and the gate recomputes it from the text rather than reading the field. Same rule for <code>mode</code>, <code>renderer</code>, and any other field a builder writes and a checker reads.</p>
+<hr>
+<h2>7. Visual verification</h2>
+<p><strong>Every shipped turn carries a visual verdict, and no turn ships on narration or metadata alone.</strong> The skill documents each specify what their own check is; this document specifies the three that are chain-level.</p>
+<ol><li><strong>Candidate pools are verified, not trusted.</strong> <code>proactive_candidates</code>, <code>memory_callback_candidates</code> and <code>attention_shifts</code> were produced by scripts. Every one that becomes a turn gets its claim checked against frames — the object is where the pool says, at the time the pool says.</li><li><strong>Anchors are verified at the frame.</strong> A turn anchored at <em>t</em> is checked on the frames at <em>t</em>, not on the narration span containing <em>t</em>. Narration spans are 5 s and the anchor is a moment.</li><li><strong>The episode&#x27;s whole timeline is checked once</strong>, not turn by turn in isolation: a frame pass that confirms turn 3&#x27;s object is absent must not contradict turn 7&#x27;s premise that it is present.</li></ol>
+<p>Where a visual check and the narration disagree, the turn is <strong>quarantined with the disagreement recorded</strong>. It is not resolved by preferring one source. Disagreement is information about the data, and overwriting it destroys the only signal that the pool is unreliable.</p>
+<hr>
+<h2>8. Mix targets are counted, never asserted</h2>
+<p>The packer aims at a mix of skills, a mix of devices, and for homogeneous episodes a mix of <strong>arms within the skill</strong> (present / absent / decline / negative). Eight turns of one skill with one arm teaches the answer shape; by turn six the model can answer without listening.</p>
+<p>All of these are <strong>measured on the built corpus and reported</strong>. A target is an intention. The realised mix is the fact, and the two are routinely different.</p>
+<hr>
+<h2>9. Pipeline</h2>
+<table><thead><tr><th>#</th><th>script</th><th>token</th><th>does</th></tr></thead><tbody><tr><td>1</td><td><code>chain_pools.py</code></td><td><code>CPL_OK</code></td><td>load candidate pools; mark unverified</td></tr><tr><td>2</td><td><code>chain_pack.py</code></td><td><code>CPK_OK</code></td><td>timeline packing, ordering, turn count by length</td></tr><tr><td>3</td><td><code>test_chain_pack.py</code></td><td><code>CPK_TEST_OK</code></td><td>fixture pairs: ordering, overlap, capacity</td></tr><tr><td>4</td><td><code>chain_visual.py</code></td><td><code>CVS_OK</code></td><td>§7 verification of every turn</td></tr><tr><td>5</td><td><code>chain_leak.py</code></td><td><code>CLK_OK</code></td><td>§5 text-only leak gate, every pair</td></tr><tr><td>6</td><td><code>test_chain_leak.py</code></td><td><code>CLK_TEST_OK</code></td><td>fixture pair: a known leak must trip it</td></tr><tr><td>7</td><td><code>chain_devices.py</code></td><td><code>CDV_OK</code></td><td>backchannel, counter-question, repair, ellipsis</td></tr><tr><td>8</td><td><code>chain_mix.py</code></td><td><code>CMX_OK</code></td><td>realised mix, reported not asserted</td></tr><tr><td>9</td><td><code>chain_audit.py</code></td><td><code>CHAIN_AUDIT_OK</code></td><td>40-episode hand audit</td></tr></tbody></table>
+<hr>
+<h2>10. Checklist</h2>
+<ul><li>[ ] <code>CHAIN-01</code> Turn count is set from clip length, not a constant.</li><li>[ ] <code>CHAIN-02</code> Every ordering constraint in §4 holds for every turn.</li><li>[ ] <code>CHAIN-03</code> No two turns occupy overlapping airtime.</li><li>[ ] <code>CHAIN-04</code> No turn reads material later than its own anchor.</li><li>[ ] <code>CHAIN-05</code> The leak gate ran on <strong>every</strong> (earlier, later) turn pair, not a sample, and every leaked turn was dropped or re-sited.</li><li>[ ] <code>CHAIN-06</code> Every turn carries a visual verdict (§7); none shipped on narration or pool metadata alone.</li><li>[ ] <code>CHAIN-07</code> Pool claims (<code>arm_s</code>, <code>fire_s</code>, <code>last_seen</code>) were checked against frames, not trusted.</li><li>[ ] <code>CHAIN-08</code> Visual/narration disagreements are quarantined with the disagreement recorded, not resolved.</li><li>[ ] <code>CHAIN-09</code> Backchannels are <code>scored: false</code> with `expected: no_response`.</li><li>[ ] <code>CHAIN-10</code> Counter-questions sit on genuine ambiguity, and the authored reply does not contain the scored answer.</li><li>[ ] <code>CHAIN-11</code> Repairs follow a first answer that was wrong for a reason present in the clip.</li><li>[ ] <code>CHAIN-12</code> Bare pointers appear only as ellipsis resolvable from the immediately preceding exchange.</li><li>[ ] <code>CHAIN-13</code> <code>cohesion</code>, <code>mode</code> and every other builder-written field are recomputed by their gate from source, never read back.</li><li>[ ] <code>CHAIN-14</code> The realised skill / device / arm mix is measured and reported, not asserted.</li><li>[ ] <code>CHAIN-15</code> Homogeneous episodes vary the arm within the skill.</li></ul>
+<hr>
+<h2>11. Open</h2>
+<ol><li>The leak gate&#x27;s text-only model and threshold are unchosen. Too strong a model drops valid turns; too weak a one passes leaks.</li><li>How many turns survive the leak gate at 8–10 per episode is unknown and may be the binding constraint on episode length.</li><li>Device rates — how often a backchannel or a repair should appear — are unset, and should come from looking at real assistant conversations rather than from a number chosen here.</li><li>Whether the 25 s spacing in §2 is right. It was assumed, not measured.</li></ol>
+<h3>Hard rules carried in</h3>
+<ul><li>Never delete. Quarantine with a written reason.</li><li>Heavy work via <code>srun</code>/<code>sbatch</code>, never the login node.</li><li>Never render with CSM.</li><li>Assistant turns stay text; only wearer turns are rendered.</li><li>A guard needs a fixture <strong>pair</strong>.</li><li>A field written by a builder may not be validated by reading that field.</li></ul></div></body></html>

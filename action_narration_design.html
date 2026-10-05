@@ -1,0 +1,129 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>action_narration — &quot;what am I doing right now?&quot;</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:60rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:38px 0 10px;padding-top:16px;
+ border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}
+code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;
+ border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:16px 0;padding:10px 15px;border:1px solid var(--line);
+ border-left:3px solid var(--warm);background:#161b22;border-radius:5px;
+ color:#e8d9b0}
+blockquote p{margin:3px 0}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;
+ vertical-align:top}
+th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.sub{color:var(--dim);margin:0 0 22px}
+strong{color:#fff}
+
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;
+ border-bottom:1px solid #262b35}
+.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;
+ color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;
+ border:1px solid transparent;border-bottom:none;position:relative;top:1px}
+.nav a:hover{color:#c3cbd8;background:#161a22}
+.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap><div class=nav><a href='index.html'>Episodes</a><a href='deixis_v52.html'>Deixis rewrite</a><a href='em_merge_v1.html'>Action memory</a><a href='episodic_memory_design.html'>Action memory design</a><a href='object_episodic_memory_design.html'>Object memory design</a><a href='interruption_model_hoi_design.html'>Model interruption design</a><a href='action_narration_design.html' class=on>Action narration design</a><a href='duration_activity_design.html'>Duration design</a><a href='chaining_design.html'>Chaining design</a><a href='narration_7xwm28.html'>Raw narration</a></div><h1>action_narration — &quot;what am I doing right now?&quot;</h1>
+<p><strong>Status:</strong> design only (2026-10-05). Nothing built. Counts below are measured off <code>briefs_v4</code> tonight; the design is not.</p>
+<p><strong>Run the whole thing (once it exists):</strong> <code>bash duplex/avd/run_actnar_gates.sh</code> → <code>ACTNAR_CHAIN_OK</code>.</p>
+<p><strong>Family string:</strong> <code>action_narration</code>.</p>
+<p>Sister document: <code>docs/DURATION_ACTIVITY_DESIGN.md</code>. The two share one component — the <strong>LLM activity segmenter</strong> — which is specified there, in full, once. This document consumes it.</p>
+<hr>
+<h2>1. What the question is for</h2>
+<p>The wearer asks the model what they are doing.</p>
+<blockquote><p><em>&quot;Hey — what am I doing right now?&quot;</em> <strong>&quot;You&#x27;re making a cup of tea.&quot;</strong></p></blockquote>
+<p>It sounds trivial and in its naive form it is (§6). What makes it worth building is that it forces a decision no other family forces: <strong>at what level of description does the model answer, and as of which second.</strong></p>
+<hr>
+<h2>2. The data</h2>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>clips with narration</td><td>477</td></tr><tr><td>action spans</td><td>34,208</td></tr><tr><td>span length</td><td>5.0 s, uniform</td></tr><tr><td>narration coverage of the clip</td><td>~100%, contiguous</td></tr><tr><td>spans with no posture word</td><td>12.3%</td></tr></tbody></table>
+<p>Ground truth for <em>something</em> is therefore free. Ground truth for the right thing is not — see §4.</p>
+<h3>2.1 121 broken spans, quarantine before use</h3>
+<p><strong>121 action spans have an end at or before their start</strong>, including negative times: <code>[2.2, -0.3]</code>, <code>[403.5, 400.7]</code>. Both this family and <code>duration_activity</code> index off this grid.</p>
+<p>They are <strong>quarantined with the reason written down, never deleted</strong>. A builder that silently skips a malformed span produces a clip with a hole in its timeline and no record that the hole is there.</p>
+<hr>
+<h2>3. When &quot;now&quot; is — anchor at the end of the question</h2>
+<p>The question takes about two seconds to say. The activity can change inside those two seconds. So &quot;now&quot; has to be defined, and the owner&#x27;s instinct is to count from where the question <strong>ends</strong>.</p>
+<p>That is right, for two reasons: it is the first moment the model has heard the whole question, and it is the only anchor that is causal. Anchoring at the question&#x27;s <em>start</em> asks the model to answer using a second it had not finished listening through.</p>
+<p><strong>And it matters more than it looks.</strong> Measured over every adjacent pair of 5-second spans in the corpus:</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>median content-word overlap between neighbouring spans</td><td>0.44</td></tr><tr><td>pairs sharing <strong>less than half</strong> their content words</td><td><strong>55%</strong> (18,515 of 33,731)</td></tr></tbody></table>
+<p>The description genuinely changes every few seconds. Picking the wrong 5-second block really does change the answer.</p>
+<h3>3.1 The obvious guard is vacuous, so use a different one</h3>
+<p>The instinct is &quot;don&#x27;t place a question near a span boundary&quot;. The spans are a <strong>uniform 5 s grid</strong>, so every possible anchor is within 2.5 s of a boundary. That guard rejects nothing, or everything, depending on the threshold — and either way it is not doing what it says.</p>
+<p>The guard that works is on the <strong>answer side</strong>:</p>
+<blockquote><p>An answer is correct if it matches the span containing the question end <strong>or</strong> the span immediately before it.</p></blockquote>
+<p>Those two are genuinely ambiguous to a person too. A model is not wrong for describing the thing that was happening one second earlier.</p>
+<p>Placement is still rejected in one case: when the question end lands within 1 s of a boundary <strong>and</strong> the two neighbouring spans describe different activities. There the item has no defensible single answer and should not exist.</p>
+<hr>
+<h2>4. The level of description — the central problem</h2>
+<p>Narration is micro-motion:</p>
+<blockquote><p><em>&quot;C is tiptoeing with both her feet while standing by the kitchen countertop as she pushes a jar container in the cupboard…&quot;</em></p></blockquote>
+<p>A person asked what they are doing says <strong>&quot;making tea.&quot;</strong> Three levels are available and only one of them is the answer:</p>
+<table><thead><tr><th>level</th><th>example</th><th>source</th></tr></thead><tbody><tr><td>micro-motion</td><td><em>&quot;pushing a jar into the cupboard&quot;</em></td><td>narration, verbatim</td></tr><tr><td><strong>activity</strong></td><td><em>&quot;making a cup of tea&quot;</em></td><td><strong>LLM segmenter</strong></td></tr><tr><td>purpose</td><td><em>&quot;getting breakfast ready before work&quot;</em></td><td>inferred, often unknowable</td></tr></tbody></table>
+<p><strong>Ship the activity level.</strong> Micro-motion is what the data says and not what anybody asks for; purpose is frequently not recoverable from the clip and would be invented.</p>
+<p>This is the whole reason the LLM segmenter exists, and it is the main cost of this family. It is specified in <code>docs/DURATION_ACTIVITY_DESIGN.md</code> §4.</p>
+<h3>4.1 A failure worth recording: word-overlap segmentation does not work</h3>
+<p>Before reaching for an LLM, activity segments were derived cheaply, by merging neighbouring spans that shared content words. It fails, and it is worth knowing how it fails.</p>
+<p>The themes it produced are posture word-soup, not activities:</p>
+<blockquote><p><code>arms clasped lap leans forward backrest couch living floor pillow</code></p></blockquote>
+<p>One genuine activity did surface (<code>arcade button chair game joystick</code>), but the common theme words across the whole run were <em>living, forward, holding, area, leans, resting, arms, bends</em> — body-pose vocabulary, because that is what the narration is mostly made of. Stripping a posture stop-list first did not save it.</p>
+<p>At three merge thresholds the method gave 588–1,184 &quot;meaningful&quot; segments with a median around 67 s. Those numbers are <strong>not</strong> an estimate of what the LLM segmenter will produce; they are the measurements of a method that was rejected. They are recorded so nobody re-derives them and thinks the problem is solved.</p>
+<hr>
+<h2>5. What the question and answer look like</h2>
+<p><strong>Question</strong> — short, spoken, no anchor, no object named:</p>
+<blockquote><p><em>&quot;What am I doing right now?&quot;</em> <em>&quot;Hey, remind me what I&#x27;m in the middle of.&quot;</em> <em>&quot;What&#x27;s going on — what am I doing?&quot;</em></p></blockquote>
+<p>Wording varies, intent preserved. A guard fails the build if any single phrasing exceeds a fifth of the family.</p>
+<p><strong>Answer</strong> — second person, one clause, present continuous:</p>
+<blockquote><p><strong>&quot;You&#x27;re making a cup of tea.&quot;</strong> <strong>&quot;You&#x27;re folding laundry on the landing.&quot;</strong></p></blockquote>
+<p>Rules:</p>
+<ul><li><strong>Second person.</strong> The narration is third person about &quot;C&quot; and must be</li></ul>
+<p>turned around. A key that says <em>&quot;C is washing a plate&quot;</em> is not an answer to <em>&quot;what am I doing&quot;</em>.</p>
+<ul><li><strong>One activity.</strong> Narration often chains with <em>while</em>. Where two are</li></ul>
+<p>genuinely concurrent, the key holds <strong>both as an accepted set</strong> and either scores.</p>
+<ul><li><strong>No timestamp, no duration.</strong> Duration belongs to the sister family.</li><li><strong>Nothing after the question end.</strong> The same no-future rule as the memory</li></ul>
+<p>families.</p>
+<hr>
+<h2>6. Triviality, and the three hard conditions</h2>
+<p>A single frame at the question moment answers most of these. That makes the plain arm a <strong>captioning task wearing a duplex task&#x27;s clothes</strong>. It is still worth having — as a floor that calibrates the harder families — but it should be labelled as a floor and not counted as evidence of anything else.</p>
+<p>Three conditions make items that are not solvable from one frame. Each becomes a flag on the item so the two populations can be scored apart:</p>
+<ol><li><strong><code>hands_offscreen</code></strong> — the manipulation is out of view at the anchor, so the activity is only recoverable from what came before.</li><li><strong><code>audio_only</code></strong> — the activity is identified by sound (a kettle, a tap, a conversation) rather than by what is visible.</li><li><strong><code>purpose</code></strong> — the question asks <em>why</em> rather than <em>what</em>. Only built where the narration or speech licenses the purpose; otherwise it is invention.</li></ol>
+<p>Expect these to cut the size hard. That is the correct trade: a small arm that measures something beats a large arm that measures a captioner.</p>
+<hr>
+<h2>7. Visual verification</h2>
+<p><strong>The answer in this family is produced without a frame ever being opened.</strong> The segmenter reads narration text (<code>DURATION_ACTIVITY_DESIGN.md</code> §4.4), the anchor is an index into a text grid, and the accepted key is two text spans. That is the gap this section closes, and it is a larger gap here than in the memory families, because there the narration at least proposed something a strip was then cut around.</p>
+<p><strong>Every shipped answer is confirmed at the anchor frame.</strong> The activity named in the key must be the activity visible at the second the question ends. A mismatch is not softened into <code>weak</code>; the item does not ship and the reading is kept.</p>
+<h3>7.1 The three hard flags are visual claims, and two of them are double</h3>
+<p><code>hands_offscreen</code> is a statement about pixels and nothing else. It cannot be assigned from the narration, which describes the hands whether or not the camera can see them.</p>
+<p><code>audio_only</code> is <strong>two</strong> claims: the sound identifies the activity <strong>and</strong> the pixels do not. Checking only the first half ships items that a frame answers trivially, which is exactly the population this flag exists to exclude. Both halves are checked, and the item carries which frames were looked at.</p>
+<p><code>purpose</code> ships only where narration or speech licenses it (§6). Vision can refute a purpose; it can rarely confirm one. So vision is used here as a veto, not as a source.</p>
+<h3>7.2 The boundary rejection in §3.1 needs frames</h3>
+<p>The rule rejects a placement when the question end lands within 1 s of a boundary <strong>and the two neighbouring spans describe different activities</strong>. &quot;Describe different activities&quot; is currently a text comparison on a corpus where 55% of adjacent spans already share less than half their words — the text will say <em>different</em> constantly. Whether the activity actually changed is a question about the frames either side, and it is settled there.</p>
+<h3>7.3 Control and disagreement</h3>
+<p>The verifier must be shown finding the activity on frames where the activity is known present before any &quot;not visible&quot; verdict is believed — otherwise a silent detector manufactures <code>hands_offscreen</code> items at will. Where narration and frames disagree, the item is quarantined with the disagreement written down, never deleted and never repaired into agreement.</p>
+<hr>
+<h2>8. Scoring</h2>
+<p>The answer is free text, so there are two layers:</p>
+<ol><li><strong>Automatic</strong> — a canonical <code>(verb, object)</code> pair is extracted from the key and from the model&#x27;s answer, and scored as a pair. Cheap, runs on every item, catches the gross failures.</li><li><strong>Judge</strong> — a blind rubric pass on the full sentence, for phrasing and for the cases where the pair is right but the sentence is wrong.</li></ol>
+<p>Both are reported. The pair score alone rewards keyword emission; the judge alone is not reproducible across runs.</p>
+<p><strong>Report the two populations separately</strong>: plain items, and items carrying any of the three hard flags. A single blended number hides whether the model can do anything beyond captioning.</p>
+<hr>
+<h2>9. Pipeline</h2>
+<table><thead><tr><th>#</th><th>script</th><th>token</th><th>does</th></tr></thead><tbody><tr><td>0</td><td><code>activity_segments.py</code></td><td><code>ASG_OK</code></td><td><strong>shared</strong> — LLM activity segments (spec in the duration doc)</td></tr><tr><td>1</td><td><code>actnar_spans.py</code></td><td><code>ANS_OK</code></td><td>quarantine the 121 broken spans; build the clean grid</td></tr><tr><td>2</td><td><code>actnar_place.py</code></td><td><code>ANP_OK</code></td><td>site questions, apply the boundary rule (§3.1)</td></tr><tr><td>3</td><td><code>test_actnar_place.py</code></td><td><code>ANP_TEST_OK</code></td><td>fixture pairs for the boundary and no-future rules</td></tr><tr><td>4</td><td><code>actnar_flags.py</code></td><td><code>ANF_OK</code></td><td>hands-offscreen / audio-only / purpose flags</td></tr><tr><td>5</td><td><code>actnar_qa.py</code></td><td><code>ANQ_OK</code></td><td>paraphrased questions, second-person answers, accepted sets</td></tr><tr><td>6</td><td><code>actnar_score.py</code></td><td><code>ANSC_OK</code></td><td>pair score + judge, reported per population</td></tr><tr><td>7</td><td><code>actnar_audit.py</code></td><td><code>ACTNAR_AUDIT_OK</code></td><td>40-item hand audit</td></tr></tbody></table>
+<hr>
+<h2>10. Checklist</h2>
+<ul><li>[ ] <code>ACTNAR-01</code> The 121 broken spans are quarantined with a written reason, not dropped.</li><li>[ ] <code>ACTNAR-02</code> The anchor is the <strong>end</strong> of the question.</li><li>[ ] <code>ACTNAR-03</code> The accepted key is the anchor span <strong>or</strong> the one before it.</li><li>[ ] <code>ACTNAR-04</code> Placements within 1 s of a boundary between two <em>different</em> activities are rejected.</li><li>[ ] <code>ACTNAR-05</code> The answer is at <strong>activity</strong> level, from the segmenter — not micro-motion, not invented purpose.</li><li>[ ] <code>ACTNAR-06</code> The answer is second person.</li><li>[ ] <code>ACTNAR-07</code> Concurrent activities are held as an accepted set, not forced to one.</li><li>[ ] <code>ACTNAR-08</code> Nothing in question or answer refers past the anchor.</li><li>[ ] <code>ACTNAR-09</code> No single phrasing exceeds a fifth of the family.</li><li>[ ] <code>ACTNAR-10</code> Plain and hard-flagged items are scored and reported <strong>separately</strong>.</li><li>[ ] <code>ACTNAR-11</code> The named activity was confirmed at the <strong>anchor frame</strong>, not only in the narration text.</li><li>[ ] <code>ACTNAR-12</code> <code>hands_offscreen</code> was assigned from frames, never from text.</li><li>[ ] <code>ACTNAR-13</code> <code>audio_only</code> items cleared <strong>both</strong> halves: the sound identifies the activity and the pixels do not.</li><li>[ ] <code>ACTNAR-14</code> Near-boundary rejections were decided at the frames either side, not by word overlap between two spans.</li><li>[ ] <code>ACTNAR-15</code> The verifier passed a control on frames where the activity is known visible, before any &quot;not visible&quot; verdict was believed.</li><li>[ ] <code>ACTNAR-16</code> Narration/vision disagreements are quarantined with the reading written down.</li></ul>
+<hr>
+<h2>11. Open</h2>
+<ol><li>The segmenter does not exist. Everything at activity level waits on it.</li><li>How many items survive each hard flag is unmeasured, because the flags need the segmenter and a vision pass.</li><li>Whether the &quot;anchor span or the one before&quot; rule matches human judgement is untested. A small hand audit should settle it before the family is built on top of it.</li></ol>
+<h3>Hard rules carried in</h3>
+<ul><li>Never delete. Quarantine with a written reason.</li><li>Heavy work via <code>srun</code>/<code>sbatch</code>, never the login node.</li><li>Never render with CSM.</li><li>A guard needs a fixture <strong>pair</strong>.</li><li>Verify claims against disk before recording them as fact. §4.1 is</li></ul>
+<p>tonight&#x27;s reminder.</p></div></body></html>

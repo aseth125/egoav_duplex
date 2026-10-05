@@ -1,0 +1,159 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>interruption_model_hoi — the model has to speak first</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:60rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:38px 0 10px;padding-top:16px;
+ border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}
+code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;
+ border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:16px 0;padding:10px 15px;border:1px solid var(--line);
+ border-left:3px solid var(--warm);background:#161b22;border-radius:5px;
+ color:#e8d9b0}
+blockquote p{margin:3px 0}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;
+ vertical-align:top}
+th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.sub{color:var(--dim);margin:0 0 22px}
+strong{color:#fff}
+
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;
+ border-bottom:1px solid #262b35}
+.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;
+ color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;
+ border:1px solid transparent;border-bottom:none;position:relative;top:1px}
+.nav a:hover{color:#c3cbd8;background:#161a22}
+.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap><div class=nav><a href='index.html'>Episodes</a><a href='deixis_v52.html'>Deixis rewrite</a><a href='em_merge_v1.html'>Action memory</a><a href='episodic_memory_design.html'>Action memory design</a><a href='object_episodic_memory_design.html'>Object memory design</a><a href='interruption_model_hoi_design.html' class=on>Model interruption design</a><a href='action_narration_design.html'>Action narration design</a><a href='duration_activity_design.html'>Duration design</a><a href='chaining_design.html'>Chaining design</a><a href='narration_7xwm28.html'>Raw narration</a></div><h1>interruption_model_hoi — the model has to speak first</h1>
+<p><strong>Status:</strong> design only (2026-10-05). Nothing is built. The counts below are measured off <code>briefs_v4</code> and the Nymeria tracks tonight; the design is not.</p>
+<p><strong>Run the whole thing (once it exists):</strong> <code>bash duplex/avd/run_hoi_gates.sh</code> → <code>HOI_CHAIN_OK</code>.</p>
+<p><strong>Family string:</strong> <code>interruption_model_hoi</code>.</p>
+<p>Sisters: <code>docs/EPISODIC_MEMORY_DESIGN.md</code> (action memory), <code>docs/OBJECT_EPISODIC_MEMORY_DESIGN.md</code> (object memory). This document borrows most of its machinery from the object one and inverts the time axis.</p>
+<hr>
+<h2>1. What this family is for</h2>
+<p>The wearer leaves a <strong>standing instruction</strong>, then forgets about it. Later the thing happens, and the model has to <strong>cut in on its own</strong>.</p>
+<blockquote><p><em>&quot;Remind me when I pick up my keys.&quot;</em> … 90 seconds of unrelated activity … <strong>&quot;You&#x27;ve just picked up the keys.&quot;</strong></p></blockquote>
+<p>Every other family in EgoDuplex <strong>answers</strong>. This is the only one where the model has to <strong>start a turn</strong>. That is the whole point of it, and it is why the family is named for the interruption rather than for the reminder.</p>
+<p>Three properties make it a real test:</p>
+<ol><li><strong>The trigger is in the future at instruction time.</strong> The model cannot answer from what it has already seen; it has to keep watching.</li><li><strong>The scored thing is a moment, not a sentence.</strong> Speaking the right words at the wrong second is a failure.</li><li><strong>Sometimes the trigger never comes</strong>, and the correct behaviour is to say nothing for the rest of the episode.</li></ol>
+<p>Property 3 is the one that stops the family being free. Without it a model that fires every ten seconds is perfect.</p>
+<hr>
+<h2>2. What it borrows, and what is new</h2>
+<p><strong>Borrowed from the object doc, unchanged:</strong> the <code>HANDLE</code> verb extraction, head-noun keying, the <code>NOT_OBJECT</code> filter, the <code>briefs_v4</code> / <code>specs_v51</code> plumbing, the control-arm rule, the two-prompt SAM3 finding, and the fixture-pair convention for every guard.</p>
+<p><strong>New here:</strong></p>
+<ul><li>the trigger ladder (§3) — several kinds of standing instruction, not one</li><li><strong>model interruption</strong> — the model speaks over the wearer (§6)</li><li>scoring on <strong>time</strong>, with four outcomes (§7)</li><li>the <strong>seated gate</strong> on the generic arm (§8)</li><li><strong>negatives</strong>, which are built last and are the hard half (§9)</li></ul>
+<hr>
+<h2>3. The trigger ladder</h2>
+<p>One template repeated 1,400 times is a template, not a benchmark. So there are several trigger kinds, each with its own evidence source. Counts are measured.</p>
+<table><thead><tr><th>#</th><th>trigger</th><th>example instruction</th><th>candidates</th><th>evidence</th><th>verdict</th></tr></thead><tbody><tr><td>T1</td><td><strong>pick up</strong></td><td><em>&quot;remind me when I pick up my keys&quot;</em></td><td><strong>1,167</strong></td><td>narration <code>PICK</code> verbs</td><td>ship first</td></tr><tr><td>T2</td><td><strong>put down</strong></td><td><em>&quot;tell me when I set the knife down&quot;</em></td><td><strong>2,575</strong></td><td>narration <code>PLACE</code> frame</td><td>ship</td></tr><tr><td>T3</td><td><strong>see / appears</strong></td><td><em>&quot;I&#x27;m looking for a chair — tell me if you see one&quot;</em></td><td><strong>10,747</strong></td><td>track frame reappears</td><td>ship, biggest</td></tr><tr><td>T4</td><td><strong>nth time</strong></td><td><em>&quot;tell me the third time I open the fridge&quot;</em></td><td><strong>307</strong></td><td>repeated picks of one object</td><td>ship, small</td></tr><tr><td>T5</td><td><strong>generic pick</strong></td><td><em>&quot;tell me if I pick anything up&quot;</em></td><td>144 clips</td><td>narration, <strong>seated only</strong></td><td>ship, gated (§8)</td></tr><tr><td>T6</td><td><strong>walk away without</strong></td><td><em>&quot;tell me if I leave without my bag&quot;</em></td><td>not measured</td><td><code>PLACE</code> + no re-pick + room change</td><td>later</td></tr><tr><td>T7</td><td><strong>duration</strong></td><td><em>&quot;tell me when I&#x27;ve been chopping two minutes&quot;</em></td><td>not measured</td><td>action spans</td><td>later</td></tr></tbody></table>
+<p>T3 is the owner&#x27;s example and it turns out to be the <strong>largest arm by a wide margin</strong>, because the Nymeria tracks already say exactly when an object comes back into view. No detector is needed for it at all.</p>
+<p>T6 is the most useful instruction a real person would give and the most expensive to ground. It is deliberately last.</p>
+<h3>3.1 The T3 count, and the mistake that nearly halved it</h3>
+<p><code>vis</code> on a track frame looks like a visibility probability and <strong>is not</strong>. Real values run from <code>2e-05</code> to about <code>0.02</code>, and <code>vis</code> is <strong>never zero</strong>. Thresholding at <code>vis &gt; 0.5</code> returned <strong>14</strong> reappearance events corpus-wide and would have killed the arm as too small.</p>
+<p>Absence is encoded as a <strong>missing frame</strong>, not a zero. Counting gaps in the <code>t_s</code> series instead:</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>tracked objects (≥10 frames)</td><td>30,224</td></tr><tr><td>out-of-view gaps ≥45 s</td><td><strong>82,824</strong></td></tr><tr><td>of those, ending in a clean return</td><td><strong>14,916</strong></td></tr><tr><td>askable after dropping Wall / Floor / Stairs / <code>Anything</code></td><td><strong>10,747</strong></td></tr><tr><td>sequences covered</td><td>263</td></tr><tr><td>median hidden gap</td><td>96 s</td></tr></tbody></table>
+<p>&quot;Clean return&quot; means the object&#x27;s <code>vis</code> on the returning frame is at least that object&#x27;s <strong>own median</strong> <code>vis</code>. A single global floor means different things for a lamp and a wall; a per-object floor calibrates itself. A barely-there return is not something a person would call <em>seeing</em> the chair.</p>
+<p>Categories available: Lamp 3,552 · Storage 1,907 · WallArt 1,001 · Window 931 · Door 813 · Chair 695 · Plant 477 · Table 382 · Screen 185 · Mirror 176 · Sink 168 · Refrigerator 146 · Couch 110 · and a tail.</p>
+<hr>
+<h2>4. Where the triggers come from</h2>
+<h3>T1, pick up</h3>
+<p>Narration, <code>PICK</code> verbs — <em>picks up, grabs, takes, lifts, retrieves, collects, reaches for</em> — plus an article and a noun, keyed on head noun, filtered through <code>NOT_OBJECT</code>.</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>pick events in narration</td><td>3,085</td></tr><tr><td>first pick of a given object</td><td>1,494</td></tr><tr><td>far enough in to site an instruction before it</td><td><strong>1,167</strong></td></tr><tr><td>median picks per clip</td><td>2</td></tr></tbody></table>
+<p><strong>The first qualifying pick after the instruction is the answer.</strong> Not any pick. A model that stays quiet through pick one and fires on pick two has missed, and must be scored as a miss, not a late hit.</p>
+<h3>T2, put down</h3>
+<p>The <code>PLACE</code> frame already built for object memory: verb + article + object + preposition + destination, all four. 2,575 events. A bare verb alternation gives 12,508 by reading <em>&quot;turns <strong>left</strong>&quot;</em> as <em>&quot;<strong>left</strong> it somewhere&quot;</em>.</p>
+<h3>T3, see / appears</h3>
+<p>Track frame-gap, as in §3.1. Free ground truth.</p>
+<h3>T4, nth time</h3>
+<p>Objects picked repeatedly inside one clip: <strong>586</strong> picked twice or more, <strong>307</strong> three times or more. The instruction names the ordinal, so the model has to count, not just detect. Cheap, and it tests something none of the other arms do.</p>
+<h3>T5, generic</h3>
+<p>§8.</p>
+<hr>
+<h2>5. What the instruction looks like</h2>
+<p>Spoken, short, and <strong>it must not describe the trigger well enough to be answered without watching</strong>.</p>
+<p>Good:</p>
+<blockquote><p><em>&quot;Remind me when I pick up my keys.&quot;</em> <em>&quot;I&#x27;m looking for a chair — tell me if you see one.&quot;</em> <em>&quot;Shout when I put the knife down.&quot;</em> <em>&quot;Tell me the third time I go into the fridge.&quot;</em></p></blockquote>
+<p>Not acceptable:</p>
+<ul><li><em>&quot;Remind me when I pick up the knife to start chopping.&quot;</em> — &quot;chopping&quot;</li></ul>
+<p>leaks it. The model fires on the narration of the next activity and never needs to see a knife. <strong>Leak rule: the instruction may name the object and the action, and nothing else about the future.</strong></p>
+<ul><li><em>&quot;Remind me when I pick that up.&quot;</em> — bare pointer, no referent. This</li></ul>
+<p>family names its object, like object memory and unlike everything else.</p>
+<ul><li><em>&quot;Remind me in two minutes.&quot;</em> — a timer, not an observation.</li></ul>
+<h3>5.1 The instruction carries a payload</h3>
+<blockquote><p><em>&quot;<strong>Remind me to call mum</strong> when I pick up my phone.&quot;</em></p></blockquote>
+<p>This is how people actually talk, it costs nothing to build, and it makes the interruption scorable on <strong>content as well as timing</strong>. A model that fires at the right second and has forgotten what the reminder was for has only done half the job.</p>
+<p>Payload is <strong>optional per item</strong> — some instructions are bare (<em>&quot;just tell me when&quot;</em>). Target mix is roughly half and half, so that a model cannot learn that a reminder always has a payload.</p>
+<h3>5.2 Wording must vary</h3>
+<p>No fixed template. Each instruction is paraphrased with the <strong>intent preserved</strong>: <em>remind me / tell me / let me know / shout when / give me a nudge when / don&#x27;t let me forget</em>. Register varies too — some are polite, some are clipped mid-task.</p>
+<p>A guard counts distinct surface forms per trigger kind and fails the build if any single phrasing is more than a fifth of its arm. Diversity that is asserted rather than measured is not diversity.</p>
+<hr>
+<h2>6. What the interruption looks like</h2>
+<p>Three parts. The first two are required.</p>
+<blockquote><p><strong>&quot;Heads up — you&#x27;ve just picked up the keys.&quot;</strong> <strong>&quot;That&#x27;s the chair you were after, on your right.&quot;</strong> <strong>&quot;Keys in hand — you wanted to call your mum.&quot;</strong></p></blockquote>
+<ol><li><strong>A cut-in opener.</strong> Short, because the wearer is probably mid-something.</li><li><strong>The trigger, named.</strong> The object and what just happened — this is the evidence the model is claiming, and if it is wrong the item is wrong even when the timing was right.</li><li><strong>The payload</strong>, when the instruction had one.</li></ol>
+<p>Not acceptable: reciting the instruction back (<em>&quot;you asked me to remind you when you picked up your keys, and you have now picked up your keys&quot;</em>), a timestamp, or any reference to anything after the trigger moment.</p>
+<h3>6.1 Model interruption — it speaks over the wearer</h3>
+<p>The owner&#x27;s call: <strong>the model speaks at the trigger, even if the wearer is mid-sentence.</strong> It does not wait for a gap.</p>
+<p>The reason is that waiting is indistinguishable from being late, and the whole family is a latency test. A model allowed to wait for silence can sit on every trigger until the wearer stops talking and never be caught.</p>
+<p>This is representable today — turns already carry an <code>interruption</code> field — but the cases here are the first where <strong>the model</strong> is the interrupter rather than the wearer, so the renderer and the scorer both need to be taught that a model-initiated barge-in is legal. That is new work, not configuration.</p>
+<hr>
+<h2>7. Scoring</h2>
+<p>Four outcomes, and only one of them is good:</p>
+<table><thead><tr><th>outcome</th><th>meaning</th></tr></thead><tbody><tr><td><strong>hit</strong></td><td>speaks inside the tolerance window around the trigger</td></tr><tr><td><strong>early</strong></td><td>speaks before the window — it guessed, it did not observe</td></tr><tr><td><strong>late</strong></td><td>speaks after the window</td></tr><tr><td><strong>miss</strong></td><td>never speaks on a positive</td></tr><tr><td><strong>false alarm</strong></td><td>speaks on a negative</td></tr></tbody></table>
+<p>Report <strong>hit rate and false-alarm rate together</strong>, always. Either alone is trivially gamed in opposite directions, and a family that reports only hit rate is a family that rewards a model which never stops talking.</p>
+<h3>7.1 The tolerance window is not yet a number</h3>
+<p>The trigger time comes from narration action spans, which are coarse. A window tighter than the annotation noise scores noise; a window looser than the event makes the task free.</p>
+<p>So the window is <strong>measured, not chosen</strong>: take a sample of T1 triggers, tighten each one against vision (object plus hand in frame), and look at how far the vision moment sits from the narration moment. The window is set from that spread. Provisionally <code>[-1 s, +5 s]</code> — asymmetric because speaking early is a different failure from speaking late — but <strong>that pair of numbers is a placeholder and must not ship unmeasured.</strong></p>
+<hr>
+<h2>8. The generic arm, and the seated gate</h2>
+<p><em>&quot;Tell me if I pick anything up&quot;</em> needs the <strong>first pick of anything</strong> to be correct. One pick missing from the narration turns a correct silence into a scored miss, and narration is sparse. Across the whole corpus that risk is unacceptable.</p>
+<p>The owner&#x27;s fix: allow the generic arm <strong>only where the wearer is sitting still</strong>. Sitting still means few actions, a small reachable set, and narration that is far more likely to have caught everything.</p>
+<p>Measured: <strong>144 of 477 clips</strong> have a seated stretch of 60 s or more, median <strong>174 s</strong>. That is a comfortable amount of material for a small arm.</p>
+<p>The gate needs <strong>two independent signals that agree</strong>, because either alone is weak:</p>
+<ol><li><strong>Narration text</strong> — a seated cue (*sits, seated, at the table, on the couch<em>) with no ambulatory cue (</em>walks, steps, stairs, heads into*) in the same span. This is what the 144 was measured with.</li><li><strong>Camera motion</strong> — frame-to-frame difference on the cached 2 fps frames. An ego camera on a walking person moves enormously; on a seated person it barely moves. This signal is independent of the narration, which is the point of having it.</li></ol>
+<p>Where they disagree the clip is not used. No generic item ships on one signal.</p>
+<hr>
+<h2>9. Negatives — built last, and not by truncation</h2>
+<p>The owner&#x27;s call: <strong>do not truncate episodes.</strong> So negatives come from the object route.</p>
+<p>A negative is an instruction whose trigger <strong>never fires for the rest of the episode</strong>, where the correct behaviour is silence throughout.</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>objects handled but never picked, with ≥60 s of clip left</td><td><strong>2,977</strong></td></tr><tr><td>clips offering at least one</td><td>425 of 477</td></tr></tbody></table>
+<p>Target share <strong>10–20%</strong> of the family, per the owner.</p>
+<p>Three routes, in order of how much they can be trusted:</p>
+<ol><li><strong>Truncate the episode before a known trigger.</strong> Airtight, free — and <strong>ruled out</strong>, because it changes the clip boundary.</li><li><strong>Name an object the narration never picks</strong> (the 2,977). Cheap, and the route being taken. Its weakness is exactly the weakness of absence evidence everywhere in this project: narration silence is not proof. An unnarrated pick turns correct silence into a scored miss, and it would do so <strong>silently</strong>.</li><li><strong>Visual sweep of the whole remaining clip.</strong> Correct, expensive.</li></ol>
+<p>So route 2 ships <strong>with route 3 as its gate</strong>: for every negative, a visual pass over the remaining clip must fail to find the object in the wearer&#x27;s hands. That is the same control discipline as object memory — a negative nobody checked is not a negative, it is an unexamined claim.</p>
+<p>This is why negatives are built last: they are the expensive half, and the positives are useful on their own while the sweep is being built.</p>
+<hr>
+<h2>10. Visual verification</h2>
+<p>Every trigger in §3 is currently proposed by <strong>text or by tracks</strong>. Neither is a pixel. This family scores a <em>time</em>, so an unverified trigger time is not a soft weakness — it is the answer key being wrong by seconds.</p>
+<p><strong>What is proposed, and what has to confirm it:</strong></p>
+<table><thead><tr><th>trigger</th><th>proposed by</th><th>what vision must settle</th></tr></thead><tbody><tr><td>T1 pick up</td><td>narration verb</td><td>the frame where the hand first holds it</td></tr><tr><td>T2 put down</td><td>narration verb</td><td>the frame where contact is released</td></tr><tr><td>T3 see / appears</td><td>track <code>t_s</code> gaps</td><td>that the object is genuinely visible at the returning frame</td></tr><tr><td>T4 nth time</td><td>counted occurrences</td><td><strong>every</strong> occurrence, not just the nth</td></tr><tr><td>T5 generic</td><td>narration + seated gate</td><td>that the wearer is seated and the pick is real</td></tr></tbody></table>
+<p>Four rules:</p>
+<ol><li>**The fire time is tightened at the frame, never taken raw from narration.** The narrator names an object when it becomes the subject of a sentence. In the sister family that lag overturned 2 of 18 anchors. Here it lands directly in the scored tolerance window (§7.1), so the window must be measured <strong>after</strong> tightening, not before.</li><li><strong>T3 is tracks only today, and tracks are a projection.</strong> §3.1 is the warning: one misread of <code>vis</code> moved the count from 14 to 10,747. The projection has never been checked against pixels in this family. A &quot;clean return&quot; ships only when a frame shows the object, and the per-object median-<code>vis</code> floor is a <em>filter</em>, not evidence.</li><li><strong>Absence claims need every frame, not a sample.</strong> The negatives arm (§9) asserts the object is never handled in the remaining window. A sampled sweep that misses one pick turns a negative into a mislabelled positive — the single worst row this family can emit. The detector also needs a <strong>control</strong>: it must be shown finding the object where the object is known to be present, or its silence means nothing.</li><li><strong>Disagreement is quarantined, with the disagreement written down.</strong> Where narration says pick and the frames show the hand passing over, the item does not ship and the reading is kept. Deleting it loses the one example that would have taught the gate.</li></ol>
+<p><strong>Instruction time is also a visual fact.</strong> HOI-03 — <em>the object is not already in hand</em> — cannot be decided from the verb list; it is a question about a frame, and it is checked at one.</p>
+<p><strong>Cost.</strong> Two passes, as in the object family: coarse 2 fps to locate, dense 15 fps around the candidate instant. Detector is SAM3 with a Qwen3-Omni-30B spot-check, because a single detector&#x27;s miss is indistinguishable from an absence.</p>
+<hr>
+<h2>11. Pipeline</h2>
+<table><thead><tr><th>#</th><th>script</th><th>token</th><th>does</th></tr></thead><tbody><tr><td>1</td><td><code>hoi_triggers.py</code></td><td><code>HOT_OK</code></td><td>T1–T4 trigger events from narration and tracks</td></tr><tr><td>2</td><td><code>test_hoi_triggers.py</code></td><td><code>HOT_TEST_OK</code></td><td>fixture pairs: leak, lead time, first-trigger</td></tr><tr><td>3</td><td><code>hoi_seated.py</code></td><td><code>HSE_OK</code></td><td>seated gate, narration cue + camera motion, agreement</td></tr><tr><td>4</td><td><code>hoi_window.py</code></td><td><code>HWN_OK</code></td><td>measure the tolerance window against vision (§7.1)</td></tr><tr><td>5</td><td><code>hoi_instructions.py</code></td><td><code>HIN_OK</code></td><td>paraphrased instructions + payloads, diversity guard</td></tr><tr><td>6</td><td><code>hoi_reminders.py</code></td><td><code>HRM_OK</code></td><td>the interruption text</td></tr><tr><td>7</td><td><code>hoi_negatives.py</code></td><td><code>HNG_OK</code></td><td>negatives + their visual control sweep (<strong>last</strong>)</td></tr><tr><td>8</td><td><code>hoi_audit.py</code></td><td><code>HOI_AUDIT_OK</code></td><td>40-item hand audit</td></tr></tbody></table>
+<p>Order is load-bearing. Step 4 must run before anything is scored, because the window is the scoring rule. Step 7 is deliberately after everything else.</p>
+<hr>
+<h2>12. Checklist — what every item must clear</h2>
+<ul><li>[ ] <code>HOI-01</code> Instruction is sited <strong>before</strong> the trigger, by a real lead (≥45 s).</li><li>[ ] <code>HOI-02</code> Instruction names the object and the action and **nothing else about the future** (leak rule).</li><li>[ ] <code>HOI-03</code> The object is <strong>not already in hand</strong> at instruction time — otherwise the first trigger is ambiguous.</li><li>[ ] <code>HOI-04</code> The scored trigger is the <strong>first</strong> qualifying one after the instruction.</li><li>[ ] <code>HOI-05</code> The trigger time has been tightened against vision, not taken raw from narration.</li><li>[ ] <code>HOI-06</code> The tolerance window comes from the measurement in step 4, not from this document&#x27;s placeholder.</li><li>[ ] <code>HOI-07</code> The reminder names the trigger, carries the payload if there was one, and refers to nothing after the trigger moment.</li><li>[ ] <code>HOI-08</code> Generic-arm items only: both seated signals agree.</li><li>[ ] <code>HOI-09</code> Negatives only: the visual sweep found no handling in the remaining clip.</li><li>[ ] <code>HOI-10</code> Negatives are 10–20% of the shipped family — counted, not intended.</li><li>[ ] <code>HOI-11</code> No single phrasing is more than a fifth of its arm.</li><li>[ ] <code>HOI-12</code> Hit rate and false-alarm rate are reported <strong>together</strong>.</li><li>[ ] <code>HOI-13</code> The fire time was tightened at the frame; the tolerance window was measured <strong>after</strong> that tightening, not before.</li><li>[ ] <code>HOI-14</code> T3 items: a frame shows the object at the returning instant — the track gap alone did not license it.</li><li>[ ] <code>HOI-15</code> T4 items: <strong>every</strong> occurrence was verified, not only the nth.</li><li>[ ] <code>HOI-16</code> The detector passed a control on frames where the object is known present, before any absence was believed.</li><li>[ ] <code>HOI-17</code> Narration/vision disagreements are quarantined with the reading written down, never deleted.</li></ul>
+<hr>
+<h2>13. Open, and what is still unknown</h2>
+<ol><li>The tolerance window (§7.1). Everything downstream depends on it and it has not been measured.</li><li>T6 <em>walk away without</em> and T7 <em>duration</em> are unmeasured and unscoped.</li><li>The renderer and scorer do not yet understand a <strong>model-initiated</strong> barge-in (§6.1).</li><li>Whether the T3 &quot;clean return&quot; rule — per-object median <code>vis</code> — matches what a person would call seeing the thing. It is a reasonable rule and it is untested against a human. A small hand audit should settle it before 10,747 items are built on top of it.</li></ol>
+<h3>Hard rules carried in</h3>
+<ul><li>Never delete. Quarantine with a written reason.</li><li>Never write into an existing mask set.</li><li>Heavy work via <code>srun</code>/<code>sbatch</code>, never the login node. <code>/ai4rl</code> is visible</li></ul>
+<p>only from compute nodes.</p>
+<ul><li>Never render with CSM.</li><li>A guard needs a fixture <strong>pair</strong> — one case that must trip it, one that</li></ul>
+<p>must not.</p>
+<ul><li>Verify claims against disk before recording them as fact. <code>vis &gt; 0.5</code></li></ul>
+<p>(§3.1) is tonight&#x27;s reminder of why.</p></div></body></html>

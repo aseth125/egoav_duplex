@@ -1,0 +1,151 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Object-episodic memory questions — end-to-end design</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:60rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:38px 0 10px;padding-top:16px;
+ border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}
+code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;
+ border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:16px 0;padding:10px 15px;border:1px solid var(--line);
+ border-left:3px solid var(--warm);background:#161b22;border-radius:5px;
+ color:#e8d9b0}
+blockquote p{margin:3px 0}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;
+ vertical-align:top}
+th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.sub{color:var(--dim);margin:0 0 22px}
+strong{color:#fff}
+
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;
+ border-bottom:1px solid #262b35}
+.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;
+ color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;
+ border:1px solid transparent;border-bottom:none;position:relative;top:1px}
+.nav a:hover{color:#c3cbd8;background:#161a22}
+.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap><div class=nav><a href='index.html'>Episodes</a><a href='deixis_v52.html'>Deixis rewrite</a><a href='em_merge_v1.html'>Action memory</a><a href='episodic_memory_design.html'>Action memory design</a><a href='object_episodic_memory_design.html' class=on>Object memory design</a><a href='interruption_model_hoi_design.html'>Model interruption design</a><a href='action_narration_design.html'>Action narration design</a><a href='duration_activity_design.html'>Duration design</a><a href='chaining_design.html'>Chaining design</a><a href='narration_7xwm28.html'>Raw narration</a></div><h1>Object-episodic memory questions — end-to-end design</h1>
+<p><strong>Status:</strong> design + three stages built and tested (2026-10-05). Nothing has shipped yet. 227 <code>object_memory</code> turns exist in <code>specs_v51</code> and <strong>none of them has ever been checked against the video</strong>, which is the whole reason this document exists.</p>
+<p><strong>Run the whole thing:</strong> <code>bash duplex/avd/run_objvis_gates.sh</code> → <code>OBJVIS_CHAIN_OK</code> (stops at the first non-OK token, producers before consumers).</p>
+<p>Sister document: <code>docs/EPISODIC_MEMORY_DESIGN.md</code> covers the <strong>action</strong> family — &quot;what was I doing before X&quot;. This one covers the <strong>object</strong> family — &quot;where did I put X&quot;. They share the no-future rule and the fixture-pair convention and nothing else.</p>
+<hr>
+<h2>1. What the question is for</h2>
+<p>The wearer put something down, did something else, and now wants it back.</p>
+<blockquote><p><em>&quot;Where did I put the cup?&quot;</em> → <em>&quot;On the table in the living room — you put it there about two minutes ago.&quot;</em></p></blockquote>
+<p>This is the most ordinary thing anybody asks an always-on assistant, and it is a real memory test <strong>only if three things are true at the moment of asking</strong>:</p>
+<ol><li><strong>The object was genuinely in the wearer&#x27;s hands at some point.</strong> If the narration invented the placement, the answer key is fiction.</li><li><strong>The object is not on screen when the question is asked.</strong> If the cup is sitting in frame, the model does not remember anything — it looks. This is the condition all 227 current rows fail to establish, and on the eight published episodes <strong>3 of 5 ask about something in plain sight</strong>.</li><li><strong>Nothing after the ask is used to justify the question or the answer.</strong> A question proved correct with frames the wearer has not lived through yet is proved against nothing.</li></ol>
+<p>Condition 2 is the owner&#x27;s design and it has two halves, both required:</p>
+<blockquote><p><em>check if the ball is present in that time period; if yes then move forward and find a different action / scene and check the ball is not present — and ensure that during the time span when the question is asked, each individual frame does not have the object present.</em></p></blockquote>
+<p>The first half is the <strong>control</strong>. Skip it and a detector that finds nothing scores a perfect absence on every window and certifies a corpus whose answers are centre-frame. The control is not a quality nicety; it is the thing that makes the absence mean anything.</p>
+<hr>
+<h2>2. Where the questions come from</h2>
+<p>Two sources, and they are not alternatives — the second is much larger.</p>
+<h3>2.1 Handled objects (the existing 227)</h3>
+<p>Narration text. <code>objvis_tasks.handled_objects()</code> scans <code>briefs_v4</code> for a <code>HANDLE</code> verb plus a noun — <em>puts, places, sets down, picks up, grabs, holds, carries, leaves, returns</em>. Objects are keyed on the <strong>head noun</strong>, so &quot;the ball&quot;, &quot;the ball with&quot; and &quot;the ball using&quot; are one candidate and not three; three would triple detector cost and report the same fact three times. An object mentioned once is a parse accident and is dropped.</p>
+<p>A separate regex, <code>objvis_tasks.asked_object()</code>, reads the object back out of each existing question. It needs <strong>two shapes</strong>, not one:</p>
+<table><thead><tr><th>form</th><th>count</th></tr></thead><tbody><tr><td><em>&quot;where did I put the X?&quot;</em></td><td>175</td></tr><tr><td><em>&quot;where&#x27;s the X?&quot;</em></td><td>52</td></tr></tbody></table>
+<p>A parser built from the first shape alone drops 23% of the corpus, and the hole shows up as &quot;the narration never mentions this object&quot; — a defect in the question that is really a defect in the regex.</p>
+<p><strong>Yield:</strong> 195 of 227 turns match a handling span. The other 32 name something the narration never says the wearer touched; they are written out with <code>status: &quot;no_handling_span&quot;</code> rather than silently dropped.</p>
+<h3>2.2 Static objects the wearer never touches (new, much larger)</h3>
+<p>The owner&#x27;s third idea, and the ground truth is free:</p>
+<blockquote><p><em>we can talk about some static object that are present, the person never touches them, but due to him moving they are not visible, and then he wants to know where is that static object</em></p></blockquote>
+<p>The Nymeria annotation files already track scene furniture with a <strong>per-frame visibility score and bounding box</strong>. For these objects no detector is needed at all — the data says exactly when the thing is on screen.</p>
+<p>Measured across all 214 annotated sequences:</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>static tracked objects</td><td>24,002</td></tr><tr><td>seen at some point, then out of view ≥45 s</td><td><strong>20,288</strong></td></tr><tr><td>clips covered</td><td>214 of 214</td></tr><tr><td>median out-of-view gap</td><td>269 s</td></tr></tbody></table>
+<p>Askable categories: lamp 2,592 · wall art 1,343 · door 1,335 · window 1,112 · chair 1,115 · table 993 · plant 881 · couch 420 · screen 282 · storage 2,732. <strong>Rejected categories:</strong> wall, floor, ceiling, stairs, and the catch-all <code>Anything</code> — &quot;where is the floor&quot; is not a question.</p>
+<p>This family is cleaner than the handled one (free ground truth, no detector error) and roughly a hundred times larger. It is <strong>not</strong> interchangeable with it: a handled object tests <em>did you track my action</em>, a static object tests <em>did you build a map of the room</em>.</p>
+<hr>
+<h2>3. What the question should look like</h2>
+<p>Short, spoken, and it must <strong>name the object</strong>. This family deliberately inverts the deictic rule used everywhere else: no &quot;that&quot;, no &quot;it&quot;, no &quot;the one I had&quot;. Naming the object is what makes a long delay safe — there is no referent to mis-resolve, so old evidence is the point rather than the defect.</p>
+<p>Good:</p>
+<blockquote><p><em>&quot;Where did I put the cup?&quot;</em> <em>&quot;Hold on — where&#x27;s the remote?&quot;</em> <em>&quot;Sorry, where did I leave the blue folder?&quot;</em></p></blockquote>
+<p>Static-object form:</p>
+<blockquote><p><em>&quot;Which room is the standing lamp in?&quot;</em> <em>&quot;Where was that picture on the wall?&quot;</em></p></blockquote>
+<p>Not acceptable:</p>
+<ul><li><em>&quot;Where did I put it?&quot;</em> — bare pointer, no referent.</li><li><em>&quot;Where&#x27;s the cup I just set down?&quot;</em> — &quot;just&quot; makes it perception.</li><li><em>&quot;Where did I put the cup before I started the laundry?&quot;</em> — an anchor the</li></ul>
+<p>wearer may not have reached yet. If an anchor is used at all it goes through the action family&#x27;s <code>ANCHOR_TIMING</code> gate.</p>
+<ul><li><em>&quot;Where did I leave my colleague?&quot;</em> — people, body parts, rooms and</li></ul>
+<p>fixtures are in <code>NOT_OBJECT</code> for a reason; the narration says &quot;holding the peer&quot; constantly.</p>
+<hr>
+<h2>4. What the answer should look like</h2>
+<p>Three parts, in this order. Parts 1 and 2 are required.</p>
+<blockquote><p><strong>&quot;In the box — you put it there a little over a minute ago.&quot;</strong> <strong>&quot;On the kitchen counter, in the room you were in before — about two minutes ago.&quot;</strong></p></blockquote>
+<ol><li><strong>The preposition and the surface, carried verbatim.</strong> <em>in</em> the box, not <em>on</em> the box. Normalising every placement to &quot;on the&quot; was the single largest error class in the hand audit (11 of 40 turns). A model that correctly answers &quot;it is inside it, not on it&quot; would be marked wrong by its own key. Shipped <code>specs_v51</code> now reads <strong>On 171 / In 54 / Under 1</strong>, so the fix is in the data.</li><li><strong>How long ago</strong>, in rough speech (&quot;about a minute ago&quot;), never a timestamp.</li><li><strong>The room, when the narration names one</strong> — optional but preferred. The owner&#x27;s phrasing, <em>&quot;on the table in the room you were in before&quot;</em>, is better than ours because it is how a person actually answers.</li></ol>
+<h3>4.1 Where the destination comes from — two routes</h3>
+<p><strong>Route A, narration.</strong> <code>objmem.PLACE</code> requires all four of verb + object + preposition + destination. A bare verb alternation reported 12,508 placements because it read <em>&quot;turns <strong>left</strong>&quot;</em> as <em>&quot;<strong>left</strong> it somewhere&quot;</em>; the full frame drops that to <strong>2,575</strong> real ones. This is the route all 227 current answers use.</p>
+<p><strong>Route B, vision — for when the narration does not say.</strong> The owner&#x27;s case:</p>
+<blockquote><p><em>if you do not have this information then we first need to confirm the presence of the ball and then ask the VLM to find where is the ball, and then we can understand that ok it is on the table, and then form the answer</em></p></blockquote>
+<p>Order matters and is not negotiable: <strong>confirm presence first, then ask where.</strong> A VLM asked &quot;where is the ball&quot; on a frame with no ball will answer anyway, and it will sound reasonable.</p>
+<p>Route B is also a free cross-check on Route A. When both run and disagree — narration says table, vision says counter — the row is quarantined with the disagreement written down, not resolved by preferring one.</p>
+<p><strong>Static objects</strong> always use Route B, on a frame where the track says the object is visible <strong>and which falls before the ask</strong>.</p>
+<h3>4.2 The answer must still be true at the ask</h3>
+<p>A placement is not permanent. If the wearer picked the thing up again before the question, the key is wrong — and wrong in a systematic direction, which is worse than wrong at random. <code>objmem_audit.py</code> calls this a <em>missed pickup</em>; it is checked by listing <strong>every</strong> later sentence naming the object head, not by matching a verb whitelist. A whitelist misses <em>&quot;she slides the cup across to the sink&quot;</em>, which moves the object and contains no listed verb.</p>
+<p>Only mentions <strong>at or before the ask</strong> may be read. See §6.</p>
+<hr>
+<h2>5. Visual verification — the gate, step by step</h2>
+<p>This is the part that does not exist yet for any shipped row.</p>
+<h3>5.1 Two passes, not one dense sweep</h3>
+<p>&quot;Every individual frame&quot; at 15 fps over a 300 s clip is 4,500 frames, times 116 clips, times a detector call. That is real money spent searching ground the narration already ruled out. So:</p>
+<table><thead><tr><th>pass</th><th>rate</th><th>over</th><th>job</th></tr></thead><tbody><tr><td><strong>coarse</strong></td><td>2 fps</td><td>the top-ranked candidate windows</td><td>choose where to look</td></tr><tr><td><strong>dense</strong></td><td>15 fps</td><td>the one window that ships</td><td>the gate itself</td></tr></tbody></table>
+<p>The dense pass is the gate. The coarse pass only aims it. A coarse miss costs a candidate window and can never cause a false pass, because nothing ships on coarse evidence.</p>
+<p>Cost after scoping to the real turns and applying the no-future rule: <strong>20,024 coarse + present frames.</strong> Minutes on a handful of GPUs.</p>
+<p>The first version of the builder emitted <strong>1.3 million</strong> frames by scanning from the first candidate window to the end of every clip for every object. Ranking first and reading four windows is the same answer for 3% of the calls.</p>
+<h3>5.2 Both arms, every candidate</h3>
+<table><thead><tr><th>arm</th><th>frames</th><th>must be</th></tr></thead><tbody><tr><td><strong>present</strong> (control)</td><td>1 fps inside the handling spans</td><td>object <strong>found</strong></td></tr><tr><td><strong>absent</strong></td><td>every frame of the shipped window</td><td>object <strong>found nowhere</strong></td></tr></tbody></table>
+<p>A candidate whose present arm is weak is <strong>dropped</strong>, not shipped with a warning. No control, no question.</p>
+<h3>5.3 The prompt is not one string — measured</h3>
+<p>SAM3&#x27;s answer depends sharply on the exact words, and no single form wins:</p>
+<table><thead><tr><th>prompt</th><th>frames found</th></tr></thead><tbody><tr><td><code>drinking cup</code></td><td><strong>0</strong> / 14</td></tr><tr><td><code>cup</code></td><td><strong>13</strong> / 14</td></tr><tr><td><code>remote control</code></td><td><strong>14</strong> / 14</td></tr><tr><td><code>control</code></td><td><strong>0</strong> / 14</td></tr><tr><td><code>hand</code> (sanity)</td><td>14 / 14</td></tr></tbody></table>
+<p>So every object is probed with <strong>both the head noun and the full phrase</strong>. The control arm decides which form works, and <strong>that same form is then used for the absence check</strong> — otherwise the two arms are different detectors and the comparison is meaningless.</p>
+<p>The <code>hand</code> row is there as a frame-sanity check: if even &quot;hand&quot; is not found in a first-person clip of someone handling something, the frame is bad, not the prompt.</p>
+<h3>5.4 Two detectors, not one</h3>
+<ul><li><strong>SAM3</strong> does the dense pass. Text-prompted, fast enough for every frame.</li><li><strong>Qwen3-Omni 30B</strong> re-checks a sample of SAM3&#x27;s verdicts. It is far too</li></ul>
+<p>slow for per-frame work (the old <code>object_visibility_gate.py</code> called it one frame at a time) but it is the only thing that can catch SAM3 being confidently wrong in a consistent direction.</p>
+<p>If the two disagree badly on the sample, the sweep is void. A disagreement is not a negative.</p>
+<hr>
+<h2>6. The no-future rule</h2>
+<blockquote><p><em>make sure this episodic memory question, so future thing should not be referred</em></p></blockquote>
+<p>Three separate places, all of which were wrong in the first draft or are wrong in the shipped data:</p>
+<ol><li><strong>The probe window must end at the ask.</strong> The first builder centred the window on the ask time, so half of every window was video that had not happened yet. Proving &quot;the cup is not on screen&quot; with future frames proves nothing.</li><li><strong>The answer&#x27;s evidence must precede the ask.</strong> Placement time &lt; ask time, and the missed-pickup scan reads only mentions ≤ ask.</li><li><strong>The answer text may not mention anything later than the ask.</strong></li></ol>
+<p>This rule is expensive and the cost is visible:</p>
+<table><thead><tr><th></th><th>centred window (wrong)</th><th>ends at ask (correct)</th></tr></thead><tbody><tr><td>turns with no alternative window</td><td>35</td><td><strong>122</strong> of 195</td></tr><tr><td>frames to check</td><td>30,576</td><td>20,024</td></tr></tbody></table>
+<p>Two-thirds of existing questions have nowhere to move to once the future is off limits. They pass or fail where they sit. The earlier 35 was low only because it was counting windows made of video that had not happened.</p>
+<p>Guarded by <code>test_objvis_tasks.py</code>, which carries a <strong>fixture pair</strong> for each rule — one case that must trip it, one that must not. A test showing only rejection passes just as happily when the gate rejects everything, and a gate that rejects everything looks exactly like a gate that works.</p>
+<hr>
+<h2>7. Why gaze does not solve this</h2>
+<p>Every clip has eye gaze — ~2,300 samples, about 2 per second, with a screen point and a focus depth. It was checked and it is <strong>not</strong> the answer:</p>
+<ul><li>Gaze says where the wearer is <strong>looking</strong>, not what is <strong>in frame</strong>. The</li></ul>
+<p>camera sees far more than the eyes rest on. The cup can be in plain sight while they look at the stove; gaze would call it hidden.</p>
+<ul><li>The gaze point is in <strong>screen</strong> coordinates, and the screen moves with the</li></ul>
+<p>head. Converting it to a fixed place in the room needs head pose, which is not in these files.</p>
+<p>What gaze is good for, and should be used for:</p>
+<ol><li><strong>Checking a placement is real.</strong> People look at what they put down, at arm&#x27;s length. If <code>depth_m</code> is 4 m at the moment the text says &quot;puts the cup on the table&quot;, the text is probably describing something else. Free.</li><li><strong>Narrowing the dense pass</strong>, so the detector reads fewer frames.</li></ol>
+<p>The per-frame <code>vis</code> field on tracked objects <em>is</em> the right instrument — but it matches only <strong>9 of 227</strong> handled objects, because the track vocabulary is furniture. That same limitation is exactly why it is perfect for the static family (§2.2).</p>
+<hr>
+<h2>8. Pipeline, in order</h2>
+<table><thead><tr><th>#</th><th>script</th><th>token</th><th>does</th></tr></thead><tbody><tr><td>1</td><td><code>objvis_tasks.py</code></td><td><code>OVT_OK</code></td><td>objects, candidate windows, probe frame lists</td></tr><tr><td>2</td><td><code>test_objvis_tasks.py</code></td><td><code>OVT_TEST_OK</code></td><td>fixture pair: no-future, too-soon, same-scene</td></tr><tr><td>3</td><td><code>objvis_sam3.py</code></td><td><code>OVS_OK</code></td><td>SAM3 per-frame presence, both arms, both prompt forms</td></tr><tr><td>4</td><td><code>objvis_decide.py</code></td><td><code>OVD_OK</code></td><td>control gate, pick the clean window, site the question</td></tr><tr><td>5</td><td><code>objvis_vlm_check.py</code></td><td><code>OVV_OK</code></td><td>30B spot-check of SAM3 on a sample</td></tr><tr><td>6</td><td><code>objvis_answer.py</code></td><td><code>OVA_OK</code></td><td>Route B destinations where narration is silent</td></tr><tr><td>7</td><td><code>objmem_audit.py</code></td><td><code>OBJ_AUDIT_OK</code></td><td>40-row hand audit, re-run against the current build</td></tr><tr><td>8</td><td><code>objstatic_tasks.py</code></td><td><code>OST_OK</code></td><td>static family from track visibility</td></tr></tbody></table>
+<p>Steps 4–8 are not built yet. 1–3 are built and tested.</p>
+<p>Order is load-bearing: the control gate (4) must see the prompt-form results (3) before it can choose which word the absence check used, and the audit (7) must run against the build that ships, not an ancestor of it.</p>
+<hr>
+<h2>9. What &quot;done&quot; requires — the checklist</h2>
+<p>Before any object-episodic row ships:</p>
+<ul><li>[ ] <code>OBJ-01</code> Object parsed from the question by <strong>both</strong> regex shapes.</li><li>[ ] <code>OBJ-02</code> A handling span exists in the narration (or it is a static track).</li><li>[ ] <code>OBJ-03</code> <strong>Control passes:</strong> the object is found in the handling frames, under a named prompt form.</li><li>[ ] <code>OBJ-04</code> The same prompt form is used for the absence check.</li><li>[ ] <code>OBJ-05</code> <strong>Every frame</strong> of the shipped window is clean — not a sample.</li><li>[ ] <code>OBJ-06</code> The window ends at or before the ask.</li><li>[ ] <code>OBJ-07</code> The window is a different activity from the handling.</li><li>[ ] <code>OBJ-08</code> Gap from last handling ≥ 45 s.</li><li>[ ] <code>OBJ-09</code> The answer carries the <strong>exact preposition</strong>.</li><li>[ ] <code>OBJ-10</code> No pickup between placement and ask (all later mentions read, not a verb whitelist).</li><li>[ ] <code>OBJ-11</code> Nothing in question or answer refers past the ask.</li><li>[ ] <code>OBJ-12</code> A 30B sample agrees with SAM3.</li><li>[ ] <code>OBJ-13</code> The 40-row hand audit has been re-run on <strong>this</strong> build and clears ≥90% correct with no error class above 5%.</li></ul>
+<p>The last line is currently <strong>50% correct (20 of 40)</strong> — and that number is against <code>specs_v28</code>, before the preposition fix and before the <code>still</code> arm was dropped. It has never been re-run. Unknown, not fine.</p>
+<hr>
+<h2>10. Still to build</h2>
+<ol><li>Two-prompt-form probing in <code>objvis_sam3.py</code> (§5.3) — identified, not written.</li><li><code>objvis_decide.py</code> — the control gate and window selection.</li><li>Route B answers (§4.1) and the A/B disagreement quarantine.</li><li>The static family (§2.2): category filter, visibility-derived windows, Route B answers from a pre-ask visible frame.</li><li>Re-run <code>objmem_audit.py</code> against the shipped build.</li><li>The gaze placement check (§7.1) — cheap, and it audits Route A for free.</li></ol>
+<h3>Hard rules carried in</h3>
+<ul><li>Never delete. Quarantine with a written reason.</li><li>Never write into an existing mask set. <code>objvis_sam3.py</code> refuses an</li></ul>
+<p><code>--outdir</code> that resolves inside a protected path rather than warning.</p>
+<ul><li>Heavy work via <code>srun</code>/<code>sbatch</code>, never the login node. <code>/ai4rl</code> is visible</li></ul>
+<p>only from compute nodes.</p>
+<ul><li>Never render with CSM.</li><li>A guard needs a fixture <strong>pair</strong>.</li><li>Verify agent and script claims against disk before recording them as fact.</li></ul></div></body></html>

@@ -1,0 +1,156 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>duration_activity — &quot;how long was I doing that?&quot;</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:60rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:38px 0 10px;padding-top:16px;
+ border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}
+code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;
+ border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:16px 0;padding:10px 15px;border:1px solid var(--line);
+ border-left:3px solid var(--warm);background:#161b22;border-radius:5px;
+ color:#e8d9b0}
+blockquote p{margin:3px 0}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;
+ vertical-align:top}
+th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.sub{color:var(--dim);margin:0 0 22px}
+strong{color:#fff}
+
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;
+ border-bottom:1px solid #262b35}
+.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;
+ color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;
+ border:1px solid transparent;border-bottom:none;position:relative;top:1px}
+.nav a:hover{color:#c3cbd8;background:#161a22}
+.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap><div class=nav><a href='index.html'>Episodes</a><a href='deixis_v52.html'>Deixis rewrite</a><a href='em_merge_v1.html'>Action memory</a><a href='episodic_memory_design.html'>Action memory design</a><a href='object_episodic_memory_design.html'>Object memory design</a><a href='interruption_model_hoi_design.html'>Model interruption design</a><a href='action_narration_design.html'>Action narration design</a><a href='duration_activity_design.html' class=on>Duration design</a><a href='chaining_design.html'>Chaining design</a><a href='narration_7xwm28.html'>Raw narration</a></div><h1>duration_activity — &quot;how long was I doing that?&quot;</h1>
+<p><strong>Status:</strong> design only (2026-10-05). Nothing built. Counts below are measured off <code>briefs_v4</code> tonight; the design is not. The headline number of this family — the constant-answer baseline — is <strong>unknown and cannot be estimated until the segmenter runs</strong> (§5).</p>
+<p><strong>Run the whole thing (once it exists):</strong> <code>bash duplex/avd/run_duract_gates.sh</code> → <code>DURACT_CHAIN_OK</code>.</p>
+<p><strong>Family string:</strong> <code>duration_activity</code>.</p>
+<p>Sister document: <code>docs/ACTION_NARRATION_DESIGN.md</code>. The <strong>LLM activity segmenter</strong> (§4) is shared and is specified here, in full, once.</p>
+<hr>
+<h2>1. What the question is for</h2>
+<p>The wearer finishes doing something and wants to know how long it took.</p>
+<blockquote><p><em>&quot;How long was I making that coffee?&quot;</em> <strong>&quot;About four minutes.&quot;</strong></p></blockquote>
+<p>Two things make it worth building. It is the only family whose answer is a <strong>number</strong>, so it can be scored exactly rather than judged. And it needs the model to hold a <strong>start time</strong> across an activity it was not asked about at the time — a different capability from answering a question about the present.</p>
+<hr>
+<h2>2. The activity must be meaningful</h2>
+<p>The owner&#x27;s constraint, and it is the one that decides whether this family is real: the thing asked about must be an <strong>activity a person would name</strong>.</p>
+<p>Good: making a coffee · playing with a ball · folding the laundry · washing up · playing an arcade game · setting the table.</p>
+<p>Not activities: standing by the counter · adjusting posture · holding something · being in the kitchen · tiptoeing.</p>
+<p>The second list is most of what the narration actually contains, which is why §4 exists.</p>
+<hr>
+<h2>3. When the question is asked</h2>
+<p>Two placements, per the owner.</p>
+<table><thead><tr><th>placement</th><th>gap after the activity ends</th><th>what it tests</th></tr></thead><tbody><tr><td><strong>immediate</strong></td><td>within ~10 s</td><td>holding a start time across one activity</td></tr><tr><td><strong>delayed</strong></td><td>2–3 minutes</td><td>the same, with other activities in between</td></tr></tbody></table>
+<p>The delayed one is the interesting half. By the time the question arrives the wearer has done one or two other things, so the model has to <strong>not</strong> report the duration of the most recent thing. That distractor is the point; without it the task is &quot;how long was the last segment&quot;.</p>
+<p>Two constraints follow:</p>
+<ul><li>The clip must run at least 2–3 minutes past the activity&#x27;s end. Clips are</li></ul>
+<p>240 s, 390 s and 600 s, so delayed items will come mostly from the long ones. How many survive is unmeasured until segments exist.</p>
+<ul><li><strong>The activity must end before the question starts.</strong> An activity still</li></ul>
+<p>running is a different question (<em>&quot;how long have I been…&quot;</em>, §8) with a different answer and a different failure mode.</p>
+<hr>
+<h2>4. The LLM activity segmenter — the shared backbone</h2>
+<p><strong>Both families depend on this and neither can be built without it.</strong></p>
+<p>Input: the ordered 5-second narration spans of one clip. Output: a list of segments, each <code>{t0, t1, name, meaningful, evidence}</code>.</p>
+<h3>4.1 Why it has to be an LLM</h3>
+<p>Cheap word-overlap merging was tried first and <strong>does not work</strong>. Merging neighbouring spans by shared content words — even after stripping a posture stop-list — produced themes like:</p>
+<blockquote><p><code>arms clasped lap leans forward backrest couch living floor pillow</code></p></blockquote>
+<p>That is body pose, not an activity, because body pose is most of what the narration is made of. One real activity did surface out of the whole corpus run (<code>arcade button chair game joystick</code>); the commonest theme words overall were <em>living, forward, holding, area, leans, resting, arms, bends</em>.</p>
+<p>The run produced 588–1,184 &quot;meaningful&quot; segments at various thresholds, median ~67 s. <strong>Those numbers describe a rejected method and must not be quoted as a size estimate for this family.</strong></p>
+<h3>4.2 Rules the segmenter must follow</h3>
+<ol><li><strong>Only the narration.</strong> It names what the spans describe. It does not infer an activity the text does not support. Each segment carries the span indices that justify it.</li><li><strong>Boundaries snap to span edges.</strong> The spans are the only timing evidence there is; a boundary invented between them is a guess with a decimal point on it.</li><li><strong>It marks <code>meaningful</code> itself</strong>, against §2, and the unmeaningful segments are kept in the output rather than dropped — a segment rejected silently is a segment nobody can audit.</li><li><strong>Segments do not overlap and do not have gaps.</strong> Dead time between activities is its own segment, marked unmeaningful.</li></ol>
+<h3>4.3 Boundary error is duration error</h3>
+<p>This is the thing that will decide whether the family is any good.</p>
+<p>If the segmenter says the coffee started at 120 s and it really started at 105 s, the duration is wrong by 15 s — and at a 4-minute activity that is inside a ±20% tolerance, while at a 45-second activity it is not. <strong>Short activities are far more sensitive to boundary error than long ones.</strong></p>
+<p>So two things are required:</p>
+<ul><li><strong>A second independent pass</strong> over each boundary: a different prompt, or a</li></ul>
+<p>vision check on the frames either side. Disagreement widens the uncertainty band (§6), it does not get resolved by preferring one.</p>
+<ul><li><strong>A minimum duration floor</strong>, set from the measured boundary spread rather</li></ul>
+<p>than chosen. If boundaries land within ±8 s, a 45-second activity cannot be scored at ±20% and the floor has to rise.</p>
+<h3>4.4 Model</h3>
+<p>Gemma-3 27B/31B via <code>transformers</code> (not vLLM), which fits one H200, or Qwen3-Omni-30B. Narration text only — no video — so this is cheap per clip and runs over all 477 in one sweep.</p>
+<hr>
+<h2>5. The baseline problem, and why posture is not the answer</h2>
+<p>A duration family is easy to build and easy to fake. If most answers are near one value, a model that ignores the video and says that value every time scores well.</p>
+<p>This was measured on the cheap version of the family — <strong>posture states</strong> (sitting / standing / walking), merged from the narration, which is the obvious first idea:</p>
+<table><thead><tr><th>set</th><th>items</th><th>median</th><th>best single constant answer</th></tr></thead><tbody><tr><td>all states, runs ≥20 s</td><td>1,365</td><td>32 s</td><td><strong>62.6%</strong></td></tr><tr><td>all states, runs ≥45 s</td><td>469</td><td>77 s</td><td>41.4%</td></tr><tr><td>all states, balanced across duration octaves</td><td>68</td><td>—</td><td>25.0%</td></tr><tr><td><strong>sitting only, ≥45 s</strong></td><td><strong>110</strong></td><td><strong>148 s</strong></td><td><strong>25%</strong></td></tr></tbody></table>
+<p>A model answering &quot;about 30 seconds&quot; to everything is right <strong>63%</strong> of the time on the obvious version of this family. The cause is standing and walking: thousands of runs, median <strong>10 s</strong> each, piled on one value.</p>
+<p>Posture duration is therefore <strong>not</strong> the family. It survives only as a small side arm (§8), built on sitting and lying, where the spread is wide enough that a constant answer gets 25%.</p>
+<p><strong>The activity version is expected to be better</strong> — named activities should be longer and more varied than postures — but that is a hypothesis, not a measurement. The constant-answer baseline must be <strong>recomputed on the LLM segments before any item ships</strong>, and if it is above ~30% the family is rebalanced or cut. It is reported next to every score forever after.</p>
+<hr>
+<h2>6. What the answer looks like</h2>
+<p>Stored as a number with a band; spoken as a person would say it.</p>
+<p>``<code> answer_s      : 247.0          the point estimate answer_band   : [232.0, 262.0] the honest uncertainty, from §4.3 answer_text   : &quot;about four minutes&quot; </code>``</p>
+<ul><li><strong>Score numerically</strong>, against the band — not by string match. This is</li></ul>
+<p>what makes the family worth having.</p>
+<ul><li><strong>Tolerance is relative</strong>: ±20%, with a floor of 10 s. Nobody says &quot;247</li></ul>
+<p>seconds&quot;, and a fixed ±15 s is far too generous at four minutes and impossible at thirty.</p>
+<ul><li><strong><code>answer_text</code> is rendered from the number</strong>, never written by hand, so</li></ul>
+<p>the spoken form cannot drift from the thing being scored.</p>
+<ul><li>The band comes from the two-pass boundary check. **An item whose band is</li></ul>
+<p>wider than its own tolerance is not scorable and does not ship.** That is a real filter and it will remove items.</p>
+<p>Accepted model answers include &quot;about four minutes&quot;, &quot;four minutes or so&quot;, &quot;roughly 250 seconds&quot;, &quot;a bit over four minutes&quot;. The scorer parses a number and a unit out of the answer; an answer with no parseable number is wrong, not unscored.</p>
+<hr>
+<h2>7. What the question looks like</h2>
+<blockquote><p><em>&quot;How long was I making that coffee?&quot;</em> <em>&quot;How much time did I spend playing with the ball?&quot;</em> <em>&quot;That laundry — how long did that take me?&quot;</em></p></blockquote>
+<p>Rules:</p>
+<ul><li><strong>Name the activity.</strong> Like the memory families and unlike the deictic</li></ul>
+<p>ones, the question identifies its target. A bare <em>&quot;how long did that take?&quot;</em> has no defensible referent two minutes later.</p>
+<ul><li><strong>Past tense for finished activities.</strong> Present perfect (*&quot;how long have</li></ul>
+<p>I been…&quot;*) belongs to the ongoing arm (§8) and must not be mixed in; the two have different answers at the same moment.</p>
+<ul><li><strong>No duration hint.</strong> <em>&quot;Was that about five minutes?&quot;</em> gives it away.</li><li>Wording varies, intent preserved. A guard fails the build if any single</li></ul>
+<p>phrasing exceeds a fifth of the family.</p>
+<h3>7.1 The decline arm</h3>
+<p>Some activities begin before the clip does. Their true duration is <strong>unknowable</strong>, and the correct answer is to say so:</p>
+<blockquote><p><strong>&quot;I only started watching partway through that, so I can&#x27;t say how long in total — at least three minutes.&quot;</strong></p></blockquote>
+<p>This is worth building deliberately rather than filtering out. Decline teaching has already paid off once in this project, and a duration model that confidently invents a number for an activity it never saw the start of is exactly the failure mode to train against. Target a small share, around 10%.</p>
+<hr>
+<h2>8. The posture side arm</h2>
+<p>Kept small, and only where the baseline holds up: <strong>sitting</strong> and <strong>lying</strong>, runs of 45 s or more, onset inside the clip. 110 sitting items, median 148 s, p90 490 s, constant answer 25%.</p>
+<p>These use the present-perfect form, <em>&quot;how long have I been sitting here?&quot;</em>, and are the only items in the family asked <strong>during</strong> the state rather than after it. They are flagged and scored separately. Standing, walking and crouching are excluded outright for the reason in §5.</p>
+<hr>
+<h2>9. Visual verification</h2>
+<p><strong>This family ships a number that no frame has confirmed.</strong> The segmenter reads narration text only (§4.4); the duration is one text-proposed boundary subtracted from another. Everything that makes the family attractive — an exactly scorable answer — rests on two timestamps that came out of prose.</p>
+<h3>9.1 Two text passes do not make an independent check</h3>
+<p>§4.3 offered the second boundary pass as <em>a different prompt, or a vision check</em>. That choice is withdrawn: <strong>the vision check is mandatory on both boundaries of every shipped item.</strong></p>
+<p>The reason is that the error here is <strong>systematic, not random</strong>. The narrator names an activity once it is underway, so a text pass is late at the start boundary and late at the end boundary, and a second text pass over the same prose is late in the same direction. Two passes agree, the band stays narrow, and the number is confidently wrong. In the sister family that same lag overturned 2 of 18 anchors — and there it cost an anchor, here it costs seconds straight off the answer.</p>
+<p>So the band in §6 comes from <strong>text-versus-vision</strong> disagreement. A text-versus-text band is not an uncertainty estimate; it is an agreement between two instruments with the same fault.</p>
+<h3>9.2 How the boundaries are checked</h3>
+<p>Coarse 2 fps over the segment to bracket each boundary, then dense 15 fps in the bracket to place it. The verifier answers a closed question — <em>is the activity underway in this frame</em> — because a free-text verdict cannot be gated. It must pass a <strong>control</strong> in the middle of the segment, where the activity is known to be running, before any &quot;not yet&quot; is believed.</p>
+<h3>9.3 The arms that are visual claims outright</h3>
+<ul><li><strong>The decline arm (§7.1)</strong> asserts the activity began before the clip.</li></ul>
+<p>That is a statement about the first frames, and it is checked there. An item whose opening frames show the activity starting is not a decline item; it is a mislabelled one, and it teaches the model to refuse answerable questions.</p>
+<ul><li><strong>The posture arm (§8)</strong> turns on a sitting or lying <strong>onset</strong>. Posture is</li></ul>
+<p>the single thing the narration says most often and the thing it is loosest about. The onset frame is confirmed.</p>
+<h3>9.4 Disagreement widens, it does not resolve</h3>
+<p>Where vision and text disagree on a boundary, the band widens to cover both. If the widened band is wider than the item&#x27;s own tolerance, the item does not ship (§6) — and that is the gate doing its job, not a yield problem to be tuned away. The disagreement is quarantined with the reading written down.</p>
+<hr>
+<h2>10. Data defect: 121 broken spans</h2>
+<p><strong>121 action spans have an end at or before their start</strong>, including negative times: <code>[2.2, -0.3]</code>, <code>[403.5, 400.7]</code>. This family computes durations off that grid, so a backwards span is a negative duration feeding straight into an answer key.</p>
+<p>Quarantined with the reason written down, never deleted, before the segmenter runs.</p>
+<hr>
+<h2>11. Pipeline</h2>
+<table><thead><tr><th>#</th><th>script</th><th>token</th><th>does</th></tr></thead><tbody><tr><td>1</td><td><code>duract_spans.py</code></td><td><code>DSP_OK</code></td><td>quarantine the 121 broken spans; clean grid</td></tr><tr><td>2</td><td><code>activity_segments.py</code></td><td><code>ASG_OK</code></td><td><strong>shared</strong> LLM segmenter (§4)</td></tr><tr><td>3</td><td><code>activity_boundaries.py</code></td><td><code>ABD_OK</code></td><td>second-pass boundary check → uncertainty band</td></tr><tr><td>4</td><td><code>test_activity_boundaries.py</code></td><td><code>ABD_TEST_OK</code></td><td>fixture pair: band must widen on disagreement</td></tr><tr><td>5</td><td><code>duract_baseline.py</code></td><td><code>DBL_OK</code></td><td><strong>constant-answer baseline on the real segments</strong></td></tr><tr><td>6</td><td><code>duract_place.py</code></td><td><code>DPL_OK</code></td><td>immediate and delayed placements, distractor check</td></tr><tr><td>7</td><td><code>duract_qa.py</code></td><td><code>DQA_OK</code></td><td>questions, numeric answers, bands, rendered text</td></tr><tr><td>8</td><td><code>duract_decline.py</code></td><td><code>DDC_OK</code></td><td>the unknowable-start arm (§7.1)</td></tr><tr><td>9</td><td><code>duract_audit.py</code></td><td><code>DURACT_AUDIT_OK</code></td><td>40-item hand audit</td></tr></tbody></table>
+<p>Step 5 is a <strong>gate, not a report</strong>. If the baseline on real segments comes back high, the chain stops there and the family is rebalanced before anything is authored on top of it.</p>
+<hr>
+<h2>12. Checklist</h2>
+<ul><li>[ ] <code>DURACT-01</code> The 121 broken spans are quarantined with a written reason.</li><li>[ ] <code>DURACT-02</code> The activity is <code>meaningful</code> by §2, judged by the segmenter and spot-checked by hand.</li><li>[ ] <code>DURACT-03</code> Boundaries snap to span edges; none were invented between them.</li><li>[ ] <code>DURACT-04</code> Two independent passes agreed, or the band was widened.</li><li>[ ] <code>DURACT-05</code> The band is narrower than the item&#x27;s own tolerance.</li><li>[ ] <code>DURACT-06</code> The activity <strong>ended</strong> before the question began (except the §8 arm).</li><li>[ ] <code>DURACT-07</code> Delayed items have at least one other activity between the end and the question.</li><li>[ ] <code>DURACT-08</code> The answer is a number with a band; the spoken text is rendered from it, not written.</li><li>[ ] <code>DURACT-09</code> Tolerance is relative (±20%, floor 10 s).</li><li>[ ] <code>DURACT-10</code> The constant-answer baseline on the shipped segments is measured and reported beside the score.</li><li>[ ] <code>DURACT-11</code> The decline arm is ~10% and its items genuinely start before the clip.</li><li>[ ] <code>DURACT-12</code> Posture items are sitting or lying only, flagged, scored apart.</li><li>[ ] <code>DURACT-13</code> No single phrasing exceeds a fifth of the family.</li><li>[ ] <code>DURACT-14</code> Both boundaries were confirmed against frames; the band comes from text-versus-vision, never text-versus-text.</li><li>[ ] <code>DURACT-15</code> The verifier passed a control mid-segment before any &quot;not yet underway&quot; verdict was believed.</li><li>[ ] <code>DURACT-16</code> Decline items were confirmed at the opening frames to be already underway.</li><li>[ ] <code>DURACT-17</code> Posture-arm onsets were confirmed at the frame.</li><li>[ ] <code>DURACT-18</code> Vision/text disagreements widened the band and were quarantined with the reading written down.</li></ul>
+<hr>
+<h2>13. Open</h2>
+<ol><li><strong>The baseline on real activity segments.</strong> The single biggest unknown. Until step 5 runs, the size and the viability of this family are both unknown.</li><li><strong>Boundary spread</strong>, which sets the minimum activity duration (§4.3).</li><li><strong>How many delayed items the clip lengths allow</strong> (§3).</li><li>Whether the segmenter&#x27;s own <code>meaningful</code> judgement matches a person&#x27;s. A hand audit of ~40 segments settles it, and it should run before anything is built on top.</li></ol>
+<h3>Hard rules carried in</h3>
+<ul><li>Never delete. Quarantine with a written reason.</li><li>Heavy work via <code>srun</code>/<code>sbatch</code>, never the login node. <code>/ai4rl</code> is visible</li></ul>
+<p>only from compute nodes.</p>
+<ul><li>Never render with CSM.</li><li>A guard needs a fixture <strong>pair</strong>.</li><li>Verify claims against disk before recording them as fact. §4.1 and §5 are</li></ul>
+<p>tonight&#x27;s reminders — one method rejected, one baseline that would have shipped a family a constant answer beats.</p></div></body></html>
