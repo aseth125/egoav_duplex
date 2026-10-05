@@ -1,0 +1,53 @@
+{
+  "schema": "egoduplex.public-interruption-validation/1",
+  "artifact_complete": true,
+  "static_checks": {
+    "unique_turn_ids": true,
+    "accepted_visual_candidates_only": true,
+    "accepted_candidate_content_bound": true,
+    "assistant_visual_trigger_bound": true,
+    "visual_candidate_count": 9,
+    "authored_indices_match_list_order": true,
+    "sanitized_runtime_projection": true,
+    "verbatim_dialogue_leaks": [],
+    "five_interruption_types": true,
+    "source_speech_collisions": [],
+    "assistant_source_speech_collisions": [],
+    "same_speaker_collisions": [],
+    "live_progress_min_words": 5,
+    "minimum_reference_words_after_target": 4,
+    "stop_latency_ms": 400
+  },
+  "media": {
+    "complete": true,
+    "measured_wavs": 13,
+    "expected_wavs": 13,
+    "source_speech_collisions": [],
+    "same_speaker_collisions": [],
+    "asr": {
+      "total": 13,
+      "ok": 13,
+      "failures": 0,
+      "pass": true,
+      "wer_tolerance": 0.5,
+      "insertion_tolerance": 0.25,
+      "max_wer": 0.143,
+      "max_insertion_rate": 0.0
+    }
+  },
+  "live": {
+    "devices_total": 5,
+    "devices_triggered": 1,
+    "devices_skipped_short_or_finished": 4,
+    "semantic_transport_400ms_pass": null,
+    "native_model_400ms_resolved": false,
+    "backchannel_contract_pass": false,
+    "assistant_initiated_reminder_pass": false,
+    "assistant_initiated_window_text": "",
+    "output_gate_intervals": []
+  },
+  "render": {
+    "passed": true,
+    "bytes": 36414775
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "schema": "egoduplex.interruption-runtime/1",
+  "visibility": "harness_only_user_stimuli",
+  "chain_id": "one_video_interruptions",
+  "source_episode_id": "episode_01",
+  "clip": "episode_01_10min",
+  "duration_s": 600.0,
+  "turns": [
+    {
+      "turn_id": "user_000",
+      "speaker": "user",
+      "text": "Stay with me for a bit. I may ask about what I'm doing.",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 1.12,
+        "end_s": 4.8
+      }
+    },
+    {
+      "turn_id": "user_001",
+      "speaker": "user",
+      "text": "After I left the bedroom, what did I do next?",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 113.36,
+        "end_s": 116.0
+      }
+    },
+    {
+      "turn_id": "user_002",
+      "speaker": "user",
+      "text": "Mm-hm.",
+      "schedule": {
+        "kind": "assistant_progress",
+        "parent_turn_id": "user_001",
+        "min_words": 5,
+        "target_words": 5,
+        "requires_assistant_active": true,
+        "on_short_or_finished_answer": "skip_device_score_base_only"
+      }
+    },
+    {
+      "turn_id": "user_003",
+      "speaker": "user",
+      "text": "Before I came into the kitchen, what had I been handling at the coffee table?",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 216.32,
+        "end_s": 220.0
+      }
+    },
+    {
+      "turn_id": "user_004",
+      "speaker": "user",
+      "text": "What color was the toy I handled after the ball?",
+      "schedule": {
+        "kind": "assistant_progress",
+        "parent_turn_id": "user_003",
+        "min_words": 5,
+        "target_words": 7,
+        "requires_assistant_active": true,
+        "on_short_or_finished_answer": "skip_device_score_base_only"
+      }
+    },
+    {
+      "turn_id": "user_005",
+      "speaker": "user",
+      "text": "Where did I leave my gray tumbler?",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 247.66,
+        "end_s": 249.5
+      }
+    },
+    {
+      "turn_id": "user_006",
+      "speaker": "user",
+      "text": "Just the room—which room?",
+      "schedule": {
+        "kind": "assistant_progress",
+        "parent_turn_id": "user_005",
+        "min_words": 5,
+        "target_words": 5,
+        "requires_assistant_active": true,
+        "on_short_or_finished_answer": "skip_device_score_base_only"
+      }
+    },
+    {
+      "turn_id": "user_007",
+      "speaker": "user",
+      "text": "What were the main things I checked in the kitchen?",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 330.76,
+        "end_s": 333.0
+      }
+    },
+    {
+      "turn_id": "user_008",
+      "speaker": "user",
+      "text": "Actually, how long was I in there?",
+      "schedule": {
+        "kind": "assistant_progress",
+        "parent_turn_id": "user_007",
+        "min_words": 5,
+        "target_words": 7,
+        "requires_assistant_active": true,
+        "on_short_or_finished_answer": "skip_device_score_base_only"
+      }
+    },
+    {
+      "turn_id": "user_009",
+      "speaker": "user",
+      "text": "When I next hold the striped ball up close, remind me to send the photo.",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 345.6,
+        "end_s": 350.0
+      }
+    },
+    {
+      "turn_id": "user_010",
+      "speaker": "user",
+      "text": "What am I doing right now?",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 409.88,
+        "end_s": 411.0
+      }
+    },
+    {
+      "turn_id": "user_011",
+      "speaker": "user",
+      "text": "Wait—how long was I checking the bedroom drawers?",
+      "schedule": {
+        "kind": "assistant_progress",
+        "parent_turn_id": "user_010",
+        "min_words": 5,
+        "target_words": 5,
+        "requires_assistant_active": true,
+        "on_short_or_finished_answer": "skip_device_score_base_only"
+      }
+    },
+    {
+      "turn_id": "user_012",
+      "speaker": "user",
+      "text": "About how long did I spend playing with the striped ball just now?",
+      "schedule": {
+        "kind": "fixed_user_audio",
+        "start_s": 580.88,
+        "end_s": 584.0
+      }
+    }
+  ]
+}
