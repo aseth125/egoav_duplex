@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Review twenty verified EgoDuplex conversational chains, with matched clean and interruption variants.">
+  <title>Twenty verified chains · EgoDuplex</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07100f; --bg2: #0b1514; --panel: #101c1a; --panel2: #132321;
+      --line: #29413d; --line2: #385851; --text: #eef8f5; --muted: #9eb6b0;
+      --mint: #77e0bc; --cyan: #6bcfd1; --gold: #f1bd68; --rose: #ed8c94;
+      --shadow: 0 22px 70px rgba(0,0,0,.28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-height: 100vh; background:
+      radial-gradient(circle at 85% -10%, rgba(107,207,209,.16), transparent 32rem),
+      radial-gradient(circle at -10% 22%, rgba(119,224,188,.08), transparent 28rem), var(--bg);
+      color: var(--text); font: 15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color: var(--cyan); text-underline-offset: 3px; }
+    a:hover { color: var(--mint); }
+    button, input, select { font: inherit; }
+    button, select { cursor: pointer; }
+    .shell { width: min(1220px, calc(100% - 36px)); margin: 0 auto; }
+    .site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 9px 22px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+    .brand { color: var(--text); font-weight: 780; text-decoration: none; letter-spacing: -.02em; margin-right: auto; }
+    .nav-link { color: var(--muted); font-size: 14px; text-decoration: none; }
+    .hero { padding: clamp(48px,8vw,94px) 0 42px; }
+    .eyebrow { color: var(--mint); font: 700 12px/1.3 ui-monospace,SFMono-Regular,monospace; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { max-width: 930px; margin: 13px 0 22px; font-size: clamp(42px,8vw,82px); line-height: .97; letter-spacing: -.055em; }
+    .lede { max-width: 790px; margin: 0; color: #c4d8d2; font-size: clamp(17px,2.2vw,21px); }
+    .badge-row, .download-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+    .badge { display: inline-flex; gap: 7px; align-items: center; min-height: 31px; padding: 5px 11px; border: 1px solid var(--line2); border-radius: 999px; color: #cbe0da; background: rgba(16,28,26,.72); font: 700 11px/1 ui-monospace,SFMono-Regular,monospace; letter-spacing: .045em; text-transform: uppercase; }
+    .badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 14px rgba(119,224,188,.7); }
+    .badge.info::before { background: var(--cyan); }
+    .button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid var(--line2); border-radius: 8px; background: var(--panel); color: var(--text); text-decoration: none; font-weight: 650; }
+    .button:hover { background: var(--panel2); border-color: var(--mint); color: var(--text); }
+    .button.primary { background: var(--mint); border-color: var(--mint); color: #07110e; }
+    .button.primary:hover { background: #99eccf; }
+    .stats { display: grid; grid-template-columns: repeat(5,minmax(130px,1fr)); gap: 11px; margin: 4px 0 48px; }
+    .stat { min-height: 108px; padding: 17px; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(145deg,rgba(19,35,33,.94),rgba(12,23,21,.94)); box-shadow: var(--shadow); }
+    .stat strong { display: block; color: var(--mint); font-size: clamp(24px,3.3vw,35px); line-height: 1.1; letter-spacing: -.04em; }
+    .stat span { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; }
+    .explorer { display: grid; grid-template-columns: 300px minmax(0,1fr); gap: 22px; align-items: start; padding-bottom: 80px; }
+    .rail { position: sticky; top: 16px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 14px; background: rgba(12,23,21,.95); overflow: hidden; box-shadow: var(--shadow); }
+    .rail-head { padding: 16px; border-bottom: 1px solid var(--line); }
+    .rail h2, .content h2 { margin: 0; letter-spacing: -.025em; }
+    .rail h2 { font-size: 18px; }
+    .search { width: 100%; margin-top: 12px; padding: 10px 12px; border: 1px solid var(--line2); border-radius: 8px; outline: none; background: var(--bg); color: var(--text); }
+    .search:focus { border-color: var(--mint); box-shadow: 0 0 0 3px rgba(119,224,188,.12); }
+    .episode-list { margin: 0; padding: 7px; overflow-y: auto; list-style: none; }
+    .episode-button { width: 100%; padding: 11px 10px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); text-align: left; }
+    .episode-button:hover { background: rgba(119,224,188,.07); color: var(--text); }
+    .episode-button[aria-current="true"] { background: rgba(119,224,188,.13); color: var(--text); }
+    .episode-button b { display: block; color: inherit; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .episode-button small { color: #78938d; }
+    .empty-list { padding: 18px 10px; color: var(--muted); }
+    .content { min-width: 0; }
+    .episode-head { padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(145deg,var(--panel2),var(--panel)); box-shadow: var(--shadow); }
+    .episode-head h2 { margin-top: 5px; font-size: clamp(24px,4vw,38px); overflow-wrap: anywhere; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; color: var(--muted); font: 12px/1.5 ui-monospace,SFMono-Regular,monospace; }
+    .section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; margin: 38px 2px 14px; }
+    .section-head h3 { margin: 0; font-size: 22px; letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 13px; }
+    .cards { display: grid; gap: 12px; }
+    .turn, .device, .audit-card { border: 1px solid var(--line); border-radius: 12px; background: rgba(16,28,26,.94); overflow: hidden; }
+    .turn-main, .device-main, .audit-card { padding: 17px 19px; }
+    .card-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 9px; }
+    .pill { padding: 4px 8px; border-radius: 999px; border: 1px solid var(--line2); color: var(--cyan); font: 700 10px/1.2 ui-monospace,SFMono-Regular,monospace; text-transform: uppercase; letter-spacing: .07em; }
+    .pill.gold { color: var(--gold); border-color: rgba(241,189,104,.42); }
+    .timestamp { color: var(--muted); font: 12px/1.4 ui-monospace,SFMono-Regular,monospace; }
+    .qa { display: grid; grid-template-columns: 74px minmax(0,1fr); gap: 9px 12px; margin-top: 15px; }
+    .qa dt { margin: 0; color: #78938d; font: 700 10px/1.6 ui-monospace,SFMono-Regular,monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .qa dd { margin: 0; color: #dce9e5; }
+    .qa dd.question { color: var(--text); font-weight: 700; font-size: 16px; }
+    details { border-top: 1px solid var(--line); }
+    summary { padding: 11px 19px; color: var(--muted); cursor: pointer; font-size: 13px; }
+    summary:hover { color: var(--mint); }
+    .details-body { padding: 2px 19px 17px; color: #bdcec9; font-size: 13px; }
+    .details-body p { margin: 8px 0 0; }
+    .device { border-left: 3px solid var(--gold); }
+    .device-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 15px; }
+    .device-field { padding: 11px 12px; border-radius: 8px; background: #0a1513; }
+    .device-field.wide { grid-column: 1 / -1; }
+    .device-field b { display: block; margin-bottom: 4px; color: #78938d; font: 700 10px/1.4 ui-monospace,SFMono-Regular,monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .device-field span { color: #dce9e5; }
+    .claim-list { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+    .claim { padding: 13px 15px; border: 1px solid rgba(237,140,148,.25); border-radius: 9px; background: rgba(237,140,148,.05); }
+    .claim b { color: var(--rose); }
+    .claim p { margin: 5px 0 0; color: #c3d1cd; }
+    .audit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .audit-card strong { display: block; color: var(--mint); font-size: 21px; }
+    .audit-card span { color: var(--muted); font-size: 12px; }
+    .status { margin: 38px 0; padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); color: var(--muted); }
+    .status strong { color: var(--text); }
+    .status.error { border-color: rgba(237,140,148,.55); }
+    .hidden { display: none !important; }
+    footer { padding: 20px 0 45px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 900px) { .stats { grid-template-columns: repeat(3,1fr); } .explorer { grid-template-columns: 1fr; } .rail { position: static; max-height: none; } .episode-list { max-height: 300px; } }
+    @media (max-width: 600px) { .shell { width: min(100% - 24px,1220px); } .stats { grid-template-columns: repeat(2,1fr); } .stat:last-child { grid-column: 1 / -1; } .device-grid,.audit-grid { grid-template-columns: 1fr; } .device-field.wide { grid-column: auto; } .qa { grid-template-columns: 1fr; gap: 3px; } h1 { font-size: 44px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <nav class="site-nav" aria-label="Site navigation">
+      <a class="brand" href="../">EgoDuplex</a>
+      <a class="nav-link" href="../">Home</a>
+      <a class="nav-link" href="../interruptions/">Interruption demo</a>
+    </nav>
+    <div class="hero">
+      <div class="eyebrow">Verified multimodal benchmark · chain20</div>
+      <h1>Twenty episodes.<br>Two matched realities.</h1>
+      <p class="lede">A reviewable corpus of natural questions for glasses-worn assistants. Every episode ships as a clean conversational chain and a matched version with output-contingent interruptions, refinements, cross-questions, topic changes, and backchannels.</p>
+      <div class="badge-row" aria-label="Corpus status">
+        <span class="badge" id="validation-badge">Validation passed</span>
+        <span class="badge" id="freshness-badge">Freshness verified</span>
+        <span class="badge info">Pixel evidence reviewed</span>
+      </div>
+      <div class="download-row" aria-label="Downloads">
+        <a class="button primary" href="data.json" download>Download complete data</a>
+        <a class="button" href="baseline.jsonl" download>Baseline JSONL</a>
+        <a class="button" href="interruptions.jsonl" download>Interruptions JSONL</a>
+        <a class="button" href="review.md">Human review</a>
+        <a class="button" href="validation-report.json">Validation</a>
+        <a class="button" href="freshness-report.json">Freshness audit</a>
+        <a class="button" href="checksums.sha256">Checksums</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="stats" aria-label="Corpus summary">
+      <div class="stat"><strong id="stat-episodes">20</strong><span>source episodes</span></div>
+      <div class="stat"><strong id="stat-variants">40</strong><span>matched variants</span></div>
+      <div class="stat"><strong id="stat-turns">108</strong><span>base questions</span></div>
+      <div class="stat"><strong id="stat-devices">57</strong><span>duplex devices</span></div>
+      <div class="stat"><strong id="stat-duration">73 min</strong><span>source video</span></div>
+    </section>
+
+    <div id="loading" class="status" role="status"><strong>Loading the corpus…</strong><br>Fetching the verified episode bundle.</div>
+    <div id="error" class="status error hidden" role="alert"><strong>Data could not be loaded.</strong><br><span id="error-message">Try refreshing this page or download data.json directly.</span></div>
+
+    <section id="explorer" class="explorer hidden" aria-label="Episode explorer">
+      <aside class="rail">
+        <div class="rail-head">
+          <h2>Episodes</h2>
+          <label>
+            <span class="hidden">Search episodes</span>
+            <input id="search" class="search" type="search" placeholder="Search ID or question…" autocomplete="off">
+          </label>
+        </div>
+        <ol id="episode-list" class="episode-list"></ol>
+      </aside>
+
+      <article id="episode-content" class="content" aria-live="polite">
+        <header class="episode-head">
+          <div class="eyebrow" id="episode-number">Episode 01</div>
+          <h2 id="episode-title"></h2>
+          <div class="meta" id="episode-meta"></div>
+        </header>
+
+        <div class="section-head"><h3>Clean baseline</h3><p>Questions and gold answers in timeline order</p></div>
+        <div class="cards" id="turns"></div>
+
+        <div class="section-head"><h3>Interruption layer</h3><p>Output-contingent devices over the same base chain</p></div>
+        <div class="cards" id="devices"></div>
+
+        <div class="section-head"><h3>Verification record</h3><p>Held-out claims stay visible for review</p></div>
+        <div id="audit"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="shell">Authored from source annotations and overlay-free frames, then checked for causal evidence, visual agreement, dialogue leakage, and prior-question reuse.</footer>
+
+  <script>
+  (() => {
+    'use strict';
+    const $ = id => document.getElementById(id);
+    const state = { data: null, episodes: [], filtered: [], selected: 0 };
+    const text = value => value === null || value === undefined || value === '' ? '—' : String(value);
+    const answerText = answer => typeof answer === 'string' ? answer : answer && (answer.text || answer.value || answer.answer) || '—';
+    const el = (tag, className, content) => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (content !== undefined) node.textContent = text(content);
+      return node;
+    };
+    const first = (...values) => values.find(v => v !== undefined && v !== null && v !== '');
+    const baselineOf = ep => ep.baseline || ep.clean || {};
+    const interruptionsOf = ep => ep.interruptions || ep.interruption || {};
+    const turnsOf = ep => baselineOf(ep).turns || baselineOf(ep).base_turns || ep.turns || [];
+    const devicesOf = ep => interruptionsOf(ep).devices || ep.devices || [];
+    const auditOf = ep => ep.audit || {};
+    const clipOf = ep => first(ep.clip, baselineOf(ep).clip, interruptionsOf(ep).clip, ep.source_episode_id, 'Untitled episode');
+    const duration = seconds => {
+      seconds = Number(seconds || 0);
+      if (!seconds) return '—';
+      const m = Math.floor(seconds / 60), s = Math.round(seconds % 60);
+      return `${m}:${String(s).padStart(2,'0')}`;
+    };
+    const disposition = value => text(value).replaceAll('_',' ');
+
+    function makeDL(label, value, className) {
+      const dt = el('dt','',label), dd = el('dd',className || '',value);
+      return [dt,dd];
+    }
+    function field(label, value, wide) {
+      const box = el('div','device-field' + (wide ? ' wide' : ''));
+      box.append(el('b','',label), el('span','',value));
+      return box;
+    }
+
+    function renderTurn(turn) {
+      const card = el('article','turn');
+      const main = el('div','turn-main');
+      const top = el('div','card-top');
+      top.append(el('span','pill',first(turn.family,'question')), el('span','timestamp',`${text(turn.turn_id)} · ${duration(turn.t_ask_s)}`));
+      const dl = el('dl','qa');
+      dl.append(...makeDL('Wearer', first(turn.text,turn.question),'question'), ...makeDL('Assistant',answerText(turn.expected_answer)));
+      main.append(top,dl); card.append(main);
+      const reading = first(turn.visual_verification && turn.visual_verification.frame_reading, turn.evidence && turn.evidence.answer_basis);
+      if (reading) {
+        const details = document.createElement('details');
+        const summary = el('summary','','Evidence and visual review');
+        const body = el('div','details-body');
+        const frames = first(turn.visual_verification && turn.visual_verification.checked_frames, turn.evidence && turn.evidence.frame_indices, []);
+        body.append(el('p','',reading));
+        if (frames.length) body.append(el('p','',`Checked frames: ${frames.join(', ')}`));
+        details.append(summary,body); card.append(details);
+      }
+      return card;
+    }
+
+    function renderDevice(device) {
+      const card = el('article','device');
+      const main = el('div','device-main');
+      const top = el('div','card-top');
+      top.append(el('span','pill gold',first(device.semantic_type,'device')), el('span','timestamp',`${text(device.event_id)} · parent ${text(device.parent_turn_id)}`));
+      const grid = el('div','device-grid');
+      const schedule = device.schedule || {};
+      const oracle = device.oracle_preview || {};
+      const behavior = device.expected_behavior || {};
+      const trigger = first(oracle.spoken_prefix, schedule.target_words && `After ${schedule.target_words} assistant words`, schedule.kind);
+      grid.append(
+        field('Wearer cuts in',first(device.text,device.utterance),'true'),
+        field('Trigger',trigger),
+        field('Expected answer',answerText(device.expected_answer)),
+        field('Required behavior',disposition(first(behavior.disposition,device.behavior))),
+        field('Stop contract',behavior.stop_required ? `Stop old answer within ${first(behavior.max_stop_latency_ms,400)} ms` : 'Continue without restarting')
+      );
+      main.append(top,grid); card.append(main);
+      const reading = device.visual_verification && device.visual_verification.frame_reading;
+      if (reading) {
+        const details = document.createElement('details');
+        details.append(el('summary','','Device evidence'),el('div','details-body',reading));
+        card.append(details);
+      }
+      return card;
+    }
+
+    function renderAudit(audit, turns, devices) {
+      const wrap = document.createDocumentFragment();
+      const summary = audit.summary || {};
+      const visual = audit.visual_review_summary || {};
+      const grid = el('div','audit-grid');
+      grid.append(
+        auditStat(first(summary.shipped_claims_with_pixel_pass,turns.length + devices.length),'pixel-verified claims'),
+        auditStat(first(visual.shipped_turns,turns.length),'shipped base turns'),
+        auditStat((audit.narration_pixel_disagreements || []).length,'source disagreements logged')
+      );
+      wrap.append(grid);
+      const claims = audit.rejected_claims || audit.held_out_claims || [];
+      const head = el('div','section-head');
+      head.append(el('h3','','Held-out claims'),el('p','',claims.length ? `${claims.length} quarantined during review` : 'No claims recorded for this episode'));
+      wrap.append(head);
+      if (claims.length) {
+        const list = el('ul','claim-list');
+        claims.forEach(item => {
+          const li = el('li','claim');
+          li.append(el('b','',first(item.proposal,item.claim,'Held-out claim')),el('p','',first(item.reason,item.rationale,item.status)));
+          list.append(li);
+        });
+        wrap.append(list);
+      }
+      return wrap;
+    }
+    function auditStat(value,label) { const node=el('div','audit-card'); node.append(el('strong','',value),el('span','',label)); return node; }
+
+    function selectEpisode(index) {
+      state.selected = index;
+      const ep = state.filtered[index];
+      if (!ep) return;
+      document.querySelectorAll('.episode-button').forEach((b,i) => b.setAttribute('aria-current',i === index ? 'true' : 'false'));
+      const turns=turnsOf(ep), devices=devicesOf(ep), baseline=baselineOf(ep), ints=interruptionsOf(ep), audit=auditOf(ep);
+      $('episode-number').textContent=`Episode ${String(state.episodes.indexOf(ep)+1).padStart(2,'0')}`;
+      $('episode-title').textContent=clipOf(ep);
+      $('episode-meta').replaceChildren(
+        el('span','',`duration ${duration(first(ep.duration_s,baseline.duration_s,ints.duration_s))}`),
+        el('span','',`${turns.length} base turns`), el('span','',`${devices.length} devices`),
+        el('span','',text(first(ep.source_episode_id,baseline.source_episode_id)))
+      );
+      $('turns').replaceChildren(...turns.map(renderTurn));
+      $('devices').replaceChildren(...(devices.length ? devices.map(renderDevice) : [el('div','status','No interruption devices in this episode.') ]));
+      $('audit').replaceChildren(renderAudit(audit,turns,devices));
+    }
+
+    function renderList() {
+      const list=$('episode-list'); list.replaceChildren();
+      if (!state.filtered.length) { list.append(el('li','empty-list','No matching episodes.')); return; }
+      state.filtered.forEach((ep,index) => {
+        const li=document.createElement('li'), button=el('button','episode-button');
+        button.type='button'; button.setAttribute('aria-current',index===state.selected?'true':'false');
+        button.append(el('b','',clipOf(ep)),el('small','',`${turnsOf(ep).length} turns · ${devicesOf(ep).length} devices`));
+        button.addEventListener('click',() => selectEpisode(index)); li.append(button); list.append(li);
+      });
+    }
+
+    function filterEpisodes() {
+      const query=$('search').value.trim().toLowerCase();
+      state.filtered=state.episodes.filter(ep => !query || [clipOf(ep),first(ep.source_episode_id,''),...turnsOf(ep).map(t=>t.text),...devicesOf(ep).map(d=>d.text)].join(' ').toLowerCase().includes(query));
+      state.selected=0; renderList(); selectEpisode(0);
+    }
+    function summaryValue(summary,keys,fallback) { for (const key of keys) if (summary[key] !== undefined) return summary[key]; return fallback; }
+    function hydrate(data) {
+      state.data=data; state.episodes=Array.isArray(data.episodes) ? data.episodes : []; state.filtered=[...state.episodes];
+      if (!state.episodes.length) throw new Error('The episode bundle is empty.');
+      const s=data.summary || {};
+      const turns=state.episodes.reduce((n,e)=>n+turnsOf(e).length,0), devices=state.episodes.reduce((n,e)=>n+devicesOf(e).length,0);
+      const seconds=state.episodes.reduce((n,e)=>n+Number(first(e.duration_s,baselineOf(e).duration_s,0)),0);
+      $('stat-episodes').textContent=summaryValue(s,['episodes','episode_count','source_episode_count'],state.episodes.length);
+      $('stat-variants').textContent=summaryValue(s,['variants','variant_count'],state.episodes.length*2);
+      $('stat-turns').textContent=summaryValue(s,['turns','base_turns','turn_count'],turns);
+      $('stat-devices').textContent=summaryValue(s,['devices','device_count'],devices);
+      $('stat-duration').textContent=summaryValue(s,['duration','duration_minutes','source_minutes'],`${Math.round(seconds/60)} min`);
+      const count=value => Array.isArray(value) ? value.length : Number(value || 0);
+      const errors=count(summaryValue(s,['validation_errors','errors'],0));
+      const warnings=count(summaryValue(s,['validation_warnings','warnings'],0));
+      $('validation-badge').textContent=errors || warnings ? `${errors} errors · ${warnings} warnings` : 'Validation · 0 errors / 0 warnings';
+      const freshness=s.freshness_audit || {};
+      const prior=first(freshness.files,summaryValue(s,['prior_questions_scanned','freshness_questions_scanned'],0));
+      const matches=Number(first(freshness.exact_matches,0))+Number(first(freshness.near_matches,0));
+      $('freshness-badge').textContent=`Freshness · ${Number(prior).toLocaleString()} files · ${matches} matches`;
+      $('loading').classList.add('hidden'); $('explorer').classList.remove('hidden');
+      renderList(); selectEpisode(0);
+    }
+
+    $('search').addEventListener('input',filterEpisodes);
+    fetch('data.json',{cache:'no-cache'}).then(response => {
+      if (!response.ok) throw new Error(`Server returned ${response.status}.`);
+      return response.json();
+    }).then(hydrate).catch(error => {
+      $('loading').classList.add('hidden'); $('error').classList.remove('hidden');
+      $('error-message').textContent=`${error.message} Try refreshing this page or download data.json directly.`;
+    });
+  })();
+  </script>
+</body>
+</html>

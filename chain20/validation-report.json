@@ -1,0 +1,392 @@
+{
+  "schema": "egoduplex.fresh-chain20-validation/1",
+  "build_id": "chain20_fresh_v1",
+  "passed": true,
+  "source_episode_count": 20,
+  "variant_count": 40,
+  "base_turn_count": 108,
+  "device_count": 57,
+  "family_counts": {
+    "episodic_memory": 93,
+    "action_narration": 15
+  },
+  "semantic_type_counts": {
+    "plain_backchannel": 17,
+    "question_change_related": 6,
+    "cross_question": 13,
+    "same_question_refinement": 15,
+    "topic_switch": 6
+  },
+  "freshness_legacy_questions_scanned": 110,
+  "raw_annotation_rows_checked": 293,
+  "pairwise_leakage_checks": 88,
+  "device_leakage_checks": 40,
+  "errors": [],
+  "warnings": [],
+  "episodes": [
+    {
+      "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+      "source_episode_id": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv",
+      "duration_s": 600,
+      "base_turns": 10,
+      "devices": 5,
+      "families": {
+        "episodic_memory": 10
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "question_change_related": 1,
+        "cross_question": 1,
+        "same_question_refinement": 1,
+        "topic_switch": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720",
+      "source_episode_id": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 2,
+      "families": {
+        "action_narration": 1,
+        "episodic_memory": 2
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "same_question_refinement": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+      "source_episode_id": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 3,
+      "families": {
+        "episodic_memory": 6
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "same_question_refinement": 1,
+        "cross_question": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+      "source_episode_id": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8",
+      "duration_s": 600,
+      "base_turns": 10,
+      "devices": 5,
+      "families": {
+        "episodic_memory": 7,
+        "action_narration": 3
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "same_question_refinement": 1,
+        "cross_question": 2,
+        "topic_switch": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+      "source_episode_id": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq",
+      "duration_s": 600,
+      "base_turns": 10,
+      "devices": 5,
+      "families": {
+        "action_narration": 4,
+        "episodic_memory": 6
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "same_question_refinement": 1,
+        "cross_question": 1,
+        "question_change_related": 1,
+        "topic_switch": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900",
+      "source_episode_id": "NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 3,
+      "families": {
+        "episodic_memory": 3
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "question_change_related": 1,
+        "cross_question": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720",
+      "source_episode_id": "NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 1,
+      "families": {
+        "episodic_memory": 3
+      },
+      "semantic_types": {
+        "plain_backchannel": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180",
+      "source_episode_id": "NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 1,
+      "families": {
+        "episodic_memory": 3
+      },
+      "semantic_types": {
+        "same_question_refinement": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240",
+      "source_episode_id": "NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 2,
+      "families": {
+        "episodic_memory": 2,
+        "action_narration": 1
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "same_question_refinement": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120",
+      "source_episode_id": "NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 2,
+      "families": {
+        "episodic_memory": 3
+      },
+      "semantic_types": {
+        "same_question_refinement": 1,
+        "plain_backchannel": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+      "source_episode_id": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 3,
+      "families": {
+        "episodic_memory": 4,
+        "action_narration": 2
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "question_change_related": 1,
+        "topic_switch": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930",
+      "source_episode_id": "NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 2,
+      "families": {
+        "episodic_memory": 3
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "cross_question": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+      "source_episode_id": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 1,
+      "families": {
+        "action_narration": 1,
+        "episodic_memory": 5
+      },
+      "semantic_types": {
+        "same_question_refinement": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+      "source_episode_id": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 3,
+      "families": {
+        "episodic_memory": 6
+      },
+      "semantic_types": {
+        "same_question_refinement": 1,
+        "plain_backchannel": 1,
+        "cross_question": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120",
+      "source_episode_id": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib",
+      "duration_s": 120,
+      "base_turns": 3,
+      "devices": 2,
+      "families": {
+        "episodic_memory": 3
+      },
+      "semantic_types": {
+        "same_question_refinement": 1,
+        "plain_backchannel": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+      "source_episode_id": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 3,
+      "families": {
+        "action_narration": 1,
+        "episodic_memory": 5
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "same_question_refinement": 1,
+        "cross_question": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+      "source_episode_id": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 1,
+      "families": {
+        "action_narration": 1,
+        "episodic_memory": 5
+      },
+      "semantic_types": {
+        "cross_question": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+      "source_episode_id": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 3,
+      "families": {
+        "action_narration": 1,
+        "episodic_memory": 5
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "same_question_refinement": 1,
+        "question_change_related": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+      "source_episode_id": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 5,
+      "families": {
+        "episodic_memory": 6
+      },
+      "semantic_types": {
+        "plain_backchannel": 1,
+        "cross_question": 1,
+        "same_question_refinement": 1,
+        "topic_switch": 1,
+        "question_change_related": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/audit.json"
+    },
+    {
+      "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+      "source_episode_id": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq",
+      "duration_s": 180,
+      "base_turns": 6,
+      "devices": 5,
+      "families": {
+        "episodic_memory": 6
+      },
+      "semantic_types": {
+        "cross_question": 2,
+        "plain_backchannel": 1,
+        "same_question_refinement": 1,
+        "topic_switch": 1
+      },
+      "baseline": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+      "interruptions": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/interruptions.json",
+      "audit": "data/ego_duplex/avd/chain20_fresh_v1/episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/audit.json"
+    }
+  ]
+}

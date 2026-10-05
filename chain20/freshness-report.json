@@ -1,0 +1,1760 @@
+{
+  "schema": "egoduplex.freshness-audit/2",
+  "created_at_utc": "2026-10-05T21:54:53.203078+00:00",
+  "status": "pass",
+  "corpus": "chain20_fresh_v1",
+  "scope": {
+    "current": "All baseline questions plus every question-form non-backchannel device in the final frozen corpus.",
+    "prior_sources": {
+      "avd": "data/ego_duplex/avd (excluding chain20_fresh_v1)",
+      "claude_job": "supplied Claude job artifacts",
+      "claude_transcript": "supplied Claude session transcript",
+      "file_filter": "text-like extensions or extensionless regular files; symlinks excluded; resolved paths de-duplicated"
+    }
+  },
+  "method": {
+    "normalization": "Unicode NFKC + casefold + punctuation-to-space + whitespace collapse",
+    "similarity": "difflib.SequenceMatcher on normalized strings; autojunk=False",
+    "near_threshold_inclusive": 0.88,
+    "exact_secondary_check": "Normalized current question substring in each parsed prior-source file.",
+    "candidate_extraction": "Recursive JSON/JSONL string leaves plus plausible question sentences/lines in other text files.",
+    "device_filter": "semantic_type != plain_backchannel and question-form text"
+  },
+  "snapshot": {
+    "inventory_sha256": "b6d393e6ec054692c906327374a3a3814e785a32c6b311cc01b3608b9f277319",
+    "utterance_count": 145,
+    "baseline_count": 108,
+    "question_form_non_backchannel_device_count": 37,
+    "unique_normalized_count": 145,
+    "source_file_hashes": [
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/baseline.json",
+        "bytes": 7416,
+        "sha256": "770041192bb947729e7cf13a7eda51da7c1123b7ca37e24c1c5167b323f19f55"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/interruptions.json",
+        "bytes": 10549,
+        "sha256": "352f0bd186b58cea5d919557c776635ee0153b90485f6c03b8bf825f4d68b467"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/baseline.json",
+        "bytes": 8620,
+        "sha256": "1a2a8a278292d31e9660495099cf4e14e1c13a7a70d95ee8c308ce79aa04edaa"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/interruptions.json",
+        "bytes": 14922,
+        "sha256": "3b1d024032ad935b03f733fed11239234fe4add19631faafcd566ee9c7302fb2"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+        "bytes": 15573,
+        "sha256": "b681f59d982664d5aa548e93a29a1d7f9d1c9683efe868f33d07bcaeb67347c0"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/interruptions.json",
+        "bytes": 18951,
+        "sha256": "ed95afeca7401dafa7c2cbcc28c55cd4e7dcfbe22d805b0b6a53034a54012422"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/baseline.json",
+        "bytes": 7537,
+        "sha256": "eca08b0b3eb33f1e6f1e1b9bd6da5ef131d8dbc00c48cccb834bbd2369cfce9f"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/interruptions.json",
+        "bytes": 12815,
+        "sha256": "f410977c98ddb73c075615871697fd7a3356141d683c4c0424bc3d43d975dee7"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/baseline.json",
+        "bytes": 8073,
+        "sha256": "b59a365463cb89feb5b617a09d12d730aee3f4e2842d8ea2133a01dc9dc90809"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/interruptions.json",
+        "bytes": 13673,
+        "sha256": "20a233dcddeca12effcac7a5cdb03a455a77b5830065ee4b09c176607e3f6bcb"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+        "bytes": 16082,
+        "sha256": "869bc9831ad4d533d6d24ed21d3b9c40f3b07276f8171d3e83ae3e9cbd02135c"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/interruptions.json",
+        "bytes": 25026,
+        "sha256": "0c6f5fd43074b8e7eac3d86f7bc4fc1273631f9ad7b8fef49ef6d506cd43641b"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+        "bytes": 10939,
+        "sha256": "dda0c4bc805dfa45341216222b641779106432df5c049077a4583ad099604ed7"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/interruptions.json",
+        "bytes": 17793,
+        "sha256": "43b850c2df75f7594f9a8555b729bd69a9ffd1c0ada7a204062f996c27a1eedc"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+        "bytes": 13695,
+        "sha256": "e78563ad8c4adccd1fd1470c759c02410bf27f4ccf4ebd5fbd62d4a5e11ad5c0"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/interruptions.json",
+        "bytes": 15858,
+        "sha256": "bd20db4c1624724d9b830e5a859cd38fba041328514b069e757fe4ed7f3857d1"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+        "bytes": 15833,
+        "sha256": "81762474596ecb26914b2d8543c041abd470dc36d272be82b3c067ef93fba3bc"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/interruptions.json",
+        "bytes": 30302,
+        "sha256": "c318d1f7752a0157eaf0aacf85238f7a8e0b0a7515fa8e91066ee92ec543dc67"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+        "bytes": 18633,
+        "sha256": "45286bce6699d8aced4a22b83b9444b1d7fb053b08fdc03276c7d44c1f31d7ce"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/interruptions.json",
+        "bytes": 28115,
+        "sha256": "157212b5d7f04010e4c524d33679e03b7172e97a3c14460c99dbb7b9f56a0b21"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+        "bytes": 13913,
+        "sha256": "3d1f5d4cfa32b6fafd6622427382cdad7ac6957312490acc737442dbb096edca"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/interruptions.json",
+        "bytes": 26221,
+        "sha256": "b8e869f4ecbd1b1bfc30cc37a3500e03b9a347c51d94f585c91b96b9c6b9e855"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/baseline.json",
+        "bytes": 9561,
+        "sha256": "a8d02141951dad40d7b5b6290fefb0ba3987f5acbdc2fa134021e3d62b0ac73a"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/interruptions.json",
+        "bytes": 15595,
+        "sha256": "9a3d9d2b95f18ec848b75a005288c6eb36db83bdb07805a1a69fbb9c6698ace7"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "bytes": 20871,
+        "sha256": "5b68ee7079efd379303f29af84b472616089d9d1b6542e26a5255462002f6b29"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/interruptions.json",
+        "bytes": 33045,
+        "sha256": "78e3f855acbf946283917176d5e87271823e829ed73f09ceab1cd597fe883cb3"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/baseline.json",
+        "bytes": 6045,
+        "sha256": "ffdfb4cd990d7623e2b147255c173fdff45dcf1b9a11db5dd0937619e2aa20a2"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/interruptions.json",
+        "bytes": 10800,
+        "sha256": "14e086e4132705764d96da2065a837641733213f180cc3328c7e7ca0cdcb3eb8"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "bytes": 23125,
+        "sha256": "0aeaae18bf450af54fc8c5f143fcf1bf3704da512ddeb8e3622874ba68da2dc6"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/interruptions.json",
+        "bytes": 34854,
+        "sha256": "711d611e86537828d92eaafcf66be6d185ec6a7be323710ca71377ad29ad0c00"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+        "bytes": 17241,
+        "sha256": "581580718f85f266866f4b8b1acdc988f60dc82ab389dc0c7f14f9290a269372"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/interruptions.json",
+        "bytes": 24821,
+        "sha256": "15e4984c81cdfc6495c6a173d9b7fe1f167d4cc84a45f109563eff0df62c2cbe"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "bytes": 24670,
+        "sha256": "33aaaf48a64fe59f9049efef9dd453086f6427579ada03551d5413ec3e777f34"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/interruptions.json",
+        "bytes": 37975,
+        "sha256": "c6493d8f7dfb641432f11971c5e8c401f155904cdacc0592212842097629fefe"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/baseline.json",
+        "bytes": 9007,
+        "sha256": "5af47ea938c4bee2c369ebbfd671f35d5614193b1c6d5df2f5897271d264bb8e"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/interruptions.json",
+        "bytes": 17206,
+        "sha256": "e73a7475512e33151a03ed3e73306d6cecb9095214dc2b05d30ac09af0751703"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/baseline.json",
+        "bytes": 6017,
+        "sha256": "e41bf0d556d211d83d92d7ade72ad1cc8e844495f4c8c57776f863817a1ef7e2"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/interruptions.json",
+        "bytes": 8530,
+        "sha256": "7cae0eea5ffb090e915e60a229a6376b6dea23fac93ace62184fe6b24ca60256"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+        "bytes": 12462,
+        "sha256": "648b558be9df1e113df732d7c771ff4bc135a76c28a627cd6ed1992930722114"
+      },
+      {
+        "path": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/interruptions.json",
+        "bytes": 19806,
+        "sha256": "e3bdb933d6a035bd772b892592136ec5d2ca192f04e135361e7ba389f1970a05"
+      }
+    ],
+    "utterances": [
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180",
+        "id": "q01",
+        "text": "What did I just bring up from the lower cabinet?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/baseline.json",
+        "normalized": "what did i just bring up from the lower cabinet"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180",
+        "id": "q02",
+        "text": "What did I do after setting it on the counter?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/baseline.json",
+        "normalized": "what did i do after setting it on the counter"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180",
+        "id": "q03",
+        "text": "Before opening the cabinet, what did I take from the drawer?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/baseline.json",
+        "normalized": "before opening the cabinet what did i take from the drawer"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180",
+        "id": "d01",
+        "text": "Just the last step—what did I switch on?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20230609_s0_angela_harrell_act2_42epvf__T2_at_180/interruptions.json",
+        "normalized": "just the last step what did i switch on"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930",
+        "id": "b01",
+        "text": "What was I moving around on the bed before I checked the closet?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/baseline.json",
+        "normalized": "what was i moving around on the bed before i checked the closet"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930",
+        "id": "b02",
+        "text": "What did I do beside the bed after checking the storage box?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/baseline.json",
+        "normalized": "what did i do beside the bed after checking the storage box"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930",
+        "id": "b03",
+        "text": "Before I reached toward the towel, what did I open?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/baseline.json",
+        "normalized": "before i reached toward the towel what did i open"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930",
+        "id": "d02",
+        "text": "What was hanging inside that shower area?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20230615_s0_dawn_heath_act1_9s9e13__T2_at_930/interruptions.json",
+        "normalized": "what was hanging inside that shower area"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+        "id": "q01",
+        "text": "What task am I doing right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+        "normalized": "what task am i doing right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+        "id": "q02",
+        "text": "What did I put away before coming into this bathroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+        "normalized": "what did i put away before coming into this bathroom"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+        "id": "q03",
+        "text": "What did I check while I was in the bathroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+        "normalized": "what did i check while i was in the bathroom"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+        "id": "q04",
+        "text": "Where did I go after putting the dustpan down?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+        "normalized": "where did i go after putting the dustpan down"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+        "id": "q05",
+        "text": "What did I bring out of the closet this time?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+        "normalized": "what did i bring out of the closet this time"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+        "id": "q06",
+        "text": "What had I been doing with the red machine?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/baseline.json",
+        "normalized": "what had i been doing with the red machine"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930",
+        "id": "d01",
+        "text": "Just the cord—what had I been doing with it?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20230707_s0_anthony_perez_act0_wghngx__T3_at_930/interruptions.json",
+        "normalized": "just the cord what had i been doing with it"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240",
+        "id": "q01",
+        "text": "Where did I check in the bathroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/baseline.json",
+        "normalized": "where did i check in the bathroom"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240",
+        "id": "q02",
+        "text": "What did I move onto the bedside table while I was looking around?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/baseline.json",
+        "normalized": "what did i move onto the bedside table while i was looking around"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240",
+        "id": "q03",
+        "text": "What am I checking around right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230713_s1_amy_crawford_act4_7nrb9d__T2_at_240/baseline.json",
+        "normalized": "what am i checking around right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120",
+        "id": "b01",
+        "text": "What did I do with the cup after picking it up by the sofa?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/baseline.json",
+        "normalized": "what did i do with the cup after picking it up by the sofa"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120",
+        "id": "b02",
+        "text": "What did I find on the sofa while I was holding the cup?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/baseline.json",
+        "normalized": "what did i find on the sofa while i was holding the cup"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120",
+        "id": "b03",
+        "text": "What did I do after leaving the dining area?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/baseline.json",
+        "normalized": "what did i do after leaving the dining area"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120",
+        "id": "d01",
+        "text": "Just the item—what did I find?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120/interruptions.json",
+        "normalized": "just the item what did i find"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "q01",
+        "text": "What task am I in the middle of right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+        "normalized": "what task am i in the middle of right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "q02",
+        "text": "What did I switch to after the shirt?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+        "normalized": "what did i switch to after the shirt"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "q03",
+        "text": "What did I do after I finished folding the pants?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+        "normalized": "what did i do after i finished folding the pants"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "q04",
+        "text": "Right before I picked up this black garment, what had I just done?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+        "normalized": "right before i picked up this black garment what had i just done"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "q05",
+        "text": "What did I do when I reached the bedroom with the folded clothes?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+        "normalized": "what did i do when i reached the bedroom with the folded clothes"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "q06",
+        "text": "What did I do after leaving those clothes in the bedroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/baseline.json",
+        "normalized": "what did i do after leaving those clothes in the bedroom"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "e02",
+        "text": "Just which item did I pick up next?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/interruptions.json",
+        "normalized": "just which item did i pick up next"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840",
+        "id": "e03",
+        "text": "Actually, where did I pick the next garment up from?",
+        "semantic_type": "question_change_related",
+        "source": "episodes/NymeriaPlus_v1.0_20230807_s0_dominique_frye_act3_lysseo__T3_at_840/interruptions.json",
+        "normalized": "actually where did i pick the next garment up from"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_t01",
+        "text": "What's going on—what am I doing right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+        "normalized": "what s going on what am i doing right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_t02",
+        "text": "What did I do at the bed just now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+        "normalized": "what did i do at the bed just now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_t03",
+        "text": "What did I do after leaving the bed?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+        "normalized": "what did i do after leaving the bed"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_t04",
+        "text": "Which way did I turn after walking backward with my arms up?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+        "normalized": "which way did i turn after walking backward with my arms up"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_t05",
+        "text": "Where did I run after bending down?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+        "normalized": "where did i run after bending down"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_t06",
+        "text": "What did I pretend to do just before holding my arm up?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/baseline.json",
+        "normalized": "what did i pretend to do just before holding my arm up"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_e02",
+        "text": "Just what did I grab there?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/interruptions.json",
+        "normalized": "just what did i grab there"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870",
+        "id": "rebecca_e03",
+        "text": "And what did I do just before that pull?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20230817_s1_rebecca_ward_act2_39a7o2__T3_at_870/interruptions.json",
+        "normalized": "and what did i do just before that pull"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+        "id": "q01",
+        "text": "Can you remind me which game we're playing?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+        "normalized": "can you remind me which game we re playing"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+        "id": "q02",
+        "text": "What did I do with the chair before walking away?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+        "normalized": "what did i do with the chair before walking away"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+        "id": "q03",
+        "text": "Where did I go after leaving the dining area?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+        "normalized": "where did i go after leaving the dining area"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+        "id": "q04",
+        "text": "Where had I been heading through the hallway?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+        "normalized": "where had i been heading through the hallway"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+        "id": "q05",
+        "text": "What kind of rooms have I been checking up here?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+        "normalized": "what kind of rooms have i been checking up here"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+        "id": "q06",
+        "text": "What did I point to in the bedroom before coming downstairs?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/baseline.json",
+        "normalized": "what did i point to in the bedroom before coming downstairs"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90",
+        "id": "d01",
+        "text": "Was I inside the room when I pointed?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20230905_s1_elizabeth_morgan_act2_nfmn6i__T3_at_90/interruptions.json",
+        "normalized": "was i inside the room when i pointed"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "b01",
+        "text": "What did I do with the paper towel after wiping the island?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+        "normalized": "what did i do with the paper towel after wiping the island"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "b02",
+        "text": "What did I do at the trash bin before going to the microwave?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+        "normalized": "what did i do at the trash bin before going to the microwave"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "b03",
+        "text": "What was I carrying as I walked over to the drawers?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+        "normalized": "what was i carrying as i walked over to the drawers"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "b04",
+        "text": "Which utensils did I take out?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+        "normalized": "which utensils did i take out"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "b05",
+        "text": "What did I close before I started checking the bottles by the stove?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+        "normalized": "what did i close before i started checking the bottles by the stove"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "b06",
+        "text": "What was I doing with the drawers later?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/baseline.json",
+        "normalized": "what was i doing with the drawers later"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "d02",
+        "text": "What was I still carrying when I reopened it?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/interruptions.json",
+        "normalized": "what was i still carrying when i reopened it"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "d03",
+        "text": "Just what came after the forks?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/interruptions.json",
+        "normalized": "just what came after the forks"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "d04",
+        "text": "Wait—what had I carried from the wall cabinet to the table?",
+        "semantic_type": "topic_switch",
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/interruptions.json",
+        "normalized": "wait what had i carried from the wall cabinet to the table"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
+        "id": "d05",
+        "text": "Actually, did I check a cabinet too?",
+        "semantic_type": "question_change_related",
+        "source": "episodes/NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690/interruptions.json",
+        "normalized": "actually did i check a cabinet too"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+        "id": "q01",
+        "text": "Where did I look in the bedroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+        "normalized": "where did i look in the bedroom"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+        "id": "q02",
+        "text": "What did I check after the bedroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+        "normalized": "what did i check after the bedroom"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+        "id": "q03",
+        "text": "What came after the sofa search?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+        "normalized": "what came after the sofa search"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+        "id": "q04",
+        "text": "What was I checking by the fireplace?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+        "normalized": "what was i checking by the fireplace"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+        "id": "q05",
+        "text": "What did I check on the way over to this table?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+        "normalized": "what did i check on the way over to this table"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+        "id": "q06",
+        "text": "What had I just finished checking?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/baseline.json",
+        "normalized": "what had i just finished checking"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
+        "id": "e03",
+        "text": "And what did I set back inside?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120/interruptions.json",
+        "normalized": "and what did i set back inside"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "b01",
+        "text": "Which rooms did I look into before I first went upstairs?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+        "normalized": "which rooms did i look into before i first went upstairs"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "b02",
+        "text": "How did I go up the stairs the next time?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+        "normalized": "how did i go up the stairs the next time"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "b03",
+        "text": "What had I been doing as I went down the corridor?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+        "normalized": "what had i been doing as i went down the corridor"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "b04",
+        "text": "Which door did I open after leaving the second bedroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+        "normalized": "which door did i open after leaving the second bedroom"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "b05",
+        "text": "Where did I go after pointing down the stairs?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+        "normalized": "where did i go after pointing down the stairs"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "b06",
+        "text": "What did I do after talking with my peer in the hallway?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/baseline.json",
+        "normalized": "what did i do after talking with my peer in the hallway"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "d01",
+        "text": "Which one did I check second?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/interruptions.json",
+        "normalized": "which one did i check second"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "d03",
+        "text": "Just the action—what was I doing?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/interruptions.json",
+        "normalized": "just the action what was i doing"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "d04",
+        "text": "And where did I head after that?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/interruptions.json",
+        "normalized": "and where did i head after that"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690",
+        "id": "d05",
+        "text": "Wait—what had I stopped to look up at on the first trip upstairs?",
+        "semantic_type": "topic_switch",
+        "source": "episodes/NymeriaPlus_v1.0_20231004_s1_ashley_reyes_act1_3d7yqq__T3_at_690/interruptions.json",
+        "normalized": "wait what had i stopped to look up at on the first trip upstairs"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120",
+        "id": "b01",
+        "text": "What did I put into the toaster when I came to this counter?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/baseline.json",
+        "normalized": "what did i put into the toaster when i came to this counter"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120",
+        "id": "b02",
+        "text": "How did I get the toaster started after loading the bread?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/baseline.json",
+        "normalized": "how did i get the toaster started after loading the bread"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120",
+        "id": "b03",
+        "text": "What had I kept checking on the stove while I waited?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/baseline.json",
+        "normalized": "what had i kept checking on the stove while i waited"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120",
+        "id": "d01",
+        "text": "Just the number—how many slices?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120/interruptions.json",
+        "normalized": "just the number how many slices"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t01",
+        "text": "What did I do at the coffee maker earlier?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "what did i do at the coffee maker earlier"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t02",
+        "text": "Where had I taken the mugs from earlier?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "where had i taken the mugs from earlier"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t03",
+        "text": "What did I set beside the sink earlier?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "what did i set beside the sink earlier"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t04",
+        "text": "What did I put into the dishwasher a moment ago?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "what did i put into the dishwasher a moment ago"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t05",
+        "text": "Which appliance did I fill and switch on earlier?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "which appliance did i fill and switch on earlier"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t06",
+        "text": "Who did I hand the stuffed toy to?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "who did i hand the stuffed toy to"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t07",
+        "text": "How many beds did I strip?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "how many beds did i strip"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t08",
+        "text": "Which room did I check just now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "which room did i check just now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t09",
+        "text": "What did I find when I looked behind the bathroom door downstairs?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "what did i find when i looked behind the bathroom door downstairs"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_t10",
+        "text": "What did I do at the downstairs kitchen window?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/baseline.json",
+        "normalized": "what did i do at the downstairs kitchen window"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_e02",
+        "text": "Actually, what did I pick up after closing it?",
+        "semantic_type": "question_change_related",
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/interruptions.json",
+        "normalized": "actually what did i pick up after closing it"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_e03",
+        "text": "And where had I filled it?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/interruptions.json",
+        "normalized": "and where had i filled it"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_e04",
+        "text": "The person at the dining table?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/interruptions.json",
+        "normalized": "the person at the dining table"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
+        "id": "joshua_e05",
+        "text": "Forget that—what did I point out over the kitchen island?",
+        "semantic_type": "topic_switch",
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450/interruptions.json",
+        "normalized": "forget that what did i point out over the kitchen island"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720",
+        "id": "dean_t01",
+        "text": "What am I busy doing in here right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/baseline.json",
+        "normalized": "what am i busy doing in here right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720",
+        "id": "dean_t02",
+        "text": "What did I do with the single-seat chair a moment ago?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/baseline.json",
+        "normalized": "what did i do with the single seat chair a moment ago"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720",
+        "id": "dean_t03",
+        "text": "Which seat did I put the pillows on first?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/baseline.json",
+        "normalized": "which seat did i put the pillows on first"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720",
+        "id": "dean_e02",
+        "text": "Just how many went on the first seat?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20231101_s1_dean_krause_act3_682crw__T2_at_720/interruptions.json",
+        "normalized": "just how many went on the first seat"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q01",
+        "text": "What did I just sprinkle over the flatbread?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "what did i just sprinkle over the flatbread"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q02",
+        "text": "Before I brought the first plate to the table, what did I put away in the fridge?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "before i brought the first plate to the table what did i put away in the fridge"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q03",
+        "text": "Can you tell what I'm making?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "can you tell what i m making"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q04",
+        "text": "Before I handed that plate over, what had I just finished?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "before i handed that plate over what had i just finished"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q05",
+        "text": "What am I preparing right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "what am i preparing right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q06",
+        "text": "What was I trying to sort out with this kettle?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "what was i trying to sort out with this kettle"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q07",
+        "text": "What did I throw away after putting the tea bag in the mug?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "what did i throw away after putting the tea bag in the mug"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q08",
+        "text": "Where did I go before coming back to the kitchen?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "where did i go before coming back to the kitchen"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q09",
+        "text": "What kitchen task am I doing right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "what kitchen task am i doing right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "q10",
+        "text": "What had I fixed before taking out the trash?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/baseline.json",
+        "normalized": "what had i fixed before taking out the trash"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "d02",
+        "text": "Just the two containers—what were they?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/interruptions.json",
+        "normalized": "just the two containers what were they"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "d03",
+        "text": "Which utensil am I using?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/interruptions.json",
+        "normalized": "which utensil am i using"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "d04",
+        "text": "Was the kettle switched on at that point?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/interruptions.json",
+        "normalized": "was the kettle switched on at that point"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420",
+        "id": "d05",
+        "text": "Wait—what machine had I switched on before buttering the toast?",
+        "semantic_type": "topic_switch",
+        "source": "episodes/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420/interruptions.json",
+        "normalized": "wait what machine had i switched on before buttering the toast"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+        "id": "q01",
+        "text": "What was I just checking on that box?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+        "normalized": "what was i just checking on that box"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+        "id": "q02",
+        "text": "How did I open those joined food packs?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+        "normalized": "how did i open those joined food packs"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+        "id": "q03",
+        "text": "Before I started peeling the tape, which appliance did I check twice?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+        "normalized": "before i started peeling the tape which appliance did i check twice"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+        "id": "q04",
+        "text": "What was I reading before opening that drawer?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+        "normalized": "what was i reading before opening that drawer"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+        "id": "q05",
+        "text": "What did I take from the bottom oven drawer?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+        "normalized": "what did i take from the bottom oven drawer"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+        "id": "q06",
+        "text": "Which appliance did I switch on after setting down the pan?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/baseline.json",
+        "normalized": "which appliance did i switch on after setting down the pan"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
+        "id": "e03",
+        "text": "And which hand did I use to take them out?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90/interruptions.json",
+        "normalized": "and which hand did i use to take them out"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q01",
+        "text": "What am I working on right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what am i working on right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q02",
+        "text": "What did I do with the box once it was empty?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what did i do with the box once it was empty"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q03",
+        "text": "What am I setting up over here?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what am i setting up over here"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q04",
+        "text": "What part of the setup am I working on now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what part of the setup am i working on now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q05",
+        "text": "What task am I on at the moment?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what task am i on at the moment"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q06",
+        "text": "What did I pick up after bringing the decorations back to the center table?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what did i pick up after bringing the decorations back to the center table"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q07",
+        "text": "Which small decoration was I handling by the door?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "which small decoration was i handling by the door"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q08",
+        "text": "What was I carrying as I moved past the sofa?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what was i carrying as i moved past the sofa"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q09",
+        "text": "What did I do with the tape while I had those large cutouts?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what did i do with the tape while i had those large cutouts"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "q10",
+        "text": "What did I do with the spare stack after laying out the plates?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/baseline.json",
+        "normalized": "what did i do with the spare stack after laying out the plates"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "e02",
+        "text": "I mean, which surface am I putting them on?",
+        "semantic_type": "same_question_refinement",
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/interruptions.json",
+        "normalized": "i mean which surface am i putting them on"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "e03",
+        "text": "And where was I holding the cutout?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/interruptions.json",
+        "normalized": "and where was i holding the cutout"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "e04",
+        "text": "Actually, forget that—what did I pick up next?",
+        "semantic_type": "question_change_related",
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/interruptions.json",
+        "normalized": "actually forget that what did i pick up next"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90",
+        "id": "e05",
+        "text": "Forget that—where was the refrigerator again?",
+        "semantic_type": "topic_switch",
+        "source": "episodes/NymeriaPlus_v1.0_20231108_s0_nicholas_hicks_act3_j7bheq__T10_at_90/interruptions.json",
+        "normalized": "forget that where was the refrigerator again"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900",
+        "id": "alexandria_t01",
+        "text": "What did I do after moving the pillows around?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/baseline.json",
+        "normalized": "what did i do after moving the pillows around"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900",
+        "id": "alexandria_t02",
+        "text": "What was my peer doing to my right arm earlier?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/baseline.json",
+        "normalized": "what was my peer doing to my right arm earlier"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900",
+        "id": "alexandria_t03",
+        "text": "What did I do after carrying the game box into the bedroom?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/baseline.json",
+        "normalized": "what did i do after carrying the game box into the bedroom"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900",
+        "id": "alexandria_e02",
+        "text": "Actually, where did I go right after that?",
+        "semantic_type": "question_change_related",
+        "source": "episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/interruptions.json",
+        "normalized": "actually where did i go right after that"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900",
+        "id": "alexandria_e03",
+        "text": "And what did I pick up after I came back?",
+        "semantic_type": "cross_question",
+        "source": "episodes/NymeriaPlus_v1.0_20231121_s0_alexandria_griffith_act2_t3030z__T2_at_900/interruptions.json",
+        "normalized": "and what did i pick up after i came back"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720",
+        "id": "q01",
+        "text": "What were those machines I just walked past?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/baseline.json",
+        "normalized": "what were those machines i just walked past"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720",
+        "id": "q02",
+        "text": "What was I checking on the bed?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/baseline.json",
+        "normalized": "what was i checking on the bed"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720",
+        "id": "q03",
+        "text": "Where did those stairs bring me?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231128_s0_paul_nguyen_act1_5i49b8__T2_at_720/baseline.json",
+        "normalized": "where did those stairs bring me"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_t01",
+        "text": "What was I looking through earlier?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+        "normalized": "what was i looking through earlier"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_t02",
+        "text": "Which room did I leave before heading down the hallway?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+        "normalized": "which room did i leave before heading down the hallway"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_t03",
+        "text": "What's keeping me busy right now?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+        "normalized": "what s keeping me busy right now"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_t04",
+        "text": "Where did I pick up the two towels?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+        "normalized": "where did i pick up the two towels"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_t05",
+        "text": "What's my current task?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+        "normalized": "what s my current task"
+      },
+      {
+        "kind": "baseline",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_t06",
+        "text": "What did I do at the restroom after the curtains?",
+        "semantic_type": null,
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/baseline.json",
+        "normalized": "what did i do at the restroom after the curtains"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_e02",
+        "text": "Actually, which area did I pass through on the way?",
+        "semantic_type": "question_change_related",
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/interruptions.json",
+        "normalized": "actually which area did i pass through on the way"
+      },
+      {
+        "kind": "device",
+        "clip": "NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810",
+        "id": "brittney_e03",
+        "text": "Forget the restroom—who had I stopped to talk to before leaving the living room?",
+        "semantic_type": "topic_switch",
+        "source": "episodes/NymeriaPlus_v1.0_20231129_s0_brittney_goodwin_act4_j3rly0__T3_at_810/interruptions.json",
+        "normalized": "forget the restroom who had i stopped to talk to before leaving the living room"
+      }
+    ]
+  },
+  "prior_index": {
+    "path": "validation/freshness_prior_index.json",
+    "sha256": "b7207b3239ea6d2e76fc20e29544e3419299324092595c22311fe07640aaf19a",
+    "unique_normalized_candidates": 36757,
+    "candidate_occurrences": 2019385,
+    "source_manifest_sha256": "58438d613413b1d1e6d98023f559eda82fd0921468b48431e9e3db6ebe67d8bb"
+  },
+  "scan": {
+    "started_at_utc": "2026-10-05T21:49:18.748972+00:00",
+    "completed_at_utc": "2026-10-05T21:54:53.203078+00:00",
+    "files": 31671,
+    "bytes": 828368549,
+    "parsed_files": 31490,
+    "extracted_candidates_raw": 2019419,
+    "candidates": 2019385,
+    "binary_skips": 181,
+    "unique_candidates": 36757,
+    "top_level_file_counts": {
+      "avd/_audit_sample.json": 1,
+      "avd/_sl_sample.json": 1,
+      "avd/_sound_existence_verify.jsonl": 1,
+      "avd/_speech_content_verify.jsonl": 1,
+      "avd/_speech_timing_verify.jsonl": 1,
+      "avd/_wellformed_dropped.json": 1,
+      "avd/asr_verify_pre_r5.jsonl": 1,
+      "avd/author_queue.json": 1,
+      "avd/briefs": 141,
+      "avd/briefs_gap": 39,
+      "avd/briefs_index.json": 1,
+      "avd/briefs_v2": 614,
+      "avd/briefs_v2_index.json": 1,
+      "avd/briefs_v3": 614,
+      "avd/briefs_v4": 477,
+      "avd/captioner_probe_audit_v1.jsonl": 1,
+      "avd/captioner_probe_audit_v2.jsonl": 1,
+      "avd/captioner_probe_audit_v3.jsonl": 1,
+      "avd/captioner_probe_v1.jsonl": 1,
+      "avd/captioner_probe_v2.jsonl": 1,
+      "avd/captioner_probe_v3.jsonl": 1,
+      "avd/chain_checks.json": 1,
+      "avd/chain_checks_v50.json": 1,
+      "avd/chain_verify.json": 1,
+      "avd/chain_verify_v50.json": 1,
+      "avd/clip_queue_v12.json": 1,
+      "avd/clip_queue_v3.json": 1,
+      "avd/conformance": 1,
+      "avd/counting_audit_blind_0.json": 1,
+      "avd/counting_audit_blind_0.verdict.json": 1,
+      "avd/counting_audit_blind_1.json": 1,
+      "avd/counting_audit_blind_1.verdict.json": 1,
+      "avd/counting_audit_blind_2.json": 1,
+      "avd/counting_audit_blind_2.verdict.json": 1,
+      "avd/counting_audit_items.jsonl": 1,
+      "avd/counting_audit_items_v2.jsonl": 1,
+      "avd/counting_audit_v2_blind_0.json": 1,
+      "avd/counting_audit_v2_blind_0.verdict.json": 1,
+      "avd/counting_audit_v2_blind_1.json": 1,
+      "avd/counting_audit_v2_blind_1.verdict.json": 1,
+      "avd/counting_events.jsonl": 1,
+      "avd/counting_events_v2.jsonl": 1,
+      "avd/counting_pilot.jsonl": 1,
+      "avd/counting_pilot_frames": 8,
+      "avd/counting_pilot_frames_v2": 16,
+      "avd/counting_pilot_v2.jsonl": 1,
+      "avd/counting_vqa_pilot.jsonl": 1,
+      "avd/counting_vqa_v2.jsonl": 1,
+      "avd/critic_in": 13,
+      "avd/deixis_apply_report.json": 1,
+      "avd/deixis_resolved_v1.json": 1,
+      "avd/download_list.txt": 1,
+      "avd/download_list_rest.txt": 1,
+      "avd/em_anchor_timing_v1.json": 1,
+      "avd/em_anchors_v1.json": 1,
+      "avd/em_answers_v1.json": 1,
+      "avd/em_candidates_v1.json": 1,
+      "avd/em_clips_v1.json": 1,
+      "avd/em_items_v1.json": 1,
+      "avd/em_questions_v1.json": 1,
+      "avd/em_runs_v1.json": 1,
+      "avd/em_sheets_v1": 1,
+      "avd/em_vision_v1.json": 1,
+      "avd/filler_probe_result.jsonl": 1,
+      "avd/gold_verify_2afc.jsonl": 1,
+      "avd/gold_verify_2afc_audit.jsonl": 1,
+      "avd/gold_verify_2afc_postrewrite.jsonl": 1,
+      "avd/gold_verify_2afc_postrewrite_audit.jsonl": 1,
+      "avd/gold_verify_2afc_singleorder.jsonl": 1,
+      "avd/gold_verify_2afc_singleorder_audit.jsonl": 1,
+      "avd/gold_verify_absolute.jsonl": 1,
+      "avd/gold_verify_absolute_audit.jsonl": 1,
+      "avd/items_av": 141,
+      "avd/items_av_supply.json": 1,
+      "avd/naturalness_v1.jsonl": 1,
+      "avd/naturalness_v2.jsonl": 1,
+      "avd/naturalness_v45.jsonl": 1,
+      "avd/naturalness_v46.jsonl": 1,
+      "avd/naturalness_v47.jsonl": 1,
+      "avd/objmem_audit2_items.jsonl": 1,
+      "avd/objmem_audit3_items.jsonl": 1,
+      "avd/objmem_audit4_items.jsonl": 1,
+      "avd/objmem_audit5_items.jsonl": 1,
+      "avd/objmem_audit6_items.jsonl": 1,
+      "avd/objmem_audit_items.jsonl": 1,
+      "avd/one_video_rebuild": 72,
+      "avd/only4.txt": 1,
+      "avd/only8.txt": 1,
+      "avd/picked_seqs.json": 1,
+      "avd/presence_audit_blind.verdict.json": 1,
+      "avd/presence_audit_items.jsonl": 1,
+      "avd/presence_audit_items_blind.json": 1,
+      "avd/presence_sets_v2.jsonl": 1,
+      "avd/quarantine": 46,
+      "avd/release": 48,
+      "avd/release_showcase": 6,
+      "avd/release_showcase15": 6,
+      "avd/render_overrun_report.json": 1,
+      "avd/render_v2_report.json": 1,
+      "avd/retime_report.json": 1,
+      "avd/retime_report_v48.json": 1,
+      "avd/retime_room.json": 1,
+      "avd/retime_shifts.json": 1,
+      "avd/rewrite": 2,
+      "avd/showcase_v10": 5,
+      "avd/showcase_v15": 5,
+      "avd/sound_listen_audit": 2,
+      "avd/specs": 47,
+      "avd/specs_pre_rewrite_20261001": 47,
+      "avd/specs_v10": 549,
+      "avd/specs_v11": 549,
+      "avd/specs_v12": 550,
+      "avd/specs_v13": 527,
+      "avd/specs_v14": 527,
+      "avd/specs_v15": 522,
+      "avd/specs_v16": 252,
+      "avd/specs_v17": 240,
+      "avd/specs_v18": 231,
+      "avd/specs_v19": 485,
+      "avd/specs_v2": 33,
+      "avd/specs_v20": 460,
+      "avd/specs_v21": 488,
+      "avd/specs_v22": 488,
+      "avd/specs_v24": 524,
+      "avd/specs_v25": 512,
+      "avd/specs_v26": 524,
+      "avd/specs_v27": 516,
+      "avd/specs_v28": 515,
+      "avd/specs_v29": 508,
+      "avd/specs_v3": 560,
+      "avd/specs_v30": 508,
+      "avd/specs_v31": 508,
+      "avd/specs_v32": 507,
+      "avd/specs_v33": 509,
+      "avd/specs_v34": 515,
+      "avd/specs_v35": 516,
+      "avd/specs_v36": 516,
+      "avd/specs_v37": 518,
+      "avd/specs_v38": 522,
+      "avd/specs_v39": 522,
+      "avd/specs_v3_wf": 556,
+      "avd/specs_v4": 548,
+      "avd/specs_v40": 518,
+      "avd/specs_v41": 523,
+      "avd/specs_v42": 447,
+      "avd/specs_v43": 435,
+      "avd/specs_v44": 461,
+      "avd/specs_v45": 458,
+      "avd/specs_v46": 395,
+      "avd/specs_v47": 507,
+      "avd/specs_v48": 507,
+      "avd/specs_v49": 498,
+      "avd/specs_v49r": 498,
+      "avd/specs_v49s": 498,
+      "avd/specs_v5": 561,
+      "avd/specs_v50": 498,
+      "avd/specs_v51": 477,
+      "avd/specs_v51_4": 4,
+      "avd/specs_v52_4": 4,
+      "avd/specs_v53_4": 4,
+      "avd/specs_v54_18": 6,
+      "avd/specs_v54_full": 477,
+      "avd/specs_v55": 40,
+      "avd/specs_v55_8clip": 8,
+      "avd/specs_v6": 560,
+      "avd/specs_v7": 555,
+      "avd/specs_v8": 552,
+      "avd/specs_v9": 550,
+      "avd/speech_rate_v2.json": 1,
+      "avd/tts_probe20.jsonl": 1,
+      "avd/tts_probe_breeze.json": 1,
+      "avd/tts_probe_fish.json": 1,
+      "avd/tts_probe_wer.json": 1,
+      "avd/v8": 2285,
+      "avd/wav_durations_v2.json": 1,
+      "avd/windows_all.json": 1,
+      "avd/worklists": 47,
+      "avd/worklists_log": 1,
+      "avd/worklists_proactive": 2,
+      "avd/worklists_probe": 1,
+      "avd/worklists_r5": 16,
+      "avd/worklists_repair": 1,
+      "avd/worklists_showcase": 5,
+      "avd/worklists_showcase15": 5,
+      "avd/worklists_v12": 64,
+      "avd/worklists_v2": 537,
+      "avd/worklists_v4": 16,
+      "avd/worklists_v5": 64,
+      "avd/worklists_v54": 6,
+      "avd/worklists_v6gap": 16,
+      "avd/worklists_v6res": 9,
+      "avd/worklists_v7res": 2,
+      "avd/worklists_v8res": 1,
+      "claude_job": 301,
+      "claude_transcript": 1
+    }
+  },
+  "result": {
+    "blocker_count": 0,
+    "exact_current_utterance_count": 0,
+    "near_current_utterance_count": 0,
+    "match_groups": []
+  }
+}

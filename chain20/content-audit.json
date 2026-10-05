@@ -1,0 +1,72 @@
+{
+  "schema": "egoduplex.fresh-chain20-content-audit/1",
+  "build_id": "chain20_fresh_v1",
+  "audit_date_utc": "2026-10-05",
+  "status": "pass",
+  "snapshot": {
+    "baseline_jsonl_sha256": "68250b0775e537b258f7d0888f346dfe53a4b5eebf64ee9906e5d856553f4a24",
+    "interruptions_jsonl_sha256": "648c87b0ddc3ffdcddecfdc69df9b6cf6c2cf88ac61ddeedeccbd4f5edd1e930",
+    "validation_report_sha256": "16435dddbc913b971ac7aab3bed124101af810a1c1453d22a32f3bf97aa77574"
+  },
+  "scope": {
+    "source_episodes": 20,
+    "matched_variants": 40,
+    "baseline_turns": 108,
+    "interruption_devices": 57,
+    "action_narration_turns": 15
+  },
+  "independent_passes": [
+    {
+      "name": "A-shard repaired-item regression",
+      "status": "pass",
+      "checks": [
+        "raw-row identity and causal evidence",
+        "answer absent from the current/static ask view",
+        "source-speech clearance",
+        "prior-dialogue and oracle-prefix leakage",
+        "frame/evidence alignment"
+      ]
+    },
+    {
+      "name": "C-shard strict raw-and-pixel audit",
+      "status": "pass",
+      "checks": [
+        "temporal truth",
+        "direct-recall present control",
+        "current-action anchor",
+        "semantic interruption type",
+        "replacement-answer leakage"
+      ]
+    },
+    {
+      "name": "Corpus-wide action-narration regression",
+      "status": "pass",
+      "claims_checked": 15,
+      "checks": [
+        "generic prompt with no answer object or scene anchor",
+        "activity-level answer",
+        "causal current anchor",
+        "visual confirmation",
+        "boundary and no-future compliance",
+        "dependent-device prefix compliance"
+      ]
+    },
+    {
+      "name": "Narration-versus-pixel conflict audit",
+      "status": "pass",
+      "dispositions": [
+        "silver toaster correction retained",
+        "garage appliances kept at generic laundry-machine level",
+        "red upright machine kept at generic cleaning-machine level",
+        "unsupported duration, first-trigger, and absence claims held out"
+      ]
+    }
+  ],
+  "automated_gate": {
+    "errors": 0,
+    "warnings": 0,
+    "verbatim_raw_rows_checked": 293,
+    "pairwise_dialogue_leakage_checks": 88,
+    "semantic_device_leakage_checks": 40
+  }
+}

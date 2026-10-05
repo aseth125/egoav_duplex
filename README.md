@@ -6,6 +6,14 @@ assistant mid-answer the way people actually do.
 
 **47 episodes · 208 minutes · 948 user turns · 809 scored · 620 interruptions**
 
+## Fresh 20-episode paired chain audit
+
+The verified chain-only release is available at
+[`/chain20/`](https://aseth125.github.io/egoav_duplex/chain20/). It contains
+matched clean and interruption variants, complete downloads, per-episode
+evidence, held-out claims, validation results, and the prior-question
+freshness audit.
+
 ## How to look at it
 
 ```
