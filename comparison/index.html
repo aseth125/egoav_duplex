@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A before-and-after EgoDuplex case study: one ten-minute episode rebuilt into three evidence-backed conversation variants.">
+  <meta name="color-scheme" content="dark">
+  <title>EgoDuplex — one-video rebuild</title>
+  <style>
+    :root {
+      --bg:#090d13; --panel:#111821; --panel2:#151e29; --fg:#edf3f8;
+      --dim:#94a2b2; --line:#263241; --blue:#63a8ff; --cyan:#48d6cb;
+      --green:#64d48a; --amber:#f0bc5e; --violet:#bb8cff; --red:#ff7b72;
+      --shadow:0 18px 45px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(circle at 74% -10%,rgba(72,214,203,.1),transparent 34rem),
+      radial-gradient(circle at 10% 12%,rgba(99,168,255,.09),transparent 30rem),var(--bg);
+      color:var(--fg);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+    a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+    button{font:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:24px 22px 90px}
+    .nav{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:54px;border-bottom:1px solid var(--line)}
+    .nav a{padding:9px 13px;color:var(--dim);font-size:13px;font-weight:650;text-decoration:none;border-bottom:2px solid transparent}
+    .nav a:hover{color:var(--fg)} .nav a.on{color:var(--fg);border-color:var(--cyan)}
+    .eyebrow{display:flex;align-items:center;gap:9px;color:var(--cyan);font:700 12px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:26px;height:1px;background:var(--cyan)}
+    h1{font-size:clamp(38px,6vw,72px);line-height:1.02;letter-spacing:-.045em;max-width:900px;margin:18px 0 20px}
+    .dek{font-size:clamp(18px,2.3vw,23px);line-height:1.48;color:#b9c6d3;max-width:850px;margin:0 0 28px}
+    .stats{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0}
+    .stat{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(17,24,33,.78);color:var(--dim);font-size:13px}
+    .stat b{color:var(--fg);font-weight:750}
+    .caveat{max-width:900px;border:1px solid #3a4758;border-left:3px solid var(--amber);border-radius:8px;background:#121922;padding:13px 16px;color:#b7c2cf;font-size:13.5px}
+    section{margin-top:78px}
+    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,480px);gap:38px;align-items:end;margin-bottom:22px}
+    h2{font-size:clamp(26px,3.5vw,39px);line-height:1.13;letter-spacing:-.025em;margin:0}
+    .section-head p{color:var(--dim);margin:0}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .shot,.card,.player-shell,.validation,.method{border:1px solid var(--line);background:linear-gradient(145deg,var(--panel2),var(--panel));border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+    .shot img{display:block;width:100%;aspect-ratio:720/664;object-fit:cover;background:#05070a}
+    .shot-copy{padding:15px 17px 18px}
+    .label{display:inline-flex;align-items:center;gap:7px;color:var(--dim);font-size:11px;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+    .after .dot{background:var(--green)}
+    .shot h3{font-size:18px;margin:7px 0 5px}.shot p{color:var(--dim);margin:0;font-size:13.5px}
+    .delta{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+    .delta .card{padding:20px;box-shadow:none}
+    .delta h3{margin:0 0 12px;font-size:17px}.delta ul{margin:0;padding-left:19px;color:#b7c2ce}.delta li+li{margin-top:7px}
+    .variant-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+    .variant{display:block;text-align:left;color:inherit;padding:19px;border:1px solid var(--line);border-radius:10px;background:var(--panel);cursor:pointer;transition:.16s ease}
+    .variant:hover{transform:translateY(-2px);border-color:#4a6078}.variant.active{border-color:var(--cyan);background:#132229;box-shadow:0 0 0 1px rgba(72,214,203,.15)}
+    .variant strong{display:block;font-size:17px;margin-bottom:6px}.variant span{display:block;color:var(--dim);font-size:13px;line-height:1.45}
+    .variant small{display:block;color:var(--cyan);margin-top:12px;font:650 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em}
+    .player-shell{padding:16px}
+    .tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+    .tab{border:1px solid var(--line);border-radius:999px;color:var(--dim);background:#0d131b;padding:7px 12px;cursor:pointer;font-size:12.5px;font-weight:650}
+    .tab:hover{color:var(--fg)}.tab.active{color:#071317;background:var(--cyan);border-color:var(--cyan)}
+    video{width:100%;max-height:68vh;display:block;background:#000;border-radius:8px}
+    .player-meta{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:12px 2px 3px;color:var(--dim);font-size:13px}
+    .player-meta strong{color:var(--fg)}
+    .timeline{display:grid;gap:8px;margin-top:12px}
+    .turn{display:grid;grid-template-columns:74px minmax(0,1fr);gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#0e151e;cursor:pointer;text-align:left;color:inherit;width:100%}
+    .turn:hover{border-color:#465a70}.turn.current{border-color:var(--blue);background:#121f2d}
+    .time{color:var(--blue);font:650 12.5px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;padding-top:2px}
+    .turn-top{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:3px}
+    .who,.family,.score{font-size:10.5px;line-height:1.3;text-transform:uppercase;letter-spacing:.06em;font-weight:750}
+    .who{color:#c8d5e3}.family{color:var(--violet)}.score{color:var(--green)}.setup{color:var(--amber)}
+    .utterance{font-size:15px;font-weight:600}.answer{color:#aebdca;margin-top:4px;font-size:13.5px}.answer b{color:var(--dim);font-size:10px;letter-spacing:.06em;text-transform:uppercase;margin-right:5px}
+    .old-note{padding:19px;border:1px dashed #485568;border-radius:8px;color:var(--dim)}
+    .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .evidence{border:1px solid var(--line);border-radius:11px;background:var(--panel);overflow:hidden}
+    .frames{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+    .frame{position:relative;background:#000}.frame img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.stamp{position:absolute;left:8px;bottom:7px;background:rgba(4,8,12,.78);border:1px solid rgba(255,255,255,.16);border-radius:5px;padding:3px 6px;color:#fff;font:11px ui-monospace,monospace}
+    .evidence-copy{padding:15px}.evidence h3{font-size:16px;margin:0 0 5px}.evidence p{font-size:13px;color:var(--dim);margin:0}
+    .families{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .family-card{border:1px solid var(--line);border-radius:9px;background:var(--panel);padding:16px;min-width:0}
+    .family-card h3{font-size:14px;margin:0 0 8px;color:var(--cyan)}.family-card q{display:block;font-weight:600;line-height:1.4}.family-card p{color:var(--dim);font-size:12.5px;margin:8px 0 11px}
+    .seek{border:0;background:none;color:var(--blue);padding:0;cursor:pointer;font-weight:650;font-size:12px}.seek:hover{text-decoration:underline}
+    .validation{display:grid;grid-template-columns:repeat(5,1fr);box-shadow:none}
+    .check{padding:20px;border-right:1px solid var(--line)}.check:last-child{border:0}.check b{display:block;color:var(--green);font-size:27px;line-height:1.1;margin-bottom:7px}.check span{display:block;color:var(--dim);font-size:12.5px;line-height:1.4}
+    .method{padding:25px;box-shadow:none}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}.step{counter-increment:step;color:var(--dim)}.step:before{content:"0" counter(step);display:block;color:var(--cyan);font:700 12px ui-monospace,monospace;margin-bottom:7px}.step strong{display:block;color:var(--fg);margin-bottom:4px}
+    footer{margin-top:65px;padding-top:19px;border-top:1px solid var(--line);color:var(--dim);font-size:12.5px}
+    @media(max-width:900px){.section-head{grid-template-columns:1fr;gap:11px}.variant-grid,.evidence-grid{grid-template-columns:1fr}.families{grid-template-columns:repeat(2,1fr)}.validation{grid-template-columns:repeat(2,1fr)}.check{border-bottom:1px solid var(--line)}.steps{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.wrap{padding:17px 14px 60px}.nav{margin-bottom:40px}.compare,.delta{grid-template-columns:1fr}.families,.validation,.steps{grid-template-columns:1fr}.check{border-right:0}.turn{grid-template-columns:58px 1fr;padding:11px}.player-meta{display:block}.player-meta span{display:block;margin-top:5px}section{margin-top:58px}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="nav" aria-label="Primary">
+    <a href="../index.html">Episodes</a><a href="../listen/">Listen</a><a class="on" href="./" aria-current="page">One-video rebuild</a><a href="../episodic_memory_design.html">Memory design</a>
+  </nav>
+
+  <header>
+    <div class="eyebrow">Case study · Episode A · 10:00</div>
+    <h1>From 2 verified scenarios to 10 evidence-backed candidates</h1>
+    <p class="dek">We rebuilt one ten-minute egocentric assistant episode from clean source frames, then composed three alternative conversations with six scored scenarios each from the accepted evidence.</p>
+    <div class="stats" aria-label="Summary statistics">
+      <div class="stat"><b>3</b> conversation variants</div>
+      <div class="stat"><b>10/10</b> candidates accepted</div>
+      <div class="stat"><b>5</b> capability families</div>
+      <div class="stat"><b>0</b> quarantined</div>
+    </div>
+    <div class="caveat"><b>Scope:</b> this validates benchmark and conversation construction, not model accuracy. Expected assistant responses are text labels; they are intentionally absent from the rendered audio.</div>
+  </header>
+
+  <section id="before-after">
+    <div class="section-head">
+      <h2>The rebuild removed visual contamination and unsupported labels</h2>
+      <p>Both frames below show the same source moment at 09:36. The earlier publish burned review text into the pixels; the rebuilt render keeps the video clean.</p>
+    </div>
+    <div class="compare">
+      <article class="shot before"><img src="evidence/before-overlay.jpg" alt="Previous frame with a wearer question burned into the bottom of the image" loading="lazy"><div class="shot-copy"><div class="label"><span class="dot"></span>Previous publish</div><h3>Annotations inside the image</h3><p>Dialogue and review state were part of the rendered pixels, while most scored labels lacked direct visual verification.</p></div></article>
+      <article class="shot after"><img src="evidence/after-clean.jpg" alt="Clean rebuild frame at the same timestamp without text overlays" loading="lazy"><div class="shot-copy"><div class="label"><span class="dot"></span>Rebuilt</div><h3>Clean observation stream</h3><p>Questions live in the audio and structured timeline. Reference answers stay separate as text-only evaluation labels.</p></div></article>
+    </div>
+    <div class="delta">
+      <article class="card"><h3>Before</h3><ul><li>8 scored scenarios, only 2 directly checked against the video</li><li>A stale ball-location answer contradicted later visible handling</li><li>No current-action narration or duration scenarios</li><li>An ambiguous event trigger and a failed render gate</li></ul></article>
+      <article class="card"><h3>After</h3><ul><li>10 accepted candidates with unanimous three-reader evidence</li><li>All five requested capability families represented</li><li>Three alternative chains with 6 scored scenarios each</li><li>Clean frames, checked speech, and conflict-free timing</li></ul></article>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="section-head">
+      <h2>Watch all three alternatives</h2>
+      <p>Each variant uses the same ten-minute visual episode and a different authored conversation. Select a row below the player to jump to that interaction.</p>
+    </div>
+    <div class="variant-grid">
+      <button class="variant active" data-variant="balanced" aria-pressed="true"><strong>Balanced</strong><span>2 duration · 2 action memory · 1 object memory · 1 triggered reminder</span><small>Broad coverage</small></button>
+      <button class="variant" data-variant="memory_narration" aria-pressed="false"><strong>Memory &amp; narration</strong><span>3 action memory · 1 object memory · 1 current action · 1 duration</span><small>Recall + live description</small></button>
+      <button class="variant" data-variant="temporal_proactive" aria-pressed="false"><strong>Temporal &amp; proactive</strong><span>3 duration · 1 object memory · 2 triggered reminders</span><small>Timing + event response</small></button>
+    </div>
+    <div class="player-shell">
+      <div class="tabs" aria-label="Video version">
+        <button class="tab" data-variant="previous" aria-pressed="false">Previous publish</button>
+        <button class="tab active" data-variant="balanced" aria-pressed="true">Balanced</button>
+        <button class="tab" data-variant="memory_narration" aria-pressed="false">Memory &amp; narration</button>
+        <button class="tab" data-variant="temporal_proactive" aria-pressed="false">Temporal &amp; proactive</button>
+      </div>
+      <video id="episode-video" controls preload="metadata" playsinline src="media/balanced.mp4"></video>
+      <div class="player-meta"><strong id="player-title">Balanced · 6 scored scenarios</strong><span>Web preview · 720 × 720 · reference answers are text-only</span></div>
+      <div id="timeline" class="timeline" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <div class="section-head">
+      <h2>Evidence is tied to visible boundaries</h2>
+      <p>Candidate answers were checked against clean frames before chain assembly. These compact pairs show three representative evidence windows.</p>
+    </div>
+    <div class="evidence-grid">
+      <article class="evidence"><div class="frames"><div class="frame"><img src="evidence/drawers-start.jpg" alt="Bedroom drawer interaction near its start" loading="lazy"><span class="stamp">00:57.5</span></div><div class="frame"><img src="evidence/drawers-end.jpg" alt="Bedroom drawer interaction near its end" loading="lazy"><span class="stamp">01:13.0</span></div></div><div class="evidence-copy"><h3>Duration boundary</h3><p>Drawer checking spans about 15.5 seconds, supporting the rounded answer “about sixteen seconds.”</p></div></article>
+      <article class="evidence"><div class="frames"><div class="frame"><img src="evidence/tumbler-placed.jpg" alt="Gray tumbler placed on the center table" loading="lazy"><span class="stamp">02:13.5</span></div><div class="frame"><img src="evidence/tumbler-query.jpg" alt="Later view when the wearer asks where the tumbler was left" loading="lazy"><span class="stamp">04:09.5</span></div></div><div class="evidence-copy"><h3>Object memory</h3><p>The tumbler is set on the center table 116 seconds before the later location question.</p></div></article>
+      <article class="evidence"><div class="frames"><div class="frame"><img src="evidence/fridge-closed.jpg" alt="Refrigerator closed just before the trigger" loading="lazy"><span class="stamp">04:51.0</span></div><div class="frame"><img src="evidence/fridge-opening.jpg" alt="Refrigerator visibly opening at the trigger" loading="lazy"><span class="stamp">04:51.5</span></div></div><div class="evidence-copy"><h3>Event boundary</h3><p>The reminder fires on the first visible refrigerator opening after it is armed.</p></div></article>
+    </div>
+  </section>
+
+  <section id="capabilities">
+    <div class="section-head"><h2>Five capability families</h2><p>Each reference answer makes a claim that can be checked from the episode available at the time of the interaction.</p></div>
+    <div class="families">
+      <article class="family-card"><h3>Action memory</h3><q>After I left the bedroom, what did I do?</q><p>Bathroom, shower door, vanity storage, then exit.</p><button class="seek" data-variant="balanced" data-time="111.84">Watch at 01:52 →</button></article>
+      <article class="family-card"><h3>Object memory</h3><q>Where did I leave my gray tumbler?</q><p>On the center table, set there about two minutes earlier.</p><button class="seek" data-variant="balanced" data-time="247.66">Watch at 04:08 →</button></article>
+      <article class="family-card"><h3>Current action</h3><q>What am I doing right now?</q><p>Turning the striped ball in both hands.</p><button class="seek" data-variant="memory_narration" data-time="409.88">Watch at 06:50 →</button></article>
+      <article class="family-card"><h3>Duration</h3><q>How long was I checking the bedroom drawers?</q><p>About sixteen seconds.</p><button class="seek" data-variant="balanced" data-time="103.52">Watch at 01:44 →</button></article>
+      <article class="family-card"><h3>Triggered reminder</h3><q>When I open the refrigerator, remind me…</q><p>Armed at 04:00; expected trigger at the opening at 04:51.5.</p><button class="seek" data-variant="temporal_proactive" data-time="235.92">Watch from 03:56 →</button></article>
+    </div>
+  </section>
+
+  <section id="validation">
+    <div class="section-head"><h2>Final validation</h2><p>The acceptance gate covers visual evidence, speech rendering, timing, structure, and final media.</p></div>
+    <div class="validation">
+      <div class="check"><b>30/30</b><span>visual decisions passed: 10 candidates × 3 readers</span></div>
+      <div class="check"><b>21/21</b><span>synthesized wearer lines passed speech recognition</span></div>
+      <div class="check"><b>3/3</b><span>variant timing gates passed with zero collisions or shortfalls</span></div>
+      <div class="check"><b>0</b><span>clipped, near-silent, or quarantined audio items</span></div>
+      <div class="check"><b>3/3</b><span>ten-minute videos rendered and passed final acceptance</span></div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="section-head"><h2>How the episode was rebuilt</h2><p>The pipeline separates observation, evidence review, conversation composition, and media validation.</p></div>
+    <div class="method"><div class="steps">
+      <div class="step"><strong>Sample the source</strong>1,200 clean frames at 2 fps cover the full episode.</div>
+      <div class="step"><strong>Author candidates</strong>Questions, answers, evidence horizons, and event boundaries are proposed.</div>
+      <div class="step"><strong>Require consensus</strong>Every shipped candidate passes three visual reads; failures go to quarantine.</div>
+      <div class="step"><strong>Compose and verify</strong>Alternatives are timed, spoken, transcribed, rendered, and checked as complete artifacts.</div>
+    </div></div>
+  </section>
+
+  <footer>Episode A is presented as a construction case study. The three rebuilt conversations are alternatives over one shared source episode, not simultaneous dialogue.</footer>
+</main>
+<script src="data.js"></script>
+<script>
+  const dataset = window.EGODUPLEX_COMPARISON;
+  const video = document.getElementById('episode-video');
+  const timeline = document.getElementById('timeline');
+  const title = document.getElementById('player-title');
+  const previousVideo = '../media/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T10_at_600.mp4';
+  const familyNames = {
+    ack:'opener', duration_activity:'duration', action_episodic_memory:'action memory',
+    object_episodic_memory:'object memory', action_narration:'current action',
+    interruption_model_hoi:'triggered reminder'
+  };
+  let selected = 'balanced';
+  let selectionToken = 0;
+
+  function clock(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const fractional = seconds % 1 !== 0;
+    const rest = (seconds - minutes * 60).toFixed(fractional ? 1 : 0).padStart(fractional ? 4 : 2, '0');
+    return String(minutes).padStart(2, '0') + ':' + rest;
+  }
+
+  function renderTimeline(id) {
+    timeline.innerHTML = '';
+    if (id === 'previous') {
+      title.textContent = 'Previous publish · retained for comparison';
+      timeline.innerHTML = '<div class="old-note">This is the earlier published preview with annotations burned into the pixels. Its legacy review timeline remains available from the <a href="../listen/">Listen index</a>.</div>';
+      return;
+    }
+    const variant = dataset.variants[id];
+    const scored = variant.turns.filter(turn => turn.scored).length;
+    title.textContent = variant.label + ' · ' + scored + ' scored scenarios';
+    for (const turn of variant.turns) {
+      const row = document.createElement('button');
+      row.className = 'turn';
+      row.dataset.start = turn.start;
+      row.dataset.end = turn.time;
+      const isSetup = turn.role === 'arm' || !turn.scored;
+      const spoken = turn.text || '[expected assistant trigger]';
+      const answer = turn.answer ? '<div class="answer"><b>Expected</b>' + escapeHtml(turn.answer) + '</div>' : '';
+      row.innerHTML = '<span class="time">' + clock(turn.start) + '</span><span><span class="turn-top"><span class="who">' + (turn.speaker === 'user' ? 'wearer' : 'assistant') + '</span><span class="family">' + familyNames[turn.family] + '</span><span class="score ' + (isSetup ? 'setup' : '') + '">' + (isSetup ? 'setup' : 'scored') + '</span></span><span class="utterance">' + escapeHtml(spoken) + '</span>' + answer + '</span>';
+      row.addEventListener('click', () => playAt(turn.start));
+      timeline.appendChild(row);
+    }
+  }
+
+  function escapeHtml(value) {
+    const node = document.createElement('span');
+    node.textContent = value;
+    return node.innerHTML;
+  }
+
+  function choose(id, at, autoplay = false) {
+    const token = ++selectionToken;
+    const wasPlaying = !video.paused && !video.ended;
+    const current = Number.isFinite(at) ? at : video.currentTime;
+    const shouldPlay = autoplay || wasPlaying;
+    const src = id === 'previous' ? previousVideo : dataset.variants[id].video;
+    selected = id;
+    document.querySelectorAll('.variant,.tab').forEach(el => {
+      const active = el.dataset.variant === id;
+      el.classList.toggle('active', active);
+      el.setAttribute('aria-pressed', String(active));
+    });
+    const sourceChanged = !video.getAttribute('src').endsWith(src);
+    const restore = () => {
+      if (token !== selectionToken) return;
+      if (Number.isFinite(current) && current > 0) video.currentTime = Math.min(current, video.duration || current);
+      if (shouldPlay) video.play().catch(() => {});
+    };
+    if (sourceChanged) {
+      video.src = src;
+      video.addEventListener('loadedmetadata', restore, {once:true});
+      video.load();
+      if (shouldPlay) video.play().catch(() => {});
+    }
+    renderTimeline(id);
+    if (!sourceChanged && video.readyState) restore();
+    else if (!sourceChanged) video.addEventListener('loadedmetadata', restore, {once:true});
+    document.getElementById('watch').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function playAt(time) {
+    const go = () => { video.currentTime = time; video.play().catch(() => {}); };
+    if (video.readyState) go(); else video.addEventListener('loadedmetadata', go, {once:true});
+  }
+
+  document.querySelectorAll('.variant,.tab').forEach(el => el.addEventListener('click', () => choose(el.dataset.variant)));
+  document.querySelectorAll('.seek').forEach(el => el.addEventListener('click', () => choose(el.dataset.variant, Number(el.dataset.time), true)));
+  video.addEventListener('timeupdate', () => {
+    for (const row of timeline.querySelectorAll('.turn')) {
+      const start = Number(row.dataset.start), end = Number(row.dataset.end) + 5;
+      const current = video.currentTime >= start && video.currentTime <= end;
+      row.classList.toggle('current', current);
+      if (current) row.setAttribute('aria-current', 'true'); else row.removeAttribute('aria-current');
+    }
+  });
+  renderTimeline(selected);
+</script>
+</body>
+</html>
