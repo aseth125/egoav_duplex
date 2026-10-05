@@ -1,0 +1,64 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>EgoDuplex v8 -- listen</title><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--hi:#1f6feb;
+ --warm:#d29922;--good:#3fb950;--bad:#f85149}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 20px 80px}
+h1{font-size:25px;margin:0 0 4px}
+h2{font-size:17px;margin:32px 0 10px;padding-top:14px;
+ border-top:1px solid var(--line)}
+.sub{color:var(--dim);margin:0 0 20px;font-size:14px}
+.note{border:1px solid var(--line);border-left:3px solid var(--warm);
+ background:#161b22;padding:12px 15px;border-radius:5px;margin:16px 0;
+ color:#cfd7e0;font-size:13.5px}
+.note b{color:#fff}
+.stats{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}
+.stat{border:1px solid var(--line);background:#161b22;border-radius:5px;
+ padding:7px 13px;font-size:13px;color:var(--dim)}
+.stat b{display:block;font-size:19px;font-weight:600;color:var(--fg)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);
+ vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:12px;text-transform:uppercase;
+ letter-spacing:.04em}
+tr.ep:hover{background:#161b22}
+code{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace;color:#a5d6ff}
+.tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:11.5px;
+ border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+.tag.sc{border-color:#d29922;color:#e3b341}
+.tag.ok{border-color:#3fb950;color:#7ee787}
+.tag.no{border-color:#f85149;color:#ff9492}
+.tag.dev{border-color:#1f6feb;color:#79c0ff}
+.tag.bar{border-color:#8957e5;color:#d2a8ff}
+.sticky{position:sticky;top:0;z-index:5;background:var(--bg);
+ padding:10px 0 12px;border-bottom:1px solid var(--line)}
+video{width:100%;max-height:52vh;border-radius:7px;background:#000}
+.turn{border:1px solid var(--line);border-radius:7px;margin:11px 0;
+ background:#121721;scroll-margin-top:62vh}
+.turn.cur{border-color:var(--hi);background:#16202e}
+.turn.model{border-left:3px solid #58a6ff}
+.thead{display:flex;gap:9px;align-items:center;padding:8px 12px;
+ border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tm{font:12.5px ui-monospace,Menlo,monospace;color:var(--dim);cursor:pointer;
+ white-space:nowrap}
+.tm:hover{color:#58a6ff;text-decoration:underline}
+.who{font-size:11.5px;font-weight:700;letter-spacing:.4px;color:#9aa6b4}
+.q{padding:9px 12px 4px;font-size:16px;font-weight:500}
+.ans{padding:2px 12px 10px;color:#b8c3d1;font-size:14.5px}
+.ans b{color:var(--dim);font-weight:600;font-size:11px;letter-spacing:.5px;
+ display:block;margin-bottom:2px}
+.silent{padding:9px 12px;color:#6e7681;font-style:italic;font-size:13.5px}
+audio{width:100%;max-width:420px;height:32px;margin:4px 12px 8px;
+ display:block;filter:invert(.92) hue-rotate(180deg)}
+details{border-top:1px solid var(--line);padding:7px 12px}
+summary{cursor:pointer;color:var(--dim);font-size:12.5px}
+.pv{font:12px/1.6 ui-monospace,Menlo,monospace;color:#9fb0c4;
+ white-space:pre-wrap;margin:7px 0 2px}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 20px;
+ border-bottom:1px solid #262b35}
+.nav a{padding:8px 14px;font-size:13.5px;font-weight:600;color:#8d99a8}
+.nav a.on{color:#fff;border-bottom:2px solid var(--hi)}
+.back{display:inline-block;margin-bottom:12px;font-size:13.5px}
+</style></head><body><div class=wrap><div class=nav><a class='' href='../index.html'>Episodes</a><a class='on' href='../listen/index.html'>Listen (v8)</a><a class='' href='../deixis_v52.html'>Deixis rewrite</a><a class='' href='../em_merge_v1.html'>Action memory</a><a class='' href='../episodic_memory_design.html'>Memory design</a><a class='' href='../narration_7xwm28.html'>Raw narration</a></div><h1>EgoDuplex v8 &mdash; listen to the eight episodes</h1><p class=sub>Every wearer line is playable next to the video it sits on. Open an episode, press play, or click a timestamp to jump.</p><div class=stats><div class=stat><b>8</b>episodes</div><div class=stat><b>101</b>turns</div><div class=stat><b>55</b>scored</div><div class=stat><b>13</b>probed in v8</div><div class=stat><b>42</b>inherited, unprobed</div><div class=stat><b>97</b>wearer lines you can play</div></div><div class=note><b>Only the wearer is audible.</b> The assistant's answers are shown as text and are never synthesised &mdash; a rendered gold answer would give a model the prosody of the target instead of its content. The wearer's speech is Breeze TTS (<code>MediaTek-Research/BreezeTTS-2</code>); nothing here was rendered with CSM.</div><div class=note>Question timing is derived from the <b>measured</b> wav, never from a words-per-second estimate: a line ENDS at its ask time, so it starts at <code>t_ask &minus; measured seconds</code>. Open any turn's provenance to see the measured length and how far retiming moved it.</div><h2>Episodes</h2><table><thead><tr><th>chain</th><th>tier</th><th>window</th><th>turns</th><th>probed</th><th>unprobed</th></tr></thead><tbody><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T10_at_600.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq::T10@600</a></td><td>T10</td><td>600s</td><td>17</td><td>2</td><td>6</td></tr><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq__T5_at_390.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act0_e72nhq::T5@390</a></td><td>T5</td><td>300s</td><td>13</td><td>2</td><td>4</td></tr><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T10_at_240.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28::T10@240</a></td><td>T10</td><td>600s</td><td>17</td><td>1</td><td>9</td></tr><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28__T2_at_810.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act1_7xwm28::T2@810</a></td><td>T2</td><td>120s</td><td>5</td><td>0</td><td>2</td></tr><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T10_at_360.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa::T10@360</a></td><td>T10</td><td>600s</td><td>14</td><td>4</td><td>5</td></tr><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa__T5_at_120.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act2_yhbvpa::T5@120</a></td><td>T5</td><td>300s</td><td>11</td><td>3</td><td>4</td></tr><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T10_at_150.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc::T10@150</a></td><td>T10</td><td>600s</td><td>15</td><td>0</td><td>8</td></tr><tr class=ep><td><a href='ep/NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc__T3_at_720.html'>NymeriaPlus_v1.0_20230607_s0_james_johnson_act3_ifj2gc::T3@720</a></td><td>T3</td><td>180s</td><td>9</td><td>1</td><td>4</td></tr></tbody></table><h2>Scored turns by family</h2><table><thead><tr><th>family</th><th>scored</th><th>probed in v8</th><th>unprobed</th></tr></thead><tbody><tr><td><code>episodic_memory</code></td><td>30</td><td>0</td><td>30</td></tr><tr><td><code>action_narration</code></td><td>7</td><td>7</td><td>0</td></tr><tr><td><code>attention</code></td><td>5</td><td>0</td><td>5</td></tr><tr><td><code>object_memory</code></td><td>5</td><td>1</td><td>4</td></tr><tr><td><code>interruption_model_hoi</code></td><td>4</td><td>4</td><td>0</td></tr><tr><td><code>attention_abandoned</code></td><td>3</td><td>0</td><td>3</td></tr><tr><td><code>duration_activity</code></td><td>1</td><td>1</td><td>0</td></tr></tbody></table><div class=note>42 of the 55 scored turns were inherited from the earlier v50 publish and carry <b>no v8 visual probe</b>. They are marked as such on every turn rather than shown as finished work.</div></div></body></html>
