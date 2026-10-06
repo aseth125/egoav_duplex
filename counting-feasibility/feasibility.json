@@ -1,0 +1,144 @@
+{
+  "schema": "egoduplex.counting-feasibility/1",
+  "status": "CANDIDATE_CENSUS_ONLY",
+  "created_utc": "2026-10-06",
+  "scope": {
+    "episodes": 20,
+    "duration_s": 4380.0,
+    "narration_rows": 1662,
+    "object_tracks": 2579,
+    "track_samples": 154971,
+    "source": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_mining/raw_nymeria",
+    "released_chains_modified": false
+  },
+  "counting_unit": {
+    "event_count": "A verified closed-to-open transition of one named physical leaf. Reopening the same leaf after a verified close is a new event.",
+    "access_episode": "One continuous visit to a container. A two-leaf cabinet can be one access episode and two leaf transitions.",
+    "unique_object_count": "The number of distinct physical identities, independent of how often each identity is used. Track rows are proposals, not identities, until visual merging is complete."
+  },
+  "narration_candidate_census": {
+    "drawer_open": {
+      "conservative": 19,
+      "flagged_not_counted": 2,
+      "subtypes": {
+        "furniture_kitchen_bathroom": 14,
+        "appliance_internal": 5
+      },
+      "flags": [
+        "one opening crosses clip time zero",
+        "one physical pullout is inconsistently called a kitchen drawer and an organizer"
+      ]
+    },
+    "phone_pickup_or_use": {
+      "conservative": 0,
+      "incidental_mentions": 1,
+      "note": "The only row says a hand rests by the phone; it does not assert pickup or use."
+    },
+    "cabinet_cupboard_open": {
+      "access_episodes": 12,
+      "leaf_transitions": 14,
+      "excluded": [
+        "failed or attempted openings",
+        "a colleague's action",
+        "one event mostly before clip time zero"
+      ]
+    },
+    "structural_room_door_open": {
+      "episodes_including_closet": 10,
+      "episodes_excluding_closet": 9
+    },
+    "appliance_door_open": {
+      "access_episodes": 8,
+      "leaf_transitions": 9,
+      "refrigerator_visits": 6,
+      "dishwasher_visits": 2
+    }
+  },
+  "per_clip": [
+    {"name":"Angela Harrell","drawer":2,"phone":0,"cabinet_access":2,"cabinet_leaves":2,"structural_door":0,"appliance_door":0},
+    {"name":"Dawn Heath","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":1,"appliance_door":0},
+    {"name":"Anthony Perez","drawer":1,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Amy Crawford","drawer":0,"phone":0,"cabinet_access":1,"cabinet_leaves":2,"structural_door":1,"appliance_door":0},
+    {"name":"Julie Taylor","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Dominique Frye","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Rebecca Ward","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Elizabeth Morgan","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":1,"appliance_door":0},
+    {"name":"Grace Randolph","drawer":7,"phone":0,"cabinet_access":2,"cabinet_leaves":2,"structural_door":0,"appliance_door":0},
+    {"name":"Allen Evans","drawer":1,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Ashley Reyes","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":5,"appliance_door":0},
+    {"name":"Alicia Drake","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Joshua Smith","drawer":1,"phone":0,"cabinet_access":3,"cabinet_leaves":4,"structural_door":2,"appliance_door":1},
+    {"name":"Dean Krause","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Amanda Rodgers","drawer":5,"phone":0,"cabinet_access":3,"cabinet_leaves":3,"structural_door":0,"appliance_door":5},
+    {"name":"Amy Snow","drawer":2,"phone":0,"cabinet_access":1,"cabinet_leaves":1,"structural_door":0,"appliance_door":2},
+    {"name":"Nicholas Hicks","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Alexandria Griffith","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Paul Nguyen","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0},
+    {"name":"Brittney Goodwin","drawer":0,"phone":0,"cabinet_access":0,"cabinet_leaves":0,"structural_door":0,"appliance_door":0}
+  ],
+  "duplicate_clustering": {
+    "merge": [
+      "overlapping rows in the same clip that name the same target and continuous hand action",
+      "an adjacent progressive continuation with no intervening close",
+      "exact-time multi-annotator paraphrases"
+    ],
+    "keep_separate": [
+      "another or other target",
+      "a verified close followed by a new open",
+      "different physical leaf",
+      "a later revisit"
+    ],
+    "reject_or_flag": [
+      "about to, reaches for, touches, holds, or a failed attempt",
+      "another person's action",
+      "clip-boundary-censored transition",
+      "conflicting target labels"
+    ]
+  },
+  "track_taxonomy_audit": {
+    "Storage": {"track_rows":325,"clips_with_any":20,"per_clip_range":[4,34],"median_per_clip":14.5},
+    "Door": {"track_rows":171,"clips_with_any":20,"per_clip_range":[1,19],"median_per_clip":9.0},
+    "Refrigerator": {"track_rows":20,"clips_with_any":19,"per_clip_range":[0,2],"median_per_clip":1.0},
+    "Screen": {"track_rows":35,"clips_with_any":20,"per_clip_range":[1,4],"median_per_clip":1.0},
+    "phone_track_rows": 0,
+    "limitations": [
+      "Storage merges shelves, cabinets, drawers, dressers, and other storage fixtures.",
+      "Door aliases include window frame and door casing.",
+      "Screen explicitly excludes mobile-phone screens.",
+      "A track UID is not accepted as a distinct physical identity until dense frames rule out split and duplicate tracks."
+    ]
+  },
+  "visual_spot_checks": [
+    {
+      "case": "Amy Snow oven drawer",
+      "evidence": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_mining/hoi/review_sheets/H03_segment1.jpg",
+      "finding": "PASS as a representative transition: the lower oven drawer changes from closed to open around relative 132.3 s. Three overlapping narration rows refer to this one physical opening."
+    },
+    {
+      "case": "Grace utensil drawer",
+      "evidence": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_mining/hoi/review_sheets/H12_segment1.jpg",
+      "finding": "INCOMPLETE for transition scoring: the drawer is clearly open throughout the available review window, so these frames verify identity and state but not the earlier closed-to-open boundary."
+    },
+    {
+      "case": "Amanda organizer under wall cabinet",
+      "evidence": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_mining/hoi/review_sheets/H04_segment1.jpg",
+      "finding": "REJECT as a cabinet-open inference: the visible action concerns a small box/organizer while the wall cabinet stays closed. This demonstrates why noun co-occurrence cannot define an opening event."
+    }
+  ],
+  "strict_yield_planning_ranges": {
+    "status": "PLANNING_PRIOR_NOT_MEASURED_YIELD",
+    "drawer_open": {"from_19_conservative_candidates":[14,18]},
+    "cabinet_access": {"from_12_conservative_candidates":[8,11]},
+    "structural_door_open": {"from_10_conservative_candidates":[8,10]},
+    "appliance_door_open": {"from_8_conservative_candidates":[6,8]},
+    "phone_pickup_or_use": {"from_narration":0,"from_visual_mining":"unknown"}
+  },
+  "confidence": {
+    "narration_census_after_dedup": "high",
+    "physical_event_truth_before_dense_review": "medium",
+    "unique_drawer_or_cabinet_identity_from_tracks_only": "low",
+    "unique_structural_door_identity_from_tracks_only": "low",
+    "physical_absence_of_phone_activity": "low"
+  },
+  "release_rule": "No item in this file is strict or shippable until a dense pre-state, transition, and post-state review passes, and a full negative sweep rules out missed qualifying events."
+}

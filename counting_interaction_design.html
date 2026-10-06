@@ -1,0 +1,376 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Interaction counting — end-to-end design</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:60rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:38px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}
+code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:16px 0;padding:10px 15px;border:1px solid var(--line);border-left:3px solid var(--warm);background:#161b22;border-radius:5px;color:#e8d9b0}
+blockquote p{margin:3px 0}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.sub{color:var(--dim);margin:0 0 22px}strong{color:#fff}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;border-bottom:1px solid #262b35}
+.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;border:1px solid transparent;border-bottom:none;position:relative;top:1px}
+.nav a:hover{color:#c3cbd8;background:#161a22}.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap>
+<div class=nav><a href='index.html'>Episodes</a><a href='episodic_memory_design.html'>Action memory design</a><a href='object_episodic_memory_design.html'>Object memory design</a><a href='interruption_model_hoi_design.html'>Model interruption design</a><a href='action_narration_design.html'>Action narration design</a><a href='duration_activity_design.html'>Duration design</a><a href='chaining_design.html'>Chaining design</a><a href='counting_interaction_design.html' class=on>Counting design</a></div>
+<h1>Interaction counting — end-to-end design</h1>
+<p class=sub>Repeated drawer openings, phone pickups, and distinct physical objects for an egocentric assistant.</p>
+<p><strong>Status:</strong> design plus a narration-level feasibility census on 20 episodes (2026-10-06). No counting item is released. The earlier <strong>90–95%</strong> figure was a planning estimate, <strong>not measured precision</strong>. It must never appear in a result table as an observed score.</p>
+<p>The release target is <strong>at least 95% precision after independent double audit</strong>, with every disagreement resolved before release. Phone yield and phone precision are unknown pending a wider visual pilot.</p>
+<p><strong>Version-1 scope:</strong> drawer-opening transitions and phone pickups. Cabinet, structural-door, appliance-door, and access-episode numbers below are feasibility-census results only. They do not become benchmark families until they have their own state machines, fixtures, and audit.</p>
+
+<h2>1. What this family tests</h2>
+<p>A glasses wearer should be able to ask a model to count what has happened, without mentally keeping a tally while doing something else.</p>
+<blockquote><p><em>“Since I started making lunch, how many times have I opened a drawer?”</em> → <em>“Four times.”</em></p><p><em>“Since I started cooking, how many different drawers did I open?”</em> → <em>“Three.”</em></p><p><em>“Since I sat down here, how many times have I picked up the phone?”</em> → <em>“Twice.”</em></p></blockquote>
+<p>There are two separate arms:</p>
+<table><thead><tr><th>arm</th><th>unit</th><th>example</th></tr></thead><tbody>
+<tr><td><strong>Repeated event count</strong></td><td>Every qualifying state transition. Reopening the same drawer after a verified close counts again.</td><td>One drawer opened three times → answer 3.</td></tr>
+<tr><td><strong>Unique physical object count</strong></td><td>Distinct physical identities that had at least one qualifying transition.</td><td>Three openings across two drawers → answer 2.</td></tr>
+</tbody></table>
+<p>These arms have different family labels and score reports. A question must say <em>times</em> or <em>different</em>; “How many drawers did I open?” is rejected because either answer could be defensible.</p>
+
+<h2>2. What the 20-episode pilot actually measured</h2>
+<p>The census read all <strong>1,662 original Nymeria narration rows</strong> across <strong>20 episodes / 4,380 seconds</strong>, then clustered duplicate and overlapping paraphrases. These are proposals from text, not strict visual ground truth.</p>
+<table><thead><tr><th>family</th><th>conservative proposal count</th><th>scope</th></tr></thead><tbody>
+<tr><td>drawer opening</td><td><strong>19</strong> + 2 flagged</td><td>14 furniture/kitchen/bathroom drawers; 5 appliance-internal drawers</td></tr>
+<tr><td>phone pickup/use</td><td><strong>0</strong></td><td>one incidental mention says a hand rests <em>by</em> a phone</td></tr>
+<tr><td>cabinet/cupboard opening</td><td><strong>12 access episodes / 14 leaves</strong></td><td>two accesses explicitly open two leaves</td></tr>
+<tr><td>structural/room door opening</td><td><strong>10</strong></td><td>9 when a closet door is excluded</td></tr>
+<tr><td>appliance door opening</td><td><strong>8 accesses / 9 leaves</strong></td><td>6 refrigerator visits and 2 dishwasher visits</td></tr>
+</tbody></table>
+<p>The two flagged drawer proposals are a clip-boundary event and a pullout called both a drawer and an organizer. They are not in the count.</p>
+<p>The extracted tracks do not solve identity: <code>Storage</code> has 325 tracks but merges shelves, cabinets, drawers, dressers, and other fixtures; <code>Door</code> has 171 tracks but its aliases include door casings and window frames. There is <strong>no phone track class</strong>, and <code>Screen</code> explicitly excludes mobile-phone screens. Track counts therefore cannot be reported as unique drawer, cabinet, door, or phone counts.</p>
+<p>Three frame spot checks support the gate design: an Amy Snow oven drawer visibly transitions from closed to open; a Grace utensil-drawer window starts after the drawer is already open and cannot prove the transition; an Amanda “organizer under the wall cabinet” example shows a box interaction while the cabinet remains closed. These cases are examples, not a measured pass rate.</p>
+<p><strong>Pilot artifacts:</strong> <a href='counting-feasibility/feasibility.json'>machine-readable census</a>, <a href='counting-feasibility/narration_count_census.md'>row-level clustering audit</a>, and <a href='counting-feasibility/README.md'>feasibility notes</a>.</p>
+
+<h2>3. The counting ontology</h2>
+<p>Every item fixes five definitions before mining:</p>
+<ol>
+<li><strong>Actor:</strong> the wearer only, unless an arm explicitly studies other people. A colleague opening a cabinet does not enter “How many did I open?”</li>
+<li><strong>Object class:</strong> version 1 supports a drawer leaf or phone. Generic <code>storage</code> and <code>door</code> never ship. The other classes in the census remain proposals until separately specified.</li>
+<li><strong>Interval:</strong> the half-open interval <code>[count_start_s, question_start_s)</code>. <code>question_start_s</code> is the first sample of wearer speech; <code>question_end_s</code> is stored separately. The stable post-state of every counted event must finish before <code>question_start_s</code>.</li>
+<li><strong>Unit:</strong> repeated transitions or unique physical identities. The unit is stored and stated in the question.</li>
+<li><strong>Referent:</strong> singular wording such as “the phone” or “my phone” binds to one verified <code>physical_object_id</code>. If ownership or identity is not grounded, the wording changes or the item declines.</li>
+</ol>
+<table><thead><tr><th>family label</th><th>unit</th><th>required wording</th><th>release status</th></tr></thead><tbody>
+<tr><td><code>count.drawer_open.event</code></td><td>verified closed-to-open transition</td><td>“Since [verified anchor], how many times did I open a drawer?”</td><td>version 1</td></tr>
+<tr><td><code>count.drawer_open.unique</code></td><td>distinct drawer <code>physical_object_id</code></td><td>“Since [verified anchor], how many different drawers did I open?”</td><td>version 1</td></tr>
+<tr><td><code>count.phone_pickup.event</code></td><td>verified support transfer for the grounded phone</td><td>“Since [verified anchor], how many times did I pick up the phone?”</td><td>version 1 after phone pilot</td></tr>
+<tr><td><code>count.phone_pickup.unique</code></td><td>distinct phone <code>physical_object_id</code></td><td>“Since [verified anchor], how many different phones did I pick up?”</td><td>future; only if the data yields it</td></tr>
+<tr><td><code>count.container_access.event</code></td><td>continuous access episode</td><td>must say “times I accessed/opened the cabinet”</td><td>census only; state/reset rule pending</td></tr>
+</tbody></table>
+<p>Leaf transitions, access episodes, and unique objects are never aliases. For example, two cabinet leaves opened in one visit can be two leaf transitions and one access episode, but neither count ships under version 1.</p>
+
+<h2>4. Exact drawer-opening state machine</h2>
+<p>Each physical drawer leaf has its own state path:</p>
+<p><code>UNKNOWN → CLOSED → OPENING → OPEN → CLOSING → CLOSED</code></p>
+<table><thead><tr><th>state</th><th>visual condition</th></tr></thead><tbody>
+<tr><td><code>UNKNOWN</code></td><td>Identity or aperture cannot be judged because of occlusion, crop, blur, or a clip boundary.</td></tr>
+<tr><td><code>CLOSED</code></td><td>The front is seated against the fixture and remains so for at least 8 frames on the 15 fps evidence stream.</td></tr>
+<tr><td><code>OPENING</code></td><td>The same leaf moves outward and its gap/interior increases for at least two ordered frames.</td></tr>
+<tr><td><code>OPEN</code></td><td>A visible cavity or usable access aperture follows an intentional outward pull and remains stable for at least 8 frames, or the wearer reaches into the newly exposed interior while it remains open. Mechanical play or a hairline gap is insufficient.</td></tr>
+<tr><td><code>CLOSING</code></td><td>The same leaf moves inward and its aperture decreases.</td></tr>
+</tbody></table>
+<p>A <strong>drawer-open event</strong> is emitted only for <code>CLOSED → OPENING → OPEN</code>. Its event time is the first frame after the final closed frame where outward motion begins, conditional on the later stable <code>OPEN</code> state.</p>
+<ul>
+<li>A handle touch, failed tug, “about to open,” or pull that returns without reaching <code>OPEN</code> counts zero.</li>
+<li>An accidental partial displacement without a visible cavity or usable opening is rejected or quarantined; it is never rounded up.</li>
+<li>Holding an already-open drawer counts zero.</li>
+<li>Pausing during one pull does not create another event.</li>
+<li>A second event requires a verified stable <code>CLOSED</code> reset before the next opening.</li>
+<li>Two leaves moving during one visit are two leaf transitions and one access episode.</li>
+<li>A drawer already open at interval start may later contribute a reopening, but its initial unseen opening does not count.</li>
+<li>Appliance-internal drawers are a separate subtype and are never silently mixed with furniture drawers.</li>
+</ul>
+<p>The 8-frame holds are the initial operational rule at 15 fps. Before release they are stress-tested against faster and slower transitions. If a valid event cannot satisfy them because of occlusion or boundary censoring, the item declines; the threshold is not relaxed per item.</p>
+<h3>4.1 When to ask</h3>
+<p>For every positive drawer item, the question is sited <strong>immediately after the latest qualifying opening has finished</strong>. The drawer must already have reached its verified stable <code>OPEN</code> state before the first sample of question speech. An onset gap of <strong>0.5–3.0 seconds after post-state confirmation</strong> is a hard version-1 gate.</p>
+<ul>
+<li><code>post_state_end_s &lt; question_start_s</code> is a hard gate.</li>
+<li><code>0.5 &le; question_start_s - post_state_end_s &le; 3.0</code> is a hard gate.</li>
+<li>No intervening task action of any class may occur in the gap; <code>intervening_action_status</code> must be <code>NONE</code>. Incidental head or hand settling is not a task action.</li>
+<li>The question may begin while the drawer remains open; opening it is already a completed action.</li>
+<li>If the wearer begins asking while the drawer is still moving, move the question later or reject the item. Do not use later frames to retroactively prove it.</li>
+<li>A later question is rejected from version 1 or labeled as a separate delayed-memory counting family; a written exception cannot make it an immediate item.</li>
+</ul>
+<p>This makes the natural trigger “I just did that—how many times have I done it?” while keeping every counted action in the past. For a repeated count, the answer still covers the declared interval, including earlier verified openings.</p>
+
+<h2>5. Exact phone-pickup state machine</h2>
+<p>Phone pickup is a <strong>support transfer</strong>, not a mention, gaze, tap, or hand proximity. The state path is:</p>
+<p><code>ABSENT/UNKNOWN → ON_EXTERNAL_SUPPORT_RELEASED → GRASPING → HAND_SUPPORTED → PLACING_DOWN → ON_EXTERNAL_SUPPORT_RELEASED</code></p>
+<table><thead><tr><th>state</th><th>visual condition</th></tr></thead><tbody>
+<tr><td><code>ABSENT</code></td><td>No phone is visible in the review region. Absence is not a support state and cannot begin a pickup proof.</td></tr>
+<tr><td><code>UNKNOWN</code></td><td>Phone identity, support contact, or the receiving hand is not visible enough to decide.</td></tr>
+<tr><td><code>ON_EXTERNAL_SUPPORT_RELEASED</code></td><td>The same phone rests on a table, counter, charger, shelf, seat, or other non-hand support for at least 8 frames, with no wearer hand contact or hand control.</td></tr>
+<tr><td><code>GRASPING</code></td><td>The wearer's hand establishes contact while external support may still remain.</td></tr>
+<tr><td><code>HAND_SUPPORTED</code></td><td>External support has ended and the phone remains grasped or co-moves with the hand for at least 8 frames.</td></tr>
+<tr><td><code>PLACING_DOWN</code></td><td>External support has resumed but the wearer may still touch or control the phone; this is not yet a reset.</td></tr>
+</tbody></table>
+<p>A <strong>phone-pickup event</strong> is emitted only for <code>ON_EXTERNAL_SUPPORT_RELEASED → GRASPING → HAND_SUPPORTED</code>. Its event time is the first frame after final external-support contact, conditional on the stable hand-supported state.</p>
+<ul>
+<li>Touching, tapping, swiping, plugging in, or looking at a phone that stays supported counts zero.</li>
+<li>Repositioning fingers while the phone remains hand-supported counts zero.</li>
+<li>Putting the phone down and picking it up again counts a second event only after <code>PLACING_DOWN → ON_EXTERNAL_SUPPORT_RELEASED</code>: at least 8 frames of external support with the wearer no longer touching or controlling it.</li>
+<li>Already holding the phone at interval start does not create a pickup.</li>
+<li>A peer-to-wearer handoff is stored as <code>handoff_acquire</code>, not phone pickup, unless a separate handoff arm is released.</li>
+<li>A pocket or bag extraction is rejected when the phone's pre-state and identity are hidden. It can become a future subtype after a dedicated pilot.</li>
+</ul>
+<p>For “my phone” or “the phone,” every included event must bind to the same verified phone identity. The item records how that referent was grounded, such as the wearer placing the device earlier. Visual association does not prove legal ownership, so “the phone” is preferred when ownership is not established. If two phones could satisfy the wording, the item is rejected rather than summed.</p>
+<p>The 20-episode narration census produced <strong>zero phone-pickup candidates</strong>. That is evidence about the narration, not evidence that no phone pickup occurred. Phone yield, detector recall, and precision remain <strong>pending a wider visual pilot</strong>.</p>
+
+<h2>6. Candidate proposals and duplicate clustering</h2>
+<p>Narration, object tracks, motion proposals, and a phone detector may propose an event. None may certify one. Proposal rows are deliberately over-complete and then merged before visual review.</p>
+<ol>
+<li>Extract explicit transition language and retain the full source row and time span.</li>
+<li>Generate visual motion proposals independently, including proposals with no narration row.</li>
+<li>Group proposals by episode, family, candidate identity, and overlapping transition interval.</li>
+<li>Merge exact-time annotator paraphrases and progressive continuations with no intervening reset.</li>
+<li>Keep separate events when text says <em>another</em>, identity changes, a verified close/reset intervenes, or the wearer revisits later.</li>
+<li>Send label conflicts, clip-boundary events, and actor conflicts to quarantine with their evidence.</li>
+</ol>
+<p>The pilot examples show why this is required: three rows can describe one oven-drawer opening, while one row can describe two different drawer openings.</p>
+
+<h2>7. Event ledger and physical-object registry</h2>
+<p>The event ledger is the ground-truth object. Questions are immutable views over it. Every event or excluded-candidate row carries:</p>
+<pre><code>{
+  schema_version, episode_id, event_id, family, subtype,
+  actor, physical_object_id, referent_basis, ownership_basis,
+  timebase, pre_state_span, transition_span, event_frame,
+  post_state_span, state_path, reset_event_id,
+  source_row_ids, source_annotation_sha256, proposal_sources,
+  dedupe_cluster_id, dense_manifest, source_media_sha256,
+  detector_control, sweep_coverage_id,
+  transition_confidence, identity_confidence,
+  auditor_a, auditor_b, adjudication,
+  status, exclusion_reason, quarantine_reason
+}</code></pre>
+<p>Every QA view has a separate item record:</p>
+<pre><code>{
+  item_id, episode_id, variant_group_id, variant_id, chain_turn_id,
+  family_label, arm, unit, actor, target_class,
+  referent_physical_object_id, ownership_basis,
+  count_start_s, question_start_s, question_end_s,
+  evidence_cutoff_s, trigger_event_id, trigger_post_state_end_s,
+  question_gap_s, intervening_action_status, question_text,
+  answer_count, answer_text, decline_label,
+  included_event_ids, excluded_candidate_ids,
+  ledger_sha256, sweep_coverage_id, sweep_manifest_sha256,
+  completeness_confidence, audit_status
+}</code></pre>
+<p><code>evidence_cutoff_s</code> must equal <code>question_start_s</code>. The sweep manifest records expected and decoded frame ranges, gaps, controls, reviewer, and escalation regions. Excluded and ambiguous proposals stay in the ledger so a zero or low count can be audited.</p>
+<p><code>physical_object_id</code> is episode-local and visual. Track UID is stored as a proposal attribute, never copied into this field automatically. Split tracks of the same drawer are merged; two adjacent leaves are separate identities. An identity merge needs matching geometry, location, appearance, and continuity across the relevant views. Unresolved identity means a generic repeated-drawer arm may survive while the unique-object arm declines; a singular-phone item also declines because its referent requires identity.</p>
+
+<h2>8. Dense verification and the full-interval negative sweep</h2>
+<p>Verifying the proposed positives is only half the work. A count of 3 is wrong if a fourth event was never proposed. Every counting item therefore needs both gates:</p>
+<table><thead><tr><th>gate</th><th>question answered</th><th>requirement</th></tr></thead><tbody>
+<tr><td><strong>positive transition gate</strong></td><td>Did each ledger event really occur?</td><td>Dense pre-state, transition, and post-state frames satisfy the state machine.</td></tr>
+<tr><td><strong>full-interval negative sweep</strong></td><td>Was any other qualifying event missed?</td><td>The complete count interval is screened for the target family, including periods with no narration.</td></tr>
+</tbody></table>
+<p>The default dense evidence stream is 15 fps. A human reviewer covers the complete stream continuously, using video playback plus the indexed dense frames; detector proposals may focus inspection but never replace the full sweep. The manifest lists every expected presentation-time range, every decoded frame, reviewer identity, review status, and any dropped/decode gap. Coarse 2 fps frames may prioritize candidate regions but cannot certify completeness. Fast phone transfers, quick open-close motion, blur, or disagreement are rechecked at source frame rate.</p>
+<p>A detector's silence is accepted only after a <strong>present control</strong> in the same episode proves that its prompt can find the target at a comparable scale, view, lighting, and occlusion level. The same prompt and threshold are used in the sweep. For drawers, motion and aperture proposals supplement semantic detection. For phones, both a whole-phone detector and hand/contact reasoning are required.</p>
+<p>If the control fails, tracking loses identity through a possible transition, or any section of the interval cannot be decoded, the item declines. Missing evidence is never interpreted as zero.</p>
+<p>One verified episode/family ledger and coverage manifest may serve several nested question intervals. Each QA view cites the exact covered prefix; overlapping questions do not trigger duplicate decoding or review, and no item may cite frames outside the reviewed coverage.</p>
+
+<h2>9. Unique physical object arm</h2>
+<p>This arm asks how many <em>different</em> objects had a qualifying event, not how many objects exist in the room. Counting all drawers in a room would require proving the wearer saw every drawer, including closed and off-camera fixtures; this dataset cannot support that claim.</p>
+<blockquote><p><em>“How many different drawers did I open?”</em> is supported.</p><p><em>“How many drawers were in the kitchen?”</em> is unsupported unless a separate exhaustive scene-inventory protocol is built.</p></blockquote>
+<p>The answer is <code>count(distinct physical_object_id)</code> over verified events in the interval. The repeated-event answer is <code>count(event_id)</code>. The two are computed from the same frozen ledger.</p>
+
+<h2>10. Questions and answers</h2>
+<h3>10.1 Question forms</h3>
+<p>Questions are short, spoken, and explicit about unit and interval:</p>
+<ul>
+<li><em>“Since I started making lunch, how many times did I open a drawer?”</em></li>
+<li><em>“Since I started cooking, how many different kitchen drawers did I open?”</em></li>
+<li><em>“Since I sat down at the desk, how many times did I pick up the phone?”</em></li>
+</ul>
+<p>The interval anchor must be a completed, visually verified, uniquely identifiable event. If the wearer sat down twice, “after I sat down” is ambiguous unless the location or occurrence resolves it. “So far” is allowed only when the media begins at a natural session or activity boundary visible to the wearer; a benchmark crop boundary is not a conversational anchor.</p>
+<p>Rejected: <em>“How many did I open?”</em> (missing class), <em>“How many drawers?”</em> (missing unit), <em>“Did I open it once or twice?”</em> (constrains and leaks the answer range), and any anchor that is ambiguous, unfinished, or later than the question. A constrained-choice count can be studied only as a separate reported arm.</p>
+<h3>10.2 Answer forms</h3>
+<p>The reference answer contains one numeric quantity for the requested unit. The structured <code>answer_count</code> is authoritative; the surface form stays short:</p>
+<blockquote><p><em>“Four times.”</em></p><p><em>“Three different drawers.”</em></p><p><em>“I can’t tell reliably because a pickup was hidden by the bag.”</em></p></blockquote>
+<p>Accepted numeric forms include digits, ordinary number words, “none,” and “didn’t … any” for zero. Declines use a fixed semantic class rather than a guessed number. A response with two incompatible numeric quantities is incorrect; secondary counts belong in a separate question.</p>
+<p>No timestamps, hidden annotation terms, or future events appear in the answer.</p>
+
+<h2>11. Scoring</h2>
+<p>Primary scoring is <strong>exact count accuracy</strong>, reported separately for repeated-event, unique-object, and decline items. Parse digits and ordinary number words, but do not infer a count from vague language such as “a few.”</p>
+<table><thead><tr><th>metric</th><th>purpose</th></tr></thead><tbody>
+<tr><td>exact-count accuracy</td><td>primary task result</td></tr>
+<tr><td>mean absolute count error</td><td>shows how far wrong misses are</td></tr>
+<tr><td>overcount / undercount rate</td><td>separates duplicate failures from missed-event failures</td></tr>
+<tr><td>decline precision and recall</td><td>rewards declining only when evidence is insufficient</td></tr>
+<tr><td>identity-set F1</td><td>optional diagnostic only when an auxiliary identity output is explicitly requested; it is not inferred from a count-only answer</td></tr>
+</tbody></table>
+<p>Aggregate scores must include answer-count histograms and per-subtype results. A model can look strong by predicting the mode in a skewed arm.</p>
+
+<h2>12. Zero counts, negatives, and declines</h2>
+<p>A zero-count item is valuable only when the full negative sweep passes. Narration silence alone does not license zero. Zero items should include nearby non-qualifying actions such as touching a handle, tapping a supported phone, opening a cabinet while the target is drawers, or a colleague performing the action.</p>
+<p>A decline is the correct label when:</p>
+<ul>
+<li>the interval begins or ends during a possible event;</li>
+<li>pre-state, transfer, reset, or post-state is occluded;</li>
+<li>object identity is lost or two leaves cannot be separated;</li>
+<li>the source row and frames disagree on class or actor;</li>
+<li>the detector control fails or the full sweep has a gap;</li>
+<li>the repeated-event count is known but unique identity is unresolved.</li>
+</ul>
+<p>Uncertain examples are kept in quarantine with a reason. They are not silently deleted and are not converted into zero.</p>
+
+<h2>13. Balance and answer priors</h2>
+<p>Balance is enforced per arm, not across the whole benchmark:</p>
+<ul>
+<li>answer buckets <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, and <code>4+</code>;</li>
+<li>drawer and phone for version 1; future object classes are balanced only inside their separately released families;</li>
+<li>repeated-event versus unique-object questions;</li>
+<li>short, medium, and long count intervals;</li>
+<li>single-room versus multi-room intervals;</li>
+<li>clean positives, hard negatives, and declines.</li>
+</ul>
+<p>The large-corpus builder measures available yield before authoring QA, then pre-registers selection caps. The default release rule is that no single numeric answer may exceed <strong>30%</strong> within a released arm, with declines reported outside the numeric histogram. If strict yield makes that impossible, the release publishes the deviation and the modal baseline; it does not invent or relabel examples. Phone cannot receive a target share until its visual pilot establishes yield.</p>
+
+<h2>14. Baselines</h2>
+<p>Every release reports:</p>
+<ol>
+<li><strong>Always zero</strong> and <strong>modal count by arm</strong> — answer-prior baselines.</li>
+<li><strong>Narration regex without dedupe</strong> — exposes duplicate-row inflation.</li>
+<li><strong>Narration regex with temporal clustering</strong> — measures what text alone supplies.</li>
+<li><strong>Raw track-row count</strong> — expected to fail the unique-object arm and documents why track UID is not identity.</li>
+<li><strong>Visual proposals without the negative sweep</strong> — quantifies missed-event damage.</li>
+<li><strong>Frozen event-ledger oracle</strong> — verifies scorer and question assembly.</li>
+</ol>
+<p>Audio-only, video-only, and audio-video model results are reported separately to measure narration leakage.</p>
+
+<h2>15. Chaining, interruption, and leakage rules</h2>
+<ol>
+<li><strong>No future evidence.</strong> The interval is exactly <code>[count_start_s, question_start_s)</code>. Every counted event's stable post-state must finish before question onset; neither answer nor proof may read question-time or later frames.</li>
+<li><strong>One frozen ledger across variants.</strong> The no-interruption and interruption/backchannel versions use identical event IDs, interval, count, and answer.</li>
+<li><strong>No assistant tally leakage.</strong> During the count interval, assistant speech may not enumerate, label, or acknowledge target events. A model-initiated reminder such as “you opened the drawer” makes a later drawer count easier and is either excluded or placed in a separately reported exposed stratum.</li>
+<li><strong>Shared HOI evidence.</strong> If an nth-event reminder and a later count item coexist, both cite the same frozen event IDs and ledger hash. The item is reported in the reminder-exposed stratum even when the reminder was interrupted.</li>
+<li><strong>No chain answer leakage.</strong> An earlier question, refinement, cross-question, or answer may not state the later count or list all contributing events.</li>
+<li><strong>No critical visual masking.</strong> User interruption, subtitles, or overlays cannot cover the pre-state, transition, or post-state evidence. Audio overlap is allowed only after the zero-collision media gate.</li>
+<li><strong>Interrupted answers remain scorable.</strong> The reference stores the count separately from its surface sentence. If the user interrupts after the number has been spoken, the count is delivered; otherwise the resume turn must still provide it.</li>
+<li><strong>Natural anchors only.</strong> A chained question may refer to a completed earlier activity, never an event that occurs later.</li>
+</ol>
+
+<h2>16. Confidence and independent audit</h2>
+<p>Confidence has three separate fields. They use an auditable enum rather than an invented probability:</p>
+<table><thead><tr><th>field</th><th>meaning</th></tr></thead><tbody>
+<tr><td><code>transition_confidence</code></td><td>pre-state, motion/transfer, and post-state satisfy the state machine</td></tr>
+<tr><td><code>identity_confidence</code></td><td>the physical object is stable across all contributing events</td></tr>
+<tr><td><code>completeness_confidence</code></td><td>the full interval has been swept with a working control</td></tr>
+</tbody></table>
+<table><thead><tr><th>value</th><th>operational meaning</th><th>effect</th></tr></thead><tbody>
+<tr><td><code>PASS</code></td><td>Both auditors find the required evidence and no unresolved contradiction.</td><td>Eligible for a strict numeric item.</td></tr>
+<tr><td><code>NOT_REQUIRED</code></td><td>The field is outside the arm: cross-event identity for a generic repeated-drawer count only.</td><td>Eligible when the arm definition permits it.</td></tr>
+<tr><td><code>AMBIGUOUS</code></td><td>Evidence could support more than one label because of occlusion, boundary, identity loss, failed control, or reviewer disagreement.</td><td>Numeric item is barred; retain as a documented decline candidate or quarantine.</td></tr>
+<tr><td><code>FAIL</code></td><td>The evidence positively contradicts the proposed transition, identity, or completeness claim.</td><td>Exclude the proposal and keep the failed record in the ledger.</td></tr>
+</tbody></table>
+<p>The item's confidence is the minimum of the fields needed by its arm. A generic repeated-drawer count does not require cross-event identity when each transition and class is clear. A unique-object arm always does. A singular-phone question also requires the same phone identity and its referent/ownership basis across every included event.</p>
+<p>A strict numeric item requires <code>transition_confidence=PASS</code> for every included event and <code>completeness_confidence=PASS</code>. It also requires <code>identity_confidence=PASS</code> for unique-object and singular-phone arms; only a generic repeated-drawer item may use <code>NOT_REQUIRED</code>. A decline item names the exact <code>AMBIGUOUS</code> field and reason. No <code>FAIL</code> proposal contributes to a gold count.</p>
+<p><strong>Release quality target:</strong> “precision” means item-level exact-gold correctness: correct numeric or decline label, complete included-event set, and no extra event. Every release item is independently double-audited. Auditor A and Auditor B inspect the source evidence and state path without seeing each other's label; a third reviewer adjudicates disagreements.</p>
+<p>After corrections, a fresh blinded audit samples <code>max(100 items, 10% of the release)</code>, stratified with at least 20 items per released family/arm when yield permits. The lower bound of a two-sided 95% Wilson interval on item correctness must be at least 0.95; otherwise the build remains a pilot. If the release is too small to support that bound, it reports the observed result without claiming 95%. Event-transition precision and missed-event recall from the independent re-sweep are also reported with confidence intervals.</p>
+<p>The previous 90–95% statement remains an estimate. The first measured precision number comes from this audit and nowhere else.</p>
+
+<h2>17. Worked examples</h2>
+<table><thead><tr><th>evidence ledger</th><th>valid view</th><th>answer</th></tr></thead><tbody>
+<tr><td>Drawer D1 opens, closes, reopens; drawer D2 opens once.</td><td>event arm / unique-object arm</td><td><em>“Three times.”</em> / <em>“Two different drawers.”</em></td></tr>
+<tr><td>The wearer taps a phone that stays supported for the full interval; the negative sweep is complete.</td><td>phone-pickup event arm</td><td><em>“None.”</em></td></tr>
+<tr><td>Phone P1 is picked up, placed down while still held, then fully released and later picked up again.</td><td>phone-pickup event arm</td><td><em>“Twice.”</em>; the continuous hand contact is not a reset.</td></tr>
+<tr><td>A drawer starts opening before question onset but reaches stable <code>OPEN</code> after onset.</td><td>none</td><td>Move the question later or quarantine; do not count it and do not call it a proved zero.</td></tr>
+<tr><td>The clip starts with a drawer already open, then shows a verified close and reopen.</td><td>event arm beginning at clip start</td><td>Count only the visible reopen. Decline if the wording asks about time before the clip.</td></tr>
+</tbody></table>
+
+<h2>18. Tests and fixture pairs</h2>
+<p>Every gate has one fixture that must pass and one that must fail:</p>
+<table><thead><tr><th>rule</th><th>positive fixture</th><th>negative fixture</th></tr></thead><tbody>
+<tr><td>duplicate clustering</td><td>three paraphrases of one opening merge</td><td>close then reopen stays two events</td></tr>
+<tr><td>leaf versus access</td><td>two cabinet leaves → 2 leaves / 1 access</td><td>one leaf mentioned twice → 1 / 1</td></tr>
+<tr><td>actor</td><td>wearer opens</td><td>colleague opens</td></tr>
+<tr><td>drawer state</td><td>closed → opening → stable open</td><td>handle touch or failed tug</td></tr>
+<tr><td>phone transfer</td><td>support → grasp → hand-supported</td><td>tap while still supported</td></tr>
+<tr><td>pickup reset</td><td>put down, release for 8 frames, pick up</td><td>phone touches table while hand still controls it</td></tr>
+<tr><td>phone referent</td><td>all events bind to grounded phone P1</td><td>P1/P2 ambiguity under “my phone” declines</td></tr>
+<tr><td>partial opening</td><td>intentional pull exposes usable cavity</td><td>accidental hairline displacement</td></tr>
+<tr><td>quick motion</td><td>source-rate frames prove both stable states</td><td>unbracketed blur declines rather than becoming zero</td></tr>
+<tr><td>boundary</td><td>whole event inside interval</td><td>event begins before frame zero</td></tr>
+<tr><td>ask boundary</td><td>stable post-state ends before question onset</td><td>post-state finishes during the spoken question</td></tr>
+<tr><td>immediate siting</td><td>gap is 0.5–3.0 s with no intervening action</td><td>gap below 0.5 s, above 3.0 s, or any intervening task action</td></tr>
+<tr><td>anchor</td><td>one verified sit-down at the desk</td><td>two unresolved sit-downs</td></tr>
+<tr><td>identity</td><td>split tracks merge to one drawer</td><td>adjacent leaves remain distinct</td></tr>
+<tr><td>completeness</td><td>full sweep finds every ledger event</td><td>hidden extra event forces quarantine</td></tr>
+<tr><td>detector control</td><td>target found on known-present frames</td><td>silent detector cannot certify absence</td></tr>
+<tr><td>no future</td><td>all evidence is before question onset</td><td>question-time or post-question frame is rejected</td></tr>
+<tr><td>chain leakage</td><td>neutral backchannel</td><td>assistant announces each target event</td></tr>
+<tr><td>HOI linkage</td><td>nth-event reminder and count cite the same IDs</td><td>separately reconstructed event lists disagree</td></tr>
+<tr><td>answer parser</td><td>one requested count</td><td>two incompatible counts in one response</td></tr>
+<tr><td>constrained choice</td><td>open numeric question</td><td>“once or twice” rejected from version 1</td></tr>
+</tbody></table>
+<p>Tests also verify schema, hashes, integer answers, event-to-question joins, variant parity, distribution reports, and scorer behavior on number words and declines.</p>
+
+<h2>19. Pipeline and scale to 400–500 episodes</h2>
+<table><thead><tr><th>#</th><th>stage</th><th>output</th></tr></thead><tbody>
+<tr><td>1</td><td>immutable source inventory</td><td>episode windows, media hashes, narration and track provenance</td></tr>
+<tr><td>2</td><td>text and visual proposal mining</td><td>over-complete proposal rows</td></tr>
+<tr><td>3</td><td>dedupe and provisional identity clustering</td><td>candidate clusters, never final counts</td></tr>
+<tr><td>4</td><td>dense state-machine verification</td><td>verified positives and quarantines</td></tr>
+<tr><td>5</td><td>full-interval negative sweep</td><td>completeness verdict and detector controls</td></tr>
+<tr><td>6</td><td>physical-object registry</td><td>episode-local identity graph</td></tr>
+<tr><td>7</td><td>question/answer assembly</td><td>repeated-event and unique-object items</td></tr>
+<tr><td>8</td><td>chain and media collision gate</td><td>paired clean/interruption variants</td></tr>
+<tr><td>9</td><td>independent double audit</td><td>precision, agreement, errors, adjudication</td></tr>
+<tr><td>10</td><td>release freeze</td><td>checksums, manifests, balance and baseline reports</td></tr>
+</tbody></table>
+<p>Episodes are independent shards. GPU workers decode and propose; verification outputs are immutable JSONL plus frame manifests; a central reducer performs only schema checks, identity joins, balance, and release assembly. A failed shard is retried without changing completed shards. Every stage records code revision, model revision, prompt, thresholds, source hash, and output hash.</p>
+<p>The run report records, per episode, family, and pipeline stage: source seconds, expected/decoded frames, GPU seconds, detector calls, reviewer minutes, proposal clusters, deduplicated candidates, accepted events, quarantines and exclusions by reason, complete count intervals, released items, and strict items per episode. It also reports total GPU-hours and reviewer-hours, yield per source hour, and cost per accepted strict item. Values remain blank until measured; planning estimates are labeled separately.</p>
+<p>The episode/family ledger is computed once. Coverage manifests support verified prefixes and sub-intervals, so many QA views can reuse the same dense sweep without multiplying GPU or reviewer cost.</p>
+<p>The pilot average is 219 seconds per episode, so a pilot-shaped 400–500 episode corpus would contain roughly 1.31–1.64 million frames at 15 fps per full visual stream. This is a workload calculation, not a yield or precision forecast. The 20 episodes were not established as a random sample of the future corpus.</p>
+<p>Scale first on a visual pilot large enough to measure phone proposals, false negatives, state-machine disagreements, and dense-review time. Only then set throughput, GPU, and staffing estimates.</p>
+
+<h2>20. Release checklist</h2>
+<ul>
+<li>[ ] <code>CNT-01</code> Question declares repeated events or unique physical objects and uses the matching family label.</li>
+<li>[ ] <code>CNT-02</code> Actor, subtype, interval start, question start/end, and evidence cutoff are explicit.</li>
+<li>[ ] <code>CNT-03</code> Every positive has stable pre-state, transition, and stable post-state.</li>
+<li>[ ] <code>CNT-03A</code> A positive drawer question starts 0.5–3.0 seconds after the trigger post-state, with no intervening action.</li>
+<li>[ ] <code>CNT-04</code> Drawer events satisfy <code>CLOSED → OPENING → OPEN</code>.</li>
+<li>[ ] <code>CNT-05</code> Phone events satisfy external-support transfer to stable hand support.</li>
+<li>[ ] <code>CNT-06</code> Reopens require a verified reset; phone reset requires stable support with hand release.</li>
+<li>[ ] <code>CNT-07</code> Duplicate narration rows collapse; distinct leaves and revisits remain distinct.</li>
+<li>[ ] <code>CNT-08</code> Track UID is not used directly as physical identity.</li>
+<li>[ ] <code>CNT-09</code> The complete interval passed the dense negative sweep with no gaps.</li>
+<li>[ ] <code>CNT-10</code> The detector passed a same-episode present control.</li>
+<li>[ ] <code>CNT-11</code> Zero counts are visually proved; silence in narration is insufficient.</li>
+<li>[ ] <code>CNT-12</code> Boundary, occlusion, label, actor, and identity ambiguity cause decline or quarantine.</li>
+<li>[ ] <code>CNT-13</code> No event or evidence frame reaches question onset; every post-state completes before it.</li>
+<li>[ ] <code>CNT-14</code> Clean and interruption variants reference the same frozen ledger and answer.</li>
+<li>[ ] <code>CNT-15</code> No earlier assistant turn tallies or names every target event.</li>
+<li>[ ] <code>CNT-16</code> Exact-count, MAE, over/undercount, decline, and per-arm metrics are reported.</li>
+<li>[ ] <code>CNT-17</code> Answer distributions and all baselines are published.</li>
+<li>[ ] <code>CNT-18</code> Independent double audit has no unresolved disagreement.</li>
+<li>[ ] <code>CNT-18A</code> All required confidence fields are <code>PASS</code>; <code>NOT_REQUIRED</code> appears only where the arm permits it.</li>
+<li>[ ] <code>CNT-19</code> The blinded audit's 95% Wilson lower bound meets 0.95; estimates are labeled as estimates.</li>
+<li>[ ] <code>CNT-20</code> Yield, GPU-hours, reviewer-hours, and failure reasons are measured and published.</li>
+<li>[ ] <code>CNT-21</code> Source media, event ledger, excluded-candidate ledger, evidence manifests, and release artifacts pass checksums.</li>
+</ul>
+
+<h2>21. Unknowns that remain open</h2>
+<ol>
+<li>Phone pickup yield and precision. The 20-episode narration census has zero candidates; a wider visual pilot is required.</li>
+<li>Phone detector recall under occlusion, screen-off appearance, and pocket/bag extraction.</li>
+<li>Whether the 8-frame stable-state rule gives the best human agreement for each subtype.</li>
+<li>The actual strict yield after every proposal receives dense verification and a full negative sweep.</li>
+<li>Large-corpus count distributions and balance caps.</li>
+<li>Measured GPU time, reviewer time, and end-to-end throughput at 400–500 episodes.</li>
+</ol>
+<p>These remain pending measurements. They are not filled with extrapolated precision.</p>
+</div></body></html>
