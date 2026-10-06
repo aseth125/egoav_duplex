@@ -1,0 +1,185 @@
+{
+  "schema": "egoduplex.proactive-reminder-pilot-audit/1",
+  "audit_date_utc": "2026-10-06",
+  "status": "first_pass_complete_no_gold_items",
+  "rendered_cues": 0,
+  "summary": {
+    "pilot_ready_base_scenes": 1,
+    "control_only_scenes": 2,
+    "conditional_scenes": 3,
+    "rejected_or_setup_seed_scenes": 3,
+    "gold_items": 0,
+    "reason_no_gold": "Every surviving scene still lacks at least one release gate: raw/final-mix cue audit, natural completion evidence, clean response runway, or independent second review."
+  },
+  "candidates": [
+    {
+      "candidate_id": "psr_phone_979xby_a0",
+      "event_cluster_id": "979xby_phone_counter_157",
+      "source_class": "phone",
+      "media_path": "/home/aseth125/qwen3omni_train/videos/nymeria/nym_979xby__a0.mp4",
+      "media": {
+        "duration_video_s": 25.923,
+        "duration_audio_s": 25.784,
+        "fps": 30,
+        "audio": "AAC stereo 44.1 kHz"
+      },
+      "visual_evidence_s": {
+        "phone_in_hands": [13.7, 17.2],
+        "release_to_counter": [17.2, 17.33],
+        "last_visible": 17.4,
+        "out_of_frame_from": 17.5
+      },
+      "arm_plan_s": [13.8, 16.7],
+      "armed_s": 17.33,
+      "cue_plan_s": {
+        "onset": 22.4,
+        "offset": 24.8,
+        "class": "phone_ringtone",
+        "delay_after_armed_s": 5.07
+      },
+      "response_runway": {
+        "to_video_end_s": 1.123,
+        "to_audio_end_s": 0.984,
+        "supports": "first_relevant_token_timing_only"
+      },
+      "native_audio_audit": {
+        "window_s": [22.35, 24.85],
+        "rms_dbfs": -47.8,
+        "peak_dbfs": -27.8,
+        "collision": "brief nonsemantic movement rustle at 24.23-24.40 s",
+        "strict_zero_collision": false
+      },
+      "visibility_condition": "same_room_out_of_frame",
+      "capability_roles": ["explicit_condition_following_control", "deictic_visual_grounding_candidate"],
+      "verdict": "accept_for_pilot_not_gold",
+      "confidence": {
+        "object_identity": "high",
+        "set_down": "high",
+        "out_of_frame": "high"
+      },
+      "remaining_gates": [
+        "choose and license ringtone asset",
+        "render realistic source distance and loudness",
+        "blind final-mix cue identity audit",
+        "accept or remove the native-rustle overlap",
+        "independent second visual review",
+        "confirm response-onset scoring before media end"
+      ]
+    },
+    {
+      "candidate_id": "psr_phone_ifj2gc_a1",
+      "event_cluster_id": "ifj2gc_phone_table_147",
+      "source_class": "phone",
+      "media_path": "/home/aseth125/qwen3omni_train/videos/nymeria/nym_ifj2gc__a1.mp4",
+      "media": {"duration_video_s": 26.123, "fps": 15, "audio": "AAC stereo"},
+      "visual_evidence_s": {
+        "pickup": 9.7,
+        "screen_clearly_visible": [10.0, 11.0],
+        "place_at_table_edge": [11.1, 11.4],
+        "out_of_frame_from": 11.4
+      },
+      "arm_plan_s": [9.5, 11.1],
+      "cue_plan_s": {"onset": 18.0, "offset": 20.0, "class": "phone_ringtone"},
+      "native_audio_audit": {"window_s": [18.0, 20.0], "rms_dbfs": -60.2, "peak_dbfs": -50.8, "collision": "none detected"},
+      "visibility_condition": "near_field_out_of_frame_wearer_remains_seated",
+      "capability_roles": ["explicit_condition_following_control", "weak_visual_binding_control"],
+      "verdict": "control_only",
+      "remaining_gates": ["final-mix audit", "independent second review"]
+    },
+    {
+      "candidate_id": "psr_kettle_joshua_5eipiv",
+      "event_cluster_id": "5eipiv_kettle_fill_start_677",
+      "source_class": "electric_kettle",
+      "media_path": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_media_v2/web/video/NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450.mp4",
+      "visual_evidence_s": {
+        "fill": [226.8, 251.8],
+        "place_and_activate": [254.8, 264.8],
+        "switch_contact": [260.0, 262.0],
+        "last_clear_view": [276.0, 277.0],
+        "bedroom_from": 288.8
+      },
+      "arm_plan_s": [258.5, 263.0],
+      "conditional_cue_plan_s": [379.5, 380.5],
+      "visibility_condition": "different_room_out_of_view",
+      "capability_roles": ["implicit_visual_grounding", "long_gap_out_of_view"],
+      "verdict": "conditional_acoustic_gate",
+      "reject_if": "A device-specific automatic shutoff or boil endpoint cannot be identified at realistic distance and SNR by blind listeners.",
+      "remaining_gates": ["retrieve raw native audio", "prove device-specific completion cue", "blind final-mix audibility audit", "independent second review"]
+    },
+    {
+      "candidate_id": "psr_toaster_alicia_dja4ib",
+      "event_cluster_id": "dja4ib_toaster_insert_start_142",
+      "source_class": "toaster",
+      "media_path": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_media_v2/web/video/NymeriaPlus_v1.0_20231025_s1_alicia_drake_act3_dja4ib__T2_at_120.mp4",
+      "visual_evidence_s": {
+        "take_bread": [11.8, 21.8],
+        "insert": [21.8, 30.8],
+        "lever_down": [30.8, 33.0],
+        "set_knob": [38.8, 48.8],
+        "leaves_view": 50.0
+      },
+      "arm_plan_s": [25.5, 32.8],
+      "conditional_cue_plan_s": [97.5, 98.5],
+      "visibility_condition": "same_room_gaze_out_of_view",
+      "capability_roles": ["implicit_visual_grounding"],
+      "verdict": "conditional_synthetic_timing_case",
+      "caveat": "No completion or toast retrieval is observed before the episode ends, so cue timing is plausible but not trajectory-verified.",
+      "remaining_gates": ["retrieve raw native audio", "justify completion timing", "final-mix audit", "independent second review"]
+    },
+    {
+      "candidate_id": "psr_toaster_amanda_kli4b8",
+      "event_cluster_id": "kli4b8_toaster_control_439",
+      "source_class": "toaster",
+      "media_path": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_media_v2/web/video/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420.mp4",
+      "visual_evidence_s": {"operate": [19.0, 20.7], "return_to_control": [67.2, 72.2], "remove_toast": [72.2, 77.2]},
+      "arm_plan_s": [18.0, 20.8],
+      "cue_plan_s": [69.5, 70.5],
+      "visibility_condition": "in_view_or_same_kitchen",
+      "capability_roles": ["explicit_condition_following_control"],
+      "verdict": "control_only",
+      "reject_for": "implicit placement-grounded condition because insertion predates the window",
+      "remaining_gates": ["retrieve raw native audio", "final-mix audit", "independent second review"]
+    },
+    {
+      "candidate_id": "psr_kettle_amanda_kli4b8",
+      "event_cluster_id": "kli4b8_kettle_start_754",
+      "source_class": "electric_kettle",
+      "media_path": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/chain20_media_v2/web/video/NymeriaPlus_v1.0_20231106_s1_amanda_rodgers_act4_kli4b8__T10_at_420.mp4",
+      "visual_evidence_s": {"place_and_switch_on": [334.6, 337.0], "blue_base_light_visible": true, "return_to_kettle": 370.0, "pour": [438.7, 448.7]},
+      "arm_plan_s": [333.7, 337.0],
+      "metadata_native_cue_proposal_s": [361.0, 362.0],
+      "visibility_condition": "in_view_or_same_kitchen",
+      "capability_roles": ["explicit_native_timing_control"],
+      "verdict": "conditional_native_audio_control",
+      "caveat": "Brief metadata calls the event kettle boiling, but the available video asset has no raw native audio.",
+      "remaining_gates": ["retrieve and listen to raw native audio", "blind cue identity audit", "independent second review"]
+    },
+    {
+      "candidate_id": "psr_toaster_42epvf_a4",
+      "event_cluster_id": "42epvf_toaster_insert_start_272",
+      "source_class": "toaster",
+      "media_path": "/home/aseth125/qwen3omni_train/videos/nymeria/nym_42epvf__a4.mp4",
+      "media": {"actual_duration_s": 19.911, "metadata_duration_s": 27.07, "fps": 15},
+      "visual_evidence_s": {"insert_two_slices": [0.0, 1.3], "operate_controls": [1.4, 4.5], "out_of_view_from": 5.2},
+      "verdict": "setup_seed_only",
+      "reject_reason": "Only about 15 seconds follow activation; parent metadata places removal roughly 107-117 seconds later. A completion cue in this clip is physically implausible.",
+      "next_action": "Fetch the continuous parent interval through toast removal."
+    },
+    {
+      "candidate_id": "psr_phone_dqa50g_a18",
+      "source_class": "phone",
+      "media_path": "/home/aseth125/qwen3omni_train/videos/nymeria/nym_dqa50g__a18.mp4",
+      "media": {"actual_duration_s": 15.909, "metadata_duration_s": 25.0, "fps": 30},
+      "verdict": "reject",
+      "reject_reason": "The alleged placement crosses the clip boundary and the phone is not visually distinguishable in decoded frames."
+    },
+    {
+      "candidate_id": "psr_kettle_9zemc6_a5",
+      "source_class": "kettle",
+      "media_path": "/home/aseth125/qwen3omni_train/videos/nymeria/nym_9zemc6__a5.mp4",
+      "media": {"actual_duration_s": 22.901, "fps": 30},
+      "verdict": "reject",
+      "reject_reason": "A kettle-like object is set down, but filling, heat activation, indicator state, steam, and retrieval are all absent."
+    }
+  ]
+}

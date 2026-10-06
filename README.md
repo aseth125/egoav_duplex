@@ -14,6 +14,11 @@ matched clean and interruption variants, complete downloads, per-episode
 evidence, held-out claims, validation results, and the prior-question
 freshness audit.
 
+The proposed cross-modal sound-triggered reminder family is documented in
+[`cross_modal_proactive_reminder_design.html`](cross_modal_proactive_reminder_design.html),
+with its metadata census and first-pass candidate audit under
+[`proactive-reminders/`](proactive-reminders/). No reminder item is Gold yet.
+
 ## How to look at it
 
 ```

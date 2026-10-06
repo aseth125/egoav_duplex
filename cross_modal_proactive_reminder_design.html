@@ -1,0 +1,253 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Cross-modal proactive reminders — end-to-end design</title><meta name=viewport content='width=device-width,initial-scale=1'><style>
+:root{--bg:#0e1116;--fg:#e6edf3;--dim:#8b949e;--line:#232a33;--warm:#d29922;--good:#3fb950;--bad:#f85149;--blue:#58a6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:64rem;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:25px;margin:0 0 6px}h2{font-size:18px;margin:38px 0 10px;padding-top:16px;border-top:1px solid var(--line)}h3{font-size:15.5px;margin:24px 0 6px;color:#c3cbd8}
+p{margin:10px 0}code{background:#161b22;border:1px solid var(--line);padding:.06rem .3rem;border-radius:3px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{overflow:auto;background:#161b22;border:1px solid var(--line);padding:12px 14px;border-radius:5px;font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote,.callout{margin:16px 0;padding:10px 15px;border:1px solid var(--line);border-left:3px solid var(--warm);background:#161b22;border-radius:5px}.callout.good{border-left-color:var(--good)}.callout.bad{border-left-color:var(--bad)}
+blockquote p,.callout p{margin:3px 0}table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}th{background:#161b22;font-weight:600;color:#c3cbd8}
+ul,ol{margin:10px 0;padding-left:22px}li{margin:5px 0}.sub{color:var(--dim);margin:0 0 22px}strong{color:#fff}.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:0 8px;color:#c3cbd8;font-size:12px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px;padding:0 0 2px;border-bottom:1px solid #262b35}.nav a{display:inline-block;padding:8px 14px;font-size:13.5px;font-weight:600;color:#8d97a7;text-decoration:none;border-radius:6px 6px 0 0;border:1px solid transparent;border-bottom:none;position:relative;top:1px}.nav a:hover{color:#c3cbd8;background:#161a22}.nav a.on{color:#e8ecf3;background:#141821;border-color:#262b35}
+</style></head><body><div class=wrap>
+<div class=nav><a href='index.html'>Episodes</a><a href='episodic_memory_design.html'>Action memory design</a><a href='object_episodic_memory_design.html'>Object memory design</a><a href='interruption_model_hoi_design.html'>Model interruption design</a><a href='cross_modal_proactive_reminder_design.html' class=on>Sound reminder design</a><a href='counting_interaction_design.html'>Counting design</a></div>
+<h1>Cross-modal proactive reminders — end-to-end design</h1>
+<p class=sub>Prospective memory across vision and sound: visually arm a reminder now, then speak at the future cue.</p>
+
+<div class=callout><p><strong>Status · 2026-10-06:</strong> metadata census and first-pass candidate audit complete. No cue has been rendered and no item is Gold. Raw-source or final-mix audio review and independent second review remain required.</p></div>
+
+<h2>1. Task</h2>
+<p>The wearer grounds a future reminder while handling an object or appliance. Later, an audible event occurs in the continuing scene. The assistant must detect the right event, recall the armed instruction, and speak without another user prompt.</p>
+<blockquote><p><strong>Implicit:</strong> while putting bread into a toaster, “Let me know when this is ready.”</p><p><strong>Explicit:</strong> “This should make a sound when it’s done—let me know.”</p><p><strong>Out of view:</strong> while setting down a phone, “Let me know if this rings.” The wearer walks away before the ring.</p></blockquote>
+<p>The video and native scene audio continue throughout. The injected cue is a separate, logged audio stem. A cue may arrive while the assistant is silent or while it is speaking. Only the speaking condition tests model-initiated interruption; the silent condition tests proactive alerting.</p>
+
+<h2>2. What each condition establishes</h2>
+<table><thead><tr><th>condition</th><th>required evidence</th><th>primary capability</th></tr></thead><tbody>
+<tr><td><strong>Explicit trigger</strong></td><td>The prompt states the expected sound or event.</td><td>Prospective-memory retention, audio detection, timing, and response control. This is the clean control.</td></tr>
+<tr><td><strong>Implicit trigger</strong></td><td>The prompt uses a visually grounded referent or outcome; the cue class is inferred from the visible setup.</td><td>Visual grounding, event inference, prospective memory, and sound detection.</td></tr>
+<tr><td><strong>Out of view</strong></td><td>The source is verified absent or fully occluded through the cue interval.</td><td>Longer-lived binding between the armed instruction and its source.</td></tr>
+<tr><td><strong>Assistant speaking</strong></td><td>The cue begins inside verified assistant speech and the runtime continues listening while generating.</td><td>External-event detection plus self-preemption and repair.</td></tr>
+</tbody></table>
+<p>Out-of-view footage strengthens the memory requirement. It is cross-modal only when information needed to arm or resolve the reminder came from vision. A prompt that names the phone and its ringtone can be solved from language plus audio, so it remains valuable as a control rather than the hardest cross-modal item.</p>
+<div class=callout><p><strong>Capability-label rule:</strong> if audio plus the prompt transcript uniquely identifies when and why to fire, label the item <code>condition_following_control</code>. Use <code>visual_grounding</code> or <code>cross_modal_binding</code> only when a visual-only referent, setup fact, source selection, or payload is necessary. Confirm this with a video-masked ablation.</p></div>
+
+<h2>3. Measured candidate supply</h2>
+<p>Three pools must stay separate. The current review set contains 20 rendered episode windows lasting 120–600 s. The downloaded Nymeria pool has short local MP4s. Full action metadata names more source events whose parent media is not currently local.</p>
+<table><thead><tr><th>pool</th><th>microwave / oven</th><th>washer / dryer</th><th>phone</th><th>toaster</th><th>kettle</th></tr></thead><tbody>
+<tr><td><strong>Current 20</strong><br>20 episodes, 4,380 s</td><td>0 exact insert-and-start setups</td><td>0 load-and-start setups</td><td>0 exact set-down-and-leave setups</td><td>1 strong setup; 1 short-runway complete setup; 1 timing control</td><td>1 visually strong but acoustically conditional out-of-view proposal; 1 timing control</td></tr>
+<tr><td><strong>Downloaded short clips</strong><br>1,577 MP4s / 332 parents</td><td>0 strict placements</td><td>0 strict loads or starts</td><td>6 metadata placements; 4 survive the media clock; 3 retain at least 5 s</td><td>3 metadata insertions; 2 survive the media clock; 1 has insertion, operation, and runway</td><td>0 fill-and-start sequences; 1 broad stovetop proposal</td></tr>
+<tr><td><strong>Full metadata</strong><br>15,147 rows / 828 parents</td><td>12 explicit placements</td><td>2 explicit loads</td><td>22 explicit set-downs</td><td>12 insertions; 8 include an explicit start</td><td>5 fill-to-start sequences</td></tr>
+</tbody></table>
+<p>Full-metadata counts are a retrieval queue, not accepted items. Missing parent media must be fetched, decoded, and checked before use. The existing <code>sounds</code> and <code>proactive_candidates</code> fields are proposal-level annotations and are not sound-event ground truth.</p>
+<p><strong>Audited proposals:</strong> Joshua Smith’s kettle setup and room exit, conditional on proving a recognizable shutoff sound; Alicia Drake’s complete toaster setup; Angela Harrell’s short-runway toaster setup; Amanda Rodgers’s separate toaster and kettle controls; and downloaded phone clip <code>nym_979xby__a0</code>. Angela’s current-20 window and downloaded clip <code>nym_42epvf__a4</code> are overlapping views of the same parent event and count once. Candidate-level decisions and remaining gates appear below.</p>
+<p><strong>Global identity rule:</strong> deduplicate and split by source parent before counting scenes or creating partitions. Overlapping windows, short clips, and alternate descriptions from the same parent event share one <code>event_cluster_id</code>.</p>
+<h3>3.1 First-pass visual and audio audit</h3>
+<table><thead><tr><th>scene</th><th>decision</th><th>reason</th></tr></thead><tbody>
+<tr><td><code>nym_979xby__a0</code> · phone</td><td><strong>Pilot</strong>, not Gold</td><td>Phone is visibly released on the counter at 17.30–17.33 s and leaves view. A ring at 22.40–24.80 s clears the five-second memory gap; a short native rustle overlaps near 24.3 s and only first-token response timing fits before media end.</td></tr>
+<tr><td><code>nym_ifj2gc__a1</code> · phone</td><td>Control only</td><td>Phone is grounded and moved out of frame, but the wearer remains seated beside the table.</td></tr>
+<tr><td>Joshua · kettle</td><td>Conditional</td><td>Fill, activation, two-minute gap, and room-level absence pass. No recognizable automatic completion sound is yet proven.</td></tr>
+<tr><td>Alicia · toaster</td><td>Conditional synthetic case</td><td>Insertion and lever activation pass, but the episode contains no observed completion or retrieval.</td></tr>
+<tr><td>Amanda · toaster</td><td>Explicit control</td><td>Activation and later retrieval are visible; insertion predates the episode window.</td></tr>
+<tr><td>Amanda · kettle</td><td>Conditional native control</td><td>Activation passes and metadata proposes boiling, but the available current-20 video has no raw native-audio track to verify it.</td></tr>
+<tr><td><code>nym_42epvf__a4</code> · toaster</td><td>Setup seed only</td><td>Excellent insertion and activation, but the decoded clip ends after 19.9 s—far too soon for the parent’s later toast removal.</td></tr>
+<tr><td><code>nym_dqa50g__a18</code> · phone</td><td>Reject</td><td>The claimed placement crosses the clip boundary and the phone cannot be distinguished visually.</td></tr>
+<tr><td><code>nym_9zemc6__a5</code> · kettle</td><td>Reject</td><td>No visible fill, heat activation, indicator, steam, or later retrieval.</td></tr>
+</tbody></table>
+<p><strong>Artifacts:</strong> <a href='proactive-reminders/metadata-census.json'>metadata census</a> and <a href='proactive-reminders/pilot-audit.json'>candidate-level pilot audit</a>.</p>
+
+<h2>4. Version-1 scope</h2>
+<p>Version 1 admits microwave completion, toaster pop, electric-kettle completion, and phone ringing. A conventional oven or laundry cycle is admitted only when the source footage contains a plausible elapsed interval, a visible timer/preheat state, or an explicit time discontinuity. A thirty-second synthetic “washer finished” event does not ship.</p>
+<table><thead><tr><th>source</th><th>preferred setup evidence</th><th>cue</th><th>initial status</th></tr></thead><tbody>
+<tr><td>Microwave</td><td>Food or container inserted, door closed, control pressed</td><td>One or more short completion beeps</td><td><span class=tag>priority</span></td></tr>
+<tr><td>Toaster</td><td>Bread inserted and lever visibly engaged</td><td>Mechanical pop</td><td><span class=tag>priority</span></td></tr>
+<tr><td>Electric kettle</td><td>Water present or filling shown; kettle switched on</td><td>A device-specific click, beep, or boil endpoint that blind listeners can recognize</td><td><span class=tag>conditional</span></td></tr>
+<tr><td>Phone</td><td>Phone visibly grounded and placed; target identity unambiguous</td><td>Ringtone</td><td><span class=tag>priority</span></td></tr>
+<tr><td>Oven / washer</td><td>Full plausible setup and elapsed-time evidence</td><td>Device-appropriate completion tone</td><td><span class=tag>later</span></td></tr>
+</tbody></table>
+
+<h2>5. Reminder lifecycle</h2>
+<p>Each item follows one state path:</p>
+<p><code>UNARMED → ARMING → ARMED → TARGET_CUE_IDENTIFIABLE → FIRED → QUIESCENT</code></p>
+<table><thead><tr><th>state boundary</th><th>operational definition</th></tr></thead><tbody>
+<tr><td><code>arm_start_s</code></td><td>First sample of the wearer’s reminder request.</td></tr>
+<tr><td><code>arm_end_s</code></td><td>End of the request. The target binding and payload must already be recoverable.</td></tr>
+<tr><td><code>activation_complete_s</code></td><td>The appliance is visibly started or the phone is visibly placed. It may occur just after the arm request when speech accompanies the setup.</td></tr>
+<tr><td><code>armed_s</code></td><td><code>max(arm_end_s, activation_complete_s)</code>. The target cue may qualify only after this point.</td></tr>
+<tr><td><code>cue_onset_s</code></td><td>First non-silent sample of the injected cue stem.</td></tr>
+<tr><td><code>cue_identifiable_s</code></td><td>First moment a human auditor can identify the target cue class. Timing scores use this point.</td></tr>
+<tr><td><code>cue_offset_s</code></td><td>Last non-silent cue sample.</td></tr>
+<tr><td><code>response_onset_s</code></td><td>First audible token that begins a relevant reminder response.</td></tr>
+</tbody></table>
+<p>The cue must be the first qualifying target event after arming and <code>cue_identifiable_s &gt; armed_s</code>. Version-1 items require at least 5 seconds between <code>armed_s</code> and <code>cue_identifiable_s</code>. Results are stratified into 5–15 s, 15–60 s, and over-60 s memory gaps.</p>
+
+<h2>6. Deictic and implicit grounding</h2>
+<p>“This” is permitted here because it can bind to an object at the moment the reminder is armed. It is not a license for an unanchored later recall question.</p>
+<ol>
+<li>The complete word span for <em>this</em>, <em>that</em>, or <em>it</em> must overlap frames where the target is visible.</li>
+<li>Hand contact, placement, operation, or an unambiguous pointing gesture must select the target.</li>
+<li>No competing object may fit the same deictic phrase at that moment.</li>
+<li>The visible setup must support a conventional completion event. “Let me know when this is ready” is rejected if nothing is visibly started.</li>
+<li>The target and setup are checked in pixels. Narration text may propose them but cannot certify them.</li>
+</ol>
+<p>The implicit condition must remove the textual shortcut. For example, “Let me know when this is ready” during microwave activation requires vision to infer the relevant source and likely completion cue. “The microwave will beep; remind me when it does” belongs to the explicit control.</p>
+<p>Two reviewers independently judge implicit intent with the cue identity hidden. They must agree on the referent, completed activation, and conventional expected cue from the visible setup. Disagreement quarantines the item.</p>
+
+<h2>7. Cue construction</h2>
+<ul>
+<li><strong>Natural duration:</strong> preserve the sound class. A phone may ring for 2–3 s; a toaster pop may last less than half a second. Sound length is not the scoring window.</li>
+<li><strong>Plausible time:</strong> place the cue near a natural completion, return, check, or retrieval when the footage supplies one. Do not make an oven or washer finish implausibly quickly.</li>
+<li><strong>Separate stem:</strong> retain native scene, wearer, assistant, and cue stems separately. Record asset hash, sample rate, gain, channel map, onset, and mix command.</li>
+<li><strong>Acoustic consistency:</strong> match loudness, distance, room response, and occlusion. A phone in another room should sound farther away than a phone beside the glasses microphone.</li>
+<li><strong>Asset diversity:</strong> use several independently sourced or synthesized exemplars per cue class. Split cue assets and source parents across evaluation partitions.</li>
+<li><strong>Collision gate:</strong> the first pilot rejects native speech or another salient sound over the cue-identification interval. A later hard arm introduces controlled overlap.</li>
+<li><strong>Blind audibility gate:</strong> on the final mix, at least the frozen reviewer threshold must identify the cue class without seeing its label. The mix must introduce no click, gain step, or channel artifact that reveals the variant.</li>
+</ul>
+<p>Cue placement is counterfactual, but the visible trajectory should remain credible. A completion cue immediately before the wearer naturally returns to the microwave is stronger than an arbitrary beep while unrelated activity continues.</p>
+<p>A kettle never receives a generic synthetic beep merely because it was switched on. Some electric kettles make a small automatic-shutoff click, whistling stovetop kettles whistle, and other kettles provide no distinct completion cue. The device type and final sound must pass the blind identity gate or the candidate is rejected.</p>
+
+<h2>8. Matched counterfactuals</h2>
+<p>Every accepted base scene produces an invariant group. Video, arming prompt, assistant state, and all non-cue audio remain byte-identical wherever possible.</p>
+<table><thead><tr><th>variant</th><th>cue manipulation</th><th>expected behavior</th></tr></thead><tbody>
+<tr><td><code>target</code></td><td>Correct cue after arming</td><td>Fire once, on time, with the correct reminder.</td></tr>
+<tr><td><code>wrong_class</code></td><td>A plausible but unarmed sound</td><td>Remain silent about the reminder.</td></tr>
+<tr><td><code>no_cue</code></td><td>No injected sound</td><td>Remain silent about the reminder.</td></tr>
+<tr><td><code>pre_arm</code></td><td>Target cue occurs before the instruction</td><td>Do not retroactively fire.</td></tr>
+<tr><td><code>repeat</code></td><td>The same cue repeats after a correct reminder</td><td>Do not issue a duplicate reminder unless the instruction requested repetition.</td></tr>
+<tr><td><code>unarmed</code></td><td>Target cue with no reminder instruction</td><td>Do not invent an obligation.</td></tr>
+</tbody></table>
+<p>Same-class distractors are a later source-localization arm. They ship only when the audio mix provides enough spatial or source-specific evidence for a human listener to distinguish them.</p>
+
+<h2>9. Silent and duplex variants</h2>
+<table><thead><tr><th>assistant state at cue</th><th>required response</th><th>additional score</th></tr></thead><tbody>
+<tr><td><code>silent</code></td><td>Initiate the reminder without a new user turn.</td><td>Reminder latency.</td></tr>
+<tr><td><code>speaking</code></td><td>Stop the current answer, issue the reminder, and abandon any obsolete partial clause.</td><td>Preemption latency and obsolete-speech overrun.</td></tr>
+</tbody></table>
+<p>The two variants use the same base scene, cue asset, cue time, and reminder content. The runtime must ingest scene audio while generating output and expose timestamps for both final assistant audio and cancellation. If it cannot, the duplex arm is unsupported rather than silently approximated.</p>
+
+<h2>10. Timing and scoring</h2>
+<p>The pilot uses a provisional 3.0 s response deadline measured from <code>cue_identifiable_s</code>, a provisional 2.0 s late grace interval, and a provisional 100 ms clock tolerance. <code>observation_end_s</code> is the grace end. All four values are frozen only after measuring the evaluation stack’s audio-ingest, decoding, TTS, and timestamp latency; none is tuned per model.</p>
+<table><thead><tr><th>outcome</th><th>rule for first relevant audible token</th></tr></thead><tbody>
+<tr><td><strong>early false alarm</strong></td><td><code>response_onset_s &lt; cue_onset_s − clock_tolerance_s</code></td></tr>
+<tr><td><strong>onset-to-identifiable reaction</strong></td><td>A response beginning after acoustic onset but before the human-identifiable point is retained and inspected; it is not automatically called early.</td></tr>
+<tr><td><strong>on time</strong></td><td><code>cue_identifiable_s ≤ response_onset_s ≤ deadline_s</code></td></tr>
+<tr><td><strong>late</strong></td><td>After the deadline but within the frozen grace interval</td></tr>
+<tr><td><strong>missed</strong></td><td>No qualifying reminder within the observation interval</td></tr>
+</tbody></table>
+<p>Report continuous latency as well as bands. Trigger timing and reminder content are separate dimensions:</p>
+<ul>
+<li><strong>Trigger recall:</strong> target variants that produce a timely reminder.</li>
+<li><strong>False-alarm rate:</strong> wrong-class, no-cue, pre-arm, repeat, and unarmed controls that produce an invalid reminder.</li>
+<li><strong>Binding accuracy:</strong> the response names the correct source, state, or stored payload. “I heard something” is detection evidence but not a successful reminder.</li>
+<li><strong>Fire-once accuracy:</strong> one valid response per armed one-shot obligation.</li>
+<li><strong>Duplex preemption:</strong> time from identifiable cue to termination of the interrupted assistant clause.</li>
+</ul>
+<p>Recall is never reported without the matched false-alarm rate.</p>
+
+<h2>11. Natural language rules</h2>
+<table><thead><tr><th>arm</th><th>acceptable</th><th>reject</th></tr></thead><tbody>
+<tr><td>Implicit microwave/toaster</td><td>“Let me know when this is ready.”<br>“Tell me when that’s done.”</td><td>Prompt spoken when the object is absent, ambiguous, or not activated.</td></tr>
+<tr><td>Explicit appliance</td><td>“This should beep when it’s done—let me know.”</td><td>Long benchmark-like instructions naming the desired model behavior.</td></tr>
+<tr><td>Phone</td><td>“Let me know if this rings.”<br>“Tell me when my phone rings.”</td><td>“Tell me when it rings” when multiple candidate phones exist and none is selected.</td></tr>
+<tr><td>Payload</td><td>“When this beeps, remind me to take the food out.”</td><td>A payload containing facts unavailable at arm time.</td></tr>
+</tbody></table>
+<p>Prompts should sound like something a glasses wearer would say during the action. Wording diversity is controlled at release time so a phrase does not identify the expected cue condition.</p>
+
+<h2>12. Item schema</h2>
+<pre><code>{
+  "schema": "egoduplex.proactive-sound-reminder/1",
+  "item_id": "psr_...",
+  "source": {
+    "parent_id": "...",
+    "timebase": "clip_relative",
+    "parent_window_start_s": 120.0,
+    "window_s": [0, 120],
+    "sha256": "...",
+    "event_cluster_id": "..."
+  },
+  "capability_label": "cross_modal_binding",
+  "variant": "target",
+  "setup": {
+    "source_class": "toaster",
+    "target_entity_id": "...",
+    "evidence_frames": ["..."],
+    "activation_span_s": [30.1, 34.2],
+    "activation_complete_s": 34.2,
+    "source_exit_s": 39.1,
+    "out_of_view_span_s": [39.1, 78.55],
+    "visual_status": "verified"
+  },
+  "arm": {
+    "explicitness": "implicit",
+    "text": "Let me know when this is ready.",
+    "span_s": [31.0, 33.1],
+    "deictic_word_span_s": [32.0, 32.3],
+    "payload": "tell wearer the toast is ready"
+  },
+  "cue": {
+    "class": "toaster_pop",
+    "asset": {"sha256": "...", "provenance": "...", "license": "..."},
+    "onset_s": 78.20,
+    "identifiable_s": 78.24,
+    "offset_s": 78.55,
+    "gain_db": -9.0,
+    "snr_db": 12.0,
+    "spatialization": {"azimuth_deg": -35, "distance_m": 4.0, "room_response": "..."},
+    "final_mix_sha256": "...",
+    "native_target_like_event_audit": "none",
+    "source_visible": false
+  },
+  "assistant_state": {"mode": "speaking", "active_span_s": [76.8, 81.1]},
+  "expected": {"fire": true, "semantic_slots": ["toast", "ready"]},
+  "score": {
+    "clock_tolerance_s": 0.10,
+    "deadline_s": 81.24,
+    "grace_end_s": 83.24,
+    "observation_end_s": 83.24
+  },
+  "counterfactual_group": "psrg_...",
+  "counterfactual_invariants": {"video_sha256": "...", "noncue_audio_sha256": "..."},
+  "audit": {"visual": "pending", "audio": "pending", "independent_review": "pending"}
+}</code></pre>
+
+<h2>13. Construction pipeline</h2>
+<ol>
+<li><strong>Mine setups:</strong> retrieve insert, load, place, activate, and leave-view proposals from action metadata.</li>
+<li><strong>Verify vision:</strong> review coarse frames, then dense frames around activation, deictic speech, departure, cue, and any natural retrieval.</li>
+<li><strong>Audit native audio:</strong> mark speech and salient sound intervals; reject accidental target-like cues in controls.</li>
+<li><strong>Choose a plausible cue time:</strong> use the natural trajectory and preserve a usable response interval.</li>
+<li><strong>Author and align prompts:</strong> synthesize natural speech, then validate word timing and deictic overlap.</li>
+<li><strong>Build cue stems:</strong> normalize and spatialize approved assets; retain hashes and mix metadata.</li>
+<li><strong>Render the counterfactual group:</strong> target, wrong, none, pre-arm, repeat, and unarmed variants.</li>
+<li><strong>Add duplex pairs:</strong> make assistant-silent and assistant-speaking versions from the same source plan.</li>
+<li><strong>Run deterministic gates:</strong> clocks, overlaps, hashes, variant invariants, cue audibility, and response runway.</li>
+<li><strong>Audit independently:</strong> two reviewers verify setup, binding, plausibility, cue identity, cue timing, and expected response. Resolve every disagreement before release.</li>
+</ol>
+
+<h2>14. Release gates</h2>
+<ul>
+<li>[ ] <code>PSR-01</code> The setup action and device state are visually verified.</li>
+<li>[ ] <code>PSR-02</code> The reminder is fully armed before the target cue is identifiable.</li>
+<li>[ ] <code>PSR-03</code> Implicit items have a unique, word-aligned visual referent and no textual source shortcut.</li>
+<li>[ ] <code>PSR-04</code> The device is visibly activated or the phone is visibly placed.</li>
+<li>[ ] <code>PSR-05</code> The cue time is physically plausible for the source and scene.</li>
+<li>[ ] <code>PSR-06</code> Cue onset, identifiable point, and offset were audited from the final mix; blind listeners meet the frozen cue-identity threshold.</li>
+<li>[ ] <code>PSR-07</code> Out-of-view labels have continuous verified absence or full occlusion from <code>source_exit_s</code> through <code>cue_offset_s</code>, for at least 5 s.</li>
+<li>[ ] <code>PSR-08</code> Native audio has no target-like collision or unlogged speech overlap.</li>
+<li>[ ] <code>PSR-09</code> Target and controls differ only in declared fields.</li>
+<li>[ ] <code>PSR-10</code> Wrong-cue and no-cue controls exist and have sufficient observation runway.</li>
+<li>[ ] <code>PSR-11</code> The reference response contains only facts available by cue time.</li>
+<li>[ ] <code>PSR-12</code> The first-token response deadline comes from frozen system-latency calibration.</li>
+<li>[ ] <code>PSR-13</code> Speaking variants contain measured cue/assistant overlap in the rendered mix.</li>
+<li>[ ] <code>PSR-14</code> The runtime listened while speaking and logged preemption and reminder onset.</li>
+<li>[ ] <code>PSR-15</code> Parent videos and cue assets are split without leakage.</li>
+<li>[ ] <code>PSR-16</code> Both independent audits pass; disagreements remain quarantined.</li>
+<li>[ ] <code>PSR-17</code> Capability labels are supported by the video-masked ablation; audio-solvable items remain condition-following controls.</li>
+<li>[ ] <code>PSR-18</code> Two reviewers agree on implicit referent, activation, and expected cue while cue identity is hidden.</li>
+<li>[ ] <code>PSR-19</code> Final-mix comparison finds no click, gain step, channel change, or other injection artifact.</li>
+<li>[ ] <code>PSR-20</code> Every variant records timebase, observation end, clock tolerance, and invariant hashes.</li>
+</ul>
+
+<h2>15. Pilot decision</h2>
+<p>Proceed with a small local pilot using toaster and phone proposals, plus kettle scenes only when their actual device class supports a recognizable end sound. Keep microwave scenes at the front of the retrieval queue because their metadata shows the clearest insertion, control, departure, and retrieval trajectories, pending media and native-audio verification. Hold laundry and conventional oven items until a plausible full cycle or timer-based event is available.</p>
+<p>The pilot should validate four things before scaling: whether implicit prompts are visually unambiguous, whether injected cues remain natural in the glasses microphone mix, whether a runtime can hear while speaking, and whether the 3 s provisional deadline is compatible with measured end-to-end latency.</p>
+</div></body></html>
