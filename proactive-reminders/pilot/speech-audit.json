@@ -1,0 +1,233 @@
+{
+  "schema": "egoduplex.proactive-phone-speech-audit/1",
+  "pass": true,
+  "critical_deictic_word": "this",
+  "critical_deictic_ok": true,
+  "rows": [
+    {
+      "id": "deictic",
+      "wav": "stems/wearer_deictic.wav",
+      "ref": "Remind me when this rings.",
+      "start_s": 5.046083,
+      "hyp": "Remind me when this rings.",
+      "words": [
+        {
+          "text": "Remind",
+          "relative_s": [
+            0.0,
+            0.2
+          ],
+          "absolute_s": [
+            5.046,
+            5.246
+          ]
+        },
+        {
+          "text": "me",
+          "relative_s": [
+            0.2,
+            0.28
+          ],
+          "absolute_s": [
+            5.246,
+            5.326
+          ]
+        },
+        {
+          "text": "when",
+          "relative_s": [
+            0.28,
+            0.42
+          ],
+          "absolute_s": [
+            5.326,
+            5.466
+          ]
+        },
+        {
+          "text": "this",
+          "relative_s": [
+            0.42,
+            0.6
+          ],
+          "absolute_s": [
+            5.466,
+            5.646
+          ]
+        },
+        {
+          "text": "rings.",
+          "relative_s": [
+            0.6,
+            1.04
+          ],
+          "absolute_s": [
+            5.646,
+            6.086
+          ]
+        }
+      ],
+      "ref_words": 5,
+      "hyp_words": 5,
+      "wer": 0.0
+    },
+    {
+      "id": "named",
+      "wav": "stems/wearer_named.wav",
+      "ref": "My phone—tell me when it rings.",
+      "start_s": 4.655292,
+      "hyp": "My phone, tell me when it rings.",
+      "words": [
+        {
+          "text": "My",
+          "relative_s": [
+            0.0,
+            0.1
+          ],
+          "absolute_s": [
+            4.655,
+            4.755
+          ]
+        },
+        {
+          "text": "phone,",
+          "relative_s": [
+            0.1,
+            0.62
+          ],
+          "absolute_s": [
+            4.755,
+            5.275
+          ]
+        },
+        {
+          "text": "tell",
+          "relative_s": [
+            0.62,
+            0.94
+          ],
+          "absolute_s": [
+            5.275,
+            5.595
+          ]
+        },
+        {
+          "text": "me",
+          "relative_s": [
+            0.94,
+            1.02
+          ],
+          "absolute_s": [
+            5.595,
+            5.675
+          ]
+        },
+        {
+          "text": "when",
+          "relative_s": [
+            1.02,
+            1.28
+          ],
+          "absolute_s": [
+            5.675,
+            5.935
+          ]
+        },
+        {
+          "text": "it",
+          "relative_s": [
+            1.28,
+            1.38
+          ],
+          "absolute_s": [
+            5.935,
+            6.035
+          ]
+        },
+        {
+          "text": "rings.",
+          "relative_s": [
+            1.38,
+            1.84
+          ],
+          "absolute_s": [
+            6.035,
+            6.495
+          ]
+        }
+      ],
+      "ref_words": 7,
+      "hyp_words": 7,
+      "wer": 0.0
+    },
+    {
+      "id": "assistant",
+      "wav": "stems/assistant_ring.wav",
+      "ref": "Your phone is ringing now.",
+      "start_s": 23.0,
+      "hyp": "Your phone is ringing now.",
+      "words": [
+        {
+          "text": "Your",
+          "relative_s": [
+            0.0,
+            0.08
+          ],
+          "absolute_s": [
+            23.0,
+            23.08
+          ]
+        },
+        {
+          "text": "phone",
+          "relative_s": [
+            0.08,
+            0.3
+          ],
+          "absolute_s": [
+            23.08,
+            23.3
+          ]
+        },
+        {
+          "text": "is",
+          "relative_s": [
+            0.3,
+            0.46
+          ],
+          "absolute_s": [
+            23.3,
+            23.46
+          ]
+        },
+        {
+          "text": "ringing",
+          "relative_s": [
+            0.46,
+            0.68
+          ],
+          "absolute_s": [
+            23.46,
+            23.68
+          ]
+        },
+        {
+          "text": "now.",
+          "relative_s": [
+            0.68,
+            1.12
+          ],
+          "absolute_s": [
+            23.68,
+            24.12
+          ]
+        }
+      ],
+      "ref_words": 5,
+      "hyp_words": 5,
+      "wer": 0.0
+    }
+  ],
+  "scope": "synthesized prompt and oracle-reference intelligibility plus deictic-word timing",
+  "interpretation": "All three utterances have WER 0.0; deictic “this” spans 5.466–5.646 s inside the verified 4.0–6.8 s phone-visible interval."
+}

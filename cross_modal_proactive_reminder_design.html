@@ -14,7 +14,7 @@ ul,ol{margin:10px 0;padding-left:22px}li{margin:5px 0}.sub{color:var(--dim);marg
 <h1>Cross-modal proactive reminders — end-to-end design</h1>
 <p class=sub>Prospective memory across vision and sound: visually arm a reminder now, then speak at the future cue.</p>
 
-<div class=callout><p><strong>Status · 2026-10-06:</strong> metadata census and first-pass candidate audit complete. No cue has been rendered and no item is Gold. Raw-source or final-mix audio review and independent second review remain required.</p></div>
+<div class=callout><p><strong>Status · 2026-10-06:</strong> the first phone scene now has six evaluation inputs and two oracle previews. Deterministic render-integrity and synthesized-speech alignment checks pass; blind cue-class and acoustic-plausibility listening, independent visual review, the video-masked ablation, and the remaining counterfactual conditions are still open. It is a review pilot, not a Gold item. <a href='proactive-reminders/pilot/'>Open the pilot.</a></p></div>
 
 <h2>1. Task</h2>
 <p>The wearer grounds a future reminder while handling an object or appliance. Later, an audible event occurs in the continuing scene. The assistant must detect the right event, recall the armed instruction, and speak without another user prompt.</p>
@@ -43,7 +43,7 @@ ul,ol{margin:10px 0;padding-left:22px}li{margin:5px 0}.sub{color:var(--dim);marg
 <p><strong>Global identity rule:</strong> deduplicate and split by source parent before counting scenes or creating partitions. Overlapping windows, short clips, and alternate descriptions from the same parent event share one <code>event_cluster_id</code>.</p>
 <h3>3.1 First-pass visual and audio audit</h3>
 <table><thead><tr><th>scene</th><th>decision</th><th>reason</th></tr></thead><tbody>
-<tr><td><code>nym_979xby__a0</code> · phone</td><td><strong>Pilot</strong>, not Gold</td><td>Phone is visibly released on the counter at 17.30–17.33 s and leaves view. A ring at 22.40–24.80 s clears the five-second memory gap; a short native rustle overlaps near 24.3 s and only first-token response timing fits before media end.</td></tr>
+<tr><td><code>nym_979xby__a0</code> · phone</td><td><strong>Rendered review pilot</strong>, not Gold</td><td>Phone is visibly released on the counter at 17.30–17.33 s and leaves view at 17.50 s. The source was extended continuously to 30 s with the aligned next clip. A ring at 22.40–24.80 s clears the five-second memory gap and leaves 5.20 s after cue offset; the native rustle near 24.3 s receives the same logged local duck in every condition.</td></tr>
 <tr><td><code>nym_ifj2gc__a1</code> · phone</td><td>Control only</td><td>Phone is grounded and moved out of frame, but the wearer remains seated beside the table.</td></tr>
 <tr><td>Joshua · kettle</td><td>Conditional</td><td>Fill, activation, two-minute gap, and room-level absence pass. No recognizable automatic completion sound is yet proven.</td></tr>
 <tr><td>Alicia · toaster</td><td>Conditional synthetic case</td><td>Insertion and lever activation pass, but the episode contains no observed completion or retrieval.</td></tr>
@@ -53,10 +53,10 @@ ul,ol{margin:10px 0;padding-left:22px}li{margin:5px 0}.sub{color:var(--dim);marg
 <tr><td><code>nym_dqa50g__a18</code> · phone</td><td>Reject</td><td>The claimed placement crosses the clip boundary and the phone cannot be distinguished visually.</td></tr>
 <tr><td><code>nym_9zemc6__a5</code> · kettle</td><td>Reject</td><td>No visible fill, heat activation, indicator, steam, or later retrieval.</td></tr>
 </tbody></table>
-<p><strong>Artifacts:</strong> <a href='proactive-reminders/metadata-census.json'>metadata census</a> and <a href='proactive-reminders/pilot-audit.json'>candidate-level pilot audit</a>.</p>
+<p><strong>Artifacts:</strong> <a href='proactive-reminders/metadata-census.json'>metadata census</a>, <a href='proactive-reminders/pilot-audit.json'>candidate-level pilot audit</a>, and <a href='proactive-reminders/pilot/'>rendered phone-pilot review</a>.</p>
 
 <h2>4. Version-1 scope</h2>
-<p>Version 1 admits microwave completion, toaster pop, electric-kettle completion, and phone ringing. A conventional oven or laundry cycle is admitted only when the source footage contains a plausible elapsed interval, a visible timer/preheat state, or an explicit time discontinuity. A thirty-second synthetic “washer finished” event does not ship.</p>
+<p>Version 1 admits microwave completion, toaster pop, verified device-specific kettle completion, and phone ringing. A kettle is never assumed to beep: a whistling stovetop kettle or an electric model with a recognizable click or tone must pass the acoustic gate. A conventional oven or laundry cycle is admitted only when the source footage contains a plausible elapsed interval, a visible timer/preheat state, or an explicit time discontinuity. A thirty-second synthetic “washer finished” event does not ship.</p>
 <table><thead><tr><th>source</th><th>preferred setup evidence</th><th>cue</th><th>initial status</th></tr></thead><tbody>
 <tr><td>Microwave</td><td>Food or container inserted, door closed, control pressed</td><td>One or more short completion beeps</td><td><span class=tag>priority</span></td></tr>
 <tr><td>Toaster</td><td>Bread inserted and lever visibly engaged</td><td>Mechanical pop</td><td><span class=tag>priority</span></td></tr>
@@ -125,7 +125,7 @@ ul,ol{margin:10px 0;padding-left:22px}li{margin:5px 0}.sub{color:var(--dim);marg
 <p>The two variants use the same base scene, cue asset, cue time, and reminder content. The runtime must ingest scene audio while generating output and expose timestamps for both final assistant audio and cancellation. If it cannot, the duplex arm is unsupported rather than silently approximated.</p>
 
 <h2>10. Timing and scoring</h2>
-<p>The pilot uses a provisional 3.0 s response deadline measured from <code>cue_identifiable_s</code>, a provisional 2.0 s late grace interval, and a provisional 100 ms clock tolerance. <code>observation_end_s</code> is the grace end. All four values are frozen only after measuring the evaluation stack’s audio-ingest, decoding, TTS, and timestamp latency; none is tuned per model.</p>
+<p>The general design uses a provisional 3.0 s response deadline measured from <code>cue_identifiable_s</code>, a provisional 2.0 s late grace interval, and a provisional 100 ms clock tolerance. The phone review pilot applies the user-facing constraint more strictly: on-time onset ends at <code>min(cue_identifiable_s + 3.0 s, cue_offset_s)</code>. The 23.00 s oracle onset is illustrative and is not the scoring threshold. <code>observation_end_s</code> is the grace end. These values are frozen only after measuring the evaluation stack’s audio-ingest, decoding, TTS, and timestamp latency; none is tuned per model.</p>
 <table><thead><tr><th>outcome</th><th>rule for first relevant audible token</th></tr></thead><tbody>
 <tr><td><strong>early false alarm</strong></td><td><code>response_onset_s &lt; cue_onset_s − clock_tolerance_s</code></td></tr>
 <tr><td><strong>onset-to-identifiable reaction</strong></td><td>A response beginning after acoustic onset but before the human-identifiable point is retained and inspected; it is not automatically called early.</td></tr>
@@ -248,6 +248,7 @@ ul,ol{margin:10px 0;padding-left:22px}li{margin:5px 0}.sub{color:var(--dim);marg
 </ul>
 
 <h2>15. Pilot decision</h2>
-<p>Proceed with a small local pilot using toaster and phone proposals, plus kettle scenes only when their actual device class supports a recognizable end sound. Keep microwave scenes at the front of the retrieval queue because their metadata shows the clearest insertion, control, departure, and retrieval trajectories, pending media and native-audio verification. Hold laundry and conventional oven items until a plausible full cycle or timer-based event is available.</p>
+<p>The first phone review pilot is rendered with deictic and named arms, each paired with target, wrong-cue, no-cue, and reviewer-only oracle variants. It tests a silent assistant’s proactive alerting; pre-arm, repeat, unarmed, and speaking-assistant variants are not yet rendered. The cue is provisional and non-spatialized, so the pilot does not pass acoustic consistency until blind classification and distance/SNR review succeed.</p>
+<p>Continue with toaster and phone proposals, plus kettle scenes only when their actual device class supports a recognizable end sound. Keep microwave scenes at the front of the retrieval queue because their metadata shows the clearest insertion, control, departure, and retrieval trajectories, pending media and native-audio verification. Hold laundry and conventional oven items until a plausible full cycle or timer-based event is available.</p>
 <p>The pilot should validate four things before scaling: whether implicit prompts are visually unambiguous, whether injected cues remain natural in the glasses microphone mix, whether a runtime can hear while speaking, and whether the 3 s provisional deadline is compatible with measured end-to-end latency.</p>
 </div></body></html>

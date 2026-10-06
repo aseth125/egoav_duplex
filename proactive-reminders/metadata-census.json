@@ -4,7 +4,11 @@
   "status": "metadata_candidates_only",
   "warning": "Counts are mining supply, not accepted benchmark yield. Every item requires dense visual review and final-mix audio review.",
   "deduplication": {
-    "exact_key": ["parent_video", "parent_start", "parent_end"],
+    "exact_key": [
+      "parent_video",
+      "parent_start",
+      "parent_end"
+    ],
     "event_cluster_rule": "Within each parent video, normalize action semantics and cluster overlapping or adjacent descriptions of the same physical event. Assign one event_cluster_id before counting.",
     "global_parent_split": true,
     "notes": "Exact-key dedup removes alternate wording at identical times. Event clustering prevents overlapping long windows and short clips with different endpoints from being counted or split as independent scenes."
@@ -25,13 +29,30 @@
           "source_class": "kettle",
           "role": "implicit_out_of_view_candidate",
           "evidence_clip_relative_s": {
-            "fill": [226.758, 251.754],
-            "place_on_base": [254.754, 261.753],
-            "turn_on": [259.753, 266.752],
-            "leave_kitchen": [278.783, 288.782],
+            "fill": [
+              226.758,
+              251.754
+            ],
+            "place_on_base": [
+              254.754,
+              261.753
+            ],
+            "turn_on": [
+              259.753,
+              266.752
+            ],
+            "leave_kitchen": [
+              278.783,
+              288.782
+            ],
             "bedroom_until_approximately": 385.0
           },
-          "disqualifiers_to_check": ["device_has_water", "power_activation_visible", "native_speech_and_sound_collisions", "continuous_source_absence"],
+          "disqualifiers_to_check": [
+            "device_has_water",
+            "power_activation_visible",
+            "native_speech_and_sound_collisions",
+            "continuous_source_absence"
+          ],
           "status": "conditional_acoustic_gate"
         },
         {
@@ -39,12 +60,28 @@
           "source_class": "toaster",
           "role": "implicit_completion_candidate",
           "evidence_clip_relative_s": {
-            "insert_bread": [21.777, 30.776],
-            "press_lever": [30.776, 35.775],
-            "adjust_control": [38.774, 48.773],
-            "wait_for_toast": [66.77, 96.732]
+            "insert_bread": [
+              21.777,
+              30.776
+            ],
+            "press_lever": [
+              30.776,
+              35.775
+            ],
+            "adjust_control": [
+              38.774,
+              48.773
+            ],
+            "wait_for_toast": [
+              66.77,
+              96.732
+            ]
           },
-          "disqualifiers_to_check": ["lever_engagement_visible", "natural_retrieval_or_completion_alignment", "native_speech_and_sound_collisions"],
+          "disqualifiers_to_check": [
+            "lever_engagement_visible",
+            "natural_retrieval_or_completion_alignment",
+            "native_speech_and_sound_collisions"
+          ],
           "status": "conditional_synthetic_timing_case"
         },
         {
@@ -52,13 +89,23 @@
           "source_class": "toaster",
           "role": "short_runway_complete_setup",
           "evidence_clip_relative_s": {
-            "insert_bread": [92.023, 96.022],
-            "operate_toaster": [96.022, 99.022],
+            "insert_bread": [
+              92.023,
+              96.022
+            ],
+            "operate_toaster": [
+              96.022,
+              99.022
+            ],
             "remaining_runway_approximately_s": 21.0
           },
           "event_cluster_id": "42epvf_toaster_insert_start_272",
           "duplicate_view_clip_id": "nym_42epvf__a4",
-          "disqualifiers_to_check": ["completion_is_plausible_within_remaining_window", "response_runway", "native_speech_and_sound_collisions"],
+          "disqualifiers_to_check": [
+            "completion_is_plausible_within_remaining_window",
+            "response_runway",
+            "native_speech_and_sound_collisions"
+          ],
           "status": "setup_seed_only"
         },
         {
@@ -66,8 +113,14 @@
           "source_class": "toaster",
           "role": "explicit_timing_control",
           "evidence_clip_relative_s": {
-            "activate": [20.196, 25.195],
-            "retrieve_toast": [72.154, 77.154]
+            "activate": [
+              20.196,
+              25.195
+            ],
+            "retrieve_toast": [
+              72.154,
+              77.154
+            ]
           },
           "disqualifier": "Bread insertion predates the episode window, so this cannot support an implicit visual setup item.",
           "status": "explicit_control_only"
@@ -77,11 +130,25 @@
           "source_class": "kettle",
           "role": "explicit_timing_control",
           "evidence_clip_relative_s": {
-            "place_and_turn_on": [334.646, 341.145],
-            "wait": [368.14, 425.165],
-            "make_tea": [425.165, 455.193]
+            "place_and_turn_on": [
+              334.646,
+              341.145
+            ],
+            "wait": [
+              368.14,
+              425.165
+            ],
+            "make_tea": [
+              425.165,
+              455.193
+            ]
           },
-          "disqualifiers_to_check": ["water_present", "activation_visible", "source_visibility_at_cue", "native_speech_and_sound_collisions"],
+          "disqualifiers_to_check": [
+            "water_present",
+            "activation_visible",
+            "source_visibility_at_cue",
+            "native_speech_and_sound_collisions"
+          ],
           "status": "conditional_native_audio_control"
         }
       ],
@@ -89,31 +156,61 @@
         {
           "source_episode": "NymeriaPlus_v1.0_20231003_s1_allen_evans_act2_7pj863__T3_at_120",
           "source_class": "phone",
-          "evidence_clip_relative_s": {"hand_rests_by_phone": [135.459, 138.459], "wearer_moves_away_after": 138.459},
+          "evidence_clip_relative_s": {
+            "hand_rests_by_phone": [
+              135.459,
+              138.459
+            ],
+            "wearer_moves_away_after": 138.459
+          },
           "reject_reason": "No phone set-down and no phone track; at most an explicit out-of-view control pending visual identity."
         },
         {
           "source_episode": "NymeriaPlus_v1.0_20231107_s0_amy_snow_act3_y044ox__T3_at_90",
           "source_class": "oven",
-          "evidence_clip_relative_s": {"storage_drawer_and_oven_setting": [121.799, 158.66]},
+          "evidence_clip_relative_s": {
+            "storage_drawer_and_oven_setting": [
+              121.799,
+              158.66
+            ]
+          },
           "reject_reason": "Tray comes from the bottom storage drawer; no food insertion and only about 21 seconds remain."
         },
         {
           "source_episode": "NymeriaPlus_v1.0_20230928_s0_grace_randolph_act4_j1cw74__T3_at_690",
           "source_class": "microwave",
-          "evidence_clip_relative_s": {"packaging_on_top": [65.379, 70.378]},
+          "evidence_clip_relative_s": {
+            "packaging_on_top": [
+              65.379,
+              70.378
+            ]
+          },
           "reject_reason": "Paper or plastic is placed on top of the microwave; the microwave is not used."
         },
         {
           "source_episode": "NymeriaPlus_v1.0_20230725_s1_julie_taylor_act4_iemk0l__T2_at_120",
           "source_class": "washer",
-          "evidence_clip_relative_s": {"detergent_on_top": [21.677, 26.676]},
+          "evidence_clip_relative_s": {
+            "detergent_on_top": [
+              21.677,
+              26.676
+            ]
+          },
           "reject_reason": "Detergent is moved on top of the washer; there is no load or start."
         },
         {
           "source_episode": "NymeriaPlus_v1.0_20231101_s0_joshua_smith_act1_5eipiv__T10_at_450",
           "source_class": "washer",
-          "evidence_clip_relative_s": {"mislabelled_summary": [54.886, 79.815], "look_only_actual_washer": [519.778, 524.777]},
+          "evidence_clip_relative_s": {
+            "mislabelled_summary": [
+              54.886,
+              79.815
+            ],
+            "look_only_actual_washer": [
+              519.778,
+              524.777
+            ]
+          },
           "reject_reason": "The first summary calls a dishwasher a washing machine; the actual washer appears only in a look event."
         }
       ]
@@ -218,10 +315,10 @@
     }
   ],
   "sources": {
-    "action_metadata": "/home/aseth125/qwen3omni_train/data/action_meta/action_meta_nymeria.jsonl.gz",
-    "downloaded_media": "/home/aseth125/qwen3omni_train/videos/nymeria",
-    "grounded_points": "/home/aseth125/qwen3omni_train/data/asg_grounded_points.jsonl",
-    "chain_supply_doc": "/home/aseth125/qwen3omni_train/docs/NYMERIA_STREAMING_CAPTION_INTERRUPT_PIPELINE.md",
-    "long_window_briefs": "/home/aseth125/qwen3omni_train/data/ego_duplex/avd/briefs_v4"
+    "action_metadata": "action_meta_nymeria.jsonl.gz",
+    "downloaded_media": "nymeria",
+    "grounded_points": "asg_grounded_points.jsonl",
+    "chain_supply_doc": "NYMERIA_STREAMING_CAPTION_INTERRUPT_PIPELINE.md",
+    "long_window_briefs": "briefs_v4"
   }
 }

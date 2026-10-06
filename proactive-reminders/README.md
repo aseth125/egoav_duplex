@@ -9,7 +9,11 @@ This directory contains the evidence artifacts behind
 - `pilot-audit.json` records candidate-level visual evidence, exact media
   clocks, proposed arm/cue windows, audio collisions, decisions, and remaining
   release gates.
+- [`pilot/`](pilot/) is the review page for the first phone pilot. It links to
+  six evaluation inputs, two oracle previews, and the machine-readable render
+  and validation artifacts.
 
-Current result: one phone scene is suitable for a first render pilot, two
-scenes are controls, and no item is Gold. No cue audio or rendered reminder
-video has been released.
+Current result: the 30-second phone scene has eight rendered review variants.
+Deterministic render-integrity and speech checks pass; human cue-class and
+acoustic-plausibility listening, an independent visual review, and the missing
+counterfactual conditions remain open. No item is Gold.

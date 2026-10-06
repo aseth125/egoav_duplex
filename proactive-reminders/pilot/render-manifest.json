@@ -1,0 +1,337 @@
+{
+  "schema": "egoduplex.proactive-phone-pilot-render/1",
+  "source": "source_extended.mp4 (local master; constructed from the declared Nymeria source clips)",
+  "source_sha256": "e0f68960ceb0282a9adac03d1adab1df466f8e0e99198b99955bdb2bacdc030d",
+  "source_duration_s": 30.0,
+  "arm_end_s": 6.8,
+  "activation_complete_s": 17.33,
+  "cue_onset_s": 22.4,
+  "cue_offset_s": 24.8,
+  "assistant_response_onset_s": 23.0,
+  "source_construction": {
+    "a0": "nym_979xby__a0.mp4[0:25.0]",
+    "a1": "nym_979xby__a1.mp4[5.003:]",
+    "measured_audio_shift_s": 19.997,
+    "seam_frame_mae": 0.0
+  },
+  "source_bed_gain_db": 0.0,
+  "matched_source_duck": {
+    "span_s": [
+      24.18,
+      24.45
+    ],
+    "gain_db": -24.0,
+    "fade_s": 0.04
+  },
+  "tts_durations_s": {
+    "deictic": 1.7539166666666666,
+    "named": 2.1447083333333334,
+    "assistant": 1.36
+  },
+  "cues": {
+    "ringtone_synthetic.wav": {
+      "path": "stems/ringtone_synthetic.wav",
+      "sha256": "d63596fa564edb32910f04514d8569f5d4080eb2867532bc30352d4cf94e8067",
+      "duration_s": 2.4,
+      "rms_dbfs": -23.91,
+      "peak_dbfs": -14.77,
+      "spatialization": "none (provisional review cue)"
+    },
+    "wrong_chime_synthetic.wav": {
+      "path": "stems/wrong_chime_synthetic.wav",
+      "sha256": "d94f13271266d1a15a66f8fc850447020253d960bc97e07918f5528af62ec62f",
+      "duration_s": 2.4,
+      "rms_dbfs": -23.91,
+      "peak_dbfs": -12.4,
+      "spatialization": "none (provisional review cue)"
+    }
+  },
+  "renders": [
+    {
+      "name": "deictic_target_input",
+      "path": "renders/deictic_target_input.mp4 (local master)",
+      "sha256": "761a48483a0cee6c365098e59b791f9b678b1f20f19bafc370eab723800fa782",
+      "prompt_start_s": 5.046083,
+      "prompt_end_s": 6.8,
+      "cue": "ringtone_synthetic.wav",
+      "cue_onset_s": 22.4,
+      "response": null,
+      "response_onset_s": null,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/deictic_target_input.mp4",
+      "assistant_state": "silent"
+    },
+    {
+      "name": "deictic_wrong_input",
+      "path": "renders/deictic_wrong_input.mp4 (local master)",
+      "sha256": "df8f7d1b9fe16c2391552e1b4b5eb623c27f40b20111e2bd0e6717a662e6f91b",
+      "prompt_start_s": 5.046083,
+      "prompt_end_s": 6.8,
+      "cue": "wrong_chime_synthetic.wav",
+      "cue_onset_s": 22.4,
+      "response": null,
+      "response_onset_s": null,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/deictic_wrong_input.mp4",
+      "assistant_state": "silent"
+    },
+    {
+      "name": "deictic_no_cue_input",
+      "path": "renders/deictic_no_cue_input.mp4 (local master)",
+      "sha256": "a338dd1208e91a97ef9afd4945051e31e6a89c4c37de875d78ef916a1527cc79",
+      "prompt_start_s": 5.046083,
+      "prompt_end_s": 6.8,
+      "cue": null,
+      "cue_onset_s": null,
+      "response": null,
+      "response_onset_s": null,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/deictic_no_cue_input.mp4",
+      "assistant_state": "silent"
+    },
+    {
+      "name": "deictic_target_oracle",
+      "path": "renders/deictic_target_oracle.mp4 (local master)",
+      "sha256": "f3636f948a8568878684f9430b9504814174fa7a77fcc6efdea20c6e1a226921",
+      "prompt_start_s": 5.046083,
+      "prompt_end_s": 6.8,
+      "cue": "ringtone_synthetic.wav",
+      "cue_onset_s": 22.4,
+      "response": "assistant_ring.wav",
+      "response_onset_s": 23.0,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/deictic_target_oracle.mp4",
+      "assistant_state": "oracle_demo_only"
+    },
+    {
+      "name": "named_target_input",
+      "path": "renders/named_target_input.mp4 (local master)",
+      "sha256": "329ccfc76ac2363d0a5eee03c230bed6c18177a3bc3e89bde7b96f597457b167",
+      "prompt_start_s": 4.655292,
+      "prompt_end_s": 6.8,
+      "cue": "ringtone_synthetic.wav",
+      "cue_onset_s": 22.4,
+      "response": null,
+      "response_onset_s": null,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/named_target_input.mp4",
+      "assistant_state": "silent"
+    },
+    {
+      "name": "named_wrong_input",
+      "path": "renders/named_wrong_input.mp4 (local master)",
+      "sha256": "ae36f7b0a626e10ec6d79c871e155a77036498d6dba3353fc6c6028bea15399a",
+      "prompt_start_s": 4.655292,
+      "prompt_end_s": 6.8,
+      "cue": "wrong_chime_synthetic.wav",
+      "cue_onset_s": 22.4,
+      "response": null,
+      "response_onset_s": null,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/named_wrong_input.mp4",
+      "assistant_state": "silent"
+    },
+    {
+      "name": "named_no_cue_input",
+      "path": "renders/named_no_cue_input.mp4 (local master)",
+      "sha256": "0ff2f7b9e55a3fe0efe3785b37209c610c68da03d2085311da0bd777c518d87a",
+      "prompt_start_s": 4.655292,
+      "prompt_end_s": 6.8,
+      "cue": null,
+      "cue_onset_s": null,
+      "response": null,
+      "response_onset_s": null,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/named_no_cue_input.mp4",
+      "assistant_state": "silent"
+    },
+    {
+      "name": "named_target_oracle",
+      "path": "renders/named_target_oracle.mp4 (local master)",
+      "sha256": "86f696151377650ae3ad6693776ca04b8fd2bf411fdd515f1ff505753a6f2508",
+      "prompt_start_s": 4.655292,
+      "prompt_end_s": 6.8,
+      "cue": "ringtone_synthetic.wav",
+      "cue_onset_s": 22.4,
+      "response": "assistant_ring.wav",
+      "response_onset_s": 23.0,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1408,
+            "height": 1408,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      },
+      "hosted_preview_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/named_target_oracle.mp4",
+      "assistant_state": "oracle_demo_only"
+    }
+  ],
+  "publication": {
+    "media_commit": "a4b067843daf889f75f0f9b96e9046e45e78df8c",
+    "hosted_assets": "720x720, 15 fps review previews",
+    "master_assets": "1408x1408, 30 fps local renders",
+    "preview_base_url": "https://raw.githubusercontent.com/aseth125/egoav_duplex/a4b067843daf889f75f0f9b96e9046e45e78df8c/proactive-phone-pilot-v1/"
+  }
+}

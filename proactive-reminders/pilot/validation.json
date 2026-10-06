@@ -1,0 +1,171 @@
+{
+  "schema": "egoduplex.proactive-phone-pilot-validation/1",
+  "pass": true,
+  "render_count": 8,
+  "video_stream_sha256": "9a10956b0f88070797733108775b01bb5f0c54fab88c4ec5f6cd523093a2eb34",
+  "peaks": {
+    "deictic_target_input": 0.8652333617210388,
+    "deictic_wrong_input": 0.8652333617210388,
+    "deictic_no_cue_input": 0.8652333617210388,
+    "deictic_target_oracle": 0.8652333617210388,
+    "named_target_input": 0.6073695421218872,
+    "named_wrong_input": 0.6073695421218872,
+    "named_no_cue_input": 0.6073695421218872,
+    "named_target_oracle": 0.860909104347229
+  },
+  "levels": {
+    "deictic_target_input": {
+      "prompt_dbfs": -22.71,
+      "cue_window_dbfs": -26.48,
+      "peak": 0.865233
+    },
+    "deictic_wrong_input": {
+      "prompt_dbfs": -22.71,
+      "cue_window_dbfs": -26.47,
+      "peak": 0.865233
+    },
+    "deictic_no_cue_input": {
+      "prompt_dbfs": -22.71,
+      "cue_window_dbfs": -58.69,
+      "peak": 0.865233
+    },
+    "deictic_target_oracle": {
+      "prompt_dbfs": -22.71,
+      "cue_window_dbfs": -21.17,
+      "peak": 0.865233
+    },
+    "named_target_input": {
+      "prompt_dbfs": -21.41,
+      "cue_window_dbfs": -26.48,
+      "peak": 0.60737
+    },
+    "named_wrong_input": {
+      "prompt_dbfs": -21.41,
+      "cue_window_dbfs": -26.47,
+      "peak": 0.60737
+    },
+    "named_no_cue_input": {
+      "prompt_dbfs": -21.41,
+      "cue_window_dbfs": -58.69,
+      "peak": 0.60737
+    },
+    "named_target_oracle": {
+      "prompt_dbfs": -21.41,
+      "cue_window_dbfs": -21.16,
+      "peak": 0.860909
+    }
+  },
+  "pair_invariants": {
+    "deictic_target_input": {
+      "pre_max_abs": 0.0,
+      "post_max_abs": 0.003330935724079609,
+      "post_diff_dbfs": -85.3,
+      "post_corr": 0.999841
+    },
+    "deictic_wrong_input": {
+      "pre_max_abs": 0.0,
+      "post_max_abs": 0.0022322966251522303,
+      "post_diff_dbfs": -78.398,
+      "post_corr": 0.99922
+    },
+    "named_target_input": {
+      "pre_max_abs": 0.0,
+      "post_max_abs": 0.0036293254233896732,
+      "post_diff_dbfs": -89.203,
+      "post_corr": 0.999935
+    },
+    "named_wrong_input": {
+      "pre_max_abs": 0.0,
+      "post_max_abs": 0.002630062634125352,
+      "post_diff_dbfs": -75.983,
+      "post_corr": 0.998639
+    }
+  },
+  "aac_alignment": {
+    "deictic": {
+      "lag_samples": 239,
+      "lag_ms": 4.979,
+      "preemphasis_corr": 0.977677
+    },
+    "named": {
+      "lag_samples": 239,
+      "lag_ms": 4.979,
+      "preemphasis_corr": 0.97873
+    }
+  },
+  "native_preservation": {
+    "deictic": [
+      {
+        "span_s": [
+          0.2,
+          3.8
+        ],
+        "gain_db": 0.4,
+        "corr": 0.997474
+      },
+      {
+        "span_s": [
+          7.0,
+          22.0
+        ],
+        "gain_db": 0.403,
+        "corr": 0.9982
+      },
+      {
+        "span_s": [
+          25.2,
+          29.8
+        ],
+        "gain_db": 0.415,
+        "corr": 0.998861
+      }
+    ],
+    "named": [
+      {
+        "span_s": [
+          0.2,
+          3.8
+        ],
+        "gain_db": 0.4,
+        "corr": 0.997474
+      },
+      {
+        "span_s": [
+          7.0,
+          22.0
+        ],
+        "gain_db": 0.402,
+        "corr": 0.998236
+      },
+      {
+        "span_s": [
+          25.2,
+          29.8
+        ],
+        "gain_db": 0.415,
+        "corr": 0.99887
+      }
+    ]
+  },
+  "checks": [
+    "eight declared variants",
+    "30 s A/V clocks",
+    "H.264 1408x1408 30 fps video copied identically",
+    "AAC 48 kHz stereo",
+    "no clipping",
+    "target/wrong/no audio identical before cue and matching after the cue tail within measured AAC tolerance",
+    "target and wrong cue level matched within 1 dB",
+    "cue exceeds no-cue window by >15 dB",
+    "assistant response absent from evaluation inputs",
+    "native bed preserved outside prompt and matched local duck"
+  ],
+  "scope": "deterministic_render_integrity_only",
+  "pass_interpretation": "All declared automated media invariants passed; this does not certify cue identity, acoustic plausibility, visual grounding, or Gold status.",
+  "not_evaluated": [
+    "blind cue-class recognition",
+    "distance/azimuth/occlusion/SNR plausibility",
+    "independent visual review",
+    "video-masked ablation",
+    "pre-arm/repeat/unarmed/speaking-assistant conditions"
+  ]
+}
