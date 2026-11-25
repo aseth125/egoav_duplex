@@ -11,6 +11,17 @@ proactive false-alarm credit were scored with a provisional gemini-3.8-flash jud
 as our GPT-6 judge; they are reported as DELTAS ONLY and are not comparable to the GPT-6 CCS table. The
 GPT-6 re-run is staged. All other numbers below are judge-free re-scores or use the authoritative judge.
 
+Cross-judge robustness: we re-scored every control with a second, independent judge (a 32-way Claude
+panel, 1,167 verdicts; Claude is not a benchmark contestant, so it avoids the self-preference concern of
+a contestant-family judge). The two judges agree on all core conclusions: frozen-frame < baseline and
+half-duplex < baseline with frozen hurting more (Claude base 0.136, frozen 0.045, half 0.068; frozen
+delta near-identical to gemini), proactivity is arm-triggered not cue-discriminative (unarmed fire 0.000
+under both), and Venus > MiniCPM on false-alarm and premature firing. Two differences we disclose rather
+than hide: (i) Claude credits only content-correct alert delivery, so its absolute proactive rates are
+lower than gemini (which counted any emission) - the ordering/pattern carry, not the absolute levels; and
+(ii) the repeat-rate ordering is judge-dependent (it flips between the two judges), so we do not rely on
+the repeat metric. We report the direction-robust findings and treat judge-sensitive ones as inconclusive.
+
 ====================================================================
 ## Reviewer 1
 
