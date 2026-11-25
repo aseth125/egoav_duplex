@@ -56,9 +56,12 @@ W3 (reliability).
 - Subtype counts and the human same-subset comparison (shared 53 chains: human 67.0 / 37.7 vs all 6
   models on the identical set) are reported.
 
-W4 (controls). Frozen-frame and half-duplex both score below the matched full-history baseline (frozen
-larger drop), consistent with dependence on historical visual evidence; provisional (gemini judge, delta
-only), GPT-6 re-run staged. Clean-vs-duplex paired comparison is already reported (W2 of R2 below).
+W4 (controls). Both ablations score below the matched full-history baseline, with frozen-frame the larger
+drop, consistent with dependence on historical visual evidence: content-correctness accuracy baseline
+0.143 -> frozen-frame 0.089 (-0.054) and half-duplex 0.125 (-0.018) under the gemini judge, and base 0.136
+-> frozen 0.045 / half 0.068 under the independent Claude panel (both judges agree on the direction and on
+frozen hurting more). Provisional (delta only), GPT-6 re-run staged. The clean-vs-duplex paired comparison
+is reported under R2-W2.
 
 W5 (configs). Full per-model table added: 1 fps for the live/duplex arms (DuplexOmni 0.52 fps), 16 kHz in
 / 24 kHz out, per-model resolution and context caps, decoding params, version pins. Gemini proactivity
