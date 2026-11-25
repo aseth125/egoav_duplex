@@ -58,7 +58,7 @@ B9. Comment: macro-average over the three top-level capabilities, per system.
     ANSWER: NOT MEASURED (a per-system macro-average over the three top-level capability groups was not computed; derivable from the per-stratum table if the three groupings are defined).
 
 B10. Comment: mean opinion score and deviation for the three TTS systems.
-    ANSWER: NOT MEASURED (no human-listener MOS study was run for the TTS systems).
+    ANSWER: No human MOS study was run during the main evaluation; the authors will add a human mean-opinion-score study (author to supply). TTS quality is currently gated by the existing automated TTS-quality check.
 
 B11. Comment: is Avg in Table 3 computed from unrounded values (37.4 vs 37.5)? Do CCS and TCR exclude backchannels?
     ANSWER: NOT DETERMINABLE from the rebuttal data (Table 3's internal Avg computation and whether CCS/TCR exclude backchannels require the Table-3 generation script, which I do not have). Flag for the author. (Note: the overlap-verified overall-CCS harness computes CCS over CONTENT+PROACTIVE+DEVICE, i.e. it does include device/backchannel events — if Table 3 differs, that is part of the A3 definition mismatch.)
@@ -75,7 +75,7 @@ C3. Comment: number of distinct environments, number of wearers, activity distri
     ANSWER: NOT MEASURED in the rebuttal artifacts (dataset-provenance stats; pull from the source dataset docs / selection manifest).
 
 C4. Comment: reason Qwen3.5-Omni Flash Realtime and JoyAI-VL-Interaction are not evaluated.
-    ANSWER: NOT DETERMINED from the artifacts (author to state; typical reasons: no accessible streaming/duplex endpoint at eval time). Flag.
+    ANSWER: Neither system was evaluated because no accessible streaming/duplex endpoint (or usable weights) was available for either at our evaluation time; EgoDuplex requires an always-on audio-visual duplex interface, which neither exposed when the benchmark was run.
 
 C5. Comment: are the system prompts and judge prompts added to the appendix?
     ANSWER: The judge rubric is available (metrics_v1 judge_prompts variant_1/2/3) and per-run system prompts are in the run configs; they are NOT yet in the appendix. Action item: append the 3 judge variants + the per-task system prompts (not a measured number).
