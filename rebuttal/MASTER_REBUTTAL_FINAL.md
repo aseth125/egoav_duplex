@@ -80,13 +80,20 @@ MiniCPM 57.8, Venus 70, DuplexOmni 28, Mini-Omni2 100 structural) and backchanne
 CCS shown in the figures). We relabel the figures as content and never collapse them under one BC number.
 
 W2 (insight beyond components / OmniInteract). Matched same-model with and without interactive turns
-(clean vs duplex, identical media and questions): Qwen-oracle +0.5, Gemini -6.2, MiniCPM -0.1, Venus
-+0.4, DuplexOmni +2.9, Mini-Omni2 +0.6. The Gemini drop is concentrated on the semantic-interrupt
-stratum (parent-answer accuracy 20.0 -> 2.7 percent); the residual cost of mere interruption is at most
-3 points for every model. The benchmark therefore isolates stopping-and-switching, which component and
-turn-based evaluations do not present, and exposes an interrupt-eagerness axis (Gemini over-stops,
-MiniCPM under-stops) invisible to single-skill tests. Table 1 is revised to separate specialized
-egocentric-skill coverage inside chains from the mere presence of egocentric tasks.
+(clean vs duplex, membership-identical content turns per model - verified 221/221 for Gemini, 215/215
+MiniCPM, etc.; contamination drops from both arms). Under a paired clustered bootstrap (resample chains,
+B=10k), the ONLY statistically significant change is Gemini: -6.19 CCS [-11.49, -0.83], p=0.024. Every
+other model is within noise of zero (DuplexOmni +2.9 [-0.4, +6.5], MiniCPM -0.1, Venus +0.4, Qwen +0.5,
+Mini-Omni2 +0.6 - all include 0), and the two oracles are turn-based so the interactive timeline is never
+injected into their arm (their deltas measure the ABSENCE of the manipulation, not robustness to it:
+oracles are 92.8 percent identical turn-by-turn vs Gemini's 62.9 percent, 62 degradations vs 20
+improvements). So this is NOT a diverse per-model effect: interactivity significantly degrades ONLY the
+live-streaming model that must manage overlap (Gemini), concentrated on the semantic-interrupt stratum
+(parent-answer accuracy 20.0 -> 2.7 percent). That is exactly what the egocentric-skills-in-chains
+combination isolates - stopping-and-switching - which component and turn-based evaluations never present;
+it also exposes an interrupt-eagerness axis (Gemini over-stops, MiniCPM under-stops) invisible to
+single-skill tests. Table 1 is revised to separate specialized egocentric-skill coverage inside chains
+from the mere presence of egocentric tasks.
 
 W3 (proactive). We report the activity-at-cue (vision-requiring) subset separately: about 41 percent of
 proactive cues require egocentric visual grounding (current + setup), memory-only about 37 percent,
