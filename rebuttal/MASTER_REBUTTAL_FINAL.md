@@ -77,10 +77,14 @@ egocentric-skill coverage inside chains from the mere presence of egocentric tas
 W3 (proactive). We report the activity-at-cue (vision-requiring) subset separately: about 41 percent of
 proactive cues require egocentric visual grounding (current + setup), memory-only about 37 percent,
 elapsed-time about 22 percent; the vision bin is discriminative, not vacuous. We add a false-alarm /
-premature / repeat axis via rendered controls (no_cue, unarmed, wrong_class, pre_arm, repeat). Provisional
-(gemini judge, Venus): false-alarm 0.50, premature 0.75, repeat 0.091; the controls reveal that Venus
-proactivity is arm-triggered rather than cue-discriminative (silent when unarmed, but fires regardless of
-the true cue once armed, and early). Full two-model numbers to follow; GPT-6 re-run staged.
+premature / repeat axis via rendered controls (no_cue, unarmed, wrong_class, pre_arm, repeat). Full
+two-model result (gemini judge, n=36, 217 control events/model): false-alarm Venus 0.62 / MiniCPM-o 0.61;
+premature (pre-arm) Venus 0.861 / MiniCPM 0.667; repeat-of-fired Venus 0.129 / MiniCPM 0.429; target-fire
+Venus 0.639 / MiniCPM 0.861; unarmed (should stay silent) Venus 0.083 / MiniCPM 0.167; wrong_class
+false-fire 0.917 / 0.972. Both models over-fire once armed and are near-tied on overall false-alarm
+(about 0.61), confirming proactivity is arm-triggered rather than cue-discriminative: MiniCPM buys higher
+recall (target 0.861) with heavy repeats (0.43), Venus fires less but mis-times (premature 0.86), and both
+stay near-silent when unarmed. Provisional judge (gemini-3.8-flash, delta-only); GPT-6 re-run staged.
 
 ====================================================================
 ## Reviewer 3
@@ -99,6 +103,6 @@ streaming mode, context caps, decoding params, SDK and version pins) is added; s
 
 ====================================================================
 ## Follow-ups in progress (disclosed)
-- Full two-model (Venus + MiniCPM-o) proactive-control numbers at n=36 (refining the provisional subset).
+- Proactive-control numbers at n=36 are DONE for both Venus + MiniCPM-o (table above); gemini-judge, provisional.
 - Authoritative GPT-6 re-run of the frozen-frame / half-duplex / proactive-control deltas (worklists
   staged; provisional gemini numbers are delta proxies only).
