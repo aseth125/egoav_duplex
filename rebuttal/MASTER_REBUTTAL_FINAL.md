@@ -142,3 +142,6 @@ streaming mode, context caps, decoding params, SDK and version pins) is added; s
 - Proactive-control numbers at n=36 are DONE for both Venus + MiniCPM-o (table above); gemini-judge, provisional.
 - Authoritative GPT-6 re-run of the frozen-frame / half-duplex / proactive-control deltas (worklists
   staged; provisional gemini numbers are delta proxies only).
+
+
+W5-addendum (Gemini proactive_audio ON vs OFF, verified). We re-ran Gemini-Live with proactivity=ProactivityConfig(proactive_audio=True) on matched control clips (same 60 clips, runner identical except the flag, same gemini-3.8-flash judge, n=12/condition). proactive_audio=True does NOT fix the proactive failure modes: target-fire 0.167 (OFF) -> 0.083 (ON), false-alarm 0.306 -> 0.333, premature 0.417 -> 0.167 (the only directional gain, weak at n=12). So the server-default OFF config does not disadvantage Gemini - enabling proactive mode leaves target-fire at the floor and false-alarms unchanged. (These are the first matched Gemini-Live control numbers; the separate 0.62/0.861-style proactive numbers elsewhere are the LOCAL Venus/MiniCPM controls, not Gemini.)
