@@ -1,0 +1,3 @@
+
+
+Per-model judge-vs-human agreement (strict, all 6 systems, n=71): Gemini-3.8-live kappa 1.00 (n=10), MiniCPM-o 4.5 kappa 0.545 (n=10, only 2 disagreements = a v8/v9 judge-drift artifact, resolves to 1.00 under the authoritative paper-table verdicts), Realtime-Venus 1.00 (n=14), DuplexOmni 1.00 (n=13), Qwen-oracle 1.00 (n=9), Mini-Omni2-oracle 1.00 (n=15); overall kappa 0.884, raw agreement 0.972. By turn-type: CONTENT_TURN kappa 0.870 (n=31), DEVICE kappa 0.870 (n=18), PROACTIVE 100% raw agreement (n=22, kappa undefined - no label variance). No systematic per-model bias.
