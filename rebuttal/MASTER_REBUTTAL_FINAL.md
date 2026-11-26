@@ -39,11 +39,26 @@ W1 (timing / backchannel / entity leak).
   removes from both arms. The ranking is identical with them in, all-semantic dropped, or only-the-21
   dropped. We corrected the specific figure flagged and neutralised its phrasing.
 
-W2 (truncation). Full generations are logged past the window, so no model is truncated at generation
-time. Window-level truncation rate is 1.4 to 1.7 percent on the strong models (Mini-Omni2 8.6). Scoring at
-wider windows (next-turn, +2, +4, +8, unbounded) does not change the ranking; Gemini rises from 39.7 to at
-most 41.0 at unbounded and stays about 26 points below human. Gemini stream interruptions fall on
-non-scored proactive narration, not on scored answers.
+W2 (truncation). Full generations are logged past the window, so no model is truncated at generation time.
+Window-level truncation rate: Gemini 1.74%, MiniCPM-o 1.4%, Venus 0.23%, DuplexOmni 0.0%, Qwen-oracle 0.0%, Mini-Omni2 8.6%.
+We re-scored CCS at wider windows (next-turn / +2 / +4 / +8 / unbounded) for ALL models; a wider window changes a window
+only when content ran past the next-turn boundary, so the change-set is width-independent and we report a rigorous
+[floor, ceil] band (ceil = fully-unbounded upper bound):
+
+| model | default CCS | wider-window band [floor, ceil] | max gain @ unbounded |
+|---|---|---|---|
+| Gemini-3.8-live | 39.7 | [39.2, 41.0] | +1.3 |
+| MiniCPM-o 4.5 | 37.7 | [37.2, 38.6] | +0.9 |
+| Realtime-Venus | 25.3 | [25.1, 25.4] | +0.1 |
+| DuplexOmni | 17.0 | [17.0, 17.0] | +0.0 |
+| Mini-Omni2 | 9.7 | [9.0, 17.6] | +8.0 |
+| Qwen-oracle | turn-based | (no truncatable windows) | +0.0 |
+
+Ranking is stable across every window (only possible reorder is Mini-Omni2 vs DuplexOmni at the very bottom). Every
+model stays far below human (67.0); even Gemini unbounded ceiling 41.0 is 26 points below. Gemini stream interruptions
+fall on non-scored proactive narration, not scored answers. Exact per-width points would need re-judging; the band
+encloses +2/+4/+8/unbounded. Backchannel-continuation upper bound (credit every fired-BC answer) also preserves the
+ranking: Gemini 39.7->42.1, MiniCPM 37.7->40.7, Venus 25.3->27.8, DuplexOmni 17.0->22.0.
 
 W3 (reliability).
 - Judge vs human: Cohen kappa 0.884 (strict) / 0.934 (quadratic-weighted), n = 71 across all 6 systems,
