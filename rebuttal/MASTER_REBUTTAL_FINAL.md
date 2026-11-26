@@ -61,7 +61,7 @@ encloses +2/+4/+8/unbounded. Backchannel-continuation upper bound (credit every 
 ranking: Gemini 39.7->42.1, MiniCPM 37.7->40.7, Venus 25.3->27.8, DuplexOmni 17.0->22.0.
 
 W3 (reliability).
-- Judge vs human: Cohen kappa 0.884 (strict) / 0.934 (quadratic-weighted), n = 71 across all 6 systems,
+- Judge vs human: Cohen kappa 0.884 (strict) / 0.934 (quadratic-weighted), n = 71 across all 6 systems, Per-model judge-vs-human agreement (strict, all 6 systems, n=71): Gemini-3.8-live kappa 1.00 (n=10), MiniCPM-o 4.5 kappa 0.545 (n=10, only 2 disagreements = a v8/v9 judge-drift artifact, resolves to 1.00 under the authoritative paper-table verdicts), Realtime-Venus 1.00 (n=14), DuplexOmni 1.00 (n=13), Qwen-oracle 1.00 (n=9), Mini-Omni2-oracle 1.00 (n=15); overall kappa 0.884, raw agreement 0.972. By turn-type: CONTENT_TURN kappa 0.870 (n=31), DEVICE kappa 0.870 (n=18), PROACTIVE 100% raw agreement (n=22, kappa undefined - no label variance). No systematic per-model bias.
   per-model agreement uniform (no per-model bias), replacing the single-model validation.
 - Variance: clustered bootstrap (10k, resampling chains). Full-set CCS with 95 percent CI: Qwen-oracle
   55.0 [50.4, 59.6], MiniCPM 39.3 [33.0, 46.0], Gemini 37.1 [31.5, 42.9], Venus 26.5 [20.1, 33.3],
